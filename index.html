@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF9900">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KVH Portfolio">
 </head>
 <body>
     <!-- Navigation -->
@@ -894,6 +901,20 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials section section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What People Say</span>
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-description">
+                    Feedback from colleagues, clients, and community members I've worked with
+                </p>
+            </div>
+            <div id="testimonialsSlider" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact section section-dark">
         <div class="container">
@@ -1003,6 +1024,19 @@
     </button>
 
     <script src="particles.js"></script>
+    <script src="interactive.js"></script>
+    <script src="themes.js"></script>
     <script src="script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered:', registration))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
