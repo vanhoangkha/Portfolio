@@ -14,6 +14,7 @@ import blogRoutes from './routes/blog.routes';
 import projectRoutes from './routes/project.routes';
 import contactRoutes from './routes/contact.routes';
 import analyticsRoutes from './routes/analytics.routes';
+import portfolioRoutes from './routes/portfolio.routes';
 
 // Load environment variables
 dotenv.config();
@@ -62,6 +63,7 @@ app.use(`/api/${API_VERSION}/blog`, blogRoutes);
 app.use(`/api/${API_VERSION}/projects`, projectRoutes);
 app.use(`/api/${API_VERSION}/contact`, contactRoutes);
 app.use(`/api/${API_VERSION}/analytics`, analyticsRoutes);
+app.use(`/api/${API_VERSION}/portfolio`, portfolioRoutes);
 
 // 404 handler
 app.use(notFoundHandler);
