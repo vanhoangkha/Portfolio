@@ -1,0 +1,26 @@
+CloudFront Distribution Information
+====================================
+
+Distribution ID: E3MOVOLQCJX2X4
+CloudFront URL: https://d1pas1x9m16mj0.cloudfront.net
+S3 Origin: khavan-portfolio-site.s3-website-ap-southeast-1.amazonaws.com
+Status: Deploying (takes 15-20 minutes)
+Created: 2025-11-06
+
+Features:
+- HTTPS enabled (automatic SSL certificate)
+- HTTP to HTTPS redirect
+- Global CDN (faster load times worldwide)
+- Gzip compression enabled
+- Custom error responses (404 → index.html)
+- Cache TTL: 24 hours default, 1 year max
+
+How to check deployment status:
+  aws cloudfront get-distribution --id E3MOVOLQCJX2X4 --query 'Distribution.Status' --output text
+
+How to invalidate cache after updates:
+  aws cloudfront create-invalidation --distribution-id E3MOVOLQCJX2X4 --paths "/*"
+
+Website URLs:
+  S3 (HTTP):        http://khavan-portfolio-site.s3-website-ap-southeast-1.amazonaws.com
+  CloudFront (HTTPS): https://d1pas1x9m16mj0.cloudfront.net
