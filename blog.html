@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kha Van Hoang's Blog - Cloud Architecture, AI/ML, and Tech Leadership">
+    <meta name="author" content="Kha Van Hoang">
+    <title>Blog - Kha Van Hoang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="brand-icon">KVH</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1 class="blog-hero-title">Tech Insights & Learnings</h1>
+                <p class="blog-hero-description">
+                    Sharing experiences from cloud architecture, AI/ML implementations, and building tech communities
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Filters -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="cloud">Cloud Architecture</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="devsecops">DevSecOps</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+                <button class="filter-btn" data-filter="career">Career</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                <!-- All blog posts will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Blog Post Sections (Hidden by default) -->
+    <section id="post-1" class="blog-post section" style="display: none;">
+        <div class="container">
+            <div class="blog-post-full">
+                <div class="blog-post-header">
+                    <div class="blog-category" style="display: inline-block; margin-bottom: 1rem;">Cloud Architecture</div>
+                    <h1 class="blog-post-title">Building Multi-Cloud Architectures: Lessons from the Field</h1>
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> January 15, 2025</span>
+                        <span class="blog-read-time"><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Multi-Cloud</span>
+                        <span class="blog-tag">Architecture</span>
+                        <span class="blog-tag">Best Practices</span>
+                    </div>
+                </div>
+                <div class="blog-post-body">
+                    <p>
+                        In today's enterprise landscape, multi-cloud strategies have evolved from optional to essential.
+                        After architecting solutions across AWS, Azure, and GCP for Fortune 500 companies, I've gathered
+                        insights that can help you navigate this complex terrain.
+                    </p>
+
+                    <h2>Why Multi-Cloud?</h2>
+                    <p>
+                        Organizations adopt multi-cloud for various reasons:
+                    </p>
+                    <ul>
+                        <li><strong>Risk mitigation:</strong> Avoid vendor lock-in and ensure business continuity</li>
+                        <li><strong>Best-of-breed services:</strong> Leverage unique capabilities from each provider</li>
+                        <li><strong>Regulatory compliance:</strong> Meet data residency and sovereignty requirements</li>
+                        <li><strong>Cost optimization:</strong> Take advantage of pricing differences and negotiations</li>
+                    </ul>
+
+                    <h2>Key Architecture Patterns</h2>
+                    <h3>1. Data Replication Layer</h3>
+                    <p>
+                        Implement a robust data replication strategy across clouds. We've successfully used tools like:
+                    </p>
+                    <ul>
+                        <li>AWS DataSync and Azure Data Factory for batch transfers</li>
+                        <li>Kafka-based streaming for real-time synchronization</li>
+                        <li>Database-native replication for critical workloads</li>
+                    </ul>
+
+                    <h3>2. Unified Identity Management</h3>
+                    <p>
+                        Single sign-on across clouds is crucial. Consider federated identity providers like:
+                    </p>
+                    <ul>
+                        <li>Okta or Azure AD for centralized authentication</li>
+                        <li>SAML/OIDC standards for cross-cloud integration</li>
+                        <li>Just-in-time provisioning to reduce security risks</li>
+                    </ul>
+
+                    <h3>3. Network Architecture</h3>
+                    <p>
+                        Design your network topology carefully:
+                    </p>
+                    <ul>
+                        <li>Use cloud interconnects (AWS Direct Connect, Azure ExpressRoute, GCP Interconnect)</li>
+                        <li>Implement SD-WAN for intelligent traffic routing</li>
+                        <li>Consider edge locations for latency-sensitive workloads</li>
+                    </ul>
+
+                    <h2>Lessons Learned</h2>
+                    <blockquote>
+                        "The biggest mistake teams make is treating multi-cloud like multiple single-cloud deployments.
+                        You need a unified orchestration layer from day one."
+                    </blockquote>
+
+                    <h3>1. Start with Observability</h3>
+                    <p>
+                        Invest in cross-cloud monitoring early. We use:
+                    </p>
+                    <ul>
+                        <li>Prometheus + Grafana for metrics aggregation</li>
+                        <li>ELK Stack for centralized logging</li>
+                        <li>OpenTelemetry for distributed tracing</li>
+                    </ul>
+
+                    <h3>2. Infrastructure as Code is Non-Negotiable</h3>
+                    <p>
+                        Use tools like Terraform or Pulumi to maintain consistency:
+                    </p>
+                    <pre><code># Example: Multi-cloud Terraform module structure
+terraform/
+  ├── modules/
+  │   ├── aws/
+  │   ├── azure/
+  │   └── gcp/
+  ├── environments/
+  │   ├── prod/
+  │   └── staging/
+  └── global/
+      └── shared-services/</code></pre>
+
+                    <h3>3. Cost Management Requires Automation</h3>
+                    <p>
+                        Manual cost tracking doesn't scale. Implement:
+                    </p>
+                    <ul>
+                        <li>Automated tagging policies across all clouds</li>
+                        <li>Unified cost dashboards (CloudHealth, Cloudability)</li>
+                        <li>Budget alerts and automatic scaling policies</li>
+                    </ul>
+
+                    <h2>Common Pitfalls to Avoid</h2>
+                    <ol>
+                        <li><strong>Over-engineering:</strong> Don't try to abstract everything. Accept some cloud-specific implementations.</li>
+                        <li><strong>Neglecting security:</strong> Each cloud has different security models. Understand them deeply.</li>
+                        <li><strong>Ignoring data gravity:</strong> Moving data is expensive. Design with data locality in mind.</li>
+                        <li><strong>Underestimating complexity:</strong> Multi-cloud increases operational overhead. Ensure your team is ready.</li>
+                    </ol>
+
+                    <h2>Tools & Technologies</h2>
+                    <p>Here are tools that have proven invaluable:</p>
+                    <ul>
+                        <li><strong>Terraform/Pulumi:</strong> Infrastructure provisioning</li>
+                        <li><strong>Kubernetes:</strong> Container orchestration across clouds</li>
+                        <li><strong>Istio:</strong> Service mesh for microservices</li>
+                        <li><strong>HashiCorp Vault:</strong> Secrets management</li>
+                        <li><strong>GitLab/GitHub Actions:</strong> CI/CD pipelines</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        Multi-cloud architecture is a journey, not a destination. Start with clear business objectives,
+                        invest in the right tooling, and build a culture of continuous learning. The complexity is real,
+                        but so are the benefits when done right.
+                    </p>
+                    <p>
+                        Have questions about your multi-cloud journey? Feel free to reach out!
+                    </p>
+                </div>
+                <div class="blog-post-footer">
+                    <h4>Share this post</h4>
+                    <div class="blog-share">
+                        <a href="#" class="blog-share-btn" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="blog-share-btn" title="Share on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="blog-share-btn" title="Share on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="blog-share-btn" title="Copy Link">
+                            <i class="fas fa-link"></i>
+                        </a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="blog.html" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add similar sections for other blog posts -->
+    <!-- Blog Post 2 -->
+    <section id="post-2" class="blog-post section" style="display: none;">
+        <div class="container">
+            <div class="blog-post-full">
+                <div class="blog-post-header">
+                    <div class="blog-category" style="display: inline-block; margin-bottom: 1rem;">AI & ML</div>
+                    <h1 class="blog-post-title">Implementing RAG Systems with AWS Bedrock</h1>
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> January 10, 2025</span>
+                        <span class="blog-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <div class="blog-tags">
+                        <span class="blog-tag">GenAI</span>
+                        <span class="blog-tag">RAG</span>
+                        <span class="blog-tag">AWS Bedrock</span>
+                    </div>
+                </div>
+                <div class="blog-post-body">
+                    <p>
+                        Retrieval-Augmented Generation (RAG) has become the go-to pattern for building production-ready
+                        generative AI applications. In this comprehensive guide, I'll walk you through implementing a
+                        robust RAG system using AWS Bedrock.
+                    </p>
+
+                    <h2>What is RAG?</h2>
+                    <p>
+                        RAG combines the power of large language models with your organization's proprietary data.
+                        Instead of relying solely on the model's training data, RAG retrieves relevant context from
+                        your knowledge base before generating responses.
+                    </p>
+
+                    <h2>Architecture Overview</h2>
+                    <p>A production RAG system typically consists of:</p>
+                    <ul>
+                        <li><strong>Data ingestion pipeline:</strong> ETL process for document processing</li>
+                        <li><strong>Vector database:</strong> Store embeddings for similarity search</li>
+                        <li><strong>Retrieval engine:</strong> Find relevant documents based on queries</li>
+                        <li><strong>LLM integration:</strong> Generate responses using retrieved context</li>
+                        <li><strong>Response generation:</strong> Combine retrieval and generation</li>
+                    </ul>
+
+                    <h2>Implementation Steps</h2>
+                    <h3>1. Document Processing</h3>
+                    <pre><code>import boto3
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# Initialize Bedrock client
+bedrock = boto3.client('bedrock-runtime')
+
+# Split documents into chunks
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200
+)
+
+chunks = text_splitter.split_documents(documents)</code></pre>
+
+                    <h3>2. Generate Embeddings</h3>
+                    <pre><code>def generate_embeddings(text):
+    response = bedrock.invoke_model(
+        modelId='amazon.titan-embed-text-v1',
+        body=json.dumps({
+            'inputText': text
+        })
+    )
+    return json.loads(response['body'].read())['embedding']</code></pre>
+
+                    <h3>3. Vector Storage</h3>
+                    <p>
+                        For vector storage, I recommend:
+                    </p>
+                    <ul>
+                        <li><strong>Amazon OpenSearch Serverless:</strong> Fully managed, scales automatically</li>
+                        <li><strong>Pinecone:</strong> Purpose-built for vector search</li>
+                        <li><strong>pgvector:</strong> PostgreSQL extension for cost-effective solutions</li>
+                    </ul>
+
+                    <h3>4. Retrieval Implementation</h3>
+                    <pre><code>from langchain.vectorstores import OpenSearchVectorSearch
+from langchain.retrievers import ContextualCompressionRetriever
+
+# Setup vector store
+vectorstore = OpenSearchVectorSearch(
+    opensearch_url=os.environ['OPENSEARCH_URL'],
+    index_name='knowledge-base'
+)
+
+# Create retriever
+retriever = vectorstore.as_retriever(
+    search_kwargs={'k': 5}
+)</code></pre>
+
+                    <h3>5. RAG Chain Assembly</h3>
+                    <pre><code>from langchain.chains import RetrievalQA
+from langchain.llms.bedrock import Bedrock
+
+# Initialize LLM
+llm = Bedrock(
+    model_id='anthropic.claude-v2',
+    client=bedrock
+)
+
+# Create RAG chain
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=retriever,
+    return_source_documents=True
+)
+
+# Query
+result = qa_chain({'query': 'Your question here'})</code></pre>
+
+                    <h2>Optimization Techniques</h2>
+                    <h3>1. Hybrid Search</h3>
+                    <p>
+                        Combine semantic and keyword search for better results:
+                    </p>
+                    <ul>
+                        <li>Use BM25 for keyword matching</li>
+                        <li>Use vector similarity for semantic search</li>
+                        <li>Combine scores with reciprocal rank fusion</li>
+                    </ul>
+
+                    <h3>2. Reranking</h3>
+                    <p>
+                        Improve retrieval quality with cross-encoder models:
+                    </p>
+                    <pre><code>from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-12-v2')
+
+# Rerank retrieved documents
+scores = reranker.predict([(query, doc) for doc in documents])
+reranked_docs = [doc for _, doc in sorted(zip(scores, documents), reverse=True)]</code></pre>
+
+                    <h3>3. Caching Strategy</h3>
+                    <p>
+                        Implement intelligent caching to reduce costs and latency:
+                    </p>
+                    <ul>
+                        <li>Cache embeddings for frequently accessed documents</li>
+                        <li>Use Redis for query result caching</li>
+                        <li>Implement semantic cache for similar queries</li>
+                    </ul>
+
+                    <h2>Production Considerations</h2>
+                    <h3>Monitoring & Observability</h3>
+                    <ul>
+                        <li>Track retrieval quality metrics (precision, recall)</li>
+                        <li>Monitor LLM response latency and token usage</li>
+                        <li>Log failed retrievals for continuous improvement</li>
+                        <li>Implement A/B testing for different configurations</li>
+                    </ul>
+
+                    <h3>Cost Optimization</h3>
+                    <blockquote>
+                        "RAG systems can get expensive fast. Optimize embedding generation and implement smart caching
+                        to keep costs under control."
+                    </blockquote>
+
+                    <h2>Real-World Results</h2>
+                    <p>
+                        In our implementations, we've seen:
+                    </p>
+                    <ul>
+                        <li>90%+ accuracy on domain-specific queries</li>
+                        <li>Sub-second response times with caching</li>
+                        <li>30-45% reduction in audit cycles (compliance use case)</li>
+                        <li>Significant reduction in support ticket resolution time</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        RAG is a powerful pattern that brings LLMs into the enterprise. With AWS Bedrock's managed
+                        infrastructure and the patterns outlined here, you can build production-ready systems quickly
+                        and reliably.
+                    </p>
+                    <p>
+                        Check out my <a href="https://github.com/aws-samples/AWS-First-GenAI-Journey" target="_blank">
+                        AWS First GenAI Journey</a> repository for complete code examples and templates.
+                    </p>
+                </div>
+                <div class="blog-post-footer">
+                    <h4>Share this post</h4>
+                    <div class="blog-share">
+                        <a href="#" class="blog-share-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="blog-share-btn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="blog-share-btn"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="blog-share-btn"><i class="fas fa-link"></i></a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="blog.html" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Kha Van Hoang. All rights reserved.</p>
+                    <p class="footer-tagline">Building the future of cloud with AI</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#experience">Experience</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>
