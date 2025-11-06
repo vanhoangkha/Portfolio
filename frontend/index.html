@@ -8,6 +8,7 @@
     <title>Kha Van Hoang - Cloud Solutions Architect</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="portfolio-enhanced.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,10 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -732,14 +737,15 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Enhanced with Proficiency Levels -->
     <section id="skills" class="skills section section-dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Expertise</span>
-                <h2 class="section-title">Skills & Technologies</h2>
+                <h2 class="section-title">Skills Matrix</h2>
+                <p class="section-description">Technical and soft skills with proficiency levels</p>
             </div>
-            <div class="skills-content">
+            <div id="skills-matrix" class="skills-content">
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
                         <i class="fas fa-brain"></i>
@@ -901,8 +907,64 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Credentials</span>
+                <h2 class="section-title">Certifications & Badges</h2>
+                <p class="section-description">
+                    Professional certifications validating expertise in cloud, security, and DevOps
+                </p>
+            </div>
+            <div id="certifications-grid" class="certifications-grid"></div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements section section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Recognition</span>
+                <h2 class="section-title">Awards & Achievements</h2>
+                <p class="section-description">
+                    Awards, recognitions, and accomplishments throughout my career
+                </p>
+            </div>
+            <div id="achievements-grid" class="achievements-grid"></div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Visualization -->
+    <section id="tech-stack" class="tech-stack section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Technology</span>
+                <h2 class="section-title">Tech Stack & Tools</h2>
+                <p class="section-description">
+                    Technologies and tools I work with daily, organized by proficiency
+                </p>
+            </div>
+            <div id="tech-stack-viz" class="tech-stack-content"></div>
+        </div>
+    </section>
+
+    <!-- Community Activities Section -->
+    <section id="community" class="community section section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Giving Back</span>
+                <h2 class="section-title">Community & Open Source</h2>
+                <p class="section-description">
+                    Contributing to the tech community through workshops, mentoring, and open source
+                </p>
+            </div>
+            <div id="community-timeline" class="community-content"></div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
-    <section class="testimonials section section-dark">
+    <section class="testimonials section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">What People Say</span>
@@ -911,7 +973,7 @@
                     Feedback from colleagues, clients, and community members I've worked with
                 </p>
             </div>
-            <div id="testimonialsSlider" data-aos="fade-up" data-aos-delay="200"></div>
+            <div id="testimonials-slider" class="testimonials-content"></div>
         </div>
     </section>
 
@@ -1027,6 +1089,10 @@
     <script src="interactive.js"></script>
     <script src="themes.js"></script>
     <script src="script.js"></script>
+
+    <!-- Enhanced Portfolio Scripts -->
+    <script src="api-service.js"></script>
+    <script src="portfolio-enhanced.js"></script>
 
     <!-- Service Worker Registration -->
     <script>
