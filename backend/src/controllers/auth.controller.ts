@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 import db from '../config/database';
 import { createError } from '../middleware/errorHandler';
 
@@ -21,7 +21,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
       process.env.JWT_SECRET!,
-      { expiresIn: process.env.JWT_EXPIRES_IN }
+      { expiresIn: '7d' } as SignOptions
     );
 
     res.status(201).json({ success: true, data: { user, token } });
@@ -47,7 +47,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
       process.env.JWT_SECRET!,
-      { expiresIn: process.env.JWT_EXPIRES_IN }
+      { expiresIn: '7d' } as SignOptions
     );
 
     res.json({
