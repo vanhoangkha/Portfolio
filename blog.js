@@ -250,6 +250,186 @@ function setupShareButtons() {
     });
 }
 
+// Blog Search Functionality
+function setupBlogSearch() {
+    const searchInput = document.getElementById('blogSearch');
+    const searchClearBtn = document.getElementById('searchClearBtn');
+    const searchResults = document.getElementById('searchResults');
+
+    if (!searchInput) return;
+
+    let searchTimeout;
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim();
+
+        // Show/hide clear button
+        searchClearBtn.style.display = query ? 'flex' : 'none';
+
+        // Debounce search
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            if (query.length >= 2) {
+                const results = searchBlogPosts(query);
+                displaySearchResults(results);
+            } else if (query.length === 0) {
+                searchResults.innerHTML = '';
+                searchResults.style.display = 'none';
+                renderBlogPosts(blogPosts); // Show all posts
+            }
+        }, 300);
+    });
+
+    // Clear button
+    searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClearBtn.style.display = 'none';
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'none';
+        renderBlogPosts(blogPosts);
+    });
+}
+
+function displaySearchResults(results) {
+    const searchResults = document.getElementById('searchResults');
+
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-no-results">
+                <i class="fas fa-search"></i>
+                <p>No posts found matching your search</p>
+            </div>
+        `;
+        searchResults.style.display = 'block';
+        renderBlogPosts([]);
+    } else {
+        searchResults.innerHTML = `
+            <div class="search-results-count">
+                Found ${results.length} post${results.length !== 1 ? 's' : ''}
+            </div>
+        `;
+        searchResults.style.display = 'block';
+        renderBlogPosts(results);
+    }
+}
+
+// Reading Progress Indicator
+function setupReadingProgress() {
+    const progressBar = document.getElementById('readingProgress');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+        // Only show progress when viewing a blog post
+        const isViewingPost = window.location.hash.startsWith('#post-');
+
+        if (isViewingPost) {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+
+            progressBar.style.width = scrolled + '%';
+            progressBar.parentElement.style.display = 'block';
+        } else {
+            progressBar.parentElement.style.display = 'none';
+        }
+    });
+}
+
+// Table of Contents Generator for Blog Posts
+function generateTableOfContents() {
+    const blogPost = document.querySelector('.blog-post[style*="display: block"] .blog-post-body');
+    if (!blogPost) return;
+
+    const headings = blogPost.querySelectorAll('h2, h3');
+    if (headings.length === 0) return;
+
+    const toc = document.createElement('div');
+    toc.className = 'blog-toc';
+    toc.innerHTML = '<h4><i class="fas fa-list"></i> Table of Contents</h4><ul></ul>';
+
+    const tocList = toc.querySelector('ul');
+
+    headings.forEach((heading, index) => {
+        const id = `heading-${index}`;
+        heading.id = id;
+
+        const li = document.createElement('li');
+        li.className = heading.tagName.toLowerCase();
+
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = heading.textContent;
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        li.appendChild(link);
+        tocList.appendChild(li);
+    });
+
+    // Insert TOC after blog post header
+    const postHeader = blogPost.previousElementSibling;
+    postHeader.parentNode.insertBefore(toc, blogPost);
+}
+
+// Estimated Reading Time Calculator
+function calculateReadingTime(text) {
+    const wordsPerMinute = 200;
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return minutes;
+}
+
+// Copy Code Block Functionality
+function setupCodeCopyButtons() {
+    document.querySelectorAll('pre code').forEach((codeBlock) => {
+        const pre = codeBlock.parentElement;
+
+        // Create copy button
+        const button = document.createElement('button');
+        button.className = 'code-copy-btn';
+        button.innerHTML = '<i class="fas fa-copy"></i>';
+        button.title = 'Copy code';
+
+        button.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(codeBlock.textContent);
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i>';
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy code:', err);
+            }
+        });
+
+        pre.style.position = 'relative';
+        pre.appendChild(button);
+    });
+}
+
+// Lazy Load Images
+function setupLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+}
+
 // Initialize when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -264,11 +444,27 @@ function init() {
     // Setup filters
     setupFilters();
 
+    // Setup search
+    setupBlogSearch();
+
+    // Setup reading progress
+    setupReadingProgress();
+
     // Setup share buttons
     setupShareButtons();
 
+    // Setup code copy buttons
+    setupCodeCopyButtons();
+
+    // Setup lazy loading
+    setupLazyLoading();
+
     // Listen for hash changes
-    window.addEventListener('hashchange', handleBlogPostNavigation);
+    window.addEventListener('hashchange', () => {
+        handleBlogPostNavigation();
+        generateTableOfContents();
+        setupCodeCopyButtons();
+    });
 
     // Add smooth scroll to blog post links
     document.querySelectorAll('a[href^="blog.html#post-"]').forEach(link => {
@@ -278,6 +474,14 @@ function init() {
             window.location.hash = hash;
         });
     });
+
+    // Generate TOC if viewing a post
+    if (window.location.hash.startsWith('#post-')) {
+        setTimeout(() => {
+            generateTableOfContents();
+            setupCodeCopyButtons();
+        }, 100);
+    }
 }
 
 // Search functionality (if needed in future)

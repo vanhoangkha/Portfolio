@@ -7,6 +7,7 @@
     <meta name="author" content="Kha Van Hoang">
     <title>Blog - Kha Van Hoang</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,9 +54,22 @@
         </div>
     </section>
 
-    <!-- Blog Filters -->
+    <!-- Blog Search & Filters -->
     <section class="section">
         <div class="container">
+            <!-- Search Bar -->
+            <div class="blog-search-container">
+                <div class="blog-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="blogSearch" placeholder="Search blog posts..." aria-label="Search blog posts">
+                    <button class="search-clear-btn" id="searchClearBtn" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="blog-search-results" id="searchResults"></div>
+            </div>
+
+            <!-- Filters -->
             <div class="blog-filters">
                 <button class="filter-btn active" data-filter="all">All Posts</button>
                 <button class="filter-btn" data-filter="cloud">Cloud Architecture</button>
@@ -75,6 +89,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-container">
+        <div class="reading-progress-bar" id="readingProgress"></div>
+    </div>
 
     <!-- Individual Blog Post Sections (Hidden by default) -->
     <section id="post-1" class="blog-post section" style="display: none;">
