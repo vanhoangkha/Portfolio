@@ -386,10 +386,27 @@ class PortfolioRenderer {
         container.innerHTML = html;
     }
 
-    // Initialize all sections
+    // Initialize all sections with loading states
     async initializePortfolio() {
         try {
             console.log('Loading portfolio data...');
+            portfolioUtils.performance.startTimer('portfolioLoad');
+
+            // Show loading states
+            const sections = [
+                'skills-matrix',
+                'certifications-grid',
+                'testimonials-slider',
+                'community-timeline',
+                'tech-stack-viz',
+                'achievements-grid'
+            ];
+
+            sections.forEach(id => {
+                portfolioUtils.loading.showLoading(id, 'Loading data...');
+            });
+
+            const startTime = performance.now();
 
             const [skills, certifications, testimonials, activities, techStack, achievements] = await Promise.all([
                 this.api.getSkills(),
@@ -400,16 +417,79 @@ class PortfolioRenderer {
                 this.api.getAchievements()
             ]);
 
+            const apiTime = performance.now() - startTime;
+            portfolioUtils.performance.logAPICall('complete-portfolio', apiTime, true);
+
+            // Hide loading and render
+            portfolioUtils.loading.hideLoading('skills-matrix');
             this.renderSkills(skills);
+            portfolioUtils.search.setData('skills', skills);
+
+            portfolioUtils.loading.hideLoading('certifications-grid');
             this.renderCertifications(certifications);
+            portfolioUtils.search.setData('certifications', certifications);
+
+            portfolioUtils.loading.hideLoading('testimonials-slider');
             this.renderTestimonials(testimonials);
+
+            portfolioUtils.loading.hideLoading('community-timeline');
             this.renderCommunityActivities(activities);
+
+            portfolioUtils.loading.hideLoading('tech-stack-viz');
             this.renderTechStack(techStack);
+
+            portfolioUtils.loading.hideLoading('achievements-grid');
             this.renderAchievements(achievements);
 
-            console.log('Portfolio loaded successfully!');
+            portfolioUtils.performance.endTimer('portfolioLoad');
+            console.log('✅ Portfolio loaded successfully!');
+
+            // Cache data for offline access
+            portfolioUtils.storage.set('portfolio_data', {
+                skills,
+                certifications,
+                testimonials,
+                activities,
+                techStack,
+                achievements,
+                timestamp: new Date()
+            });
+
         } catch (error) {
-            console.error('Error initializing portfolio:', error);
+            console.error('❌ Error initializing portfolio:', error);
+
+            // Show error states
+            const sections = [
+                'skills-matrix',
+                'certifications-grid',
+                'testimonials-slider',
+                'community-timeline',
+                'tech-stack-viz',
+                'achievements-grid'
+            ];
+
+            sections.forEach(id => {
+                portfolioUtils.loading.hideLoading(id);
+                portfolioUtils.error.showError(
+                    id,
+                    'Failed to load data. Please check your connection.',
+                    () => this.initializePortfolio()
+                );
+            });
+
+            portfolioUtils.performance.logAPICall('complete-portfolio', 0, false);
+
+            // Try to load cached data
+            const cachedData = portfolioUtils.storage.get('portfolio_data');
+            if (cachedData) {
+                console.log('📦 Loading from cache...');
+                this.renderSkills(cachedData.skills);
+                this.renderCertifications(cachedData.certifications);
+                this.renderTestimonials(cachedData.testimonials);
+                this.renderCommunityActivities(cachedData.activities);
+                this.renderTechStack(cachedData.techStack);
+                this.renderAchievements(cachedData.achievements);
+            }
         }
     }
 }
