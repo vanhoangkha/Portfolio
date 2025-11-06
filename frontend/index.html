@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="portfolio-enhanced.css">
     <link rel="stylesheet" href="loading-error.css">
     <link rel="stylesheet" href="search-filter.css">
+    <link rel="stylesheet" href="modern-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +25,9 @@
     <meta name="apple-mobile-web-app-title" content="KVH Portfolio">
 </head>
 <body>
+    <!-- Gradient Mesh Background -->
+    <div class="gradient-mesh"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -67,7 +71,7 @@
                 <div class="greeting" data-aos="fade-up">
                     <span class="wave">👋</span> Hi, I'm
                 </div>
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="hero-title gradient-text-animated" data-aos="fade-up" data-aos-delay="100">
                     Kha Van Hoang
                 </h1>
                 <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
@@ -361,13 +365,13 @@
     <!-- Projects Section -->
     <section id="projects" class="projects section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header reveal" data-aos="fade-up">
                 <span class="section-label">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title gradient-text">Featured Projects</h2>
             </div>
             <div class="projects-grid">
                 <!-- CloudThinker -->
-                <div class="project-card" data-aos="fade-up">
+                <div class="project-card glass-card card-3d hover-lift reveal" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -399,7 +403,7 @@
                 </div>
 
                 <!-- AWS First GenAI Journey -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card glass-card card-3d hover-lift reveal-delay-100" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -428,7 +432,7 @@
                 </div>
 
                 <!-- Enterprise Landing Zone -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card glass-card card-3d hover-lift reveal-delay-200" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -457,7 +461,7 @@
                 </div>
 
                 <!-- Special Force LMS -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card glass-card card-3d hover-lift reveal-delay-300" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -486,7 +490,7 @@
                 </div>
 
                 <!-- Multi-Agent Financial Automation -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card glass-card card-3d hover-lift reveal-delay-400" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -514,7 +518,7 @@
                 </div>
 
                 <!-- Cloud Journey -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-card glass-card card-3d hover-lift reveal-delay-500" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -742,13 +746,13 @@
     <!-- Skills Section - Enhanced with Proficiency Levels -->
     <section id="skills" class="skills section section-dark">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header reveal" data-aos="fade-up">
                 <span class="section-label">Expertise</span>
-                <h2 class="section-title">Skills Matrix</h2>
+                <h2 class="section-title gradient-text">Skills Matrix</h2>
                 <p class="section-description">Technical and soft skills with proficiency levels</p>
             </div>
             <div id="skills-matrix" class="skills-content">
-                <div class="skill-category" data-aos="fade-up">
+                <div class="skill-category glass-card hover-lift reveal" data-aos="fade-up">
                     <div class="category-header">
                         <i class="fas fa-brain"></i>
                         <h3>AI/ML & GenAI</h3>
@@ -764,7 +768,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-category glass-card hover-lift reveal-delay-100" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-header">
                         <i class="fab fa-aws"></i>
                         <h3>Cloud Platforms</h3>
@@ -912,9 +916,9 @@
     <!-- Certifications Section -->
     <section id="certifications" class="certifications section">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header reveal" data-aos="fade-up">
                 <span class="section-label">Credentials</span>
-                <h2 class="section-title">Certifications & Badges</h2>
+                <h2 class="section-title gradient-text">Certifications & Badges</h2>
                 <p class="section-description">
                     Professional certifications validating expertise in cloud, security, and DevOps
                 </p>
@@ -926,9 +930,9 @@
     <!-- Achievements Section -->
     <section id="achievements" class="achievements section section-dark">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header reveal" data-aos="fade-up">
                 <span class="section-label">Recognition</span>
-                <h2 class="section-title">Awards & Achievements</h2>
+                <h2 class="section-title gradient-text">Awards & Achievements</h2>
                 <p class="section-description">
                     Awards, recognitions, and accomplishments throughout my career
                 </p>
@@ -1097,6 +1101,7 @@
     <script src="api-service.js"></script>
     <script src="portfolio-enhanced.js"></script>
     <script src="search-filter.js"></script>
+    <script src="modern-ui.js"></script>
 
     <!-- Service Worker Registration -->
     <script>
