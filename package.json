@@ -2,16 +2,60 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "A modern, responsive portfolio and personal blog showcasing cloud architecture, AI/ML, and DevSecOps expertise.",
-  "main": "blog.js",
+  "main": "frontend/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "bash scripts/build.sh",
+    "deploy:s3": "bash scripts/deploy-s3.sh",
+    "deploy:aws": "bash scripts/deploy-aws.sh",
+    "update:s3": "bash scripts/update-s3.sh",
+    "check:cloudfront": "bash scripts/check-cloudfront.sh",
+    "dev:backend": "cd backend && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "start:backend": "cd backend && npm start",
+    "docker:up": "docker-compose -f config/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f config/docker-compose.yml down",
+    "docker:logs": "docker-compose -f config/docker-compose.yml logs -f",
+    "test": "echo \"Add test suite with Jest or Vitest\"",
+    "lint": "eslint frontend/js/**/*.js --fix",
+    "lint:check": "eslint frontend/js/**/*.js",
+    "format": "prettier --write \"frontend/**/*.{js,css,html,json}\"",
+    "format:check": "prettier --check \"frontend/**/*.{js,css,html,json}\"",
+    "validate": "npm run lint:check && npm run format:check",
+    "precommit": "npm run validate",
+    "prepare": "echo \"Husky hooks can be installed here\"",
+    "clean": "rm -rf dist/ build/ node_modules/.cache",
+    "audit:fix": "npm audit fix",
+    "update:deps": "npm update --save"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/Portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "blog",
+    "cloud-architecture",
+    "aws",
+    "devops",
+    "devsecops",
+    "ai-ml",
+    "personal-website"
+  ],
+  "author": "Kha Van Hoang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/Portfolio/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/Portfolio#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "devDependencies": {
     "csso-cli": "^4.0.2",
+    "eslint": "^8.57.0",
     "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.2.4",
     "terser": "^5.44.1"
   }
 }
