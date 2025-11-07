@@ -33,23 +33,33 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Install root dependencies (for CDK bundling tools)
+        run: |
+          echo "📦 Installing root dependencies..."
+          npm ci
+
       - name: Install Amplify backend dependencies
         working-directory: amplify
         run: |
           echo "📦 Installing Amplify Gen 2 dependencies..."
           npm ci
 
+      - name: Install Lambda function dependencies
+        working-directory: amplify/functions/contact-handler
+        run: |
+          echo "📦 Installing Lambda function dependencies..."
+          npm ci
+
       - name: Deploy Amplify backend
-        working-directory: amplify
         run: |
           echo "🚀 Deploying Amplify Gen 2 backend..."
           echo "This will create:"
           echo "  - Amazon Cognito User Pool"
           echo "  - AWS AppSync GraphQL API"
           echo "  - 7 DynamoDB tables"
-          echo "  - AWS Lambda functions"
+          echo "  - AWS Lambda functions (contact-handler)"
           echo "  - 3 S3 buckets"
-          npx ampx pipeline-deploy --branch ${{ github.ref_name }} --app-id ${{ env.AMPLIFY_APP_ID }}
+          npx --prefix amplify ampx pipeline-deploy --branch ${{ github.ref_name }} --app-id ${{ env.AMPLIFY_APP_ID }}
 
       - name: Export backend config
         working-directory: amplify

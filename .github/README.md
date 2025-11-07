@@ -6,14 +6,15 @@ This directory contains GitHub-specific configuration files for the Portfolio pr
 
 ```
 .github/
-├── workflows/              # GitHub Actions workflows
-│   ├── ci.yml             # Continuous Integration
-│   └── deploy.yml         # Deployment workflow
-├── ISSUE_TEMPLATE/        # Issue templates
-│   ├── bug_report.md      # Bug report template
-│   └── feature_request.md # Feature request template
-├── PULL_REQUEST_TEMPLATE.md # PR template
-└── README.md              # This file
+├── workflows/                  # GitHub Actions workflows
+│   ├── ci.yml                 # Continuous Integration
+│   ├── deploy.yml             # Legacy S3/CloudFront deployment
+│   └── amplify-deploy.yml     # AWS Amplify full-stack deployment
+├── ISSUE_TEMPLATE/            # Issue templates
+│   ├── bug_report.md          # Bug report template
+│   └── feature_request.md     # Feature request template
+├── PULL_REQUEST_TEMPLATE.md   # PR template
+└── README.md                  # This file
 ```
 
 ## GitHub Actions Workflows
@@ -47,7 +48,54 @@ Runs on every push and pull request to `master`, `main`, or `develop` branches.
 
 ---
 
-### Deploy Workflow (`workflows/deploy.yml`)
+### Amplify Deploy Workflow (`workflows/amplify-deploy.yml`) ⭐ **ACTIVE**
+
+**Primary deployment workflow** for AWS Amplify Gen 2 full-stack application.
+
+Deploys to production when code is pushed to `master` or `main` branch.
+
+**Architecture:**
+- **Backend**: Amazon Cognito, AWS AppSync GraphQL API, DynamoDB (7 tables), Lambda functions, S3 buckets
+- **Frontend**: AWS Amplify Hosting with CloudFront CDN
+
+**Jobs:**
+
+1. **deploy-backend** - Deploy serverless backend
+   - Install root dependencies (esbuild for CDK)
+   - Install Amplify backend dependencies
+   - Install Lambda function dependencies
+   - Run Amplify pipeline deployment
+   - Export amplify_outputs.json config
+
+2. **deploy-frontend** - Deploy frontend to Amplify Hosting
+   - Trigger Amplify Hosting deployment
+   - Monitor deployment progress
+   - Output production URL
+
+3. **notify** - Send deployment notifications
+   - Deployment summary
+   - Production URL
+   - Resource list
+
+**Required Secrets:**
+
+| Secret Name | Description | Required |
+|------------|-------------|----------|
+| `AWS_ACCESS_KEY_ID` | AWS access key | Yes |
+| `AWS_SECRET_ACCESS_KEY` | AWS secret key | Yes |
+
+**Environment Variables (set in workflow):**
+- `AWS_REGION`: ap-southeast-1
+- `AMPLIFY_APP_ID`: dzecmyr42457
+
+**Status Badge:**
+```markdown
+![Amplify Deploy](https://github.com/vanhoangkha/Portfolio/workflows/Deploy%20Amplify%20Full-Stack/badge.svg)
+```
+
+---
+
+### Deploy Workflow (`workflows/deploy.yml`) 🔒 **LEGACY**
 
 Deploys to production when code is pushed to `master` or `main` branch.
 

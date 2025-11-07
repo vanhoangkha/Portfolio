@@ -10,6 +10,8 @@
     "deploy:amplify": "cd amplify && npx ampx pipeline-deploy --branch master --app-id dzecmyr42457",
     "deploy": "npm run deploy:amplify",
     "dev": "npm run sandbox",
+    "build": "echo 'Frontend is static HTML/CSS/JS - no build step required' && mkdir -p dist && cp -r frontend/* dist/",
+    "build:backend": "cd amplify && npm ci && cd functions/contact-handler && npm ci",
     "test": "echo \"Add test suite with Jest or Vitest\"",
     "lint": "eslint frontend/js/**/*.js --fix",
     "lint:check": "eslint frontend/js/**/*.js",
