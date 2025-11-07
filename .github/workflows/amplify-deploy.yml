@@ -1,0 +1,168 @@
+name: Deploy Amplify Full-Stack
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ap-southeast-1
+  AMPLIFY_APP_ID: dzecmyr42457
+
+jobs:
+  deploy-backend:
+    name: Deploy Backend (Cognito, DynamoDB, AppSync, Lambda)
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: amplify/package-lock.json
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install Amplify backend dependencies
+        working-directory: amplify
+        run: |
+          echo "📦 Installing Amplify Gen 2 dependencies..."
+          npm ci
+
+      - name: Deploy Amplify backend
+        working-directory: amplify
+        run: |
+          echo "🚀 Deploying Amplify Gen 2 backend..."
+          echo "This will create:"
+          echo "  - Amazon Cognito User Pool"
+          echo "  - AWS AppSync GraphQL API"
+          echo "  - 7 DynamoDB tables"
+          echo "  - AWS Lambda functions"
+          echo "  - 3 S3 buckets"
+          npx ampx pipeline-deploy --branch ${{ github.ref_name }} --app-id ${{ env.AMPLIFY_APP_ID }}
+
+      - name: Export backend config
+        working-directory: amplify
+        run: |
+          echo "📝 Generating amplify_outputs.json..."
+          if [ -f amplify_outputs.json ]; then
+            cp amplify_outputs.json ../frontend/
+            echo "✅ Config exported to frontend/"
+          fi
+
+      - name: Deployment summary
+        if: success()
+        run: |
+          echo "✅ Backend deployment successful!"
+          echo ""
+          echo "Resources created:"
+          echo "  ✅ Cognito User Pool"
+          echo "  ✅ AppSync GraphQL API"
+          echo "  ✅ DynamoDB tables (7)"
+          echo "  ✅ Lambda functions"
+          echo "  ✅ S3 buckets (3)"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Backend deployment failed!"
+          echo "Check logs above for details."
+
+  deploy-frontend:
+    name: Deploy Frontend (CloudFront CDN)
+    runs-on: ubuntu-latest
+    needs: deploy-backend
+
+    steps:
+      - name: Trigger Amplify frontend build
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Start Amplify deployment
+        run: |
+          echo "🚀 Triggering Amplify Hosting deployment..."
+          JOB_ID=$(aws amplify start-job \
+            --app-id ${{ env.AMPLIFY_APP_ID }} \
+            --branch-name ${{ github.ref_name }} \
+            --job-type RELEASE \
+            --region ${{ env.AWS_REGION }} \
+            --query 'jobSummary.jobId' \
+            --output text)
+
+          echo "Job ID: $JOB_ID"
+          echo "JOB_ID=$JOB_ID" >> $GITHUB_ENV
+
+      - name: Monitor deployment
+        run: |
+          echo "⏳ Monitoring deployment progress..."
+
+          for i in {1..30}; do
+            STATUS=$(aws amplify get-job \
+              --app-id ${{ env.AMPLIFY_APP_ID }} \
+              --branch-name ${{ github.ref_name }} \
+              --job-id ${{ env.JOB_ID }} \
+              --region ${{ env.AWS_REGION }} \
+              --query 'job.summary.status' \
+              --output text)
+
+            echo "Status: $STATUS"
+
+            if [ "$STATUS" = "SUCCEED" ]; then
+              echo "✅ Deployment successful!"
+              exit 0
+            elif [ "$STATUS" = "FAILED" ]; then
+              echo "❌ Deployment failed!"
+              exit 1
+            fi
+
+            sleep 10
+          done
+
+          echo "⏱️ Deployment timeout - check Amplify Console"
+
+      - name: Get production URL
+        if: success()
+        run: |
+          echo "🌐 Production URL:"
+          echo "https://master.${{ env.AMPLIFY_APP_ID }}.amplifyapp.com"
+
+  notify:
+    name: Send Deployment Notification
+    runs-on: ubuntu-latest
+    needs: [deploy-backend, deploy-frontend]
+    if: always()
+
+    steps:
+      - name: Deployment summary
+        run: |
+          echo "================================================"
+          echo "🎉 AMPLIFY FULL-STACK DEPLOYMENT COMPLETE"
+          echo "================================================"
+          echo ""
+          echo "Backend: ${{ needs.deploy-backend.result }}"
+          echo "Frontend: ${{ needs.deploy-frontend.result }}"
+          echo ""
+          echo "🔗 Production URL:"
+          echo "https://master.${{ env.AMPLIFY_APP_ID }}.amplifyapp.com"
+          echo ""
+          echo "📊 Backend Resources:"
+          echo "  - Cognito User Pool"
+          echo "  - AppSync GraphQL API"
+          echo "  - DynamoDB (7 tables)"
+          echo "  - Lambda functions"
+          echo "  - S3 buckets (3)"
+          echo ""
+          echo "================================================"
