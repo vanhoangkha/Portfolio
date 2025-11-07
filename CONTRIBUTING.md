@@ -49,7 +49,7 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/Portfolio.git
+git clone https://github.com/vanhoangkha/Portfolio.git
 cd Portfolio
 
 # Install dependencies

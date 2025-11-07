@@ -1,32 +1,32 @@
 // Enhanced Portfolio Renderer
 class PortfolioRenderer {
-    constructor() {
-        this.api = portfolioAPI;
-    }
+  constructor() {
+    this.api = portfolioAPI;
+  }
 
-    // Render Skills with Proficiency Levels
-    renderSkills(skills) {
-        if (!skills) return;
+  // Render Skills with Proficiency Levels
+  renderSkills(skills) {
+    if (!skills) {return;}
 
-        const technicalSkills = skills.filter(s => s.category === 'technical');
-        const softSkills = skills.filter(s => s.category === 'soft');
+    const technicalSkills = skills.filter(s => s.category === 'technical');
+    const softSkills = skills.filter(s => s.category === 'soft');
 
-        // Group technical skills by subcategory
-        const grouped = {};
-        technicalSkills.forEach(skill => {
-            const cat = skill.subcategory || 'Other';
-            if (!grouped[cat]) grouped[cat] = [];
-            grouped[cat].push(skill);
-        });
+    // Group technical skills by subcategory
+    const grouped = {};
+    technicalSkills.forEach(skill => {
+      const cat = skill.subcategory || 'Other';
+      if (!grouped[cat]) {grouped[cat] = [];}
+      grouped[cat].push(skill);
+    });
 
-        const skillsContainer = document.getElementById('skills-matrix');
-        if (!skillsContainer) return;
+    const skillsContainer = document.getElementById('skills-matrix');
+    if (!skillsContainer) {return;}
 
-        let html = '<div class="skills-categories">';
+    let html = '<div class="skills-categories">';
 
-        // Technical Skills by Category
-        Object.keys(grouped).sort().forEach(category => {
-            html += `
+    // Technical Skills by Category
+    Object.keys(grouped).sort().forEach(category => {
+      html += `
                 <div class="skill-category" data-aos="fade-up">
                     <h3 class="skill-category-title">
                         <i class="fas fa-code"></i> ${category}
@@ -34,11 +34,11 @@ class PortfolioRenderer {
                     <div class="skills-grid">
             `;
 
-            grouped[category].forEach(skill => {
-                const proficiencyLevel = this.getProficiencyPercentage(skill.proficiency);
-                const proficiencyColor = this.getProficiencyColor(skill.proficiency);
+      grouped[category].forEach(skill => {
+        const proficiencyLevel = this.getProficiencyPercentage(skill.proficiency);
+        const proficiencyColor = this.getProficiencyColor(skill.proficiency);
 
-                html += `
+        html += `
                     <div class="skill-item" data-proficiency="${skill.proficiency}">
                         <div class="skill-header">
                             <i class="${skill.icon || 'fas fa-circle'}"></i>
@@ -53,17 +53,17 @@ class PortfolioRenderer {
                         ${skill.years_experience ? `<div class="skill-years">${skill.years_experience} years</div>` : ''}
                     </div>
                 `;
-            });
+      });
 
-            html += `
+      html += `
                     </div>
                 </div>
             `;
-        });
+    });
 
-        // Soft Skills
-        if (softSkills.length > 0) {
-            html += `
+    // Soft Skills
+    if (softSkills.length > 0) {
+      html += `
                 <div class="skill-category" data-aos="fade-up">
                     <h3 class="skill-category-title">
                         <i class="fas fa-users"></i> Soft Skills & Leadership
@@ -71,11 +71,11 @@ class PortfolioRenderer {
                     <div class="skills-grid soft-skills">
             `;
 
-            softSkills.forEach(skill => {
-                const proficiencyLevel = this.getProficiencyPercentage(skill.proficiency);
-                const proficiencyColor = this.getProficiencyColor(skill.proficiency);
+      softSkills.forEach(skill => {
+        const proficiencyLevel = this.getProficiencyPercentage(skill.proficiency);
+        const proficiencyColor = this.getProficiencyColor(skill.proficiency);
 
-                html += `
+        html += `
                     <div class="skill-item soft" data-proficiency="${skill.proficiency}">
                         <div class="skill-header">
                             <i class="${skill.icon || 'fas fa-star'}"></i>
@@ -87,43 +87,43 @@ class PortfolioRenderer {
                         </div>
                     </div>
                 `;
-            });
+      });
 
-            html += `
+      html += `
                     </div>
                 </div>
             `;
-        }
-
-        html += '</div>';
-        skillsContainer.innerHTML = html;
     }
 
-    getProficiencyPercentage(proficiency) {
-        const levels = { basic: 40, intermediate: 70, expert: 95 };
-        return levels[proficiency.toLowerCase()] || 50;
-    }
+    html += '</div>';
+    skillsContainer.innerHTML = html;
+  }
 
-    getProficiencyColor(proficiency) {
-        const colors = {
-            basic: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            intermediate: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            expert: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-        };
-        return colors[proficiency.toLowerCase()] || colors.intermediate;
-    }
+  getProficiencyPercentage(proficiency) {
+    const levels = { basic: 40, intermediate: 70, expert: 95 };
+    return levels[proficiency.toLowerCase()] || 50;
+  }
 
-    // Render Certifications
-    renderCertifications(certifications) {
-        if (!certifications) return;
+  getProficiencyColor(proficiency) {
+    const colors = {
+      basic: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      intermediate: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      expert: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+    };
+    return colors[proficiency.toLowerCase()] || colors.intermediate;
+  }
 
-        const container = document.getElementById('certifications-grid');
-        if (!container) return;
+  // Render Certifications
+  renderCertifications(certifications) {
+    if (!certifications) {return;}
 
-        let html = '';
-        certifications.forEach((cert, index) => {
-            const delay = index * 100;
-            html += `
+    const container = document.getElementById('certifications-grid');
+    if (!container) {return;}
+
+    let html = '';
+    certifications.forEach((cert, index) => {
+      const delay = index * 100;
+      html += `
                 <div class="certification-card" data-aos="fade-up" data-aos-delay="${delay}">
                     <div class="cert-header">
                         <div class="cert-icon">
@@ -148,23 +148,23 @@ class PortfolioRenderer {
                     ` : ''}
                 </div>
             `;
-        });
+    });
 
-        container.innerHTML = html;
-    }
+    container.innerHTML = html;
+  }
 
-    // Render Testimonials
-    renderTestimonials(testimonials) {
-        if (!testimonials) return;
+  // Render Testimonials
+  renderTestimonials(testimonials) {
+    if (!testimonials) {return;}
 
-        const container = document.getElementById('testimonials-slider');
-        if (!container) return;
+    const container = document.getElementById('testimonials-slider');
+    if (!container) {return;}
 
-        let html = '<div class="testimonials-wrapper">';
+    let html = '<div class="testimonials-wrapper">';
 
-        testimonials.forEach((testimonial, index) => {
-            const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
-            html += `
+    testimonials.forEach((testimonial, index) => {
+      const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+      html += `
                 <div class="testimonial-card ${index === 0 ? 'active' : ''}" data-aos="fade-up">
                     <div class="testimonial-quote">
                         <i class="fas fa-quote-left"></i>
@@ -186,13 +186,13 @@ class PortfolioRenderer {
                     </div>
                 </div>
             `;
-        });
+    });
 
-        html += '</div>';
+    html += '</div>';
 
-        // Add navigation if more than one testimonial
-        if (testimonials.length > 1) {
-            html += `
+    // Add navigation if more than one testimonial
+    if (testimonials.length > 1) {
+      html += `
                 <div class="testimonials-nav">
                     <button class="testimonial-nav-btn prev" onclick="portfolioRenderer.prevTestimonial()">
                         <i class="fas fa-chevron-left"></i>
@@ -205,61 +205,61 @@ class PortfolioRenderer {
                     </button>
                 </div>
             `;
-        }
-
-        container.innerHTML = html;
-        this.currentTestimonial = 0;
-        this.totalTestimonials = testimonials.length;
     }
 
-    // Testimonial navigation
-    nextTestimonial() {
-        this.currentTestimonial = (this.currentTestimonial + 1) % this.totalTestimonials;
-        this.updateTestimonialDisplay();
-    }
+    container.innerHTML = html;
+    this.currentTestimonial = 0;
+    this.totalTestimonials = testimonials.length;
+  }
 
-    prevTestimonial() {
-        this.currentTestimonial = (this.currentTestimonial - 1 + this.totalTestimonials) % this.totalTestimonials;
-        this.updateTestimonialDisplay();
-    }
+  // Testimonial navigation
+  nextTestimonial() {
+    this.currentTestimonial = (this.currentTestimonial + 1) % this.totalTestimonials;
+    this.updateTestimonialDisplay();
+  }
 
-    goToTestimonial(index) {
-        this.currentTestimonial = index;
-        this.updateTestimonialDisplay();
-    }
+  prevTestimonial() {
+    this.currentTestimonial = (this.currentTestimonial - 1 + this.totalTestimonials) % this.totalTestimonials;
+    this.updateTestimonialDisplay();
+  }
 
-    updateTestimonialDisplay() {
-        const cards = document.querySelectorAll('.testimonial-card');
-        const dots = document.querySelectorAll('.testimonial-dots .dot');
+  goToTestimonial(index) {
+    this.currentTestimonial = index;
+    this.updateTestimonialDisplay();
+  }
 
-        cards.forEach((card, index) => {
-            card.classList.toggle('active', index === this.currentTestimonial);
-        });
+  updateTestimonialDisplay() {
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.testimonial-dots .dot');
 
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentTestimonial);
-        });
-    }
+    cards.forEach((card, index) => {
+      card.classList.toggle('active', index === this.currentTestimonial);
+    });
 
-    // Render Community Activities
-    renderCommunityActivities(activities) {
-        if (!activities) return;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.currentTestimonial);
+    });
+  }
 
-        const container = document.getElementById('community-timeline');
-        if (!container) return;
+  // Render Community Activities
+  renderCommunityActivities(activities) {
+    if (!activities) {return;}
 
-        let html = '<div class="community-timeline">';
+    const container = document.getElementById('community-timeline');
+    if (!container) {return;}
 
-        activities.forEach((activity, index) => {
-            const delay = index * 100;
-            const iconMap = {
-                workshop: 'fa-chalkboard-teacher',
-                meetup: 'fa-users',
-                mentoring: 'fa-graduation-cap',
-                'open-source': 'fa-code-branch'
-            };
+    let html = '<div class="community-timeline">';
 
-            html += `
+    activities.forEach((activity, index) => {
+      const delay = index * 100;
+      const iconMap = {
+        workshop: 'fa-chalkboard-teacher',
+        meetup: 'fa-users',
+        mentoring: 'fa-graduation-cap',
+        'open-source': 'fa-code-branch'
+      };
+
+      html += `
                 <div class="community-item" data-aos="fade-up" data-aos-delay="${delay}">
                     <div class="community-icon">
                         <i class="fas ${iconMap[activity.type] || 'fa-star'}"></i>
@@ -276,45 +276,45 @@ class PortfolioRenderer {
                         ${activity.impact_metrics ? `
                             <div class="community-metrics">
                                 ${Object.entries(activity.impact_metrics).map(([key, value]) =>
-                                    `<span class="metric"><strong>${key.replace('_', ' ')}:</strong> ${value}</span>`
-                                ).join('')}
+    `<span class="metric"><strong>${key.replace('_', ' ')}:</strong> ${value}</span>`
+  ).join('')}
                             </div>
                         ` : ''}
                     </div>
                 </div>
             `;
-        });
+    });
 
-        html += '</div>';
-        container.innerHTML = html;
-    }
+    html += '</div>';
+    container.innerHTML = html;
+  }
 
-    // Render Tech Stack Visualization
-    renderTechStack(techStack) {
-        if (!techStack) return;
+  // Render Tech Stack Visualization
+  renderTechStack(techStack) {
+    if (!techStack) {return;}
 
-        const container = document.getElementById('tech-stack-viz');
-        if (!container) return;
+    const container = document.getElementById('tech-stack-viz');
+    if (!container) {return;}
 
-        // Group by category
-        const grouped = {};
-        techStack.forEach(tech => {
-            if (!grouped[tech.category]) grouped[tech.category] = [];
-            grouped[tech.category].push(tech);
-        });
+    // Group by category
+    const grouped = {};
+    techStack.forEach(tech => {
+      if (!grouped[tech.category]) {grouped[tech.category] = [];}
+      grouped[tech.category].push(tech);
+    });
 
-        let html = '<div class="tech-stack-grid">';
+    let html = '<div class="tech-stack-grid">';
 
-        const categoryIcons = {
-            cloud: 'fa-cloud',
-            language: 'fa-code',
-            framework: 'fa-layer-group',
-            tool: 'fa-wrench',
-            database: 'fa-database'
-        };
+    const categoryIcons = {
+      cloud: 'fa-cloud',
+      language: 'fa-code',
+      framework: 'fa-layer-group',
+      tool: 'fa-wrench',
+      database: 'fa-database'
+    };
 
-        Object.entries(grouped).forEach(([category, items]) => {
-            html += `
+    Object.entries(grouped).forEach(([category, items]) => {
+      html += `
                 <div class="tech-category" data-aos="fade-up">
                     <h3 class="tech-category-title">
                         <i class="fas ${categoryIcons[category] || 'fa-cube'}"></i>
@@ -323,9 +323,9 @@ class PortfolioRenderer {
                     <div class="tech-items">
             `;
 
-            items.forEach(tech => {
-                const isPrimary = tech.is_primary ? 'primary' : '';
-                html += `
+      items.forEach(tech => {
+        const isPrimary = tech.is_primary ? 'primary' : '';
+        html += `
                     <div class="tech-item ${isPrimary}" title="${tech.name} - ${tech.proficiency}% proficiency">
                         <div class="tech-icon">${tech.name.substring(0, 2).toUpperCase()}</div>
                         <span class="tech-name">${tech.name}</span>
@@ -334,35 +334,35 @@ class PortfolioRenderer {
                         </div>
                     </div>
                 `;
-            });
+      });
 
-            html += `
+      html += `
                     </div>
                 </div>
             `;
-        });
+    });
 
-        html += '</div>';
-        container.innerHTML = html;
-    }
+    html += '</div>';
+    container.innerHTML = html;
+  }
 
-    // Render Achievements
-    renderAchievements(achievements) {
-        if (!achievements) return;
+  // Render Achievements
+  renderAchievements(achievements) {
+    if (!achievements) {return;}
 
-        const container = document.getElementById('achievements-grid');
-        if (!container) return;
+    const container = document.getElementById('achievements-grid');
+    if (!container) {return;}
 
-        let html = '';
-        achievements.forEach((achievement, index) => {
-            const delay = index * 100;
-            const categoryIcons = {
-                award: 'fa-trophy',
-                recognition: 'fa-award',
-                competition: 'fa-medal'
-            };
+    let html = '';
+    achievements.forEach((achievement, index) => {
+      const delay = index * 100;
+      const categoryIcons = {
+        award: 'fa-trophy',
+        recognition: 'fa-award',
+        competition: 'fa-medal'
+      };
 
-            html += `
+      html += `
                 <div class="achievement-card" data-aos="fade-up" data-aos-delay="${delay}">
                     <div class="achievement-icon">
                         <i class="fas ${categoryIcons[achievement.category] || 'fa-star'}"></i>
@@ -381,117 +381,117 @@ class PortfolioRenderer {
                     </div>
                 </div>
             `;
-        });
+    });
 
-        container.innerHTML = html;
+    container.innerHTML = html;
+  }
+
+  // Initialize all sections with loading states
+  async initializePortfolio() {
+    try {
+      console.log('Loading portfolio data...');
+      portfolioUtils.performance.startTimer('portfolioLoad');
+
+      // Show loading states
+      const sections = [
+        'skills-matrix',
+        'certifications-grid',
+        'testimonials-slider',
+        'community-timeline',
+        'tech-stack-viz',
+        'achievements-grid'
+      ];
+
+      sections.forEach(id => {
+        portfolioUtils.loading.showLoading(id, 'Loading data...');
+      });
+
+      const startTime = performance.now();
+
+      const [skills, certifications, testimonials, activities, techStack, achievements] = await Promise.all([
+        this.api.getSkills(),
+        this.api.getCertifications(),
+        this.api.getTestimonials(true),
+        this.api.getCommunityActivities(),
+        this.api.getTechStack(),
+        this.api.getAchievements()
+      ]);
+
+      const apiTime = performance.now() - startTime;
+      portfolioUtils.performance.logAPICall('complete-portfolio', apiTime, true);
+
+      // Hide loading and render
+      portfolioUtils.loading.hideLoading('skills-matrix');
+      this.renderSkills(skills);
+      portfolioUtils.search.setData('skills', skills);
+
+      portfolioUtils.loading.hideLoading('certifications-grid');
+      this.renderCertifications(certifications);
+      portfolioUtils.search.setData('certifications', certifications);
+
+      portfolioUtils.loading.hideLoading('testimonials-slider');
+      this.renderTestimonials(testimonials);
+
+      portfolioUtils.loading.hideLoading('community-timeline');
+      this.renderCommunityActivities(activities);
+
+      portfolioUtils.loading.hideLoading('tech-stack-viz');
+      this.renderTechStack(techStack);
+
+      portfolioUtils.loading.hideLoading('achievements-grid');
+      this.renderAchievements(achievements);
+
+      portfolioUtils.performance.endTimer('portfolioLoad');
+      console.log('✅ Portfolio loaded successfully!');
+
+      // Cache data for offline access
+      portfolioUtils.storage.set('portfolio_data', {
+        skills,
+        certifications,
+        testimonials,
+        activities,
+        techStack,
+        achievements,
+        timestamp: new Date()
+      });
+
+    } catch (error) {
+      console.error('❌ Error initializing portfolio:', error);
+
+      // Show error states
+      const sections = [
+        'skills-matrix',
+        'certifications-grid',
+        'testimonials-slider',
+        'community-timeline',
+        'tech-stack-viz',
+        'achievements-grid'
+      ];
+
+      sections.forEach(id => {
+        portfolioUtils.loading.hideLoading(id);
+        portfolioUtils.error.showError(
+          id,
+          'Failed to load data. Please check your connection.',
+          () => this.initializePortfolio()
+        );
+      });
+
+      portfolioUtils.performance.logAPICall('complete-portfolio', 0, false);
+
+      // Try to load cached data
+      const cachedData = portfolioUtils.storage.get('portfolio_data');
+      if (cachedData) {
+        console.log('📦 Loading from cache...');
+        this.renderSkills(cachedData.skills);
+        this.renderCertifications(cachedData.certifications);
+        this.renderTestimonials(cachedData.testimonials);
+        this.renderCommunityActivities(cachedData.activities);
+        this.renderTechStack(cachedData.techStack);
+        this.renderAchievements(cachedData.achievements);
+      }
     }
-
-    // Initialize all sections with loading states
-    async initializePortfolio() {
-        try {
-            console.log('Loading portfolio data...');
-            portfolioUtils.performance.startTimer('portfolioLoad');
-
-            // Show loading states
-            const sections = [
-                'skills-matrix',
-                'certifications-grid',
-                'testimonials-slider',
-                'community-timeline',
-                'tech-stack-viz',
-                'achievements-grid'
-            ];
-
-            sections.forEach(id => {
-                portfolioUtils.loading.showLoading(id, 'Loading data...');
-            });
-
-            const startTime = performance.now();
-
-            const [skills, certifications, testimonials, activities, techStack, achievements] = await Promise.all([
-                this.api.getSkills(),
-                this.api.getCertifications(),
-                this.api.getTestimonials(true),
-                this.api.getCommunityActivities(),
-                this.api.getTechStack(),
-                this.api.getAchievements()
-            ]);
-
-            const apiTime = performance.now() - startTime;
-            portfolioUtils.performance.logAPICall('complete-portfolio', apiTime, true);
-
-            // Hide loading and render
-            portfolioUtils.loading.hideLoading('skills-matrix');
-            this.renderSkills(skills);
-            portfolioUtils.search.setData('skills', skills);
-
-            portfolioUtils.loading.hideLoading('certifications-grid');
-            this.renderCertifications(certifications);
-            portfolioUtils.search.setData('certifications', certifications);
-
-            portfolioUtils.loading.hideLoading('testimonials-slider');
-            this.renderTestimonials(testimonials);
-
-            portfolioUtils.loading.hideLoading('community-timeline');
-            this.renderCommunityActivities(activities);
-
-            portfolioUtils.loading.hideLoading('tech-stack-viz');
-            this.renderTechStack(techStack);
-
-            portfolioUtils.loading.hideLoading('achievements-grid');
-            this.renderAchievements(achievements);
-
-            portfolioUtils.performance.endTimer('portfolioLoad');
-            console.log('✅ Portfolio loaded successfully!');
-
-            // Cache data for offline access
-            portfolioUtils.storage.set('portfolio_data', {
-                skills,
-                certifications,
-                testimonials,
-                activities,
-                techStack,
-                achievements,
-                timestamp: new Date()
-            });
-
-        } catch (error) {
-            console.error('❌ Error initializing portfolio:', error);
-
-            // Show error states
-            const sections = [
-                'skills-matrix',
-                'certifications-grid',
-                'testimonials-slider',
-                'community-timeline',
-                'tech-stack-viz',
-                'achievements-grid'
-            ];
-
-            sections.forEach(id => {
-                portfolioUtils.loading.hideLoading(id);
-                portfolioUtils.error.showError(
-                    id,
-                    'Failed to load data. Please check your connection.',
-                    () => this.initializePortfolio()
-                );
-            });
-
-            portfolioUtils.performance.logAPICall('complete-portfolio', 0, false);
-
-            // Try to load cached data
-            const cachedData = portfolioUtils.storage.get('portfolio_data');
-            if (cachedData) {
-                console.log('📦 Loading from cache...');
-                this.renderSkills(cachedData.skills);
-                this.renderCertifications(cachedData.certifications);
-                this.renderTestimonials(cachedData.testimonials);
-                this.renderCommunityActivities(cachedData.activities);
-                this.renderTechStack(cachedData.techStack);
-                this.renderAchievements(cachedData.achievements);
-            }
-        }
-    }
+  }
 }
 
 // Create global renderer instance
@@ -499,5 +499,5 @@ const portfolioRenderer = new PortfolioRenderer();
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    portfolioRenderer.initializePortfolio();
+  portfolioRenderer.initializePortfolio();
 });

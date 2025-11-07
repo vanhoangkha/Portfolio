@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/Portfolio.git"
+    "url": "https://github.com/vanhoangkha/Portfolio.git"
   },
   "keywords": [
     "portfolio",
@@ -44,9 +44,9 @@
   "author": "Kha Van Hoang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/Portfolio/issues"
+    "url": "https://github.com/vanhoangkha/Portfolio/issues"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/Portfolio#readme",
+  "homepage": "https://github.com/vanhoangkha/Portfolio#readme",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"

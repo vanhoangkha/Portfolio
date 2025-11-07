@@ -44,7 +44,7 @@ A modern, full-stack portfolio and personal blog showcasing cloud architecture, 
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/Portfolio.git
+git clone https://github.com/vanhoangkha/Portfolio.git
 cd Portfolio
 
 # Install dependencies
@@ -259,4 +259,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Version**: 1.0.0
 **Last Updated**: January 2025
 
-For questions or issues, please [open an issue](https://github.com/YOUR_USERNAME/Portfolio/issues) on GitHub.
+For questions or issues, please [open an issue](https://github.com/vanhoangkha/Portfolio/issues) on GitHub.
