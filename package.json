@@ -1,15 +1,19 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "A modern, responsive portfolio and personal blog showcasing cloud architecture, AI/ML, and DevSecOps expertise.",
+  "version": "2.0.0",
+  "description": "Full-stack serverless portfolio with AWS Amplify - Cloud architecture, AI/ML, and DevSecOps expertise.",
   "main": "frontend/index.html",
+  "type": "module",
   "scripts": {
+    "sandbox": "cd amplify && npm run sandbox",
+    "deploy:backend": "cd amplify && npm run deploy",
+    "deploy": "npm run deploy:backend",
     "build": "bash scripts/build.sh",
     "deploy:s3": "bash scripts/deploy-s3.sh",
     "deploy:aws": "bash scripts/deploy-aws.sh",
     "update:s3": "bash scripts/update-s3.sh",
     "check:cloudfront": "bash scripts/check-cloudfront.sh",
-    "dev:backend": "cd backend && npm run dev",
+    "dev:backend:old": "cd backend && npm run dev",
     "build:backend": "cd backend && npm run build",
     "start:backend": "cd backend && npm start",
     "docker:up": "docker-compose -f config/docker-compose.yml up -d",
@@ -52,10 +56,15 @@
     "npm": ">=9.0.0"
   },
   "devDependencies": {
+    "@aws-amplify/backend": "^1.0.0",
+    "@aws-amplify/backend-cli": "^1.0.0",
     "csso-cli": "^4.0.2",
     "eslint": "^8.57.0",
     "html-minifier-terser": "^7.2.0",
     "prettier": "^3.2.4",
     "terser": "^5.44.1"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.0.0"
   }
 }
