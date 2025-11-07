@@ -14,6 +14,6 @@
     "outDir": "./dist",
     "rootDir": "./"
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["auth/**/*.ts", "data/**/*.ts", "storage/**/*.ts", "functions/**/resource.ts", "backend.ts"],
+  "exclude": ["node_modules", "dist", "functions/**/handler.ts", "functions/**/node_modules", "functions/**/dist"]
 }
