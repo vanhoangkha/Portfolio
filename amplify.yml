@@ -3,6 +3,8 @@ backend:
   phases:
     build:
       commands:
+        - echo "📦 Installing root dependencies (for CDK bundling tools)..."
+        - npm ci --cache .npm --prefer-offline
         - echo "📦 Installing Amplify backend dependencies..."
         - cd amplify && npm ci --cache .npm --prefer-offline && cd ..
         - echo "🚀 Deploying Amplify Gen 2 backend from project root..."
