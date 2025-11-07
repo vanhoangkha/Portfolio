@@ -1,6 +1,8 @@
 # Dependencies
 node_modules/
-package-lock.json
+# Keep package-lock.json for reproducible builds in amplify functions and backend
+# package-lock.json
+!amplify/**/package-lock.json
 
 # Build outputs
 dist/
