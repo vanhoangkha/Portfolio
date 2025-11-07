@@ -2,6 +2,7 @@ import { defineBackend } from '@aws-amplify/backend';
 import { auth } from './auth/resource';
 import { data } from './data/resource';
 import { storage } from './storage/resource';
+import { contactHandler } from './functions/contact-handler/resource';
 
 /**
  * AWS Amplify Gen 2 Backend Configuration
@@ -11,4 +12,5 @@ export const backend = defineBackend({
   auth,
   data,
   storage,
+  contactHandler,
 });
