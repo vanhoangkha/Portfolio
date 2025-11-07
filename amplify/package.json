@@ -5,11 +5,15 @@
   "scripts": {
     "sandbox": "ampx sandbox",
     "deploy": "ampx pipeline-deploy --branch main",
-    "generate": "ampx generate graphql-client-code --out ../frontend/src/graphql"
+    "generate": "ampx generate graphql-client-code --out ../frontend/src/graphql",
+    "seed": "tsx data/seeds/seed-database.ts",
+    "seed:clear": "tsx data/seeds/seed-database.ts --clear",
+    "seed:check": "echo 'Checking database...' && tsx data/seeds/check-data.ts"
   },
   "dependencies": {
     "@aws-amplify/backend": "^1.0.0",
     "@aws-amplify/backend-cli": "^1.0.0",
+    "aws-amplify": "^6.0.0",
     "aws-cdk-lib": "^2.129.0",
     "constructs": "^10.3.0",
     "typescript": "^5.3.0",

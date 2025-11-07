@@ -152,7 +152,8 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: 'userPool',
+    // TODO: Change back to 'userPool' after seeding for production
+    defaultAuthorizationMode: 'apiKey', // Using apiKey for seeding
     apiKeyAuthorizationMode: {
       expiresInDays: 30,
     },
