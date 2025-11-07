@@ -22,10 +22,6 @@ export const auth = defineAuth({
       required: true,
       mutable: true,
     },
-    name: {
-      required: false,
-      mutable: true,
-    },
   },
   accountRecovery: 'EMAIL_ONLY',
 });
