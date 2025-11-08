@@ -18,7 +18,8 @@ NC='\033[0m' # No Color
 BUCKET_NAME="${BUCKET_NAME:-khavan-portfolio-site}"
 REGION="${AWS_REGION:-ap-southeast-1}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE_DIR="${SCRIPT_DIR}/frontend"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+SOURCE_DIR="${SOURCE_DIR:-${PROJECT_ROOT}/apps/web}"
 
 echo -e "${BLUE}========================================${NC}"
 echo -e "${BLUE}  Portfolio Deployment to AWS S3${NC}"

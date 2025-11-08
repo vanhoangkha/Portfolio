@@ -1,18 +1,30 @@
 # Dependencies
 node_modules/
-# Keep package-lock.json for reproducible builds in amplify functions and backend
+apps/*/node_modules/
+packages/*/node_modules/
+infrastructure/*/node_modules/
+tests/*/node_modules/
+
+# Keep package-lock.json for reproducible builds
 # package-lock.json
-!amplify/**/package-lock.json
+!infrastructure/amplify/**/package-lock.json
+!apps/**/package-lock.json
+!packages/**/package-lock.json
 
 # Build outputs
 dist/
 build/
+apps/*/dist/
+apps/*/build/
+packages/*/dist/
 *.log
 
 # Environment variables
 .env
 .env.local
 .env.*.local
+apps/*/.env
+apps/*/.env.local
 
 # IDE & Editor
 .vscode/
@@ -34,6 +46,9 @@ Thumbs.db
 # Test coverage
 coverage/
 .nyc_output/
+tests/*/coverage/
+playwright-report/
+test-results/
 
 # Logs
 logs/
@@ -52,6 +67,7 @@ pids/
 # AWS & Deployment
 deployment-info.txt
 cloudfront-info.txt
+backend-deployment.log
 
 # Misc
 .serverless/
@@ -59,7 +75,8 @@ cloudfront-info.txt
 
 # Amplify Gen 2
 amplify_outputs.json
-.amplify/
+infrastructure/.amplify/
+infrastructure/amplify/amplify_outputs.json
 
 # Generated analysis files (documentation, not for git)
 *_ANALYSIS.md

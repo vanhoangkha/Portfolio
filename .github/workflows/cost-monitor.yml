@@ -1,0 +1,66 @@
+name: Cost Monitoring
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  cost-check:
+    name: Monitor AWS Costs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Get current month cost
+        id: cost
+        run: |
+          START_DATE=$(date -u -d "$(date +%Y-%m-01)" +%Y-%m-%d)
+          END_DATE=$(date -u +%Y-%m-%d)
+
+          COST=$(aws ce get-cost-and-usage \
+            --time-period Start=$START_DATE,End=$END_DATE \
+            --granularity MONTHLY \
+            --metrics "UnblendedCost" \
+            --query 'ResultsByTime[0].Total.UnblendedCost.Amount' \
+            --output text)
+
+          echo "cost=$COST" >> $GITHUB_OUTPUT
+          echo "📊 Current month cost: \$$COST"
+
+      - name: Check budget threshold
+        run: |
+          THRESHOLD=50
+          COST=${{ steps.cost.outputs.cost }}
+
+          if (( $(echo "$COST > $THRESHOLD" | bc -l) )); then
+            echo "⚠️ Cost \$$COST exceeds threshold \$$THRESHOLD"
+            exit 1
+          else
+            echo "✅ Cost \$$COST is within budget"
+          fi
+
+      - name: Get service breakdown
+        run: |
+          START_DATE=$(date -u -d "$(date +%Y-%m-01)" +%Y-%m-%d)
+          END_DATE=$(date -u +%Y-%m-%d)
+
+          aws ce get-cost-and-usage \
+            --time-period Start=$START_DATE,End=$END_DATE \
+            --granularity MONTHLY \
+            --group-by Type=DIMENSION,Key=SERVICE \
+            --metrics "UnblendedCost" \
+            --query 'ResultsByTime[0].Groups[*].[Keys[0],Metrics.UnblendedCost.Amount]' \
+            --output text | head -20
+
+      - name: Notify if over budget
+        if: failure()
+        run: |
+          echo "💰 AWS cost alert triggered"
+          # Add Slack/SNS notification here

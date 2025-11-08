@@ -11,6 +11,38 @@ Modern serverless portfolio with AWS Amplify Gen 2 backend showcasing cloud arch
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazon-aws&logoColor=FF9900)
 
+## Project Structure
+
+This project follows international standard monorepo structure:
+
+```
+Portfolio/
+├── apps/                   # Applications
+│   ├── web/               # Frontend (HTML/CSS/JS + PWA)
+│   └── admin/             # Admin CMS Dashboard (React + TypeScript)
+│
+├── packages/              # Shared packages
+│   ├── types/            # TypeScript type definitions
+│   ├── utils/            # Shared utility functions
+│   └── config/           # Configuration constants
+│
+├── infrastructure/        # Infrastructure as Code
+│   └── amplify/          # AWS Amplify Gen 2 backend
+│       ├── data/         # GraphQL schema & DynamoDB models
+│       ├── auth/         # Cognito configuration
+│       ├── storage/      # S3 bucket configuration
+│       └── functions/    # Lambda functions
+│
+├── tests/                 # Test suites
+│   ├── unit/             # Unit tests (Jest)
+│   ├── integration/      # Integration tests
+│   └── e2e/              # End-to-end tests (Playwright)
+│
+├── scripts/               # Build & deployment scripts
+├── docs/                  # Documentation
+└── .github/              # CI/CD workflows
+```
+
 ## Architecture
 
 This portfolio is built on **AWS Amplify Gen 2** serverless architecture with:
@@ -103,17 +135,35 @@ npm run sandbox
 #### Run Frontend
 ```bash
 # Option 1: Use any HTTP server
-cd frontend
+cd apps/web
 python3 -m http.server 8000
 
 # Option 2: Use VS Code Live Server extension
-# Right-click frontend/index.html → Open with Live Server
+# Right-click apps/web/index.html → Open with Live Server
 
 # Option 3: Use npx serve
-npx serve frontend
+npx serve apps/web
 ```
 
 Open http://localhost:8000 in your browser.
+
+#### Run Admin Dashboard
+```bash
+cd apps/admin
+npm install
+npm run dev
+```
+
+#### Build Packages
+```bash
+# Build all shared packages
+npm run build:packages
+
+# Or build individual packages
+cd packages/types && npm run build
+cd packages/utils && npm run build
+cd packages/config && npm run build
+```
 
 ### Deploy to AWS
 
@@ -144,62 +194,47 @@ The easiest way is to connect your GitHub repo to AWS Amplify Hosting:
 
 **After deployment**, every `git push` will automatically deploy updates!
 
-## Project Structure
-
-```
-Portfolio/
-├── amplify/                  # Amplify Gen 2 Backend
-│   ├── backend.ts           # Main backend config
-│   ├── auth/                # Cognito authentication
-│   │   └── resource.ts
-│   ├── data/                # DynamoDB + GraphQL API
-│   │   └── resource.ts      # 7 data models
-│   ├── storage/             # S3 buckets
-│   │   └── resource.ts
-│   ├── functions/           # Lambda functions
-│   │   └── contact-handler/
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── frontend/                # Static Frontend
-│   ├── index.html          # Main portfolio page
-│   ├── blog.html           # Blog listing
-│   ├── resume.html         # Resume/CV
-│   ├── css/                # Stylesheets
-│   │   ├── main.css
-│   │   ├── blog.css
-│   │   └── themes.css
-│   ├── js/                 # JavaScript modules
-│   │   ├── main.js
-│   │   ├── blog.js
-│   │   └── analytics.js
-│   ├── assets/             # Images, fonts, icons
-│   └── sw.js               # Service Worker
-│
-├── docs/                    # Documentation
-│   ├── QUICK_START.md
-│   ├── DEPLOYMENT.md
-│   └── archive/            # Historical docs
-│
-├── amplify.yml              # Amplify build config
-├── amplify_outputs.json     # Generated backend config (gitignored)
-├── package.json             # Project scripts
-├── cleanup-amplify.sh       # Cleanup script
-└── README.md               # This file
-```
-
 ## Available Scripts
 
 ```bash
-# Backend Development
+# Development
+npm run dev                  # Run Amplify sandbox (local backend)
+npm run dev:web              # Run web frontend locally
+npm run dev:admin            # Run admin dashboard locally
+
+# Backend
 npm run sandbox              # Run Amplify sandbox (local backend)
 npm run deploy:backend       # Deploy backend to AWS
+npm run build:backend        # Build backend functions
 
-# Full Deployment
-npm run deploy               # Deploy backend (frontend via Amplify Console)
+# Frontend & Packages
+npm run build                # Build web frontend
+npm run build:web            # Build web app specifically
+npm run build:admin          # Build admin dashboard
+npm run build:packages       # Build all shared packages
+npm run build:all            # Build everything
 
-# Utility
-npm install                  # Install all dependencies
+# Testing
+npm test                     # Run all tests
+npm run test:unit            # Run unit tests
+npm run test:integration     # Run integration tests
+npm run test:e2e             # Run end-to-end tests
+
+# Code Quality
+npm run lint                 # Lint code
+npm run lint:check           # Check linting without fixing
+npm run format               # Format code with Prettier
+npm run format:check         # Check formatting without fixing
+npm run validate             # Run lint + format checks
+
+# Deployment
+npm run deploy               # Deploy backend + frontend
+npm run deploy:amplify       # Deploy via Amplify pipeline
+
+# Utilities
+npm run clean                # Clean build artifacts
+npm run clean:all            # Clean all including node_modules
+npm install                  # Install all dependencies (includes workspaces)
 ```
 
 ## Backend Resources
