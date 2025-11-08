@@ -56,3 +56,17 @@ cloudfront-info.txt
 # Misc
 .serverless/
 .webpack/
+
+# Amplify Gen 2
+amplify_outputs.json
+.amplify/
+
+# Generated analysis files (documentation, not for git)
+*_ANALYSIS.md
+*_SUMMARY.md
+*_SUMMARY.txt
+*_REFERENCE.md
+*_INDEX.md
+ANALYSIS_*.md
+EXECUTIVE_SUMMARY.*
+UI_*.md

@@ -1,16 +1,19 @@
 // Service Worker for PWA
-const CACHE_NAME = 'kvh-portfolio-v1';
+const CACHE_NAME = 'kvh-portfolio-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/blog.html',
   '/resume.html',
-  '/styles.css',
-  '/animations.css',
-  '/script.js',
-  '/particles.js',
-  '/interactive.js',
-  '/blog.js',
+  '/css/main.css',
+  '/css/core/styles.css',
+  '/css/components/navbar.css',
+  '/js/core/script.js',
+  '/js/core/particles.js',
+  '/js/core/interactive.js',
+  '/js/core/themes.js',
+  '/js/features/blog.js',
+  '/js/main.js',
   '/manifest.json'
 ];
 

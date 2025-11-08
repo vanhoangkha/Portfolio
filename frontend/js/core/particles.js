@@ -6,18 +6,42 @@ class ParticleSystem {
 
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
+
+    // Detect mobile device and reduce performance impact
+    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    this.isLowPerformance = this.checkPerformance();
+
+    // Adjust settings based on device capabilities
+    const defaultCount = this.isMobile ? 20 : (this.isLowPerformance ? 30 : 50);
+    const defaultDistance = this.isMobile ? 100 : 150;
+
     this.options = {
-      particleCount: options.particleCount || 50,
+      particleCount: options.particleCount || defaultCount,
       particleColor: options.particleColor || '#FF9900',
       lineColor: options.lineColor || 'rgba(255, 153, 0, 0.2)',
       particleSize: options.particleSize || 2,
-      lineDistance: options.lineDistance || 150,
-      particleSpeed: options.particleSpeed || 0.5,
-      interactive: options.interactive !== false
+      lineDistance: options.lineDistance || defaultDistance,
+      particleSpeed: options.particleSpeed || (this.isMobile ? 0.3 : 0.5),
+      interactive: options.interactive !== false && !this.isMobile // Disable interaction on mobile
     };
 
     this.mouse = { x: null, y: null, radius: 150 };
+    this.lastFrame = Date.now();
+    this.fps = 60;
+    this.fpsInterval = 1000 / (this.isMobile ? 30 : 60); // Reduce FPS on mobile
     this.init();
+  }
+
+  checkPerformance() {
+    // Simple performance check based on device memory if available
+    if (navigator.deviceMemory && navigator.deviceMemory < 4) {
+      return true;
+    }
+    // Check if reduced motion is preferred
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return true;
+    }
+    return false;
   }
 
   init() {
@@ -116,6 +140,18 @@ class ParticleSystem {
   }
 
   animate() {
+    requestAnimationFrame(() => this.animate());
+
+    // Throttle frame rate for better performance
+    const now = Date.now();
+    const elapsed = now - this.lastFrame;
+
+    if (elapsed < this.fpsInterval) {
+      return;
+    }
+
+    this.lastFrame = now - (elapsed % this.fpsInterval);
+
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     this.particles.forEach(particle => {
@@ -123,9 +159,10 @@ class ParticleSystem {
       this.drawParticle(particle);
     });
 
-    this.connectParticles();
-
-    requestAnimationFrame(() => this.animate());
+    // Skip line connections on low performance devices to save CPU
+    if (!this.isLowPerformance) {
+      this.connectParticles();
+    }
   }
 }
 
@@ -421,18 +458,19 @@ function initAdvancedAnimations() {
   // Loading animation
   new LoadingAnimation();
 
-  // Particle system in hero
+  // Particle system in hero (with automatic mobile optimization)
   const heroCanvas = document.getElementById('particleCanvas');
   if (heroCanvas) {
+    // ParticleSystem will auto-detect mobile and adjust settings
     new ParticleSystem('particleCanvas', {
-      particleCount: 80,
-      particleSpeed: 0.3
+      particleCount: window.innerWidth < 768 ? 25 : 80,
+      particleSpeed: window.innerWidth < 768 ? 0.2 : 0.3
     });
   }
 
-  // Floating code animation
+  // Floating code animation (disabled on mobile for performance)
   const codeContainer = document.getElementById('floatingCodeContainer');
-  if (codeContainer) {
+  if (codeContainer && window.innerWidth > 768) {
     new FloatingCode('floatingCodeContainer');
   }
 

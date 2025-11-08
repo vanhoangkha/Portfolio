@@ -39,6 +39,18 @@
 @import url('./premium/advanced-ui.css');
 
 /* ===================================
+   UI IMPROVEMENTS
+   Modern animations and visual enhancements
+   =================================== */
+@import url('./enhancements/ui-improvements.css');
+
+/* ===================================
+   MOBILE OPTIMIZATIONS
+   Touch interactions and mobile enhancements
+   =================================== */
+@import url('./enhancements/mobile-optimizations.css');
+
+/* ===================================
    UTILITIES
    Helper classes and utilities
    =================================== */
