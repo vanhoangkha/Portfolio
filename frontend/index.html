@@ -503,6 +503,8 @@
                 <span class="section-label">Portfolio</span>
                 <h2 class="section-title gradient-text">Featured Projects</h2>
             </div>
+            <!-- Dynamic Projects - Will be populated by backend-integration.js -->
+            <!-- Static projects below serve as fallback if JS is disabled -->
             <div class="projects-grid">
                 <!-- CloudThinker -->
                 <div class="project-card glass-card card-3d hover-lift reveal" data-aos="fade-up">
@@ -692,7 +694,9 @@
                     Sharing my journey in cloud architecture, AI/ML, and tech leadership
                 </p>
             </div>
-            <div class="blog-grid">
+            <!-- Dynamic Blog Posts - Will be populated by backend-integration.js -->
+            <!-- Static posts below serve as fallback if JS is disabled -->
+            <div class="blog-grid featured-blog-grid">
                 <!-- Blog Post 1 -->
                 <article class="blog-card" data-aos="fade-up">
                     <div class="blog-image">
@@ -1249,6 +1253,9 @@
 
     <!-- Main Script - Initialization & Monitoring -->
     <script src="js/main.js" type="module"></script>
+
+    <!-- Backend Integration - AWS Amplify Dynamic Data -->
+    <script src="js/backend-integration.js" type="module"></script>
 
     <!-- Service Worker Registration -->
     <script>
