@@ -1,4 +1,4 @@
-const isDevelopment = import.meta.env?.DEV ?? process.env.NODE_ENV === 'development';
+const isDevelopment = import.meta.env?.DEV ?? false;
 
 export const logger = {
   info: (...args: unknown[]) => {
