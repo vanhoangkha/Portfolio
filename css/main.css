@@ -47,6 +47,12 @@
 @import url('./enhancements/enhanced-typography.css');
 
 /* ===================================
+   MINIMAL THEME OVERRIDES
+   Simplified, production-ready styling
+   =================================== */
+@import url('./minimal.css');
+
+/* ===================================
    MOBILE OPTIMIZATIONS
    Touch interactions and mobile enhancements
    =================================== */
