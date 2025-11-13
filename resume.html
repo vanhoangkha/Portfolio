@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kha Van Hoang - Professional Resume/CV">
+    <title>Resume - Kha Van Hoang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Print Styles */
+        @media print {
+            .navbar, .resume-actions, footer, .back-to-top {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .resume-container {
+                max-width: 100% !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+
+            .section-break {
+                page-break-inside: avoid;
+            }
+
+            a {
+                text-decoration: none;
+                color: black !important;
+            }
+
+            .resume-header {
+                border-bottom: 2px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="brand-icon">KVH</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Back to Portfolio</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Resume Content -->
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <!-- Resume Actions -->
+            <div class="resume-actions" style="text-align: center; margin-bottom: 2rem;">
+                <button onclick="window.print()" class="btn btn-primary">
+                    <i class="fas fa-print"></i> Print Resume
+                </button>
+                <a href="assets/documents/KHA VAN HOANG 2025.pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+
+            <!-- Resume Container -->
+            <div class="resume-container">
+                <!-- Header -->
+                <div class="resume-header section-break">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">KHA VAN HOANG</h1>
+                    <h2 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 1rem;">
+                        Solutions Architect
+                    </h2>
+                    <div class="resume-contact">
+                        <span><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</span>
+                        <span><i class="fas fa-phone"></i> +84 367 242 327</span>
+                        <span><i class="fas fa-envelope"></i> khavan.work@gmail.com</span>
+                    </div>
+                    <div class="resume-links">
+                        <a href="https://linkedin.com/in/vanhoangkha" target="_blank">
+                            <i class="fab fa-linkedin"></i> linkedin.com/in/vanhoangkha
+                        </a>
+                        <a href="https://github.com/vanhoangkha" target="_blank">
+                            <i class="fab fa-github"></i> github.com/vanhoangkha
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">PROFESSIONAL SUMMARY</h3>
+                    <p>
+                        Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon Web Services, 
+                        Microsoft Azure, and Google Cloud Platform. AWS Community Builder recognized for establishing 
+                        Vietnam's premier cloud learning ecosystem serving 50,000 professionals. Expertise in cloud 
+                        architecture, infrastructure automation, artificial intelligence, security governance, and multi-cloud 
+                        strategy. Proven track record delivering transformational solutions for multinational enterprises and 
+                        financial services organizations.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">PROFESSIONAL EXPERIENCE</h3>
+
+                    <div class="resume-job">
+                        <div class="job-header">
+                            <div>
+                                <h4>Cloud and AI Solution Architect</h4>
+                                <p class="company">Amazon Web Services (AWS)</p>
+                            </div>
+                            <span class="job-date">12/2021 – Present</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Designed standardized AWS landing zones and Infrastructure as Code frameworks using Terraform and AWS Cloud Development Kit for 60+ enterprise organizations, reducing deployment time by 30 percent</li>
+                            <li>Architected Generative AI solutions utilizing Amazon Bedrock and Amazon SageMaker for compliance automation and intelligent audit workflows, achieving 45 percent reduction in review cycles and 2 million dollars in annual savings</li>
+                            <li>Implemented Zero Trust security architectures with comprehensive observability using Amazon CloudWatch, OpenTelemetry, and Grafana, reducing security incidents by 40 percent</li>
+                            <li>Delivered 200+ technical workshops training 150+ engineers, establishing cloud competency across 45,000+ professionals</li>
+                            <li>Led multi-cloud transformation initiatives for 20+ enterprise clients across banking, financial services, and manufacturing sectors</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-job">
+                        <div class="job-header">
+                            <div>
+                                <h4>Co-Founder and Architect</h4>
+                                <p class="company">CloudThinker - Intelligent Cloud Operations Platform</p>
+                            </div>
+                            <span class="job-date">2025 – Present</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Architected multi-agent orchestration platform leveraging Amazon Bedrock for autonomous cloud operations and compliance monitoring across Amazon Web Services, Microsoft Azure, and Google Cloud Platform</li>
+                            <li>Results: 35-40 percent operational efficiency improvement; 50 percent reduction in mean time to recovery</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-job">
+                        <div class="job-header">
+                            <div>
+                                <h4>Founding Architect</h4>
+                                <p class="company">Cloud Journey Platform - AWS Learning Ecosystem</p>
+                            </div>
+                            <span class="job-date">2021 – Present</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Architected multi-tenant platform serving 50,000+ learners and 150+ mentors using Amazon ECS, Amazon RDS, Amazon CloudFront, and Amazon Cognito</li>
+                            <li>Developed 100+ hands-on laboratory exercises and multi-account governance framework for 60+ enterprises</li>
+                            <li>Results: 50 percent reduction in onboarding time; 500,000 dollars in enterprise partnerships</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-job">
+                        <div class="job-header">
+                            <div>
+                                <h4>Cloud Solution Architect</h4>
+                                <p class="company">Renova Cloud (AWS Advanced Consulting Partner)</p>
+                            </div>
+                            <span class="job-date">01/2020 – 12/2021</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Executed AWS Migration Acceleration Program engagements for financial services clients, delivering zero-downtime migrations of mission-critical banking systems</li>
+                            <li>Designed continuous integration continuous deployment pipelines using Terraform and AWS CodePipeline, increasing deployment velocity by 70 percent</li>
+                            <li>Conducted AWS Well-Architected Framework Reviews for 15 organizations, achieving 30 percent improvement in reliability, security, and cost efficiency</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-job">
+                        <div class="job-header">
+                            <div>
+                                <h4>Head of Laboratory</h4>
+                                <p class="company">PTIT IOT Innovation Lab</p>
+                            </div>
+                            <span class="job-date">12/2019 – 12/2020</span>
+                        </div>
+                        <ul class="job-responsibilities">
+                            <li>Established Internet of Things and Artificial Intelligence research laboratory, mentoring 30+ students</li>
+                            <li>Architected edge computing solutions using AWS IoT Core and Amazon SageMaker Edge Manager, reducing inference latency by 40 percent</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">TECHNICAL SKILLS</h3>
+                    <p><strong>Cloud Platforms:</strong> Amazon Web Services, Microsoft Azure, Google Cloud Platform</p>
+                    <p><strong>Infrastructure:</strong> Terraform, AWS Cloud Development Kit, Infrastructure as Code</p>
+                    <p><strong>Artificial Intelligence and Machine Learning:</strong> Amazon Bedrock, Amazon SageMaker, Large Language Models, Retrieval Augmented Generation</p>
+                    <p><strong>Security:</strong> Zero Trust Architecture, AWS Identity and Access Management, AWS Control Tower, Compliance Governance</p>
+                    <p><strong>DevOps:</strong> Continuous Integration Continuous Deployment, Docker, Kubernetes, AWS CodePipeline</p>
+                    <p><strong>Programming:</strong> Python, Bash, JavaScript, SQL</p>
+                </div>
+
+                <!-- Certifications -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">PROFESSIONAL CERTIFICATIONS</h3>
+                    <p><strong>Amazon Web Services:</strong></p>
+                    <ul class="certifications-list">
+                        <li>AWS Certified Solutions Architect - Professional</li>
+                        <li>AWS Certified Solutions Architect - Associate</li>
+                        <li>AWS Certified DevOps Engineer - Professional</li>
+                        <li>AWS Certified Security - Specialty</li>
+                        <li>AWS Certified Artificial Intelligence Practitioner</li>
+                        <li>In Progress: AWS Certified Machine Learning - Specialty, Certified Kubernetes Administrator</li>
+                    </ul>
+                    <p><strong>AWS Community Builder Program (2021 - 2025):</strong> Artificial Intelligence and Machine Learning Track</p>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">EDUCATION</h3>
+                    <div class="resume-education">
+                        <div class="education-header">
+                            <div>
+                                <h4>Bachelor of Engineering in Telecommunications</h4>
+                                <p>Posts and Telecommunications Institute of Technology (PTIT) | Ho Chi Minh City, Vietnam</p>
+                            </div>
+                            <span>2018 – 2023</span>
+                        </div>
+                        <ul>
+                            <li>Founder and Director: PTIT Internet of Things Innovation Laboratory</li>
+                            <li>Research Excellence Award: 2021 - 2023</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">KEY PROJECTS</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>Cloud Journey Platform - AWS Learning Ecosystem</strong></p>
+                        <p style="margin-left: 1rem;">Founding Architect | 2021 - Present | cloudjourney.awsstudygroup.com | genai.awsstudygroup.com</p>
+                        <p style="margin-left: 1rem;">Architected multi-tenant platform serving 50,000+ learners and 150+ mentors. Results: 50 percent reduction in onboarding time; 500,000 dollars in enterprise partnerships.</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>AWS First GenAI Journey - Official Reference Framework</strong></p>
+                        <p style="margin-left: 1rem;">Lead Technical Contributor | 2024 - Present | github.com/aws-samples/AWS-First-GenAI-Journey</p>
+                        <p style="margin-left: 1rem;">Principal architect of AWS official Generative AI reference framework. Results: 1,000+ GitHub stars; 3,000+ repository forks; adopted as regional reference by AWS Partner Network.</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>Chubb AWS Enterprise Migration</strong></p>
+                        <p style="margin-left: 1rem;">Migration Architect | 2025 - Present</p>
+                        <p style="margin-left: 1rem;">Led migration of 100+ banking workloads to AWS. Results: 20 percent cost reduction; 30 percent compliance efficiency improvement; 5 million dollars in operational savings.</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>CloudThinker - Intelligent Cloud Operations Platform</strong></p>
+                        <p style="margin-left: 1rem;">Co-Founder and Architect | 2025 - Present | cloudthinker.io</p>
+                        <p style="margin-left: 1rem;">Architected multi-agent orchestration platform leveraging Amazon Bedrock. Results: 35-40 percent operational efficiency improvement; 50 percent reduction in mean time to recovery.</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>Financial Services Intelligence Automation</strong></p>
+                        <p style="margin-left: 1rem;">Lead Architect | 2024 - Present | github.com/vanhoangkha/Financial-Services-Intelligence-Automation</p>
+                        <p style="margin-left: 1rem;">Developed AI-driven platform for KYC and AML compliance. Results: 40 percent reduction in manual audit workload; 1.5 million dollars in annual compliance savings.</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p><strong>HDBank Core Banking System Modernization</strong></p>
+                        <p style="margin-left: 1rem;">Cloud Architecture Consultant | 2024 - Present</p>
+                        <p style="margin-left: 1rem;">Consulted on core banking system modernization aligned with State Bank of Vietnam requirements. Architected multi-AZ deployment with automated backup and disaster recovery enabling RTO less than one hour.</p>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">AWARDS</h3>
+                    <ul>
+                        <li>AWS Asia-Pacific and Japan Community Leader, 2024</li>
+                        <li>AWS ASEAN Builder Award, 2024 - Cloud Automation Category</li>
+                        <li>AWS Community Builder Program, 2021 - 2025</li>
+                    </ul>
+                </div>
+
+                <!-- Professional Reference -->
+                <div class="resume-section section-break">
+                    <h3 class="resume-section-title">PROFESSIONAL REFERENCE</h3>
+                    <p>Nguyen Gia Hung | Head of Solutions Architecture, AWS Vietnam | hunggia@amazon.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Kha Van Hoang. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,43 +1,14 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-kha-van-hoang",
   "version": "2.0.0",
-  "description": "Full-stack serverless portfolio with AWS Amplify - Cloud architecture, AI/ML, and DevSecOps expertise.",
-  "main": "apps/web/index.html",
+  "description": "Portfolio Website - Solutions Architect | AWS, Azure, GCP | Cloud Architecture, AI/ML, DevSecOps",
+  "main": "index.html",
   "type": "module",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "infrastructure/amplify"
-  ],
   "scripts": {
-    "sandbox": "cd infrastructure/amplify && npm run sandbox",
-    "deploy:backend": "cd infrastructure/amplify && npm run deploy",
-    "deploy:amplify": "cd infrastructure/amplify && npx ampx pipeline-deploy --branch master --app-id dzecmyr42457",
-    "deploy": "npm run deploy:amplify",
-    "dev": "npm run sandbox",
-    "dev:web": "cd apps/web && npm run dev",
-    "dev:admin": "cd apps/admin && npm run dev",
-    "build": "echo 'Frontend is static HTML/CSS/JS - no build step required' && mkdir -p dist && cp -r apps/web/* dist/",
-    "build:web": "cd apps/web && npm run build",
-    "build:admin": "cd apps/admin && npm run build",
-    "build:backend": "cd infrastructure/amplify && npm ci && cd functions/contact-handler && npm ci",
-    "build:packages": "npm run build --workspaces --if-present",
-    "build:all": "npm run build:packages && npm run build:backend && npm run build:web && npm run build:admin",
-    "test": "npm run test --workspaces --if-present",
-    "test:unit": "cd tests/unit && npm test",
-    "test:integration": "cd tests/integration && npm test",
-    "test:e2e": "cd tests/e2e && npm test",
-    "lint": "eslint apps/web/js/**/*.js --fix",
-    "lint:check": "eslint apps/web/js/**/*.js",
-    "format": "prettier --write \"apps/**/*.{js,css,html,json,ts,tsx}\" \"packages/**/*.{js,ts}\"",
-    "format:check": "prettier --check \"apps/**/*.{js,css,html,json,ts,tsx}\" \"packages/**/*.{js,ts}\"",
-    "validate": "npm run lint:check && npm run format:check",
-    "prepare": "echo \"Husky hooks can be installed here\"",
-    "clean": "rm -rf dist/ build/ node_modules/.cache apps/*/dist packages/*/dist",
-    "clean:all": "npm run clean && rm -rf node_modules apps/*/node_modules packages/*/node_modules infrastructure/amplify/node_modules",
-    "audit:fix": "npm audit fix",
-    "update:deps": "npm update --save"
+    "dev": "npx http-server -p 8080 -c-1",
+    "preview": "npx http-server -p 3000",
+    "clean": "rm -rf node_modules/.cache"
   },
   "repository": {
     "type": "git",
@@ -45,36 +16,22 @@
   },
   "keywords": [
     "portfolio",
-    "blog",
+    "solutions-architect",
     "cloud-architecture",
     "aws",
-    "devops",
-    "devsecops",
+    "azure",
+    "gcp",
     "ai-ml",
+    "devsecops",
     "personal-website"
   ],
-  "author": "Kha Van Hoang",
+  "author": "Kha Van Hoang <khavan.work@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vanhoangkha/Portfolio/issues"
   },
   "homepage": "https://github.com/vanhoangkha/Portfolio#readme",
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
-  },
-  "devDependencies": {
-    "@aws-amplify/backend": "^1.0.0",
-    "@aws-amplify/backend-cli": "^1.0.0",
-    "csso-cli": "^4.0.2",
-    "eslint": "^8.57.0",
-    "html-minifier-terser": "^7.2.0",
-    "prettier": "^3.2.4",
-    "terser": "^5.44.1"
-  },
-  "dependencies": {
-    "aws-amplify": "^6.0.0",
-    "esbuild": "^0.25.12",
-    "sharp": "^0.34.5"
+    "node": ">=18.0.0"
   }
 }

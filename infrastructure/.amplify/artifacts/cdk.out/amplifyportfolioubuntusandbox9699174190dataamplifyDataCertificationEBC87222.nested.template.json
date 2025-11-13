@@ -1,0 +1,2080 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource070E2F8FOutputsamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerTableManagerCustomPEFF4F0A7": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "CertificationTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource070E2F8FOutputsamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerTableManagerCustomPEFF4F0A7"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "Certification-",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/CertificationTable/Default/Default"
+   }
+  },
+  "CertificationIAMRole01477649": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Certification-",
+                {
+                 "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Certification-",
+                {
+                 "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "CertificationIAMRole868d41-",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/CertificationIAMRole/Resource"
+   }
+  },
+  "CertificationDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "CertificationTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "CertificationTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "CertificationIAMRole01477649",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "CertificationIAMRole01477649"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/CertificationDataSource/Resource"
+   }
+  },
+  "QuerygetCertificationauth0FunctionQuerygetCertificationauth0FunctionAppSyncFunctionB0B99D66": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/62baca1d1fe8e93eb394d958513556ffc536c35fde7d8fba84f4af8dd76705da.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QuerygetCertificationauth0Function/QuerygetCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetCertificationpostAuth0FunctionQuerygetCertificationpostAuth0FunctionAppSyncFunctionFD20A4C7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QuerygetCertificationpostAuth0Function/QuerygetCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetCertificationDataResolverFnQueryGetCertificationDataResolverFnAppSyncFunction38DF38F2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QueryGetCertificationDataResolverFn/QueryGetCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "getCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetCertificationauth0FunctionQuerygetCertificationauth0FunctionAppSyncFunctionB0B99D66",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetCertificationpostAuth0FunctionQuerygetCertificationpostAuth0FunctionAppSyncFunctionFD20A4C7",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetCertificationDataResolverFnQueryGetCertificationDataResolverFnAppSyncFunction38DF38F2",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "CertificationTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/queryGetCertificationResolver"
+   }
+  },
+  "QuerylistCertificationsauth0FunctionQuerylistCertificationsauth0FunctionAppSyncFunctionD4C1FFAA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistCertificationsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/62baca1d1fe8e93eb394d958513556ffc536c35fde7d8fba84f4af8dd76705da.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QuerylistCertificationsauth0Function/QuerylistCertificationsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistCertificationspostAuth0FunctionQuerylistCertificationspostAuth0FunctionAppSyncFunction8BB3BCFA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistCertificationspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QuerylistCertificationspostAuth0Function/QuerylistCertificationspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListCertificationsDataResolverFnQueryListCertificationsDataResolverFnAppSyncFunction1033B45A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListCertificationsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/QueryListCertificationsDataResolverFn/QueryListCertificationsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "listCertifications",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistCertificationsauth0FunctionQuerylistCertificationsauth0FunctionAppSyncFunctionD4C1FFAA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistCertificationspostAuth0FunctionQuerylistCertificationspostAuth0FunctionAppSyncFunction8BB3BCFA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListCertificationsDataResolverFnQueryListCertificationsDataResolverFnAppSyncFunction1033B45A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listCertifications\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "CertificationTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/queryListCertificationsResolver"
+   }
+  },
+  "MutationcreateCertificationinit0FunctionMutationcreateCertificationinit0FunctionAppSyncFunctionD2D51A5F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateCertificationinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationcreateCertificationinit0Function/MutationcreateCertificationinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateCertificationauth0FunctionMutationcreateCertificationauth0FunctionAppSyncFunction09903191": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/163f1e92c10dcaf85e4690f19146fc5a18d1291ad6a6ad84db40c0c36d101fe9.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationcreateCertificationauth0Function/MutationcreateCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateCertificationpostAuth0FunctionMutationcreateCertificationpostAuth0FunctionAppSyncFunction2DFED046": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationcreateCertificationpostAuth0Function/MutationcreateCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateCertificationDataResolverFnMutationCreateCertificationDataResolverFnAppSyncFunctionBEF01AD1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/dd378e66718d31494196055a4a67330b9cbb227018277c4105046ee3dc54f2a8.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationCreateCertificationDataResolverFn/MutationCreateCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "createCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateCertificationinit0FunctionMutationcreateCertificationinit0FunctionAppSyncFunctionD2D51A5F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateCertificationauth0FunctionMutationcreateCertificationauth0FunctionAppSyncFunction09903191",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateCertificationpostAuth0FunctionMutationcreateCertificationpostAuth0FunctionAppSyncFunction2DFED046",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateCertificationDataResolverFnMutationCreateCertificationDataResolverFnAppSyncFunctionBEF01AD1",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "CertificationTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/mutationCreateCertificationResolver"
+   }
+  },
+  "MutationupdateCertificationinit0FunctionMutationupdateCertificationinit0FunctionAppSyncFunction2750DBF8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateCertificationinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationupdateCertificationinit0Function/MutationupdateCertificationinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateCertificationauth0FunctionMutationupdateCertificationauth0FunctionAppSyncFunction80FD6B4F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/58a246af4be16a1ddccdbae460faba9ba768ae2655833a75797307311c63ad0f.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationupdateCertificationauth0Function/MutationupdateCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateCertificationpostAuth0FunctionMutationupdateCertificationpostAuth0FunctionAppSyncFunction930AA1F6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationupdateCertificationpostAuth0Function/MutationupdateCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateCertificationDataResolverFnMutationUpdateCertificationDataResolverFnAppSyncFunction97DF3232": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationUpdateCertificationDataResolverFn/MutationUpdateCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "updateCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateCertificationinit0FunctionMutationupdateCertificationinit0FunctionAppSyncFunction2750DBF8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateCertificationauth0FunctionMutationupdateCertificationauth0FunctionAppSyncFunction80FD6B4F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateCertificationpostAuth0FunctionMutationupdateCertificationpostAuth0FunctionAppSyncFunction930AA1F6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateCertificationDataResolverFnMutationUpdateCertificationDataResolverFnAppSyncFunction97DF3232",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "CertificationTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/mutationUpdateCertificationResolver"
+   }
+  },
+  "MutationdeleteCertificationauth0FunctionMutationdeleteCertificationauth0FunctionAppSyncFunctionE5FFCDE1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9026b39b763f6e1ba5a06488ea2fbfe6eb653fb4c7ebeb3d0aafabe2928d34b.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationdeleteCertificationauth0Function/MutationdeleteCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteCertificationpostAuth0FunctionMutationdeleteCertificationpostAuth0FunctionAppSyncFunction16563D99": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationdeleteCertificationpostAuth0Function/MutationdeleteCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteCertificationDataResolverFnMutationDeleteCertificationDataResolverFnAppSyncFunction8F40BFE7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "CertificationDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "CertificationDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/MutationDeleteCertificationDataResolverFn/MutationDeleteCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "deleteCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteCertificationauth0FunctionMutationdeleteCertificationauth0FunctionAppSyncFunctionE5FFCDE1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteCertificationpostAuth0FunctionMutationdeleteCertificationpostAuth0FunctionAppSyncFunction16563D99",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteCertificationDataResolverFnMutationDeleteCertificationDataResolverFnAppSyncFunction8F40BFE7",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "CertificationTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/mutationDeleteCertificationResolver"
+   }
+  },
+  "SubscriptiononCreateCertificationauth0FunctionSubscriptiononCreateCertificationauth0FunctionAppSyncFunction1B574A52": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/616d9084d37a5192e6c798ff5243c52f88c11adb3c7a2424c4a4948cbfa78618.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononCreateCertificationauth0Function/SubscriptiononCreateCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateCertificationpostAuth0FunctionSubscriptiononCreateCertificationpostAuth0FunctionAppSyncFunctionAF731CE5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononCreateCertificationpostAuth0Function/SubscriptiononCreateCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateCertificationDataResolverFnSubscriptionOnCreateCertificationDataResolverFnAppSyncFunctionC579B653": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptionOnCreateCertificationDataResolverFn/SubscriptionOnCreateCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onCreateCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateCertificationauth0FunctionSubscriptiononCreateCertificationauth0FunctionAppSyncFunction1B574A52",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateCertificationpostAuth0FunctionSubscriptiononCreateCertificationpostAuth0FunctionAppSyncFunctionAF731CE5",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateCertificationDataResolverFnSubscriptionOnCreateCertificationDataResolverFnAppSyncFunctionC579B653",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/subscriptionOnCreateCertificationResolver"
+   }
+  },
+  "SubscriptiononUpdateCertificationauth0FunctionSubscriptiononUpdateCertificationauth0FunctionAppSyncFunction7B564607": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/616d9084d37a5192e6c798ff5243c52f88c11adb3c7a2424c4a4948cbfa78618.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononUpdateCertificationauth0Function/SubscriptiononUpdateCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateCertificationpostAuth0FunctionSubscriptiononUpdateCertificationpostAuth0FunctionAppSyncFunction101B0AE4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononUpdateCertificationpostAuth0Function/SubscriptiononUpdateCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateCertificationDataResolverFnSubscriptionOnUpdateCertificationDataResolverFnAppSyncFunction30CF435A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptionOnUpdateCertificationDataResolverFn/SubscriptionOnUpdateCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onUpdateCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateCertificationauth0FunctionSubscriptiononUpdateCertificationauth0FunctionAppSyncFunction7B564607",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateCertificationpostAuth0FunctionSubscriptiononUpdateCertificationpostAuth0FunctionAppSyncFunction101B0AE4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateCertificationDataResolverFnSubscriptionOnUpdateCertificationDataResolverFnAppSyncFunction30CF435A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/subscriptionOnUpdateCertificationResolver"
+   }
+  },
+  "SubscriptiononDeleteCertificationauth0FunctionSubscriptiononDeleteCertificationauth0FunctionAppSyncFunction1ED7079D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteCertificationauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/616d9084d37a5192e6c798ff5243c52f88c11adb3c7a2424c4a4948cbfa78618.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononDeleteCertificationauth0Function/SubscriptiononDeleteCertificationauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteCertificationpostAuth0FunctionSubscriptiononDeleteCertificationpostAuth0FunctionAppSyncFunction2109747C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteCertificationpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptiononDeleteCertificationpostAuth0Function/SubscriptiononDeleteCertificationpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteCertificationDataResolverFnSubscriptionOnDeleteCertificationDataResolverFnAppSyncFunctionEBA0CDEF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteCertificationDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/SubscriptionOnDeleteCertificationDataResolverFn/SubscriptionOnDeleteCertificationDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteCertificationResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onDeleteCertification",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteCertificationauth0FunctionSubscriptiononDeleteCertificationauth0FunctionAppSyncFunction1ED7079D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteCertificationpostAuth0FunctionSubscriptiononDeleteCertificationpostAuth0FunctionAppSyncFunction2109747C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteCertificationDataResolverFnSubscriptionOnDeleteCertificationDataResolverFnAppSyncFunctionEBA0CDEF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteCertification\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/subscriptionOnDeleteCertificationResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34HVUO+y4gnbcJti9MolBKeCg2GlVId59gk6ddvr9yZ/sP4c8z2G/w6tk1vXZ4BuYP0iUXK1oe1O0/IURR1KKKxSBnVcf2FQkIUVLpkiiYfzDlh8zXuU0uxvjGFwD39gMdEQh43GEuQrD3Q4DLQanSW5sYS43vWxKVKwfJ//Te2K7ligCt75LEbdGv5+HC8XFyOGEIqQCb2sYOcAx2Z50LbCs7mfSKanZ1rVi57lbDAdHcJanS76H51d42Z3F+ywmVj8SVPf8AcZ3hEU2AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/Certification/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttCertificationTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "CertificationTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "GetAtt:CertificationTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttCertificationTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "Certification-",
+      {
+       "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "GetAtt:CertificationTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

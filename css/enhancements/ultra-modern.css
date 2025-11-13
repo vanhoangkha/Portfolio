@@ -1,0 +1,533 @@
+/**
+ * Ultra Modern UI Enhancements
+ * Premium visual effects and interactions
+ */
+
+/* ===================================
+   ENHANCED COLOR SYSTEM
+   =================================== */
+:root {
+    /* Modern Gradient Collection */
+    --gradient-ocean: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-fire: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+    --gradient-mint: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --gradient-cosmic: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+    
+    /* Glassmorphism Variables */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Advanced Shadows */
+    --shadow-glow: 0 0 20px rgba(255, 153, 0, 0.3);
+    --shadow-float: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    --shadow-premium: 0 30px 60px rgba(0, 0, 0, 0.12);
+    
+    /* Animations */
+    --bounce-timing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme {
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* ===================================
+   GLASS MORPHISM EFFECTS
+   =================================== */
+.glass-card,
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s var(--smooth-timing);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+/* ===================================
+   MAGNETIC BUTTON EFFECTS
+   =================================== */
+.btn-magnetic {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s var(--bounce-timing);
+}
+
+.btn-magnetic::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-magnetic:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-magnetic:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.3);
+}
+
+.btn-magnetic:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ===================================
+   3D CARD TRANSFORMS
+   =================================== */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.6s var(--smooth-timing);
+}
+
+.card-3d:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+
+.card-3d-strong:hover {
+    transform: rotateY(15deg) scale(1.05);
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+   ANIMATED GRADIENT BACKGROUNDS
+   =================================== */
+.gradient-animated {
+    background: linear-gradient(
+        -45deg,
+        #667eea, #764ba2, #f093fb, #f5576c
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===================================
+   FLOATING ANIMATIONS
+   =================================== */
+.float {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.float-slow {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 153, 0, 0.6),
+                    0 0 60px rgba(255, 153, 0, 0.4);
+    }
+}
+
+/* ===================================
+   PARALLAX SCROLL EFFECTS
+   =================================== */
+.parallax {
+    transition: transform 0.3s ease-out;
+}
+
+.parallax-fast {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* ===================================
+   MICRO INTERACTIONS
+   =================================== */
+.hover-lift {
+    transition: transform 0.3s var(--smooth-timing),
+                box-shadow 0.3s var(--smooth-timing);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-float);
+}
+
+.hover-scale {
+    transition: transform 0.3s var(--bounce-timing);
+}
+
+.hover-scale:hover {
+    transform: scale(1.08);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transition: box-shadow 0.3s ease;
+}
+
+/* ===================================
+   TEXT EFFECTS
+   =================================== */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-animated {
+    background: linear-gradient(
+        90deg,
+        #FF9900, #ec7211, #FF9900, #ec7211
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.5),
+                 0 0 20px rgba(255, 153, 0, 0.3),
+                 0 0 30px rgba(255, 153, 0, 0.2);
+}
+
+/* ===================================
+   LOADING STATES
+   =================================== */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 0%,
+        var(--bg-primary) 50%,
+        var(--bg-secondary) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.spinner {
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===================================
+   ENHANCED SCROLL ANIMATIONS
+   =================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s var(--smooth-timing),
+                transform 0.6s var(--smooth-timing);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-100 { transition-delay: 0.1s; }
+.reveal-delay-200 { transition-delay: 0.2s; }
+.reveal-delay-300 { transition-delay: 0.3s; }
+.reveal-delay-400 { transition-delay: 0.4s; }
+.reveal-delay-500 { transition-delay: 0.5s; }
+
+/* ===================================
+   NEON GLOW EFFECTS
+   =================================== */
+.neon-border {
+    position: relative;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color),
+                inset 0 0 10px var(--primary-color);
+}
+
+.neon-text {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color),
+                 0 0 10px var(--primary-color),
+                 0 0 20px var(--primary-color);
+}
+
+/* ===================================
+   MORPHING SHAPES
+   =================================== */
+.blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% {
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+}
+
+/* ===================================
+   MODERN HOVER EFFECTS
+   =================================== */
+.hover-brightness:hover {
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+}
+
+.hover-saturate:hover {
+    filter: saturate(1.3);
+    transition: filter 0.3s ease;
+}
+
+.hover-blur-bg:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* ===================================
+   GRADIENT BORDERS
+   =================================== */
+.gradient-border {
+    position: relative;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    padding: 2px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                  linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* ===================================
+   ENHANCED BUTTON STYLES
+   =================================== */
+.btn-modern {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s var(--smooth-timing);
+}
+
+.btn-modern::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.btn-modern:hover::after {
+    transform: translateX(100%);
+}
+
+.btn-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4);
+}
+
+/* ===================================
+   ENHANCED CARD EFFECTS
+   =================================== */
+.card-ultra {
+    position: relative;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s var(--smooth-timing);
+    overflow: hidden;
+}
+
+.card-ultra::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+}
+
+.card-ultra:hover::before {
+    opacity: 0.05;
+}
+
+.card-ultra:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-premium);
+}
+
+/* ===================================
+   SMOOTH ENTRANCE ANIMATIONS
+   =================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s var(--smooth-timing) forwards;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 0.6s var(--smooth-timing) forwards;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.6s var(--smooth-timing) forwards;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.6s var(--smooth-timing) forwards;
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+@media (max-width: 768px) {
+    .card-3d:hover {
+        transform: translateY(-5px);
+    }
+    
+    .hover-lift:hover {
+        transform: translateY(-4px);
+    }
+    
+    .btn-magnetic:hover {
+        transform: translateY(-1px) scale(1.02);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+

@@ -1,89 +1,33 @@
 # Dependencies
 node_modules/
-apps/*/node_modules/
-packages/*/node_modules/
-infrastructure/*/node_modules/
-tests/*/node_modules/
-
-# Keep package-lock.json for reproducible builds
-# package-lock.json
-!infrastructure/amplify/**/package-lock.json
-!apps/**/package-lock.json
-!packages/**/package-lock.json
 
 # Build outputs
 dist/
 build/
-apps/*/dist/
-apps/*/build/
-packages/*/dist/
-*.log
 
-# Environment variables
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
 .env
 .env.local
-.env.*.local
-apps/*/.env
-apps/*/.env.local
 
-# IDE & Editor
+# Editor
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
-.DS_Store
 
-# OS files
-Thumbs.db
+# OS
 .DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+*.cache
+.eslintcache
 
 # Temporary files
 *.tmp
-*.temp
-.cache/
-
-# Test coverage
-coverage/
-.nyc_output/
-tests/*/coverage/
-playwright-report/
-test-results/
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# AWS & Deployment
-deployment-info.txt
-cloudfront-info.txt
-backend-deployment.log
-
-# Misc
-.serverless/
-.webpack/
-
-# Amplify Gen 2
-amplify_outputs.json
-infrastructure/.amplify/
-infrastructure/amplify/amplify_outputs.json
-
-# Generated analysis files (documentation, not for git)
-*_ANALYSIS.md
-*_SUMMARY.md
-*_SUMMARY.txt
-*_REFERENCE.md
-*_INDEX.md
-ANALYSIS_*.md
-EXECUTIVE_SUMMARY.*
-UI_*.md
+temp/

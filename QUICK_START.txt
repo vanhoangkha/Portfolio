@@ -1,0 +1,45 @@
+========================================
+PORTFOLIO SERVER - QUICK ACCESS GUIDE
+========================================
+
+SERVER STATUS: ✅ RUNNING
+PORT: 3000
+DIRECTORY: /home/ubuntu/Portfolio
+
+========================================
+HOW TO ACCESS:
+========================================
+
+OPTION 1 - Local Terminal (on server):
+   lynx http://localhost:3000
+   OR
+   curl http://localhost:3000
+
+OPTION 2 - Browser on same machine:
+   http://localhost:3000
+
+OPTION 3 - From another machine (AWS EC2):
+   1. Get your PUBLIC IP from AWS Console
+   2. Open Security Group
+   3. Add Inbound Rule:
+      - Type: Custom TCP
+      - Port: 3000
+      - Source: 0.0.0.0/0 (or your IP)
+   4. Access: http://YOUR_PUBLIC_IP:3000
+
+OPTION 4 - Port Forward (if using SSH):
+   ssh -L 3000:localhost:3000 user@server
+   Then open: http://localhost:3000
+
+========================================
+VERIFY SERVER:
+========================================
+   curl -I http://localhost:3000
+   Should return: HTTP/1.0 200 OK
+
+========================================
+STOP SERVER:
+========================================
+   kill $(lsof -t -i:3000)
+
+========================================
