@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Components Demo - Beautiful Modern Design</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/core/styles.css">
+    <link rel="stylesheet" href="css/components/animated-buttons.css">
+    <link rel="stylesheet" href="css/components/glassmorphism.css">
+    <link rel="stylesheet" href="css/components/modern-cards.css">
+    <link rel="stylesheet" href="css/components/micro-interactions.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .demo-title {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .demo-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .demo-card-content {
+            color: white;
+        }
+
+        .demo-card-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .demo-card-content p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .glass-input-group {
+            margin-bottom: 20px;
+        }
+
+        .glass-input-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">🎨 Modern UI Components</h1>
+            <p class="demo-subtitle">Bộ sưu tập các component UI đẹp mắt và hiện đại</p>
+        </div>
+
+        <!-- Animated Buttons -->
+        <div class="demo-section">
+            <h2 class="section-title">✨ Animated Buttons</h2>
+            <div class="button-grid">
+                <button class="btn-gradient-animated">
+                    <i class="fas fa-rocket"></i> Gradient
+                </button>
+                <button class="btn-neon">
+                    <i class="fas fa-bolt"></i> Neon
+                </button>
+                <button class="btn-liquid">
+                    <i class="fas fa-droplet"></i> Liquid
+                </button>
+                <button class="btn-shimmer">
+                    <i class="fas fa-star"></i> Shimmer
+                </button>
+                <button class="btn-pulse">
+                    <i class="fas fa-heart"></i> Pulse
+                </button>
+                <button class="btn-slide">
+                    <i class="fas fa-arrow-right"></i> Slide
+                </button>
+                <button class="btn-3d">
+                    <i class="fas fa-cube"></i> 3D Effect
+                </button>
+                <button class="btn-glitch">
+                    <i class="fas fa-bug"></i> Glitch
+                </button>
+            </div>
+        </div>
+
+        <!-- Glassmorphism -->
+        <div class="demo-section">
+            <h2 class="section-title">🪟 Glassmorphism Effects</h2>
+            <div class="card-grid">
+                <div class="glass-card">
+                    <div class="demo-card-content">
+                        <h3>Glass Card</h3>
+                        <p>Hiệu ứng kính mờ với backdrop filter tạo cảm giác hiện đại và sang trọng.</p>
+                        <div class="badge-group">
+                            <span class="glass-badge"><i class="fas fa-check"></i> Modern</span>
+                            <span class="glass-badge"><i class="fas fa-star"></i> Premium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="frosted-panel">
+                    <div class="demo-card-content">
+                        <h3>Frosted Panel</h3>
+                        <p>Panel với hiệu ứng sương mờ, tạo độ sâu và chiều không gian.</p>
+                        <button class="glass-btn" style="margin-top: 16px;">
+                            <i class="fas fa-arrow-right"></i> Tìm hiểu thêm
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gradient-glass glass-shine">
+                    <div class="demo-card-content">
+                        <h3>Gradient Glass</h3>
+                        <p>Kết hợp gradient và glass effect với hiệu ứng shine animation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Glass Form -->
+            <div style="margin-top: 32px; max-width: 500px;">
+                <h3 style="color: white; margin-bottom: 20px;">Glass Form</h3>
+                <div class="glass-input-group">
+                    <label>Email</label>
+                    <input type="email" class="glass-input" placeholder="your@email.com">
+                </div>
+                <div class="glass-input-group">
+                    <label>Message</label>
+                    <input type="text" class="glass-input" placeholder="Nhập tin nhắn...">
+                </div>
+                <button class="glass-btn">
+                    <i class="fas fa-paper-plane"></i> Gửi
+                </button>
+            </div>
+        </div>
+
+        <!-- Modern Cards -->
+        <div class="demo-section">
+            <h2 class="section-title">🎴 Modern Cards</h2>
+            <div class="card-grid">
+                <div class="floating-card hover-lift">
+                    <div class="demo-card-content">
+                        <h3>Floating Card</h3>
+                        <p>Card nổi với shadow động và hiệu ứng hover mượt mà.</p>
+                    </div>
+                </div>
+
+                <div class="gradient-border-card">
+                    <div class="gradient-border-card-inner">
+                        <div class="demo-card-content">
+                            <h3>Gradient Border</h3>
+                            <p>Viền gradient đầy màu sắc và bắt mắt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="holo-card">
+                    <div class="demo-card-content">
+                        <h3>Holographic</h3>
+                        <p>Hiệu ứng holographic với màu sắc chuyển động.</p>
+                    </div>
+                </div>
+
+                <div class="glow-card">
+                    <div class="demo-card-content">
+                        <h3>Glow Card</h3>
+                        <p>Card phát sáng với hiệu ứng neon khi hover.</p>
+                    </div>
+                </div>
+
+                <div class="ripple-card">
+                    <div class="demo-card-content">
+                        <h3>Ripple Effect</h3>
+                        <p>Hiệu ứng gợn sóng khi click vào card.</p>
+                    </div>
+                </div>
+
+                <div class="neuro-card">
+                    <div class="demo-card-content">
+                        <h3>Neumorphism</h3>
+                        <p>Thiết kế neumorphic với shadow mềm mại.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flip Card Demo -->
+        <div class="demo-section">
+            <h2 class="section-title">🔄 Flip Card</h2>
+            <div style="max-width: 400px; margin: 0 auto;">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="demo-card-content">
+                                <h3>Mặt trước</h3>
+                                <p>Hover để xem mặt sau</p>
+                                <i class="fas fa-sync-alt" style="font-size: 48px; margin-top: 20px;"></i>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="demo-card-content">
+                                <h3>Mặt sau</h3>
+                                <p>Card có thể lật 180 độ với hiệu ứng 3D mượt mà!</p>
+                                <i class="fas fa-check-circle" style="font-size: 48px; margin-top: 20px; color: #1EC876;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="demo-section" style="text-align: center;">
+            <p style="color: white; font-size: 18px;">
+                <i class="fas fa-heart" style="color: #ff6b6b;"></i>
+                Tạo bởi Kha Van Hoang
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.7); margin-top: 8px;">
+                Sử dụng các component này trong dự án của bạn!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add ripple effect to ripple cards
+        document.querySelectorAll('.ripple-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Magnetic card effect
+        document.querySelectorAll('.magnetic-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const deltaX = (x - centerX) / centerX;
+                const deltaY = (y - centerY) / centerY;
+                
+                this.style.transform = `
+                    perspective(1000px)
+                    rotateY(${deltaX * 10}deg)
+                    rotateX(${-deltaY * 10}deg)
+                    scale(1.05)
+                `;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale(1)';
+            });
+        });
+
+        console.log('%c🎨 UI Components Demo', 'color: #667eea; font-size: 20px; font-weight: bold;');
+        console.log('%c✨ Khám phá các component UI đẹp mắt!', 'color: #764ba2; font-size: 14px;');
+    </script>
+</body>
+</html>

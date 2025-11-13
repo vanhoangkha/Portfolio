@@ -7,34 +7,19 @@ assignees: ''
 ---
 
 ## Feature Description
-A clear and concise description of what you want to happen.
+A clear and concise description of the feature you'd like to see.
 
-## Problem Statement
-Is your feature request related to a problem? Please describe.
-Example: I'm always frustrated when [...]
+## Problem It Solves
+Describe the problem this feature would solve or the use case it addresses.
 
 ## Proposed Solution
-Describe the solution you'd like to see implemented.
+Describe how you envision this feature working.
 
 ## Alternatives Considered
 Describe any alternative solutions or features you've considered.
 
-## Use Case
-Describe the use case for this feature. Who would benefit from it?
-
 ## Additional Context
-Add any other context, screenshots, or examples about the feature request here.
+Add any other context, mockups, or screenshots about the feature request here.
 
 ## Implementation Ideas
-If you have thoughts on how to implement this feature, share them here.
-
-## Priority
-- [ ] Low - Nice to have
-- [ ] Medium - Would be beneficial
-- [ ] High - Critical for functionality
-
-## Acceptance Criteria
-What needs to be true for this feature to be considered complete?
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
+If you have ideas about how to implement this, share them here.

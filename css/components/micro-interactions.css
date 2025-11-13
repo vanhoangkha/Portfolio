@@ -1,0 +1,59 @@
+/**
+ * Micro Interactions
+ * Subtle animations that enhance UX
+ */
+
+/* Hover Scale */
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Hover Lift */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover Glow */
+.hover-glow {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: var(--primary-color);
+  border-radius: inherit;
+  opacity: 0;
+  filter: blur(20px);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.hover-glow:hover::after {
+  opacity: 0.5;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
