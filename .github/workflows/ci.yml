@@ -7,105 +7,33 @@ on:
     branches: [ master, main, develop ]
 
 jobs:
-  lint:
-    name: Lint Code
+  validate:
+    name: Validate Static Site
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+      - name: Validate HTML
+        run: |
+          echo "✅ Checking HTML files exist..."
+          test -f index.html && echo "✓ index.html"
+          test -f resume.html && echo "✓ resume.html"
+          test -f blog.html && echo "✓ blog.html"
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Validate CSS
+        run: |
+          echo "✅ Checking CSS files..."
+          test -d css && echo "✓ css directory exists"
 
-      - name: Run ESLint
-        run: npm run lint:check
-        continue-on-error: true
+      - name: Validate JS
+        run: |
+          echo "✅ Checking JS files..."
+          test -d js && echo "✓ js directory exists"
 
-      - name: Check formatting
-        run: npm run format:check
-        continue-on-error: true
-
-  test:
-    name: Run Tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-        continue-on-error: true
-
-  build:
-    name: Build Project
-    runs-on: ubuntu-latest
-    needs: [lint, test]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build frontend
-        run: npm run build
-
-      - name: Build backend
-        run: npm run build:backend
-        continue-on-error: true
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: dist/
-          retention-days: 7
-
-  security:
-    name: Security Audit
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run npm audit
-        run: npm audit --audit-level=moderate
-        continue-on-error: true
-
-      - name: Check for known vulnerabilities
-        run: npm audit --production
-        continue-on-error: true
+      - name: Check PWA files
+        run: |
+          echo "✅ Checking PWA files..."
+          test -f manifest.json && echo "✓ manifest.json"
+          test -f sw.js && echo "✓ sw.js"

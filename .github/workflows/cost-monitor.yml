@@ -38,8 +38,8 @@ jobs:
         run: |
           THRESHOLD=50
           COST=${{ steps.cost.outputs.cost }}
-
-          if (( $(echo "$COST > $THRESHOLD" | bc -l) )); then
+          
+          if (( $(awk "BEGIN {print ($COST > $THRESHOLD)}") )); then
             echo "⚠️ Cost \$$COST exceeds threshold \$$THRESHOLD"
             exit 1
           else
