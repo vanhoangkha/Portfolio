@@ -63,6 +63,7 @@
                 <li><a href="index.html#experience" class="nav-link">Experience</a></li>
                 <li><a href="index.html#projects" class="nav-link">Projects</a></li>
                 <li><a href="blog.html" class="nav-link" style="color: var(--primary-color);">Blog</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="index.html#skills" class="nav-link">Skills</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 <li>
@@ -515,7 +516,13 @@ reranked_docs = [doc for _, doc in sorted(zip(scores, documents), reverse=True)]
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="script.js"></script>
-    <script src="blog.js"></script>
+    <!-- Core Scripts -->
+    <script src="js/core/themes.js"></script>
+    <script src="js/core/script.js"></script>
+
+    <!-- Blog Functionality -->
+    <script src="js/utils/portfolio-utils.js"></script>
+    <script src="js/utils/api-service.js"></script>
+    <script src="js/features/blog.js"></script>
 </body>
 </html>
