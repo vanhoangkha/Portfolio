@@ -18,7 +18,7 @@ echo ""
 
 echo -e "${YELLOW}Do you want to:${NC}"
 echo "1. Push current branch (feature/restructure-international-standards)"
-echo "2. Merge to master and push master"
+echo "2. Merge to main and push main"
 echo "3. Setup git authentication first"
 echo "4. Exit"
 echo ""
@@ -34,7 +34,7 @@ case $choice in
             echo "Next steps:"
             echo "1. Go to: https://github.com/vanhoangkha/Portfolio"
             echo "2. You'll see a banner to create Pull Request"
-            echo "3. Create PR and merge to master"
+            echo "3. Create PR and merge to main"
             echo "4. Or just merge locally with option 2"
         else
             echo -e "${RED}❌ Push failed!${NC}"
@@ -42,12 +42,12 @@ case $choice in
         fi
         ;;
     2)
-        echo -e "\n${YELLOW}Switching to master...${NC}"
-        git checkout master
+        echo -e "\n${YELLOW}Switching to main...${NC}"
+        git checkout main
         echo -e "${YELLOW}Merging feature branch...${NC}"
         git merge feature/restructure-international-standards
-        echo -e "${YELLOW}Pushing master...${NC}"
-        git push origin master
+        echo -e "${YELLOW}Pushing main...${NC}"
+        git push origin main
         if [ $? -eq 0 ]; then
             echo -e "${GREEN}✅ Push successful!${NC}"
             echo ""
