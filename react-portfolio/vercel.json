@@ -1,9 +1,8 @@
 {
-  "buildCommand": "cd react-portfolio && npm install && npm run build",
-  "outputDirectory": "react-portfolio/dist",
-  "devCommand": "npm run dev",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
-  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
@@ -25,10 +24,6 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
         }
       ]
     },
