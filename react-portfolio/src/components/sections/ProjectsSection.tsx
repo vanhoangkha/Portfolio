@@ -4,29 +4,27 @@ import styles from './ProjectsSection.module.css';
 
 const projects = [
   {
-    title: 'CloudThinker',
+    title: 'CloudThinker - Intelligent Cloud Operations',
     description:
-      'Multi-cloud agentic AI platform for cloud operations automation. Increased operational efficiency by 35-40% across AWS/Azure/GCP.',
+      'Co-Founder and Architect. Multi-agent orchestration platform leveraging Amazon Bedrock for autonomous cloud operations and compliance monitoring across AWS, Azure, and GCP. Results: 35-40% operational efficiency improvement; 50% reduction in mean time to recovery.',
     icon: 'fas fa-robot',
-    tags: ['AI Agents', 'Multi-Cloud', 'Automation', '10K+ Users'],
-    github: 'https://github.com/strands-agents',
+    tags: ['AI Agents', 'Multi-Cloud', 'Amazon Bedrock', 'Automation'],
     demo: 'https://www.cloudthinker.io',
   },
   {
     title: 'AWS First GenAI Journey',
     description:
-      'Principal architect of AWS official Generative AI reference framework. Designed 20+ enterprise architectures for LLM and RAG systems. 1,000+ GitHub stars.',
+      'Lead Technical Contributor. Principal architect of AWS official Generative AI reference framework. Designed 20+ enterprise architectures for LLM and RAG systems using Amazon Bedrock, SageMaker, Lambda, and OpenSearch. Results: 1,000+ GitHub stars; 3,000+ forks; adopted as regional reference by AWS Partner Network.',
     icon: 'fas fa-brain',
-    tags: ['AWS Bedrock', 'GenAI', 'RAG', '1K+ Stars'],
+    tags: ['AWS Bedrock', 'GenAI', 'RAG', 'LLM', '1K+ Stars'],
     github: 'https://github.com/aws-samples/AWS-First-GenAI-Journey',
   },
   {
-    title: 'Enterprise Landing Zone',
+    title: 'Chubb AWS Enterprise Migration',
     description:
-      'Led migration of 100+ banking workloads to AWS. Designed multi-account landing zone with centralized governance. Results: 20% cost reduction, $5M in savings.',
+      'Migration Architect. Led migration of 100+ banking workloads to AWS using MAP methodology. Designed multi-account landing zone with centralized governance using Terraform IaC. Results: 20% cost reduction; 30% compliance efficiency improvement; zero-downtime execution; $5M in operational savings.',
     icon: 'fas fa-building',
-    tags: ['AWS', 'Migration', 'Terraform', 'Banking'],
-    github: 'https://github.com/vanhoangkha/chubb-aws-migration',
+    tags: ['AWS MAP', 'Migration', 'Terraform', 'Banking', 'Landing Zone'],
   },
   {
     title: 'Special Force LMS',

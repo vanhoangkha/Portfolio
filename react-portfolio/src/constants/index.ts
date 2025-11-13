@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
   name: 'Kha Van Hoang',
-  title: 'Solutions Architect',
+  title: 'Cloud and AI Solution Architect',
   description:
-    'Solutions Architect with 5 years designing enterprise-scale cloud solutions on AWS, Azure, and GCP.',
+    'Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon Web Services, Microsoft Azure, and Google Cloud Platform. AWS Community Builder recognized for establishing Vietnam\'s premier cloud learning ecosystem serving 50,000 professionals.',
   url: 'https://vanhoangkha.github.io/Portfolio',
   email: 'khavan.work@gmail.com',
-  phone: '+84367242327',
+  phone: '+84 367 242 327',
   location: 'Ho Chi Minh City, Vietnam',
 };
 

@@ -6,15 +6,16 @@ const experiences = [
   {
     company: 'Amazon Web Services (AWS)',
     position: 'Cloud and AI Solution Architect',
-    period: 'Dec 2021 - Present',
+    period: 'December 2021 - Present',
     icon: 'fab fa-aws',
     achievements: [
       'Designed standardized AWS landing zones and Infrastructure as Code frameworks using Terraform and AWS CDK for 60+ enterprise organizations, reducing deployment time by 30%',
       'Architected Generative AI solutions utilizing Amazon Bedrock and Amazon SageMaker for compliance automation and intelligent audit workflows, achieving 45% reduction in review cycles and $2M in annual savings',
       'Implemented Zero Trust security architectures with comprehensive observability using Amazon CloudWatch, OpenTelemetry, and Grafana, reducing security incidents by 40%',
       'Delivered 200+ technical workshops training 150+ engineers, establishing cloud competency across 45,000+ professionals',
+      'Led multi-cloud transformation initiatives for 20+ enterprise clients across banking, financial services, and manufacturing sectors',
     ],
-    tags: ['AWS', 'GenAI', 'Architecture', 'IaC'],
+    tags: ['AWS', 'GenAI', 'Zero Trust', 'IaC', 'Multi-Cloud'],
   },
   {
     company: 'CloudThinker',
@@ -32,16 +33,28 @@ const experiences = [
     ],
   },
   {
-    company: 'Renova Cloud',
+    company: 'Renova Cloud (AWS Advanced Consulting Partner)',
     position: 'Cloud Solution Architect',
-    period: 'Jan 2020 - Dec 2021',
+    period: 'January 2020 - December 2021',
     icon: 'fas fa-cloud',
     achievements: [
       'Executed AWS Migration Acceleration Program engagements for financial services clients, delivering zero-downtime migrations of mission-critical banking systems',
       'Designed CI/CD pipelines using Terraform and AWS CodePipeline, increasing deployment velocity by 70%',
       'Conducted AWS Well-Architected Framework Reviews for 15 organizations, achieving 30% improvement in reliability, security, and cost efficiency',
     ],
-    tags: ['AWS', 'Migration', 'DevOps'],
+    tags: ['AWS MAP', 'Migration', 'CI/CD', 'Well-Architected'],
+  },
+  {
+    company: 'PTIT IOT Innovation Lab',
+    position: 'Head of Laboratory',
+    period: 'December 2019 - December 2020',
+    icon: 'fas fa-university',
+    achievements: [
+      'Established IoT and AI research laboratory, mentoring 30+ students',
+      'Architected edge computing solutions using AWS IoT Core and Amazon SageMaker Edge Manager, reducing inference latency by 40%',
+      'Research Excellence Award: 2021 - 2023',
+    ],
+    tags: ['IoT', 'Edge Computing', 'AI/ML', 'Research'],
   },
 ];
 

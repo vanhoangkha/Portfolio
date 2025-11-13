@@ -5,10 +5,11 @@ import styles from './HeroSection.module.css';
 
 const phrases = [
   'Cloud Solutions Architect',
+  'AWS Community Builder',
   'AI/ML Specialist',
   'DevSecOps Expert',
-  'Community Leader',
-  'Tech Innovator',
+  'Multi-Cloud Expert',
+  'Tech Community Leader',
 ];
 
 export const HeroSection = () => {
@@ -34,10 +35,10 @@ export const HeroSection = () => {
           </div>
 
           <p className={styles.description}>
-            Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon
-            Web Services, Microsoft Azure, and Google Cloud Platform. AWS Community Builder
-            recognized for establishing Vietnam's premier cloud learning ecosystem serving 50,000
-            professionals.
+            Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon Web Services, 
+            Microsoft Azure, and Google Cloud Platform. AWS Community Builder recognized for establishing 
+            Vietnam's premier cloud learning ecosystem serving 50,000 professionals. Expertise in cloud architecture, 
+            infrastructure automation, artificial intelligence, security governance, and multi-cloud strategy.
           </p>
 
           <div className={styles.metrics}>
