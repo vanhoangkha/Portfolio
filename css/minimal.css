@@ -116,6 +116,35 @@ body {
     max-width: 640px;
 }
 
+.hero-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.hero-metric {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+}
+
+.hero-metric-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.hero-metric-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
 .hero-cta {
     display: flex;
     flex-wrap: wrap;
@@ -407,6 +436,11 @@ a:focus {
 }
 
 @media (max-width: 768px) {
+    .hero-metrics {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .hero {
         padding: 4rem 0 2rem;
     }
