@@ -1,0 +1,109 @@
+═══════════════════════════════════════════════════════════════
+  🚀 HƯỚNG DẪN DEPLOY PORTFOLIO - 5 PHÚT
+═══════════════════════════════════════════════════════════════
+
+✅ PORTFOLIO ĐÃ SẴN SÀNG!
+
+Code đã được push lên GitHub:
+→ https://github.com/vanhoangkha/Portfolio
+
+═══════════════════════════════════════════════════════════════
+  📋 DEPLOY QUA VERCEL WEB (KHUYẾN NGHỊ)
+═══════════════════════════════════════════════════════════════
+
+BƯỚC 1: TẠO TÀI KHOẢN VERCEL
+────────────────────────────────────────────────────────────────
+1. Mở browser trên máy Windows/Mac
+2. Vào: https://vercel.com/signup
+3. Click: "Continue with GitHub"
+4. Login GitHub và authorize Vercel
+
+BƯỚC 2: IMPORT PROJECT
+────────────────────────────────────────────────────────────────
+1. Trong Vercel Dashboard, click: "Add New..." → "Project"
+2. Tìm repository: "Portfolio"
+3. Click: "Import"
+
+BƯỚC 3: CONFIGURE (QUAN TRỌNG!)
+────────────────────────────────────────────────────────────────
+Nhập settings này:
+
+   Root Directory: react-portfolio  ← QUAN TRỌNG!
+   
+   (Các settings khác để mặc định)
+   Framework Preset: Vite
+   Build Command: npm run build
+   Output Directory: dist
+
+BƯỚC 4: DEPLOY
+────────────────────────────────────────────────────────────────
+1. Click: "Deploy"
+2. Đợi 2-3 phút
+3. Xong! 🎉
+
+═══════════════════════════════════════════════════════════════
+  🌐 KẾT QUẢ
+═══════════════════════════════════════════════════════════════
+
+Sau khi deploy, bạn sẽ có URL:
+
+   https://portfolio-vanhoangkha.vercel.app
+
+Hoặc tương tự.
+
+═══════════════════════════════════════════════════════════════
+  🔧 NẾU CÓ LỖI
+═══════════════════════════════════════════════════════════════
+
+LỖI: "Build Failed"
+FIX: 
+   1. Vercel Dashboard → Settings → General
+   2. Root Directory: react-portfolio
+   3. Save → Redeploy
+
+LỖI: "404 Not Found"
+FIX: Redeploy (đã có config trong vercel.json)
+
+═══════════════════════════════════════════════════════════════
+  🎯 SAU KHI DEPLOY
+═══════════════════════════════════════════════════════════════
+
+✅ Portfolio live 24/7
+✅ Free SSL certificate
+✅ Global CDN
+✅ Auto-deploy khi push code
+✅ Free analytics
+
+═══════════════════════════════════════════════════════════════
+  📱 SHARE PORTFOLIO
+═══════════════════════════════════════════════════════════════
+
+LinkedIn:
+   1. Profile → Contact Info
+   2. Website: Add Vercel URL
+   3. Post about your portfolio
+
+Resume:
+   Add: Portfolio: https://your-url.vercel.app
+
+═══════════════════════════════════════════════════════════════
+  📚 TÀI LIỆU CHI TIẾT
+═══════════════════════════════════════════════════════════════
+
+Xem file: react-portfolio/DEPLOY_NOW.md
+Hoặc: react-portfolio/DEPLOY_GUIDE.md
+
+═══════════════════════════════════════════════════════════════
+  🆘 HỖ TRỢ
+═══════════════════════════════════════════════════════════════
+
+Vercel: https://vercel.com/docs
+Email: khavan.work@gmail.com
+
+═══════════════════════════════════════════════════════════════
+
+🎉 CHÚC MỪNG! PORTFOLIO CỦA BẠN SẼ ONLINE TRONG 5 PHÚT!
+
+Bắt đầu ngay: https://vercel.com/signup
+
+═══════════════════════════════════════════════════════════════
