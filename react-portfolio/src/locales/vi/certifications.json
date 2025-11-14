@@ -1,0 +1,49 @@
+{
+  "title": "Chứng chỉ & Thành tựu",
+  "subtitle": "Chứng chỉ chuyên nghiệp và công nhận trong ngành",
+  "filter": {
+    "all": "Tất cả Chứng chỉ",
+    "aws": "AWS",
+    "azure": "Azure",
+    "gcp": "Google Cloud",
+    "security": "Bảo mật",
+    "other": "Khác"
+  },
+  "emptyState": {
+    "title": "Không tìm thấy chứng chỉ",
+    "description": "Không tìm thấy chứng chỉ nào trong danh mục này"
+  },
+  "cta": {
+    "text": "Quan tâm đến việc học tập liên tục và phát triển chuyên môn",
+    "button": "Kết nối với tôi"
+  },
+  "card": {
+    "viewDetails": "Xem chi tiết",
+    "verify": "Xác minh Chứng chỉ",
+    "issuer": "Cấp bởi",
+    "issued": "Ngày cấp",
+    "expires": "Hết hạn",
+    "validUntil": "Có hiệu lực đến",
+    "credentialId": "Mã chứng chỉ",
+    "skills": "Kỹ năng",
+    "noExpiry": "Không hết hạn",
+    "expired": "Đã hết hạn",
+    "expiresIn": "Hết hạn trong {{days}} ngày"
+  },
+  "categories": {
+    "technical": "Kỹ thuật",
+    "professional": "Chuyên nghiệp",
+    "language": "Ngôn ngữ",
+    "other": "Khác",
+    "cloud": "Cloud",
+    "security": "Bảo mật",
+    "devops": "DevOps",
+    "ai": "AI/ML"
+  },
+  "modal": {
+    "title": "Chi tiết Chứng chỉ",
+    "close": "Đóng",
+    "download": "Tải Chứng chỉ",
+    "share": "Chia sẻ Chứng chỉ"
+  }
+}

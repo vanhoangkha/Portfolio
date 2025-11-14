@@ -1,40 +1,24 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { CountUp } from '@components/CountUp';
 import styles from './AboutSection.module.css';
 
-const highlights = [
-  {
-    icon: 'fas fa-award',
-    title: '5+ Years Experience',
-    description: 'Delivering cloud modernization and enterprise solutions',
-  },
-  {
-    icon: 'fas fa-users',
-    title: '50K+ Community Members',
-    description: "Co-founded Vietnam's largest AWS learning network",
-  },
-  {
-    icon: 'fas fa-rocket',
-    title: 'CloudThinker Founder',
-    description: 'Architected multi-agent AI platform for cloud automation',
-  },
-  {
-    icon: 'fas fa-chalkboard-teacher',
-    title: '150+ Engineers Mentored',
-    description: 'Successfully helped professionals land Cloud/DevOps/AI roles',
-  },
+const highlightIcons = [
+  'fas fa-award',
+  'fas fa-users',
+  'fas fa-rocket',
+  'fas fa-chalkboard-teacher',
 ];
 
-const stats = [
-  { value: 20, label: 'Projects Delivered' },
-  { value: 200, label: 'Workshops Conducted' },
-  { value: 50, label: 'Community Members (K+)' },
-  { value: 6, label: 'AWS Certifications' },
-];
+const statsValues = [20, 200, 50, 6];
 
 export const AboutSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation('about');
+
+  const highlights = t('highlights', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const stats = t('stats', { returnObjects: true }) as Array<{ label: string }>;
 
   return (
     <section id="about" className={styles.about} ref={ref}>
@@ -45,8 +29,8 @@ export const AboutSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>About Me</span>
-          <h2 className={styles.title}>Who I Am</h2>
+          <span className={styles.label}>{t('label')}</span>
+          <h2 className={styles.title}>{t('title')}</h2>
         </motion.div>
 
         <div className={styles.content}>
@@ -57,12 +41,7 @@ export const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className={styles.intro}>
-              I'm a Solutions Architect with expertise in designing enterprise-scale cloud solutions
-              across AWS, Azure, and GCP. Currently at <strong>Amazon Web Services (AWS)</strong>, I
-              specialize in cloud architecture, infrastructure automation, artificial intelligence,
-              security governance, and multi-cloud strategy. Proven track record delivering
-              transformational solutions for multinational enterprises and financial services
-              organizations.
+              {t('intro')}
             </p>
 
             <div className={styles.highlights}>
@@ -75,7 +54,7 @@ export const AboutSection = () => {
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 >
                   <div className={styles.highlightIcon}>
-                    <i className={item.icon} />
+                    <i className={highlightIcons[index]} />
                   </div>
                   <div className={styles.highlightText}>
                     <h4>{item.title}</h4>
@@ -95,7 +74,7 @@ export const AboutSection = () => {
             {stats.map((stat, index) => (
               <div key={index} className={styles.statCard}>
                 <div className={styles.statNumber}>
-                  {inView && <CountUp end={stat.value} duration={2} />}
+                  {inView && <CountUp end={statsValues[index]} duration={2} />}
                 </div>
                 <div className={styles.statLabel}>{stat.label}</div>
               </div>

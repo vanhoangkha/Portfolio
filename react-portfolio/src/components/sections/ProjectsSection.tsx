@@ -1,43 +1,60 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
+import { useProjectFilterStore } from '@store/projectFilterStore';
+import { ProjectFilter } from '@components/projects/ProjectFilter';
+import type { Project } from '@/types';
 import styles from './ProjectsSection.module.css';
 
-const projects = [
-  {
-    title: 'CloudThinker - Intelligent Cloud Operations',
-    description:
-      'Co-Founder and Architect. Multi-agent orchestration platform leveraging Amazon Bedrock for autonomous cloud operations and compliance monitoring across AWS, Azure, and GCP. Results: 35-40% operational efficiency improvement; 50% reduction in mean time to recovery.',
-    icon: 'fas fa-robot',
-    tags: ['AI Agents', 'Multi-Cloud', 'Amazon Bedrock', 'Automation'],
-    demo: 'https://www.cloudthinker.io',
-  },
-  {
-    title: 'AWS First GenAI Journey',
-    description:
-      'Lead Technical Contributor. Principal architect of AWS official Generative AI reference framework. Designed 20+ enterprise architectures for LLM and RAG systems using Amazon Bedrock, SageMaker, Lambda, and OpenSearch. Results: 1,000+ GitHub stars; 3,000+ forks; adopted as regional reference by AWS Partner Network.',
-    icon: 'fas fa-brain',
-    tags: ['AWS Bedrock', 'GenAI', 'RAG', 'LLM', '1K+ Stars'],
-    github: 'https://github.com/aws-samples/AWS-First-GenAI-Journey',
-  },
-  {
-    title: 'Chubb AWS Enterprise Migration',
-    description:
-      'Migration Architect. Led migration of 100+ banking workloads to AWS using MAP methodology. Designed multi-account landing zone with centralized governance using Terraform IaC. Results: 20% cost reduction; 30% compliance efficiency improvement; zero-downtime execution; $5M in operational savings.',
-    icon: 'fas fa-building',
-    tags: ['AWS MAP', 'Migration', 'Terraform', 'Banking', 'Landing Zone'],
-  },
-  {
-    title: 'Special Force LMS',
-    description:
-      'Learning management system serving 40K+ users for AWS certification preparation and cloud training.',
-    icon: 'fas fa-graduation-cap',
-    tags: ['LMS', 'Education', 'AWS', '40K+ Users'],
-    demo: 'https://specialforce.awsstudygroup.com',
-  },
-];
+interface ProjectItem {
+  title: string;
+  description: string;
+  icon: string;
+  tags: string[];
+}
 
 export const ProjectsSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation('projects');
+  const { getFilteredProjects } = useProjectFilterStore();
+
+  const projectItems = t('items', { returnObjects: true }) as ProjectItem[];
+  const links = t('links', { returnObjects: true }) as Record<string, string>;
+
+  // Convert translated items to Project objects with required fields
+  const projectsData: Project[] = projectItems.map((item, index) => ({
+    id: `project-${index}`,
+    title: item.title,
+    description: item.description,
+    icon: item.icon,
+    tags: item.tags,
+    category: index === 0 ? 'AI/ML' : index === 1 ? 'AI/ML' : index === 2 ? 'Cloud Infrastructure' : 'Education',
+    completedAt: new Date().toISOString(),
+    status: 'completed' as const,
+    images: [],
+    technologies: item.tags,
+    ...(index === 0 ? { demo: links.demo } : {}),
+    ...(index === 1 ? { github: links.github } : {}),
+    ...(index === 3 ? { demo: links.lms } : {}),
+  }));
+
+  const filteredProjects = getFilteredProjects(projectsData);
+
+  // Extract unique technologies and categories
+  const availableTechnologies = Array.from(
+    new Set(projectsData.flatMap((p) => p.technologies || []))
+  ).sort();
+
+  const availableCategories = Array.from(
+    new Set(projectsData.map((p) => p.category))
+  ).sort();
+
+  const getProjectLinks = (project: Project) => {
+    return {
+      github: project.github,
+      demo: project.demo,
+    };
+  };
 
   return (
     <section id="projects" className={styles.projects} ref={ref}>
@@ -48,60 +65,108 @@ export const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>Portfolio</span>
-          <h2 className={styles.title}>Featured Projects</h2>
+          <span className={styles.label}>{t('label')}</span>
+          <h2 className={styles.title}>{t('featured')}</h2>
         </motion.div>
 
-        <div className={styles.grid}>
-          {projects.map((project, index) => (
+        {/* Filters */}
+        <ProjectFilter
+          availableTechnologies={availableTechnologies}
+          availableCategories={availableCategories}
+          resultCount={filteredProjects.length}
+          totalCount={projectsData.length}
+        />
+
+        {/* Projects Grid */}
+        <AnimatePresence mode="wait">
+          {filteredProjects.length > 0 ? (
             <motion.div
-              key={index}
-              className={styles.card}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
+              key="grid"
+              className={styles.grid}
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className={styles.cardIcon}>
-                <i className={project.icon} />
-              </div>
-
-              <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.cardDescription}>{project.description}</p>
-
-              <div className={styles.tags}>
-                {project.tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className={styles.links}>
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
+              {filteredProjects.map((project, index) => {
+                const projectLinks = getProjectLinks(project);
+                return (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    className={styles.card}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.05,
+                    }}
+                    whileHover={{ y: -10 }}
                   >
-                    <i className="fab fa-github" /> Code
-                  </a>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    <i className="fas fa-external-link-alt" /> Demo
-                  </a>
-                )}
-              </div>
+                    <div className={styles.cardIcon}>
+                      <i className={project.icon} />
+                    </div>
+
+                    <h3 className={styles.cardTitle}>{project.title}</h3>
+                    <p className={styles.cardDescription}>{project.description}</p>
+
+                    <div className={styles.tags}>
+                      {project.tags.map((tag) => (
+                        <span key={tag} className={styles.tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className={styles.links}>
+                      {projectLinks.github && (
+                        <a
+                          href={projectLinks.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.link}
+                        >
+                          <i className="fab fa-github" /> {t('card.viewCode')}
+                        </a>
+                      )}
+                      {projectLinks.demo && (
+                        <a
+                          href={projectLinks.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.link}
+                        >
+                          <i className="fas fa-external-link-alt" /> {t('card.viewDemo')}
+                        </a>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </motion.div>
-          ))}
-        </div>
+          ) : (
+            <motion.div
+              key="empty"
+              className={styles.emptyState}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <i className="fas fa-search" />
+              <h3>{t('filter.noResults')}</h3>
+              <p>{t('filter.noResults')}</p>
+              <button
+                onClick={() => useProjectFilterStore.getState().clearFilters()}
+                className={styles.resetButton}
+              >
+                <i className="fas fa-redo" /> {t('filter.clearAll')}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

@@ -1,0 +1,12 @@
+{
+  "title": "Mọi Người Nói Gì",
+  "description": "Đánh giá từ khách hàng và đồng nghiệp",
+  "rating": "{{rating}} trên 5 sao",
+  "previous": "Đánh giá trước",
+  "next": "Đánh giá tiếp theo",
+  "carousel": {
+    "autoplay": "Tự động phát đánh giá",
+    "pause": "Tạm dừng",
+    "play": "Phát"
+  }
+}

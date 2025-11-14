@@ -1,0 +1,82 @@
+{
+  "title": "Projects",
+  "subtitle": "Things I've built",
+  "label": "Portfolio",
+  "featured": "Featured Projects",
+  "all": "All Projects",
+  "filter": {
+    "title": "Filter Projects",
+    "all": "All",
+    "technology": "Technology",
+    "category": "Category",
+    "status": "Status",
+    "date": "Date Range",
+    "clearFilters": "Clear Filters",
+    "clearAll": "Clear All",
+    "activeFilters": "Active Filters",
+    "searchPlaceholder": "Search projects...",
+    "results": "{{count}} project found",
+    "results_plural": "{{count}} projects found",
+    "resultsCount": "Showing {{count}} of {{total}} projects",
+    "noResults": "No projects match your filters. Try adjusting your criteria."
+  },
+  "categories": {
+    "web": "Web Application",
+    "mobile": "Mobile App",
+    "cloud": "Cloud Infrastructure",
+    "ai": "AI/ML",
+    "iot": "IoT",
+    "other": "Other"
+  },
+  "status": {
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "archived": "Archived"
+  },
+  "card": {
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "viewDemo": "Live Demo",
+    "technologies": "Technologies",
+    "completedOn": "Completed on {{date}}"
+  },
+  "details": {
+    "overview": "Overview",
+    "features": "Key Features",
+    "technologies": "Technologies Used",
+    "challenges": "Challenges & Solutions",
+    "results": "Results & Impact",
+    "links": "Project Links"
+  },
+  "items": [
+    {
+      "title": "CloudThinker - Intelligent Cloud Operations",
+      "description": "Co-Founder and Architect. Multi-agent orchestration platform leveraging Amazon Bedrock for autonomous cloud operations and compliance monitoring across AWS, Azure, and GCP. Results: 35-40% operational efficiency improvement; 50% reduction in mean time to recovery.",
+      "icon": "fas fa-robot",
+      "tags": ["AI Agents", "Multi-Cloud", "Amazon Bedrock", "Automation"]
+    },
+    {
+      "title": "AWS First GenAI Journey",
+      "description": "Lead Technical Contributor. Principal architect of AWS official Generative AI reference framework. Designed 20+ enterprise architectures for LLM and RAG systems using Amazon Bedrock, SageMaker, Lambda, and OpenSearch. Results: 1,000+ GitHub stars; 3,000+ forks; adopted as regional reference by AWS Partner Network.",
+      "icon": "fas fa-brain",
+      "tags": ["AWS Bedrock", "GenAI", "RAG", "LLM", "1K+ Stars"]
+    },
+    {
+      "title": "Chubb AWS Enterprise Migration",
+      "description": "Migration Architect. Led migration of 100+ banking workloads to AWS using MAP methodology. Designed multi-account landing zone with centralized governance using Terraform IaC. Results: 20% cost reduction; 30% compliance efficiency improvement; zero-downtime execution; $5M in operational savings.",
+      "icon": "fas fa-building",
+      "tags": ["AWS MAP", "Migration", "Terraform", "Banking", "Landing Zone"]
+    },
+    {
+      "title": "Special Force LMS",
+      "description": "Learning management system serving 40K+ users for AWS certification preparation and cloud training.",
+      "icon": "fas fa-graduation-cap",
+      "tags": ["LMS", "Education", "AWS", "40K+ Users"]
+    }
+  ],
+  "links": {
+    "demo": "https://www.cloudthinker.io",
+    "github": "https://github.com/aws-samples/AWS-First-GenAI-Journey",
+    "lms": "https://specialforce.awsstudygroup.com"
+  }
+}

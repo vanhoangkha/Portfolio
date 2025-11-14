@@ -1,42 +1,44 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import styles from './SkillsSection.module.css';
 
 const skillCategories = [
   {
     icon: 'fas fa-brain',
-    title: 'AI/ML & GenAI',
+    key: 'aiml',
     skills: ['AWS Bedrock', 'SageMaker', 'Azure OpenAI', 'Vertex AI', 'LangChain', 'RAG', 'Multi-Agent Systems'],
   },
   {
     icon: 'fab fa-aws',
-    title: 'Cloud Platforms',
+    key: 'cloud',
     skills: ['AWS', 'Azure', 'GCP', 'Multi-Cloud', 'Hybrid Cloud'],
   },
   {
     icon: 'fas fa-dharmachakra',
-    title: 'Container & Orchestration',
+    key: 'container',
     skills: ['Kubernetes', 'EKS', 'Docker', 'Fargate', 'Step Functions'],
   },
   {
     icon: 'fas fa-code',
-    title: 'Infrastructure as Code',
+    key: 'iac',
     skills: ['Terraform', 'AWS CDK', 'CloudFormation', 'Bicep'],
   },
   {
     icon: 'fas fa-sync-alt',
-    title: 'CI/CD & Automation',
+    key: 'cicd',
     skills: ['GitHub Actions', 'GitLab CI', 'Jenkins', 'AWS CodePipeline'],
   },
   {
     icon: 'fas fa-chart-line',
-    title: 'Observability',
+    key: 'observability',
     skills: ['Prometheus', 'Grafana', 'ELK Stack', 'OpenTelemetry', 'CloudWatch'],
   },
 ];
 
 export const SkillsSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation('skills');
 
   return (
     <section id="skills" className={styles.skills} ref={ref}>
@@ -47,8 +49,8 @@ export const SkillsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>Expertise</span>
-          <h2 className={styles.title}>Skills Matrix</h2>
+          <span className={styles.label}>{t('label')}</span>
+          <h2 className={styles.title}>{t('title')}</h2>
         </motion.div>
 
         <div className={styles.grid}>
@@ -62,7 +64,7 @@ export const SkillsSection = () => {
             >
               <div className={styles.categoryHeader}>
                 <i className={category.icon} />
-                <h3>{category.title}</h3>
+                <h3>{t(`categories.${category.key}`)}</h3>
               </div>
               <div className={styles.skillTags}>
                 {category.skills.map((skill) => (

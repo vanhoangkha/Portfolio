@@ -1,19 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from '@components/TypeAnimation';
 import styles from './HeroSection.module.css';
 
-const phrases = [
-  'Cloud Solutions Architect',
-  'AWS Community Builder',
-  'AI/ML Specialist',
-  'DevSecOps Expert',
-  'Multi-Cloud Expert',
-  'Tech Community Leader',
-];
-
 export const HeroSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation('home');
+
+  const phrases = t('hero.titles', { returnObjects: true }) as string[];
 
   return (
     <section id="home" className={styles.hero} ref={ref}>
@@ -25,46 +20,43 @@ export const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.greeting}>
-            <span className={styles.wave}>👋</span> Hi, I'm
+            <span className={styles.wave}>👋</span> {t('hero.greeting')}
           </div>
 
-          <h1 className={styles.title}>Kha Van Hoang</h1>
+          <h1 className={styles.title}>{t('hero.name')}</h1>
 
           <div className={styles.subtitle}>
             <TypeAnimation phrases={phrases} />
           </div>
 
           <p className={styles.description}>
-            Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon Web Services, 
-            Microsoft Azure, and Google Cloud Platform. AWS Community Builder recognized for establishing 
-            Vietnam's premier cloud learning ecosystem serving 50,000 professionals. Expertise in cloud architecture, 
-            infrastructure automation, artificial intelligence, security governance, and multi-cloud strategy.
+            {t('hero.description')}
           </p>
 
           <div className={styles.metrics}>
             <div className={styles.metric}>
               <span className={styles.metricValue}>50K+</span>
-              <span className={styles.metricLabel}>Professionals Enabled</span>
+              <span className={styles.metricLabel}>{t('hero.metrics.professionals')}</span>
             </div>
             <div className={styles.metric}>
               <span className={styles.metricValue}>100+</span>
-              <span className={styles.metricLabel}>Enterprise Projects</span>
+              <span className={styles.metricLabel}>{t('hero.metrics.projects')}</span>
             </div>
             <div className={styles.metric}>
               <span className={styles.metricValue}>7</span>
-              <span className={styles.metricLabel}>AWS Certifications</span>
+              <span className={styles.metricLabel}>{t('hero.metrics.certifications')}</span>
             </div>
           </div>
 
           <div className={styles.cta}>
             <a href="/assets/documents/KHA VAN HOANG 2025.pdf" className={styles.btnPrimary} download>
-              <i className="fas fa-file-download" /> Download Resume
+              <i className="fas fa-file-download" /> {t('hero.cta.downloadResume')}
             </a>
             <a href="mailto:khavan.work@gmail.com" className={styles.btnSecondary}>
-              <i className="fas fa-paper-plane" /> Book a Call
+              <i className="fas fa-paper-plane" /> {t('hero.cta.bookCall')}
             </a>
             <a href="#projects" className={styles.btnSecondary}>
-              <i className="fas fa-folder-open" /> View Projects
+              <i className="fas fa-folder-open" /> {t('hero.cta.viewProjects')}
             </a>
           </div>
 
@@ -101,7 +93,7 @@ export const HeroSection = () => {
       </div>
 
       <div className={styles.scrollIndicator}>
-        <a href="#about" aria-label="Scroll to About section">
+        <a href="#about" aria-label={t('hero.scrollDown')}>
           <i className="fas fa-chevron-down" />
         </a>
       </div>

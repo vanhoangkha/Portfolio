@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
+import { ContactForm } from '@components/contact/ContactForm';
 import styles from './ContactSection.module.css';
 
 export const ContactSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation('contact');
 
   return (
     <section id="contact" className={styles.contact} ref={ref}>
@@ -14,8 +17,8 @@ export const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>Get In Touch</span>
-          <h2 className={styles.title}>Contact Me</h2>
+          <span className={styles.label}>{t('title')}</span>
+          <h2 className={styles.title}>{t('subtitle')}</h2>
         </motion.div>
 
         <motion.div
@@ -24,13 +27,11 @@ export const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p>
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part
-            of your visions.
-          </p>
-          <a href="mailto:khavan.work@gmail.com" className={styles.emailButton}>
-            <i className="fas fa-envelope" /> khavan.work@gmail.com
-          </a>
+          <p className={styles.description}>{t('description')}</p>
+          
+          <div className={styles.formWrapper}>
+            <ContactForm />
+          </div>
         </motion.div>
       </div>
     </section>

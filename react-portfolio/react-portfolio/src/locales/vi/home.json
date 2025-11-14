@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Kha Văn Hoàng",
+    "title": "Kiến trúc sư Giải pháp Cloud & AI",
+    "description": "Tôi xây dựng hạ tầng cloud có khả năng mở rộng và các giải pháp AI. Đam mê với DevSecOps, Kubernetes và các công nghệ tiên tiến.",
+    "cta": {
+      "viewProjects": "Xem Dự Án",
+      "contact": "Liên Hệ Ngay"
+    }
+  },
+  "stats": {
+    "experience": "Năm Kinh Nghiệm",
+    "projects": "Dự Án Hoàn Thành",
+    "certifications": "Chứng Chỉ",
+    "contributions": "Đóng Góp Mã Nguồn Mở"
+  },
+  "featured": {
+    "title": "Dự Án Nổi Bật",
+    "viewAll": "Xem Tất Cả Dự Án"
+  }
+}

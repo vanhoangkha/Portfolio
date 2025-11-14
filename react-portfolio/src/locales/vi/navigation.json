@@ -1,0 +1,27 @@
+{
+  "home": "Trang chủ",
+  "about": "Giới thiệu",
+  "experience": "Kinh nghiệm",
+  "projects": "Dự án",
+  "skills": "Kỹ năng",
+  "testimonials": "Đánh giá",
+  "certifications": "Chứng chỉ",
+  "blog": "Blog",
+  "resume": "Hồ sơ",
+  "contact": "Liên hệ",
+  "menu": "Menu",
+  "skipToContent": "Chuyển đến nội dung chính",
+  "backToTop": "Về đầu trang",
+  "scrollDown": "Cuộn xuống",
+  "mobileMenu": {
+    "open": "Mở Menu",
+    "close": "Đóng Menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}. Bảo lưu mọi quyền.",
+    "builtWith": "Xây dựng với {{tech}}",
+    "social": "Theo dõi tôi",
+    "links": "Liên kết nhanh",
+    "newsletter": "Bản tin"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Hồ Sơ",
+  "download": "Tải PDF",
+  "print": "In Hồ Sơ",
+  "sections": {
+    "summary": "Tóm Tắt Chuyên Nghiệp",
+    "experience": "Kinh Nghiệm Làm Việc",
+    "education": "Học Vấn",
+    "skills": "Kỹ Năng Kỹ Thuật",
+    "certifications": "Chứng Chỉ",
+    "languages": "Ngôn Ngữ",
+    "achievements": "Thành Tích"
+  },
+  "experience": {
+    "present": "Hiện tại",
+    "responsibilities": "Trách Nhiệm Chính",
+    "achievements": "Thành Tích Chính"
+  },
+  "languages": {
+    "native": "Bản ngữ",
+    "fluent": "Thành thạo",
+    "intermediate": "Trung bình",
+    "basic": "Cơ bản"
+  }
+}

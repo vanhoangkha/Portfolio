@@ -1,0 +1,45 @@
+{
+  "title": "What Clients Say",
+  "subtitle": "Trusted by professionals and companies worldwide",
+  "label": "Testimonials",
+  "featured": "Featured Testimonials",
+  "all": "All Testimonials",
+  "stats": {
+    "clients": "Happy Clients",
+    "rating": "Average Rating",
+    "satisfaction": "Satisfaction",
+    "reviews": "Total Reviews"
+  },
+  "cta": {
+    "text": "Want to work together? Let's create something amazing!",
+    "button": "Get In Touch"
+  },
+  "carousel": {
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
+    "pause": "Pause autoplay",
+    "play": "Resume autoplay",
+    "goToSlide": "Go to slide {{number}}"
+  },
+  "card": {
+    "verifiedReview": "Verified Review",
+    "from": "from {{name}}",
+    "at": "at {{company}}",
+    "role": "{{role}}",
+    "date": "{{date}}",
+    "readMore": "Read More",
+    "showLess": "Show Less"
+  },
+  "filter": {
+    "all": "All",
+    "clients": "Clients",
+    "colleagues": "Colleagues",
+    "students": "Students",
+    "partners": "Partners"
+  },
+  "rating": "Rating: {{rating}} out of 5 stars",
+  "empty": {
+    "title": "No testimonials yet",
+    "description": "Check back soon for client reviews and feedback."
+  }
+}

@@ -1,33 +1,42 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useThemeStore } from '@store/themeStore';
+import { LanguageSwitcher } from '@components/LanguageSwitcher';
+import { SearchBar } from '@components/search/SearchBar';
+import { debounce } from '@utils/debounce';
+import { DEBOUNCE_DELAYS, SCROLL_THRESHOLDS, HEIGHTS, ANIMATIONS } from '@/constants';
 import clsx from 'clsx';
 import styles from './Navbar.module.css';
 
 const navLinks = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { href: '/#experience', label: 'Experience' },
-  { href: '/#projects', label: 'Projects' },
-  { href: '/#skills', label: 'Skills' },
-  { href: '/resume', label: 'Resume' },
-  { href: '/#contact', label: 'Contact' },
-];
+  { href: '/#home', key: 'home' },
+  { href: '/#about', key: 'about' },
+  { href: '/#experience', key: 'experience' },
+  { href: '/#projects', key: 'projects' },
+  { href: '/#skills', key: 'skills' },
+  { href: '/resume', key: 'resume' },
+  { href: '/#contact', key: 'contact' },
+] as const;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useThemeStore();
   const location = useLocation();
+  const { t } = useTranslation('navigation');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = debounce(() => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLDS.NAVBAR);
+    }, DEBOUNCE_DELAYS.SCROLL);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      handleScroll.cancel();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -37,8 +46,7 @@ export const Navbar = () => {
       const id = href.substring(2);
       const element = document.getElementById(id);
       if (element) {
-        const navbarHeight = 80;
-        const targetPosition = element.offsetTop - navbarHeight;
+        const targetPosition = element.offsetTop - HEIGHTS.NAVBAR;
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth',
@@ -50,8 +58,8 @@ export const Navbar = () => {
   return (
     <motion.nav
       className={clsx(styles.navbar, scrolled && styles.scrolled)}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: ANIMATIONS.NAVBAR_INITIAL_Y }}
+      animate={{ y: ANIMATIONS.NAVBAR_FINAL_Y }}
       transition={{ duration: 0.3 }}
     >
       <div className={styles.container}>
@@ -85,7 +93,7 @@ export const Navbar = () => {
                       handleNavClick(link.href);
                     }}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </a>
                 ) : (
                   <Link
@@ -96,11 +104,17 @@ export const Navbar = () => {
                     )}
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 )}
               </li>
             ))}
+            <li className={styles.searchItem}>
+              <SearchBar variant="header" />
+            </li>
+            <li>
+              <LanguageSwitcher />
+            </li>
             <li>
               <button
                 className={styles.themeToggle}

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { NewsletterForm } from '@components/newsletter/NewsletterForm';
 import styles from './Footer.module.css';
 
 const socialLinks = [
@@ -8,6 +10,7 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const { t } = useTranslation('contact');
   const currentYear = new Date().getFullYear();
 
   return (
@@ -17,6 +20,17 @@ export const Footer = () => {
           <div className={styles.brand}>
             <h3>Kha Van Hoang</h3>
             <p>Solutions Architect | Cloud & AI Specialist</p>
+          </div>
+
+          <div className={styles.newsletter}>
+            <h4 className={styles.newsletterTitle}>
+              <i className="fas fa-envelope" />
+              {t('newsletter.title', 'Subscribe to Newsletter')}
+            </h4>
+            <p className={styles.newsletterDescription}>
+              {t('newsletter.description', 'Get updates on new blog posts and projects')}
+            </p>
+            <NewsletterForm source="footer" variant="compact" />
           </div>
 
           <div className={styles.social}>

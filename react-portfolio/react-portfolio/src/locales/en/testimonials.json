@@ -1,0 +1,12 @@
+{
+  "title": "What People Say",
+  "description": "Testimonials from clients and colleagues",
+  "rating": "{{rating}} out of 5 stars",
+  "previous": "Previous testimonial",
+  "next": "Next testimonial",
+  "carousel": {
+    "autoplay": "Auto-play testimonials",
+    "pause": "Pause",
+    "play": "Play"
+  }
+}

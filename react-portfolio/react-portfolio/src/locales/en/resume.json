@@ -1,0 +1,25 @@
+{
+  "title": "Resume",
+  "download": "Download PDF",
+  "print": "Print Resume",
+  "sections": {
+    "summary": "Professional Summary",
+    "experience": "Work Experience",
+    "education": "Education",
+    "skills": "Technical Skills",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "achievements": "Achievements"
+  },
+  "experience": {
+    "present": "Present",
+    "responsibilities": "Key Responsibilities",
+    "achievements": "Key Achievements"
+  },
+  "languages": {
+    "native": "Native",
+    "fluent": "Fluent",
+    "intermediate": "Intermediate",
+    "basic": "Basic"
+  }
+}

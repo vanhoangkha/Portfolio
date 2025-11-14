@@ -1,0 +1,20 @@
+{
+  "title": "Kỹ Năng & Chuyên Môn",
+  "description": "Các công nghệ và công cụ tôi sử dụng",
+  "categories": {
+    "cloud": "Nền tảng Cloud",
+    "containerization": "Container hóa & Điều phối",
+    "cicd": "CI/CD & DevOps",
+    "programming": "Ngôn ngữ Lập trình",
+    "databases": "Cơ sở Dữ liệu",
+    "monitoring": "Giám sát & Quan sát",
+    "security": "Bảo mật",
+    "ai": "AI & Học máy"
+  },
+  "proficiency": {
+    "expert": "Chuyên gia",
+    "advanced": "Nâng cao",
+    "intermediate": "Trung bình",
+    "beginner": "Mới bắt đầu"
+  }
+}

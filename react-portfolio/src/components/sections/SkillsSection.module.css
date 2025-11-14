@@ -39,15 +39,37 @@
 }
 
 .category {
-  background: var(--bg-primary);
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
   transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.category:hover::before {
+  transform: scaleX(1);
 }
 
 .category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
 }
 
 .categoryHeader {
@@ -55,37 +77,67 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.category:hover .categoryHeader {
+  transform: translateX(4px);
 }
 
 .categoryHeader i {
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: var(--primary-color);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.category:hover .categoryHeader i {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .categoryHeader h3 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
+  font-weight: 700;
   color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.category:hover .categoryHeader h3 {
+  color: var(--primary-color);
 }
 
 .skillTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.625rem;
 }
 
 .skillTag {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.125rem;
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
   font-size: 0.875rem;
+  font-weight: 500;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  cursor: default;
 }
 
 .skillTag:hover {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  transform: scale(1.05);
+  border-color: var(--primary-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 768px) {

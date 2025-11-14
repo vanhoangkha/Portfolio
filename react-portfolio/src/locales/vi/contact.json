@@ -1,0 +1,54 @@
+{
+  "title": "Liên hệ",
+  "subtitle": "Hãy cùng làm việc",
+  "description": "Có dự án trong đầu hoặc muốn thảo luận về giải pháp cloud? Hãy liên hệ với tôi!",
+  "form": {
+    "name": {
+      "label": "Tên của bạn",
+      "placeholder": "Nguyễn Văn A"
+    },
+    "email": {
+      "label": "Địa chỉ Email",
+      "placeholder": "email@example.com"
+    },
+    "subject": {
+      "label": "Chủ đề",
+      "placeholder": "Yêu cầu dự án"
+    },
+    "message": {
+      "label": "Tin nhắn",
+      "placeholder": "Hãy cho tôi biết về dự án của bạn..."
+    },
+    "submit": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm.",
+    "error": "Không thể gửi tin nhắn. Vui lòng thử lại hoặc gửi email trực tiếp cho tôi."
+  },
+  "info": {
+    "email": "Email",
+    "phone": "Điện thoại",
+    "location": "Địa điểm",
+    "availability": "Tình trạng",
+    "availableForWork": "Sẵn sàng nhận công việc freelance"
+  },
+  "social": {
+    "title": "Kết nối với tôi",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter"
+  },
+  "newsletter": {
+    "title": "Đăng ký nhận tin",
+    "description": "Nhận cập nhật về bài viết blog và dự án mới",
+    "placeholder": "Nhập email của bạn",
+    "subscribe": "Đăng ký",
+    "success": "Đăng ký thành công!",
+    "error": "Đăng ký thất bại. Vui lòng thử lại.",
+    "privacy": "Chúng tôi tôn trọng quyền riêng tư của bạn. Hủy đăng ký bất cứ lúc nào.",
+    "consent": "Tôi đồng ý với",
+    "privacyPolicy": "Chính sách bảo mật",
+    "alreadySubscribed": "Bạn đã đăng ký rồi!",
+    "welcomeMessage": "Cảm ơn bạn đã đăng ký! Chúng tôi đã gửi email xác nhận đến {{email}}",
+    "connectTitle": "Kết nối với tôi:"
+  }
+}

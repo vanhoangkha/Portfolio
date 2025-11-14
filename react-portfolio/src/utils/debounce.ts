@@ -1,10 +1,15 @@
+export interface DebouncedFunction<T extends (...args: any[]) => any> {
+  (...args: Parameters<T>): void;
+  cancel: () => void;
+}
+
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
-): (...args: Parameters<T>) => void {
+): DebouncedFunction<T> {
   let timeout: ReturnType<typeof setTimeout> | null = null;
 
-  return function executedFunction(...args: Parameters<T>) {
+  const debounced = function executedFunction(...args: Parameters<T>) {
     const later = () => {
       timeout = null;
       func(...args);
@@ -14,7 +19,16 @@ export function debounce<T extends (...args: any[]) => any>(
       clearTimeout(timeout);
     }
     timeout = setTimeout(later, wait);
+  } as DebouncedFunction<T>;
+
+  debounced.cancel = () => {
+    if (timeout) {
+      clearTimeout(timeout);
+      timeout = null;
+    }
   };
+
+  return debounced;
 }
 
 export function throttle<T extends (...args: any[]) => any>(

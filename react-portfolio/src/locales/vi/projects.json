@@ -1,0 +1,82 @@
+{
+  "title": "Dự án",
+  "subtitle": "Những gì tôi đã xây dựng",
+  "label": "Danh mục đầu tư",
+  "featured": "Dự án nổi bật",
+  "all": "Tất cả dự án",
+  "filter": {
+    "title": "Lọc dự án",
+    "all": "Tất cả",
+    "technology": "Công nghệ",
+    "category": "Danh mục",
+    "status": "Trạng thái",
+    "date": "Khoảng thời gian",
+    "clearFilters": "Xóa bộ lọc",
+    "clearAll": "Xóa tất cả",
+    "activeFilters": "Bộ lọc hoạt động",
+    "searchPlaceholder": "Tìm kiếm dự án...",
+    "results": "Tìm thấy {{count}} dự án",
+    "results_plural": "Tìm thấy {{count}} dự án",
+    "resultsCount": "Hiển thị {{count}} trong {{total}} dự án",
+    "noResults": "Không có dự án nào phù hợp với bộ lọc của bạn. Hãy thử điều chỉnh tiêu chí."
+  },
+  "categories": {
+    "web": "Ứng dụng Web",
+    "mobile": "Ứng dụng Di động",
+    "cloud": "Hạ tầng Cloud",
+    "ai": "AI/ML",
+    "iot": "IoT",
+    "other": "Khác"
+  },
+  "status": {
+    "completed": "Hoàn thành",
+    "ongoing": "Đang thực hiện",
+    "archived": "Đã lưu trữ"
+  },
+  "card": {
+    "viewProject": "Xem dự án",
+    "viewCode": "Xem mã nguồn",
+    "viewDemo": "Demo trực tiếp",
+    "technologies": "Công nghệ",
+    "completedOn": "Hoàn thành vào {{date}}"
+  },
+  "details": {
+    "overview": "Tổng quan",
+    "features": "Tính năng chính",
+    "technologies": "Công nghệ sử dụng",
+    "challenges": "Thách thức & Giải pháp",
+    "results": "Kết quả & Tác động",
+    "links": "Liên kết dự án"
+  },
+  "items": [
+    {
+      "title": "CloudThinker - Hoạt động Cloud Thông minh",
+      "description": "Đồng sáng lập và Kiến trúc sư. Nền tảng điều phối đa agent sử dụng Amazon Bedrock cho hoạt động cloud tự động và giám sát tuân thủ trên AWS, Azure và GCP. Kết quả: Cải thiện hiệu quả vận hành 35-40%; Giảm 50% thời gian phục hồi trung bình.",
+      "icon": "fas fa-robot",
+      "tags": ["AI Agents", "Multi-Cloud", "Amazon Bedrock", "Automation"]
+    },
+    {
+      "title": "AWS First GenAI Journey",
+      "description": "Đóng góp viên Kỹ thuật Chính. Kiến trúc sư chính của khung tham chiếu Generative AI chính thức của AWS. Thiết kế hơn 20 kiến trúc doanh nghiệp cho hệ thống LLM và RAG sử dụng Amazon Bedrock, SageMaker, Lambda và OpenSearch. Kết quả: Hơn 1,000 sao GitHub; Hơn 3,000 fork; được chấp nhận làm tham chiếu khu vực bởi AWS Partner Network.",
+      "icon": "fas fa-brain",
+      "tags": ["AWS Bedrock", "GenAI", "RAG", "LLM", "1K+ Stars"]
+    },
+    {
+      "title": "Chubb AWS Enterprise Migration",
+      "description": "Kiến trúc sư Migration. Dẫn dắt di chuyển hơn 100 workload ngân hàng lên AWS sử dụng phương pháp MAP. Thiết kế landing zone đa tài khoản với quản trị tập trung sử dụng Terraform IaC. Kết quả: Giảm chi phí 20%; Cải thiện hiệu quả tuân thủ 30%; thực hiện zero-downtime; tiết kiệm $5M vận hành.",
+      "icon": "fas fa-building",
+      "tags": ["AWS MAP", "Migration", "Terraform", "Banking", "Landing Zone"]
+    },
+    {
+      "title": "Special Force LMS",
+      "description": "Hệ thống quản lý học tập phục vụ hơn 40K người dùng cho chuẩn bị chứng chỉ AWS và đào tạo cloud.",
+      "icon": "fas fa-graduation-cap",
+      "tags": ["LMS", "Education", "AWS", "40K+ Users"]
+    }
+  ],
+  "links": {
+    "demo": "https://www.cloudthinker.io",
+    "github": "https://github.com/aws-samples/AWS-First-GenAI-Journey",
+    "lms": "https://specialforce.awsstudygroup.com"
+  }
+}

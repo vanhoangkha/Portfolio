@@ -1,0 +1,24 @@
+{
+  "title": "About Me",
+  "introduction": "Cloud & AI Solution Architect with a passion for building scalable systems",
+  "description": "I specialize in designing and implementing cloud-native solutions, with expertise in AWS, Azure, Kubernetes, and AI/ML technologies. I'm passionate about DevSecOps practices and building secure, scalable infrastructure.",
+  "experience": {
+    "title": "Experience",
+    "years": "{{years}}+ years of experience",
+    "current": "Current",
+    "present": "Present"
+  },
+  "education": {
+    "title": "Education",
+    "degree": "Degree",
+    "university": "University",
+    "graduationYear": "Graduation Year"
+  },
+  "interests": {
+    "title": "Interests",
+    "item1": "Cloud Computing",
+    "item2": "AI & Machine Learning",
+    "item3": "DevSecOps",
+    "item4": "Open Source"
+  }
+}

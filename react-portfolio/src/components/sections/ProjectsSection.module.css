@@ -46,6 +46,9 @@
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card::before {
@@ -82,6 +85,32 @@
   border-radius: var(--radius-md);
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  position: relative;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardIcon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .cardIcon::after {
+  opacity: 1;
 }
 
 .cardTitle {
@@ -104,31 +133,151 @@
 }
 
 .tag {
-  padding: 0.25rem 0.75rem;
+  padding: 0.4rem 0.875rem;
   background: var(--bg-tertiary);
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .links {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .link {
-  padding: 0.5rem 1rem;
+  flex: 1;
+  padding: 0.625rem 1.125rem;
   background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--text-primary);
   font-size: 0.875rem;
+  font-weight: 500;
   transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 0;
+}
+
+.link i,
+.link span {
+  position: relative;
+  z-index: 1;
 }
 
 .link:hover {
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.link:hover::before {
+  opacity: 1;
+}
+
+.link:active {
+  transform: translateY(0);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--border-color);
+  min-height: 400px;
+}
+
+.emptyState i {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-tertiary);
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.emptyState h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.emptyState p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.resetButton {
+  padding: 0.75rem 1.5rem;
   background: var(--primary-color);
   color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resetButton:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.resetButton i {
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {

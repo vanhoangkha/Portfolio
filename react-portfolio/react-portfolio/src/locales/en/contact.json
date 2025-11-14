@@ -1,0 +1,36 @@
+{
+  "title": "Get In Touch",
+  "description": "Feel free to reach out for collaborations or just a friendly hello",
+  "form": {
+    "name": {
+      "label": "Your Name",
+      "placeholder": "John Doe",
+      "error": "Please enter your name"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "john@example.com",
+      "error": "Please enter a valid email address"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Project Inquiry",
+      "error": "Please enter a subject"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell me about your project...",
+      "error": "Please enter your message (minimum 20 characters)"
+    },
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Failed to send message. Please try again."
+  },
+  "info": {
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "social": "Connect with me"
+  }
+}

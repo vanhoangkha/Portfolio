@@ -102,6 +102,20 @@
   transform: scale(1.05);
 }
 
+.searchItem {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .searchItem {
+    max-width: 100%;
+    margin: 0;
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
   .mobileToggle {
     display: block;

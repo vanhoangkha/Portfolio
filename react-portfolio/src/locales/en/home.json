@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Kha Van Hoang",
+    "titles": [
+      "Cloud Solutions Architect",
+      "AWS Community Builder",
+      "AI/ML Specialist",
+      "DevSecOps Expert",
+      "Multi-Cloud Expert",
+      "Tech Community Leader"
+    ],
+    "description": "Solutions Architect with 5 years designing enterprise-scale cloud solutions on Amazon Web Services, Microsoft Azure, and Google Cloud Platform. AWS Community Builder recognized for establishing Vietnam's premier cloud learning ecosystem serving 50,000 professionals. Expertise in cloud architecture, infrastructure automation, artificial intelligence, security governance, and multi-cloud strategy.",
+    "metrics": {
+      "professionals": "Professionals Enabled",
+      "projects": "Enterprise Projects",
+      "certifications": "AWS Certifications"
+    },
+    "cta": {
+      "downloadResume": "Download Resume",
+      "bookCall": "Book a Call",
+      "viewProjects": "View Projects"
+    },
+    "scrollDown": "Scroll to About section"
+  },
+  "featured": {
+    "title": "Featured Work",
+    "subtitle": "Recent projects and achievements"
+  }
+}
