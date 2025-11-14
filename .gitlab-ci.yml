@@ -75,34 +75,46 @@ build:production:
     - tags
 
 # Deploy Stage
-deploy:staging:
+deploy:vercel:preview:
   stage: deploy
-  image: alpine:latest
+  image: node:20-alpine
   before_script:
-    - apk add --no-cache curl
+    - npm install -g vercel
   script:
-    - echo "Deploying to staging environment"
-    - echo "Add your deployment commands here"
+    - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --token=$VERCEL_TOKEN > deployment-url.txt
+    - cat deployment-url.txt
   environment:
-    name: staging
-    url: https://staging.portfolio.example.com
+    name: preview
+    url: https://portfolio-preview.vercel.app
+  artifacts:
+    paths:
+      - deployment-url.txt
+    expire_in: 1 day
   only:
-    - main
+    - merge_requests
 
-deploy:production:
+deploy:vercel:production:
   stage: deploy
-  image: alpine:latest
+  image: node:20-alpine
   before_script:
-    - apk add --no-cache curl
+    - npm install -g vercel
   script:
-    - echo "Deploying to production environment"
-    - echo "Add your deployment commands here"
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN > deployment-url.txt
+    - echo "🚀 Deployed to production:"
+    - cat deployment-url.txt
   environment:
     name: production
-    url: https://portfolio.example.com
-  when: manual
+    url: https://portfolio.vercel.app
+  artifacts:
+    paths:
+      - deployment-url.txt
+    expire_in: 7 days
   only:
-    - tags
+    - main
 
 # Security Scanning
 include:
