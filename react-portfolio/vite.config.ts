@@ -67,18 +67,120 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
-      }
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2, // Multiple passes for better optimization
+      },
+      mangle: {
+        safari10: true, // Fix Safari 10 issues
+      },
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'animation': ['framer-motion'],
-          'utils': ['zustand', 'clsx']
-        }
-      }
-    }
+        // Intelligent chunk splitting strategy
+        manualChunks: (id) => {
+          // React core libraries
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
+            return 'react-vendor';
+          }
+
+          // Animation library
+          if (id.includes('node_modules/framer-motion')) {
+            return 'animation';
+          }
+
+          // i18n libraries
+          if (id.includes('node_modules/i18next') || id.includes('node_modules/react-i18next')) {
+            return 'i18n';
+          }
+
+          // Form libraries
+          if (id.includes('node_modules/react-hook-form') || id.includes('node_modules/zod') || id.includes('node_modules/@hookform')) {
+            return 'forms';
+          }
+
+          // Data fetching
+          if (id.includes('node_modules/@tanstack/react-query') || id.includes('node_modules/axios')) {
+            return 'data-fetching';
+          }
+
+          // Charts (large library, already lazy loaded)
+          if (id.includes('node_modules/recharts')) {
+            return 'charts';
+          }
+
+          // Markdown rendering (already lazy loaded)
+          if (id.includes('node_modules/react-markdown') || id.includes('node_modules/remark-')) {
+            return 'markdown';
+          }
+
+          // Search library
+          if (id.includes('node_modules/fuse.js')) {
+            return 'search';
+          }
+
+          // UI components
+          if (id.includes('node_modules/@headlessui')) {
+            return 'ui-components';
+          }
+
+          // Date utilities
+          if (id.includes('node_modules/date-fns')) {
+            return 'date-utils';
+          }
+
+          // SEO and meta
+          if (id.includes('node_modules/react-helmet')) {
+            return 'seo';
+          }
+
+          // Utilities
+          if (id.includes('node_modules/zustand') || id.includes('node_modules/clsx')) {
+            return 'utils';
+          }
+
+          // Other node_modules
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+        // Optimize chunk file names
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId
+            ? chunkInfo.facadeModuleId.split('/').pop()?.replace(/\.[^.]*$/, '')
+            : 'chunk';
+          return `js/${facadeModuleId}-[hash].js`;
+        },
+        entryFileNames: 'js/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') || [];
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/i.test(ext)) {
+            return `fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        // Better code splitting
+        experimentalMinChunkSize: 20000, // Minimum chunk size: 20KB
+      },
+      // Tree shaking optimization
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+        tryCatchDeoptimization: false,
+      },
+    },
+    // Chunk size warnings
+    chunkSizeWarningLimit: 1000, // 1MB warning threshold
+    // Source maps for production debugging (optional, can disable for smaller builds)
+    sourcemap: false,
+    // CSS code splitting
+    cssCodeSplit: true,
+    // Optimize asset inlining threshold
+    assetsInlineLimit: 4096, // 4KB - inline smaller assets
   },
   server: {
     port: 3000,
