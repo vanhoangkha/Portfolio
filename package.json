@@ -1,47 +1,18 @@
 {
-  "name": "portfolio-kha-van-hoang",
+  "name": "portfolio",
   "version": "2.0.0",
-  "description": "Portfolio Website - Solutions Architect | AWS, Azure, GCP | Cloud Architecture, AI/ML, DevSecOps",
-  "main": "index.html",
-  "type": "module",
-  "private": true,
+  "description": "Kha Van Hoang - Solutions Architect Portfolio",
   "scripts": {
-    "dev": "npx http-server -p 8080 -c-1",
-    "preview": "npx http-server -p 3000",
-    "clean": "rm -rf node_modules/.cache",
-    "lint": "eslint js/**/*.js --fix",
-    "lint:check": "eslint js/**/*.js",
-    "format": "prettier --write \"**/*.{js,css,html,json,md}\"",
-    "format:check": "prettier --check \"**/*.{js,css,html,json,md}\"",
-    "validate": "npm run lint:check && npm run format:check",
-    "build": "npm run clean && npm run validate"
+    "dev": "cd react-portfolio && npm run dev",
+    "build": "cd react-portfolio && npm run build",
+    "preview": "cd react-portfolio && npm run preview",
+    "test": "cd react-portfolio && npm test",
+    "lint": "cd react-portfolio && npm run lint"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/vanhoangkha/Portfolio.git"
   },
-  "keywords": [
-    "portfolio",
-    "solutions-architect",
-    "cloud-architecture",
-    "aws",
-    "azure",
-    "gcp",
-    "ai-ml",
-    "devsecops",
-    "personal-website"
-  ],
   "author": "Kha Van Hoang <khavan.work@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vanhoangkha/Portfolio/issues"
-  },
-  "homepage": "https://github.com/vanhoangkha/Portfolio#readme",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
-  }
+  "license": "MIT"
 }
