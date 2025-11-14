@@ -1,155 +1,95 @@
 # Contributing to Portfolio
 
-Thank you for your interest in contributing! This document provides guidelines for contributing to this project.
+Thank you for your interest in contributing to this project! This document provides guidelines for contributing.
 
-## Development Setup
+## Code of Conduct
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/vanhoangkha/Portfolio.git
-   cd Portfolio
-   ```
+- Be respectful and inclusive
+- Provide constructive feedback
+- Focus on what is best for the community
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## How to Contribute
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
+### Reporting Bugs
 
-4. **Access the site**
-   Open http://localhost:8080 in your browser
+1. Check if the bug has already been reported in Issues
+2. Create a new issue with:
+   - Clear title and description
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Screenshots if applicable
+   - Environment details (browser, OS)
 
-## Code Quality
+### Suggesting Features
 
-### Linting
-Run ESLint to check code quality:
+1. Check existing feature requests
+2. Create an issue with:
+   - Clear use case
+   - Expected behavior
+   - Potential implementation approach
+
+### Pull Requests
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes following the code style
+4. Write/update tests if applicable
+5. Update documentation
+6. Commit with clear messages: `git commit -m "feat: add new feature"`
+7. Push to your fork: `git push origin feature/your-feature-name`
+8. Open a Pull Request
+
+### Commit Message Convention
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Code style changes (formatting)
+- `refactor:` Code refactoring
+- `test:` Adding or updating tests
+- `chore:` Maintenance tasks
+
+### Development Setup
+
 ```bash
-npm run lint        # Auto-fix issues
-npm run lint:check  # Check only
+# Clone the repository
+git clone https://gitlab.com/awsfirstcloudaijourney/Portfolio.git
+cd Portfolio/react-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run tests
+npm test
+
+# Build for production
+npm run build
 ```
 
-### Formatting
-Use Prettier for consistent code formatting:
-```bash
-npm run format        # Format all files
-npm run format:check  # Check formatting
-```
+### Code Style
 
-### Validation
-Run all checks before committing:
-```bash
-npm run validate
-```
-
-## Coding Standards
-
-### JavaScript
-- Use ES6+ features
-- Follow ESLint configuration
-- Use meaningful variable names
-- Add JSDoc comments for functions
+- Use TypeScript for type safety
+- Follow ESLint and Prettier configurations
+- Write meaningful variable and function names
+- Add comments for complex logic
 - Keep functions small and focused
-- Avoid console.log in production code (use logger utility)
 
-### CSS
-- Follow BEM naming convention
-- Use CSS custom properties for theming
-- Mobile-first responsive design
-- Maintain consistent spacing
+### Testing
 
-### HTML
-- Semantic HTML5 elements
-- Proper heading hierarchy
-- Alt text for all images
-- ARIA labels for accessibility
-
-## Commit Messages
-
-Follow conventional commits format:
-```
-type(scope): subject
-
-body (optional)
-
-footer (optional)
-```
-
-Types:
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting)
-- `refactor`: Code refactoring
-- `perf`: Performance improvements
-- `test`: Adding tests
-- `chore`: Maintenance tasks
-
-Example:
-```
-feat(blog): add search functionality
-
-Implemented client-side search for blog posts with debouncing
-and highlighting of search terms.
-
-Closes #123
-```
-
-## Pull Request Process
-
-1. Create a feature branch from `develop`
-2. Make your changes
-3. Run validation: `npm run validate`
-4. Commit with conventional commit messages
-5. Push to your fork
-6. Create a Pull Request to `develop` branch
-7. Wait for review and CI checks to pass
-
-## Testing
-
-### Manual Testing Checklist
-- [ ] Test on Chrome, Firefox, Safari
-- [ ] Test on mobile devices
-- [ ] Check accessibility with screen reader
-- [ ] Verify all links work
-- [ ] Test form submissions
-- [ ] Check PWA functionality
-- [ ] Verify dark/light theme toggle
-
-### Performance Testing
-- Run Lighthouse audit (target: 90+ scores)
-- Check Core Web Vitals
-- Test on slow 3G connection
-
-## Accessibility
-
-Ensure all contributions meet WCAG 2.1 Level AA:
-- Proper heading structure
-- Sufficient color contrast
-- Keyboard navigation support
-- Screen reader compatibility
-- Alt text for images
-- ARIA labels where needed
-
-## Browser Support
-
-Target browsers:
-- Chrome/Edge (latest 2 versions)
-- Firefox (latest 2 versions)
-- Safari (latest 2 versions)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Write unit tests for utilities and hooks
+- Write integration tests for components
+- Ensure all tests pass before submitting PR
+- Aim for >80% code coverage
 
 ## Questions?
 
-Feel free to open an issue for:
-- Bug reports
-- Feature requests
-- Questions about the code
-- Suggestions for improvements
+Feel free to open an issue for any questions or reach out to:
+- Email: khavan.work@gmail.com
+- LinkedIn: [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)
 
-## License
-
-By contributing, you agree that your contributions will be licensed under the MIT License.
+Thank you for contributing! 🎉
