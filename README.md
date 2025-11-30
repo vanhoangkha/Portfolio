@@ -1,5 +1,12 @@
 # Portfolio - Kha Van Hoang
 
+![License](https://img.shields.io/github/license/vanhoangkha/Portfolio?style=flat-square)
+![Stars](https://img.shields.io/github/stars/vanhoangkha/Portfolio?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/vanhoangkha/Portfolio?style=flat-square)
+![Language](https://img.shields.io/github/languages/top/vanhoangkha/Portfolio?style=flat-square)
+
+
+
 > Solutions Architect | AWS, Azure, GCP | Cloud Architecture, AI/ML, DevSecOps
 
 ## 🚀 Overview
