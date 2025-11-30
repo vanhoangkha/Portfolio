@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useBlogTranslation } from '@hooks/useBlogTranslation';
+import { OptimizedImage } from '@components/Image';
 import type { BlogPost } from '@/types';
 import styles from './BlogCard.module.css';
 
@@ -26,7 +27,13 @@ export const BlogCard = ({ post, layout = 'grid' }: BlogCardProps) => {
       transition={{ duration: 0.2 }}
     >
       <Link to={`/blog/${post.slug}`} className={styles.link}>
-        <img src={post.featuredImage} alt={title} className={styles.image} />
+        <OptimizedImage
+          src={post.featuredImage}
+          alt={title}
+          className={styles.image}
+          aspectRatio={16 / 9}
+          objectFit="cover"
+        />
         <div className={styles.content}>
           <div className={styles.header}>
             <span className={styles.category}>{post.category}</span>

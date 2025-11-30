@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { OptimizedImage } from '@components/Image';
 import type { Certification } from '@/types';
 import { formatDate } from '@utils/i18n';
 import styles from './CertificationCard.module.css';
@@ -89,7 +89,6 @@ export const CertificationCard = ({
   index = 0,
   onViewDetails,
 }: CertificationCardProps) => {
-  const [imageError, setImageError] = useState(false);
   const { name, issuer, issueDate, expiryDate, category, skills, credentialUrl } = certification;
 
   const handleViewDetails = () => {
@@ -112,23 +111,13 @@ export const CertificationCard = ({
 
       {/* Certificate Image */}
       <div className={styles.imageContainer}>
-        {!imageError ? (
-          <img
-            src={certification.certificateImage}
-            alt={`${name} certificate`}
-            className={styles.image}
-            loading="lazy"
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <div className={styles.imagePlaceholder}>
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-              <rect x="8" y="12" width="48" height="40" rx="2" stroke="currentColor" strokeWidth="2" />
-              <path d="M20 28H44M20 36H44M20 44H36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="32" cy="20" r="4" fill="currentColor" />
-            </svg>
-          </div>
-        )}
+        <OptimizedImage
+          src={certification.certificateImage}
+          alt={`${name} certificate`}
+          className={styles.image}
+          aspectRatio={4 / 3}
+          objectFit="contain"
+        />
       </div>
 
       {/* Content */}

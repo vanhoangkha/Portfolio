@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from '@components/Image';
 import type { Certification } from '@/types';
 import { formatDate } from '@utils/i18n';
 import styles from './CertificationModal.module.css';
@@ -122,10 +123,12 @@ export const CertificationModal = ({
             <div className={styles.content}>
               {/* Certificate Image */}
               <div className={styles.imageSection}>
-                <img
+                <OptimizedImage
                   src={certificateImage}
                   alt={`${name} certificate`}
                   className={styles.image}
+                  objectFit="contain"
+                  priority
                 />
               </div>
 

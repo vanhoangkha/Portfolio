@@ -1,14 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "cd react-portfolio && npm install && npm run build",
-  "outputDirectory": "react-portfolio/dist",
-  "framework": "vite",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

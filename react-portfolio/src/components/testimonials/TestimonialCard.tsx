@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { OptimizedImage } from '@components/Image';
 import type { Testimonial } from '@/types';
 import styles from './TestimonialCard.module.css';
 
@@ -90,13 +91,14 @@ export const TestimonialCard = ({ testimonial, index = 0 }: TestimonialCardProps
 
         {/* Author Info */}
         <div className={styles.author}>
-          <img
+          <OptimizedImage
             src={photo}
             alt={name}
             className={styles.photo}
-            loading="lazy"
-            width="56"
-            height="56"
+            width={56}
+            height={56}
+            aspectRatio={1}
+            objectFit="cover"
           />
           
           <div className={styles.authorInfo}>

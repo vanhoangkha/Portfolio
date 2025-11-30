@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { NewsletterForm } from '@components/newsletter/NewsletterForm';
+import { OptimizedImage } from '@components/Image';
 import type { BlogPost } from '@/types';
 import styles from './BlogSidebar.module.css';
 
@@ -41,10 +42,11 @@ export const BlogSidebar = ({
                 className={styles.postItem}
               >
                 <div className={styles.postImage}>
-                  <img
+                  <OptimizedImage
                     src={post.featuredImage}
                     alt={post.title}
-                    loading="lazy"
+                    aspectRatio={16 / 9}
+                    objectFit="cover"
                   />
                 </div>
                 <div className={styles.postInfo}>

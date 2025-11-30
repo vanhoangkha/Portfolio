@@ -163,8 +163,6 @@ export default defineConfig({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        // Better code splitting
-        experimentalMinChunkSize: 20000, // Minimum chunk size: 20KB
       },
       // Tree shaking optimization
       treeshake: {

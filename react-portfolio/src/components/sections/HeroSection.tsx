@@ -1,17 +1,38 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from '@components/TypeAnimation';
+import { reserveSpace } from '@utils/performanceOptimizations';
 import styles from './HeroSection.module.css';
 
 export const HeroSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const sectionRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation('home');
 
   const phrases = t('hero.titles', { returnObjects: true }) as string[];
 
+  // Reserve space to prevent CLS
+  useEffect(() => {
+    if (sectionRef.current) {
+      // Reserve minimum height for hero section to prevent layout shift
+      reserveSpace(sectionRef.current, 600);
+    }
+  }, []);
+
+  // Combined ref callback
+  const setRefs = (node: HTMLElement | null) => {
+    sectionRef.current = node;
+    if (typeof ref === 'function') {
+      ref(node);
+    } else if (ref && node) {
+      (ref as React.MutableRefObject<HTMLElement | null>).current = node;
+    }
+  };
+
   return (
-    <section id="home" className={styles.hero} ref={ref}>
+    <section id="home" className={styles.hero} ref={setRefs}>
       <div className={styles.container}>
         <motion.div
           className={styles.content}

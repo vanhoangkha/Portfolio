@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { OptimizedImage } from '@components/Image';
 import { CommentForm } from './CommentForm';
 import type { Comment } from '@/types';
 import styles from './CommentItem.module.css';
@@ -56,10 +57,14 @@ export const CommentItem = ({
     >
       <div className={styles.commentContent}>
         <div className={styles.header}>
-          <img
+          <OptimizedImage
             src={getAvatarUrl(comment.author)}
             alt={comment.author.name}
             className={styles.avatar}
+            width={40}
+            height={40}
+            aspectRatio={1}
+            objectFit="cover"
           />
           <div className={styles.meta}>
             <div className={styles.authorInfo}>

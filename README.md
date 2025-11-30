@@ -49,6 +49,27 @@ Portfolio/
 │   ├── utils/             # Utility functions
 │   └── premium/           # Premium UI effects
 ├── assets/                 # Images and media
+├── docs/                   # Documentation files
+│   ├── CHANGELOG.md
+│   ├── CONTRIBUTING.md
+│   ├── SECURITY.md
+│   └── ...
+├── scripts/                # Shell scripts
+│   ├── push-to-github.sh
+│   └── ...
+├── config/                 # Configuration files
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── vercel.json
+│   └── ...
+├── deployment/             # Deployment guides
+│   ├── AWS_DEPLOYMENT_GUIDE.md
+│   ├── GITHUB_PAGES_DEPLOY.md
+│   └── ...
+├── demos/                  # Demo and test files
+│   ├── demo-ui.html
+│   └── ...
+├── logs/                   # Log files
 ├── infrastructure/         # AWS Amplify backend (optional)
 ├── manifest.json          # PWA manifest
 ├── sw.js                  # Service worker

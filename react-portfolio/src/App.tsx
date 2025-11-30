@@ -1,10 +1,12 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useThemeStore } from '@store/themeStore';
 import { useToastStore } from '@store/toastStore';
 import { csrfService } from '@/services/security/csrfService';
 import { logger } from '@utils/logger';
+import { setupRoutePrefetch } from '@utils/prefetch';
+import { initWebVitals } from '@utils/webVitals';
 import { ErrorBoundary } from '@components/ErrorBoundary';
 import { Layout } from '@components/Layout';
 import { ToastContainer } from '@components/Toast/Toast';
@@ -25,6 +27,7 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then(module => ({
 function App() {
   const theme = useThemeStore((state) => state.theme);
   const { toasts, removeToast } = useToastStore();
+  const location = useLocation();
 
   // Initialize CSRF token on app startup
   useEffect(() => {
@@ -52,6 +55,42 @@ function App() {
 
     initializeCsrf();
   }, []);
+
+  // Initialize Web Vitals tracking
+  useEffect(() => {
+    initWebVitals();
+  }, []);
+
+  // Setup route prefetching on mount
+  useEffect(() => {
+    setupRoutePrefetch();
+  }, []);
+
+  // Prefetch likely next routes based on current location
+  useEffect(() => {
+    const prefetchNextRoutes = () => {
+      // Prefetch common routes that users might visit next
+      const commonRoutes = ['/resume', '/blog'];
+      commonRoutes.forEach((route) => {
+        if (route !== location.pathname) {
+          // Use requestIdleCallback for non-critical prefetching
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+              const link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = route;
+              link.as = 'document';
+              document.head.appendChild(link);
+            });
+          }
+        }
+      });
+    };
+
+    // Delay prefetching to avoid blocking initial load
+    const timeoutId = setTimeout(prefetchNextRoutes, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [location.pathname]);
 
   return (
     <ErrorBoundary>

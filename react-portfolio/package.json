@@ -18,7 +18,10 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "lighthouse": "node scripts/lighthouse.js",
+    "lighthouse:ci": "lhci autorun",
+    "lighthouse:mobile": "lighthouse http://localhost:4173 --only-categories=performance --preset=mobile --output=html --output-path=./lighthouse-reports/mobile-report.html"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -39,12 +42,15 @@
     "react-intersection-observer": "^9.8.1",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.22.0",
+    "react-syntax-highlighter": "^16.1.0",
     "recharts": "^3.4.1",
     "remark-gfm": "^4.0.1",
+    "web-vitals": "^5.1.0",
     "zod": "^4.1.12",
     "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@tanstack/react-query-devtools": "^5.90.2",
     "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^14.2.0",
@@ -62,6 +68,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "jsdom": "^24.0.0",
+    "lighthouse": "^12.8.2",
     "prettier": "^3.2.5",
     "prismjs": "^1.30.0",
     "typescript": "^5.3.3",
