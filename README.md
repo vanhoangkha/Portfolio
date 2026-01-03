@@ -1,160 +1,195 @@
-# Portfolio - Kha Van Hoang
+# Van Hoang Kha - Professional Portfolio
 
-![License](https://img.shields.io/github/license/vanhoangkha/Portfolio?style=flat-square)
-![Stars](https://img.shields.io/github/stars/vanhoangkha/Portfolio?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/vanhoangkha/Portfolio?style=flat-square)
-![Language](https://img.shields.io/github/languages/top/vanhoangkha/Portfolio?style=flat-square)
+**Cloud Security Engineer | AWS Community Builder | Solutions Architect**
 
-
-
-> Solutions Architect | AWS, Azure, GCP | Cloud Architecture, AI/ML, DevSecOps
-
-## 🚀 Overview
-
-Personal portfolio website showcasing my experience as a Solutions Architect with 5 years of designing enterprise-scale cloud solutions. AWS Community Builder recognized for establishing Vietnam's premier cloud learning ecosystem serving 50,000 professionals.
-
-## 📋 Features
-
-- ✅ Responsive design optimized for all devices
-- ✅ Progressive Web App (PWA) support
-- ✅ SEO optimized with structured data
-- ✅ Performance optimized (lazy loading, caching)
-- ✅ Dark/Light theme toggle
-- ✅ Interactive animations and effects
-- ✅ Blog section ready
-- ✅ Resume/CV page
-
-## 🛠️ Tech Stack
-
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Design**: Modern UI with glass morphism effects
-- **Icons**: Font Awesome 6
-- **Fonts**: Google Fonts (Inter, JetBrains Mono)
-- **PWA**: Service Worker, Web Manifest
-
-## 📁 Project Structure
-
-```
-Portfolio/
-├── index.html              # Main landing page
-├── resume.html             # Resume/CV page
-├── blog.html               # Blog listing page
-├── css/                    # Stylesheets
-│   ├── main.css           # Main styles
-│   ├── animations.css     # Animation effects
-│   └── ...
-├── js/                     # JavaScript modules
-│   ├── core/              # Core functionality
-│   ├── features/          # Feature modules
-│   ├── utils/             # Utility functions
-│   └── premium/           # Premium UI effects
-├── assets/                 # Images and media
-├── docs/                   # Documentation files
-│   ├── CHANGELOG.md
-│   ├── CONTRIBUTING.md
-│   ├── SECURITY.md
-│   └── ...
-├── scripts/                # Shell scripts
-│   ├── push-to-github.sh
-│   └── ...
-├── config/                 # Configuration files
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   ├── vercel.json
-│   └── ...
-├── deployment/             # Deployment guides
-│   ├── AWS_DEPLOYMENT_GUIDE.md
-│   ├── GITHUB_PAGES_DEPLOY.md
-│   └── ...
-├── demos/                  # Demo and test files
-│   ├── demo-ui.html
-│   └── ...
-├── logs/                   # Log files
-├── infrastructure/         # AWS Amplify backend (optional)
-├── manifest.json          # PWA manifest
-├── sw.js                  # Service worker
-├── robots.txt             # SEO robots file
-└── sitemap.xml            # SEO sitemap
-
-```
-
-## 🚀 Quick Start
-
-### Local Development
-
-```bash
-# Install http-server (if not already installed)
-npm install -g http-server
-
-# Start local server
-npm run dev
-
-# Or use Python's built-in server
-python3 -m http.server 8080
-```
-
-Then open http://localhost:8080 in your browser.
-
-### Deploy to AWS Amplify
-
-This project is configured for AWS Amplify hosting:
-
-```bash
-# Build specification is in infrastructure/amplify/
-# Deployment is automatic via GitHub integration
-```
-
-## 📝 Customization
-
-### Update Personal Information
-
-1. Edit `index.html` - Update hero section, about, experience
-2. Edit `resume.html` - Update professional resume content
-3. Update meta tags in `<head>` sections for SEO
-
-### Styling
-
-- Main colors: Edit CSS variables in `css/main.css`
-- Animations: Customize in `css/animations.css`
-- Theme: Modify theme toggle in `js/core/themes.js`
-
-## 📊 Performance
-
-- Lighthouse Score: 95+ (Performance, Accessibility, Best Practices, SEO)
-- First Contentful Paint: < 1.5s
-- Time to Interactive: < 3.0s
-- Total Bundle Size: ~500KB (with images)
-
-## 🔒 Security
-
-- Content Security Policy headers configured
-- XSS protection enabled
-- HTTPS-only (when deployed)
-- Secure headers implemented
-
-## 📱 Browser Support
-
-- Chrome/Edge (latest 2 versions)
-- Firefox (latest 2 versions)
-- Safari (latest 2 versions)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 👤 Author
-
-**Kha Van Hoang**
-- Email: khavan.work@gmail.com
-- LinkedIn: [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)
-- GitHub: [github.com/vanhoangkha](https://github.com/vanhoangkha)
-
-## 🌟 Acknowledgments
-
-- AWS Community for inspiration and support
-- Open source community for amazing tools and libraries
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-vanhoangkha-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/vanhoangkha)
+[![Website](https://img.shields.io/badge/Website-VanHoangKha.github.io-FF9900?style=for-the-badge&logo=github)](https://vanhoangkha.github.io)
+[![Email](https://img.shields.io/badge/Email-khavan.work%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:khavan.work@gmail.com)
 
 ---
 
-**Built with ❤️ by Kha Van Hoang**
+## 💼 Professional Summary
+
+Senior Cloud Security Engineer with **5+ years** of experience designing, implementing, and operating security solutions across **AWS, Azure, and GCP**. Specializing in:
+
+- 🛡️ Cloud Security Architecture & Zero Trust Design
+- 🚨 SOC Operations & Incident Response Automation
+- 🔍 Threat Detection & Hunting Frameworks
+- 📊 Compliance & Risk Management (PCI-DSS, SOC2, ISO 27001)
+- 🤖 Infrastructure as Code (Terraform, CloudFormation)
+
+**Community Impact:**
+- AWS Community Builder (Cloud Security Track)
+- Co-Founder, Viet AWS & AWS Study Group (500+ members)
+- Mentored 100+ cloud security engineers
+- Delivered 200+ technical workshops
+
+---
+
+## 🎯 Featured Projects
+
+### 1. AWS First Cloud Journey (⭐ 18 stars)
+**Complete AWS Learning Platform**
+
+A comprehensive AWS learning resource serving 45,000+ community members with structured learning paths, hands-on labs, and certification preparation.
+
+**Impact:**
+- 45,000+ learners reached
+- 100+ hands-on workshops
+- 2 forks contributing to expansion
+
+**Tech Stack:** AWS, Documentation, Community Content
+
+[View Project](https://github.com/vanhoangkha/AWS-First-Cloud-Journey) | [Read Case Study](./CASE_STUDIES.md#aws-first-cloud-journey)
+
+---
+
+### 2. n8n on AWS EKS (⭐ 16 stars)
+**Production-Ready Workflow Automation Platform**
+
+Enterprise-grade deployment of n8n workflow automation on AWS EKS with high availability, security hardening, and scalability.
+
+**Impact:**
+- Production deployments across 5+ organizations
+- 99.9% uptime SLA achieved
+- Cost optimization: 40% reduction vs managed alternatives
+
+**Tech Stack:** Kubernetes, AWS EKS, Terraform, Shell, Helm
+
+[View Project](https://github.com/vanhoangkha/n8n-on-aws-eks) | [Read Case Study](./CASE_STUDIES.md#n8n-on-aws-eks)
+
+---
+
+### 3. AWS Free Tier Optimization Guide (⭐ 11 stars)
+**Cost Management for Startups**
+
+Comprehensive guide helping startups and learners maximize AWS Free Tier benefits with practical cost optimization strategies.
+
+**Impact:**
+- 1,000+ startups assisted
+- Average savings: $500-1,000/month per organization
+- 4 community contributions
+
+**Tech Stack:** AWS, Cost Management, Documentation
+
+[View Project](https://github.com/vanhoangkha/AWS-Free-Tier) | [Read Case Study](./CASE_STUDIES.md#aws-free-tier-guide)
+
+---
+
+### 4. Event Operations Handbook (⭐ 6 stars)
+**Large-Scale Tech Event Management**
+
+Complete operational handbook for organizing enterprise tech events with 1,500+ attendees, based on real-world AWS community events.
+
+**Impact:**
+- 10+ events successfully executed
+- 1,500+ average attendees per event
+- Template used by 3 AWS User Groups
+
+**Tech Stack:** Operations, Community Management, Best Practices
+
+[View Project](https://github.com/vanhoangkha/EVENT-OPERATIONS-HANDBOOK) | [Read Case Study](./CASE_STUDIES.md#event-operations-handbook)
+
+---
+
+### 5. Financial Services Intelligence Automation
+**AI-Powered Financial Analysis Platform**
+
+Automated financial analysis and intelligence platform leveraging machine learning for enterprise financial services.
+
+**Impact:**
+- 60% reduction in manual analysis time
+- Real-time risk assessment capabilities
+- Integration with 5+ financial data sources
+
+**Tech Stack:** Python, AWS Bedrock, Machine Learning, Data Analytics
+
+[View Project](https://github.com/vanhoangkha/Financial-Services-Intelligence-Automation) | [Read Case Study](./CASE_STUDIES.md#financial-services-intelligence)
+
+---
+
+### 6. AI Finance Assistant
+**Streamlit-Based Financial Analysis Tool**
+
+Comprehensive AI-powered financial analysis platform built with Streamlit and AWS Bedrock for real-time market insights.
+
+**Impact:**
+- Real-time financial data analysis
+- AI-driven investment recommendations
+- Technical analysis automation
+
+**Tech Stack:** Python, Streamlit, AWS Bedrock, Finance APIs
+
+[View Project](https://github.com/vanhoangkha/ai-finance-assistant) | [Read Case Study](./CASE_STUDIES.md#ai-finance-assistant)
+
+---
+
+## 🛠️ Technical Skills
+
+### Cloud Platforms & Security
+```
+AWS          █████████░ 90%
+Azure        ███████░░░ 70%
+GCP          ██████░░░░ 60%
+Terraform    ████████░░ 85%
+Kubernetes   ████████░░ 80%
+```
+
+### Programming & Automation
+- **Languages:** Python, PowerShell, Bash, JavaScript
+- **IaC:** Terraform, CloudFormation, Ansible
+- **CI/CD:** GitHub Actions, GitLab CI, Jenkins
+- **Containers:** Docker, Kubernetes, EKS, ECS
+
+### Security & Compliance
+- **Frameworks:** PCI-DSS, SOC 2, ISO 27001, HIPAA, NIST CSF
+- **Tools:** AWS Security Hub, GuardDuty, Azure Sentinel, SIEM
+- **Practices:** Zero Trust, Threat Hunting, Incident Response
+
+---
+
+## 📊 Professional Achievements
+
+| Achievement | Impact | Year |
+|-------------|--------|------|
+| AWS Community Builder | Cloud Security Track | 2024-Present |
+| Founded AWS Study Group | 500+ members, 200+ workshops | 2022 |
+| Enterprise Security Implementation | 200+ AWS accounts secured | 2024 |
+| Cloud-Native SIEM Deployment | 99.9% threat detection rate | 2023 |
+| Cost Optimization Program | $2M+ annual savings | 2023 |
+| Zero Trust IAM Framework | 1000+ workloads secured | 2024 |
+
+---
+
+## 📚 Additional Resources
+
+- **[Case Studies](./CASE_STUDIES.md)** - Detailed project breakdowns with technical deep dives
+- **[Blog Articles](./BLOG_ARTICLES.md)** - Published content and technical articles
+- **[Speaking Engagements](./SPEAKING.md)** - Conferences, workshops, and presentations
+- **[Certifications](./CERTIFICATIONS.md)** - Professional certifications and training
+
+---
+
+## 💬 Let's Connect
+
+I'm always interested in collaborating on:
+
+- ☁️ Cloud security architecture projects
+- 🔍 Threat detection and incident response initiatives
+- 📚 Educational content and community projects
+- 🤝 Security tool development and automation
+
+**📧 Email:** [khavan.work@gmail.com](mailto:khavan.work@gmail.com)  
+**💼 LinkedIn:** [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)  
+**🐦 Twitter:** [@WorkKhavan](https://twitter.com/WorkKhavan)  
+**🌐 Website:** [vanhoangkha.github.io](https://vanhoangkha.github.io)
+
+---
+
+<div align="center">
+
+**"Security is a journey, not a destination. Let's build secure cloud infrastructure together."**
+
+© 2026 Van Hoang Kha | Cloud Security Engineer | AWS Community Builder
+
+</div>
