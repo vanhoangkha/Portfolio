@@ -1,0 +1,267 @@
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.filterLabel svg {
+  color: var(--primary-color);
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filterButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.filterButton:hover {
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filterButton:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.filterButton.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.filterButton.active:hover {
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 0.5rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.filterButton.active .count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: -2px;
+  border-radius: 0.75rem;
+  background: var(--primary-color);
+  z-index: -1;
+}
+
+/* Active Badge */
+.activeBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.clearButton:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.clearButton:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .filterButton {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .filterButton:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .filterButton.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+[data-theme='dark'] .activeBadge {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .filterButtons {
+    gap: 0.75rem;
+  }
+
+  .filterButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .icon {
+    font-size: 1.125rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .filterContainer {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .filterLabel {
+    font-size: 0.9375rem;
+  }
+
+  .filterButtons {
+    gap: 0.5rem;
+  }
+
+  .filterButton {
+    flex: 1;
+    min-width: calc(50% - 0.25rem);
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 0.8125rem;
+  }
+
+  .count {
+    min-width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+  }
+
+  .activeBadge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .clearButton {
+    align-self: flex-end;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .filterButton {
+    min-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .filterButton {
+    border-width: 3px;
+  }
+
+  .filterButton.active {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .filterButton {
+    transition: none;
+  }
+
+  .filterButton:hover {
+    transform: none;
+  }
+
+  .activeIndicator {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .filterContainer {
+    display: none;
+  }
+}

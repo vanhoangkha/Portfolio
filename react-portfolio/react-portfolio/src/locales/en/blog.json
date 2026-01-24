@@ -1,0 +1,50 @@
+{
+  "title": "Blog",
+  "description": "Articles about cloud, AI, and software engineering",
+  "search": {
+    "placeholder": "Search blog posts...",
+    "noResults": "No posts found matching \"{{query}}\"",
+    "results": "{{count}} posts found"
+  },
+  "filters": {
+    "all": "All",
+    "sortBy": "Sort by:",
+    "latest": "Latest",
+    "popular": "Most Popular",
+    "oldest": "Oldest",
+    "layout": {
+      "grid": "Grid layout",
+      "list": "List layout"
+    }
+  },
+  "post": {
+    "readTime": "{{minutes}} min read",
+    "views": "{{count}} views",
+    "publishedOn": "Published on {{date}}",
+    "updatedOn": "Updated on {{date}}",
+    "author": "By {{name}}",
+    "sharePost": "Share this post",
+    "relatedPosts": "Related Posts"
+  },
+  "sidebar": {
+    "recentPosts": "Recent Posts",
+    "popularPosts": "Popular Posts",
+    "categories": "Categories",
+    "tags": "Popular Tags",
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest posts delivered right to your inbox.",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe"
+    }
+  },
+  "comments": {
+    "title": "Comments",
+    "noComments": "No comments yet. Be the first to comment!",
+    "writeComment": "Write a comment...",
+    "submit": "Submit Comment",
+    "reply": "Reply",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

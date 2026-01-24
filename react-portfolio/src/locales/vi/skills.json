@@ -1,0 +1,26 @@
+{
+  "title": "Ma trận Kỹ năng",
+  "label": "Chuyên môn",
+  "subtitle": "Công nghệ tôi làm việc cùng",
+  "categories": {
+    "aiml": "AI/ML & GenAI",
+    "cloud": "Nền tảng Cloud",
+    "container": "Container & Orchestration",
+    "iac": "Infrastructure as Code",
+    "cicd": "CI/CD & Tự động hóa",
+    "observability": "Quan sát & Giám sát",
+    "programming": "Ngôn ngữ lập trình",
+    "frameworks": "Framework & Thư viện",
+    "databases": "Cơ sở dữ liệu",
+    "devops": "DevOps & Công cụ",
+    "ai": "AI & Machine Learning",
+    "other": "Kỹ năng khác"
+  },
+  "proficiency": {
+    "expert": "Chuyên gia",
+    "advanced": "Nâng cao",
+    "intermediate": "Trung cấp",
+    "beginner": "Cơ bản"
+  },
+  "yearsOfExperience": "{{years}} năm kinh nghiệm"
+}

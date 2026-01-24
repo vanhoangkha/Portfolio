@@ -1,0 +1,2108 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource070E2F8FOutputsamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerTableManagerCustomPEFF4F0A7": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "ContactSubmissionTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource070E2F8FOutputsamplifyportfolioubuntusandbox9699174190dataamplifyDataAmplifyTableManagerTableManagerCustomPEFF4F0A7"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "ContactSubmission-",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/ContactSubmissionTable/Default/Default"
+   }
+  },
+  "ContactSubmissionIAMRole799BDB42": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "ContactSubmission-",
+                {
+                 "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "ContactSubmission-",
+                {
+                 "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "ContactSubmissionIAMb8da70-",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/ContactSubmissionIAMRole/Resource"
+   }
+  },
+  "ContactSubmissionDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "ContactSubmissionTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "ContactSubmissionTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "ContactSubmissionIAMRole799BDB42",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "ContactSubmissionIAMRole799BDB42"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/ContactSubmissionDataSource/Resource"
+   }
+  },
+  "QuerygetContactSubmissionauth0FunctionQuerygetContactSubmissionauth0FunctionAppSyncFunction1268AC11": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6677b1986afebbf1f4026c57099890e32ab4e450e422c5e3c930b085a73b6b60.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QuerygetContactSubmissionauth0Function/QuerygetContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetContactSubmissionpostAuth0FunctionQuerygetContactSubmissionpostAuth0FunctionAppSyncFunction1740AEB4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QuerygetContactSubmissionpostAuth0Function/QuerygetContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetContactSubmissionDataResolverFnQueryGetContactSubmissionDataResolverFnAppSyncFunction383C0339": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QueryGetContactSubmissionDataResolverFn/QueryGetContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "getContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetContactSubmissionauth0FunctionQuerygetContactSubmissionauth0FunctionAppSyncFunction1268AC11",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetContactSubmissionpostAuth0FunctionQuerygetContactSubmissionpostAuth0FunctionAppSyncFunction1740AEB4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetContactSubmissionDataResolverFnQueryGetContactSubmissionDataResolverFnAppSyncFunction383C0339",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ContactSubmissionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/queryGetContactSubmissionResolver"
+   }
+  },
+  "QuerylistContactSubmissionsauth0FunctionQuerylistContactSubmissionsauth0FunctionAppSyncFunction956908DA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistContactSubmissionsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6677b1986afebbf1f4026c57099890e32ab4e450e422c5e3c930b085a73b6b60.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QuerylistContactSubmissionsauth0Function/QuerylistContactSubmissionsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistContactSubmissionspostAuth0FunctionQuerylistContactSubmissionspostAuth0FunctionAppSyncFunction330673C1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistContactSubmissionspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QuerylistContactSubmissionspostAuth0Function/QuerylistContactSubmissionspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListContactSubmissionsDataResolverFnQueryListContactSubmissionsDataResolverFnAppSyncFunctionDD2BA7AE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListContactSubmissionsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/QueryListContactSubmissionsDataResolverFn/QueryListContactSubmissionsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "listContactSubmissions",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistContactSubmissionsauth0FunctionQuerylistContactSubmissionsauth0FunctionAppSyncFunction956908DA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistContactSubmissionspostAuth0FunctionQuerylistContactSubmissionspostAuth0FunctionAppSyncFunction330673C1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListContactSubmissionsDataResolverFnQueryListContactSubmissionsDataResolverFnAppSyncFunctionDD2BA7AE",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listContactSubmissions\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ContactSubmissionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/queryListContactSubmissionsResolver"
+   }
+  },
+  "MutationcreateContactSubmissioninit0FunctionMutationcreateContactSubmissioninit0FunctionAppSyncFunction9936D98E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateContactSubmissioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationcreateContactSubmissioninit0Function/MutationcreateContactSubmissioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateContactSubmissioninit1FunctionMutationcreateContactSubmissioninit1FunctionAppSyncFunction9C9BBECA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateContactSubmissioninit1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/90ed482c70feee247022228c89c5a1a98741033755a8db7e1e7992deee511cff.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationcreateContactSubmissioninit1Function/MutationcreateContactSubmissioninit1Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateContactSubmissionauth0FunctionMutationcreateContactSubmissionauth0FunctionAppSyncFunctionEE7E7AE0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b00b044cbf62771b1bdbd1b085098bec0b7389277c1a5093ff24000983e9f8a1.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationcreateContactSubmissionauth0Function/MutationcreateContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateContactSubmissionpostAuth0FunctionMutationcreateContactSubmissionpostAuth0FunctionAppSyncFunction4C576C1E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationcreateContactSubmissionpostAuth0Function/MutationcreateContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateContactSubmissionDataResolverFnMutationCreateContactSubmissionDataResolverFnAppSyncFunction4003D952": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1b36effa5c6d39657fcd7c1cf461f8ba852d3247c223de8f95c08099fce1a7e5.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationCreateContactSubmissionDataResolverFn/MutationCreateContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "createContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateContactSubmissioninit0FunctionMutationcreateContactSubmissioninit0FunctionAppSyncFunction9936D98E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateContactSubmissioninit1FunctionMutationcreateContactSubmissioninit1FunctionAppSyncFunction9C9BBECA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateContactSubmissionauth0FunctionMutationcreateContactSubmissionauth0FunctionAppSyncFunctionEE7E7AE0",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateContactSubmissionpostAuth0FunctionMutationcreateContactSubmissionpostAuth0FunctionAppSyncFunction4C576C1E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateContactSubmissionDataResolverFnMutationCreateContactSubmissionDataResolverFnAppSyncFunction4003D952",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ContactSubmissionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/mutationCreateContactSubmissionResolver"
+   }
+  },
+  "MutationupdateContactSubmissioninit0FunctionMutationupdateContactSubmissioninit0FunctionAppSyncFunction7BF85018": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateContactSubmissioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationupdateContactSubmissioninit0Function/MutationupdateContactSubmissioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateContactSubmissionauth0FunctionMutationupdateContactSubmissionauth0FunctionAppSyncFunction8D790267": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/58a246af4be16a1ddccdbae460faba9ba768ae2655833a75797307311c63ad0f.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationupdateContactSubmissionauth0Function/MutationupdateContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateContactSubmissionpostAuth0FunctionMutationupdateContactSubmissionpostAuth0FunctionAppSyncFunction26940E8D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationupdateContactSubmissionpostAuth0Function/MutationupdateContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateContactSubmissionDataResolverFnMutationUpdateContactSubmissionDataResolverFnAppSyncFunctionCDC0FAF4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationUpdateContactSubmissionDataResolverFn/MutationUpdateContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "updateContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateContactSubmissioninit0FunctionMutationupdateContactSubmissioninit0FunctionAppSyncFunction7BF85018",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateContactSubmissionauth0FunctionMutationupdateContactSubmissionauth0FunctionAppSyncFunction8D790267",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateContactSubmissionpostAuth0FunctionMutationupdateContactSubmissionpostAuth0FunctionAppSyncFunction26940E8D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateContactSubmissionDataResolverFnMutationUpdateContactSubmissionDataResolverFnAppSyncFunctionCDC0FAF4",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ContactSubmissionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/mutationUpdateContactSubmissionResolver"
+   }
+  },
+  "MutationdeleteContactSubmissionauth0FunctionMutationdeleteContactSubmissionauth0FunctionAppSyncFunctionAFD0616F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9026b39b763f6e1ba5a06488ea2fbfe6eb653fb4c7ebeb3d0aafabe2928d34b.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationdeleteContactSubmissionauth0Function/MutationdeleteContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteContactSubmissionpostAuth0FunctionMutationdeleteContactSubmissionpostAuth0FunctionAppSyncFunctionEA4E8374": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationdeleteContactSubmissionpostAuth0Function/MutationdeleteContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteContactSubmissionDataResolverFnMutationDeleteContactSubmissionDataResolverFnAppSyncFunction136DBC5E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "ContactSubmissionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "ContactSubmissionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/MutationDeleteContactSubmissionDataResolverFn/MutationDeleteContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "deleteContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteContactSubmissionauth0FunctionMutationdeleteContactSubmissionauth0FunctionAppSyncFunctionAFD0616F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteContactSubmissionpostAuth0FunctionMutationdeleteContactSubmissionpostAuth0FunctionAppSyncFunctionEA4E8374",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteContactSubmissionDataResolverFnMutationDeleteContactSubmissionDataResolverFnAppSyncFunction136DBC5E",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "ContactSubmissionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/mutationDeleteContactSubmissionResolver"
+   }
+  },
+  "SubscriptiononCreateContactSubmissionauth0FunctionSubscriptiononCreateContactSubmissionauth0FunctionAppSyncFunctionC850E901": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4843bc77043eb1b2460e9b1e3df9218ebee2b5c86adc9e9f789a60b4f3a02049.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononCreateContactSubmissionauth0Function/SubscriptiononCreateContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateContactSubmissionpostAuth0FunctionSubscriptiononCreateContactSubmissionpostAuth0FunctionAppSyncFunction2647D044": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononCreateContactSubmissionpostAuth0Function/SubscriptiononCreateContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateContactSubmissionDataResolverFnSubscriptionOnCreateContactSubmissionDataResolverFnAppSyncFunctionB3C38CBF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptionOnCreateContactSubmissionDataResolverFn/SubscriptionOnCreateContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onCreateContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateContactSubmissionauth0FunctionSubscriptiononCreateContactSubmissionauth0FunctionAppSyncFunctionC850E901",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateContactSubmissionpostAuth0FunctionSubscriptiononCreateContactSubmissionpostAuth0FunctionAppSyncFunction2647D044",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateContactSubmissionDataResolverFnSubscriptionOnCreateContactSubmissionDataResolverFnAppSyncFunctionB3C38CBF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/subscriptionOnCreateContactSubmissionResolver"
+   }
+  },
+  "SubscriptiononUpdateContactSubmissionauth0FunctionSubscriptiononUpdateContactSubmissionauth0FunctionAppSyncFunctionFC16AE09": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4843bc77043eb1b2460e9b1e3df9218ebee2b5c86adc9e9f789a60b4f3a02049.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononUpdateContactSubmissionauth0Function/SubscriptiononUpdateContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateContactSubmissionpostAuth0FunctionSubscriptiononUpdateContactSubmissionpostAuth0FunctionAppSyncFunction8AEA678D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononUpdateContactSubmissionpostAuth0Function/SubscriptiononUpdateContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateContactSubmissionDataResolverFnSubscriptionOnUpdateContactSubmissionDataResolverFnAppSyncFunction6DF3611C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptionOnUpdateContactSubmissionDataResolverFn/SubscriptionOnUpdateContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onUpdateContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateContactSubmissionauth0FunctionSubscriptiononUpdateContactSubmissionauth0FunctionAppSyncFunctionFC16AE09",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateContactSubmissionpostAuth0FunctionSubscriptiononUpdateContactSubmissionpostAuth0FunctionAppSyncFunction8AEA678D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateContactSubmissionDataResolverFnSubscriptionOnUpdateContactSubmissionDataResolverFnAppSyncFunction6DF3611C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/subscriptionOnUpdateContactSubmissionResolver"
+   }
+  },
+  "SubscriptiononDeleteContactSubmissionauth0FunctionSubscriptiononDeleteContactSubmissionauth0FunctionAppSyncFunctionBACDD448": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteContactSubmissionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4843bc77043eb1b2460e9b1e3df9218ebee2b5c86adc9e9f789a60b4f3a02049.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononDeleteContactSubmissionauth0Function/SubscriptiononDeleteContactSubmissionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteContactSubmissionpostAuth0FunctionSubscriptiononDeleteContactSubmissionpostAuth0FunctionAppSyncFunction8A8BE905": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteContactSubmissionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptiononDeleteContactSubmissionpostAuth0Function/SubscriptiononDeleteContactSubmissionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteContactSubmissionDataResolverFnSubscriptionOnDeleteContactSubmissionDataResolverFnAppSyncFunction8E6411BA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPINONEDSCB9F82AAName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteContactSubmissionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/SubscriptionOnDeleteContactSubmissionDataResolverFn/SubscriptionOnDeleteContactSubmissionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteContactSubmissionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+    },
+    "FieldName": "onDeleteContactSubmission",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteContactSubmissionauth0FunctionSubscriptiononDeleteContactSubmissionauth0FunctionAppSyncFunctionBACDD448",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteContactSubmissionpostAuth0FunctionSubscriptiononDeleteContactSubmissionpostAuth0FunctionAppSyncFunction8A8BE905",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteContactSubmissionDataResolverFnSubscriptionOnDeleteContactSubmissionDataResolverFnAppSyncFunction8E6411BA",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteContactSubmission\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthauthenticatedUserRoleDA08E75BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthunauthenticatedUserRole1843A93BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190authNestedStackauthNestedStackResourceE539B6ADOutputsamplifyportfolioubuntusandbox9699174190authamplifyAuthIdentityPool05A725E6Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/subscriptionOnDeleteContactSubmissionResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34HVUO+y4gnbcJti9MolBKeCg2GlVId59gk6ddvr9yZ/sP4c8z2G/w6tk1vXZ4BuYP0iUXK1oe1O0/IURR1KKKxSBnVcf2FQkIUVLpkiiYfzDlh8zXuU0uxvjGFwD39gMdEQh43GEuQrD3Q4DLQanSW5sYS43vWxKVKwfJ//Te2K7ligCt75LEbdGv5+HC8XFyOGEIqQCb2sYOcAx2Z50LbCs7mfSKanZ1rVi57lbDAdHcJanS76H51d42Z3F+ywmVj8SVPf8AcZ3hEU2AQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-portfolio-ubuntu-sandbox-9699174190/data/amplifyData/ContactSubmission/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttContactSubmissionTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "ContactSubmissionTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "GetAtt:ContactSubmissionTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttContactSubmissionTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "ContactSubmission-",
+      {
+       "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyportfolioubuntusandbox9699174190dataamplifyDataGraphQLAPI62F43F9DApiId"
+       },
+       "GetAtt:ContactSubmissionTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

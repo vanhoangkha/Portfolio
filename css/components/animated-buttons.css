@@ -1,0 +1,321 @@
+/**
+ * Animated Button Components
+ * Modern button designs with smooth animations
+ */
+
+/* Gradient Animated Button */
+.btn-gradient-animated {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 200% 200%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.btn-gradient-animated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.btn-gradient-animated:active {
+  transform: translateY(0);
+}
+
+/* Neon Button */
+.btn-neon {
+  position: relative;
+  padding: 14px 32px;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  background: transparent;
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.btn-neon:hover {
+  background: #00ffff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(0, 255, 255, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Liquid Button */
+.btn-liquid {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-liquid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-liquid:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Shimmer Button */
+.btn-shimmer {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  background-size: 200% 100%;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.btn-shimmer:hover {
+  animation-duration: 1s;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+/* Pulse Button */
+.btn-pulse {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 153, 0, 0);
+  }
+}
+
+.btn-pulse:hover {
+  animation: none;
+  transform: scale(1.05);
+}
+
+/* Slide Button */
+.btn-slide {
+  position: relative;
+  padding: 14px 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-slide:hover {
+  color: white;
+}
+
+.btn-slide:hover::before {
+  left: 0;
+}
+
+/* 3D Button */
+.btn-3d {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 
+    0 6px 0 #cc7a00,
+    0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+  transform: translateY(0);
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 0 #cc7a00,
+    0 10px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 
+    0 2px 0 #cc7a00,
+    0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Glitch Button */
+.btn-glitch {
+  position: relative;
+  padding: 14px 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-glitch:hover {
+  animation: glitch 0.3s ease;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Icon Button with Hover Effect */
+.btn-icon-hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon-hover i {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon-hover:hover i {
+  transform: translateX(5px);
+}
+
+/* Loading Button */
+.btn-loading {
+  position: relative;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-loading.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn-loading.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

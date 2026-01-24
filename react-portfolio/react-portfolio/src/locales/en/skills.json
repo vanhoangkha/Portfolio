@@ -1,0 +1,20 @@
+{
+  "title": "Skills & Expertise",
+  "description": "Technologies and tools I work with",
+  "categories": {
+    "cloud": "Cloud Platforms",
+    "containerization": "Containerization & Orchestration",
+    "cicd": "CI/CD & DevOps",
+    "programming": "Programming Languages",
+    "databases": "Databases",
+    "monitoring": "Monitoring & Observability",
+    "security": "Security",
+    "ai": "AI & Machine Learning"
+  },
+  "proficiency": {
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner"
+  }
+}

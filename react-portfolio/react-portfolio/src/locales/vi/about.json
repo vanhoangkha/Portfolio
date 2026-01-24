@@ -1,0 +1,24 @@
+{
+  "title": "Giới Thiệu",
+  "introduction": "Kiến trúc sư Giải pháp Cloud & AI với đam mê xây dựng hệ thống có khả năng mở rộng",
+  "description": "Tôi chuyên thiết kế và triển khai các giải pháp cloud-native, với chuyên môn về AWS, Azure, Kubernetes và công nghệ AI/ML. Tôi đam mê thực hành DevSecOps và xây dựng hạ tầng an toàn, có khả năng mở rộng.",
+  "experience": {
+    "title": "Kinh Nghiệm",
+    "years": "{{years}}+ năm kinh nghiệm",
+    "current": "Hiện tại",
+    "present": "Hiện tại"
+  },
+  "education": {
+    "title": "Học Vấn",
+    "degree": "Bằng cấp",
+    "university": "Trường Đại học",
+    "graduationYear": "Năm Tốt nghiệp"
+  },
+  "interests": {
+    "title": "Sở Thích",
+    "item1": "Điện toán đám mây",
+    "item2": "AI & Học máy",
+    "item3": "DevSecOps",
+    "item4": "Mã nguồn mở"
+  }
+}

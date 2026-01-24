@@ -1,0 +1,28 @@
+{
+  "title": "Kinh nghiệm Chuyên môn",
+  "subtitle": "Hành trình sự nghiệp của tôi",
+  "label": "Kinh nghiệm",
+  "present": "Hiện tại",
+  "responsibilities": "Trách nhiệm Chính",
+  "achievements": "Thành tựu",
+  "technologies": "Công nghệ Sử dụng",
+  "viewDetails": "Xem Chi tiết",
+  "hideDetails": "Ẩn Chi tiết",
+  "duration": "{{years}} năm {{months}} tháng",
+  "positions": {
+    "cloudArchitect": "Kiến trúc sư Giải pháp Cloud và AI",
+    "solutionArchitect": "Kiến trúc sư Giải pháp Cloud",
+    "labHead": "Trưởng Phòng thí nghiệm",
+    "consultant": "Chuyên gia Tư vấn Kiến trúc Cloud",
+    "founder": "Kiến trúc sư Sáng lập"
+  },
+  "companies": {
+    "aws": "Amazon Web Services (AWS)",
+    "renovaCloud": "Renova Cloud (Đối tác Tư vấn Nâng cao AWS)",
+    "ptitLab": "Phòng thí nghiệm Đổi mới IoT PTIT"
+  },
+  "timeline": {
+    "current": "Vị trí Hiện tại",
+    "past": "Vị trí Trước đây"
+  }
+}

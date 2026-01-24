@@ -1,0 +1,28 @@
+{
+  "title": "Dự Án Của Tôi",
+  "description": "Tổng hợp các dự án tôi đã thực hiện",
+  "filter": {
+    "all": "Tất Cả Dự Án",
+    "technology": "Công Nghệ",
+    "category": "Danh Mục",
+    "status": "Trạng Thái",
+    "clearFilters": "Xóa Tất Cả Bộ Lọc",
+    "resultsCount": "Tìm thấy {{count}} dự án"
+  },
+  "status": {
+    "completed": "Hoàn Thành",
+    "ongoing": "Đang Thực Hiện",
+    "archived": "Đã Lưu Trữ"
+  },
+  "card": {
+    "viewProject": "Xem Dự Án",
+    "viewCode": "Xem Mã Nguồn",
+    "liveDemo": "Demo Trực Tiếp",
+    "technologies": "Công Nghệ Sử Dụng"
+  },
+  "empty": {
+    "title": "Không tìm thấy dự án",
+    "description": "Thử điều chỉnh bộ lọc của bạn",
+    "action": "Đặt Lại Bộ Lọc"
+  }
+}

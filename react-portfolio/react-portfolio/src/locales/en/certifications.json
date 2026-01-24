@@ -1,0 +1,26 @@
+{
+  "title": "Certifications & Achievements",
+  "description": "Professional certifications and notable achievements",
+  "filter": {
+    "all": "All Categories",
+    "technical": "Technical",
+    "professional": "Professional",
+    "language": "Language",
+    "other": "Other"
+  },
+  "card": {
+    "issuer": "Issued by",
+    "issued": "Issued",
+    "expires": "Expires",
+    "noExpiry": "No Expiry",
+    "credentialId": "Credential ID",
+    "viewCertificate": "View Certificate",
+    "verify": "Verify",
+    "expiringSoon": "Expiring Soon"
+  },
+  "modal": {
+    "viewFull": "View Full Certificate",
+    "verifyOnline": "Verify Online",
+    "close": "Close"
+  }
+}

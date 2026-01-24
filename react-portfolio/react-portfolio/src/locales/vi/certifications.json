@@ -1,0 +1,26 @@
+{
+  "title": "Chứng Chỉ & Thành Tích",
+  "description": "Các chứng chỉ chuyên nghiệp và thành tích đáng chú ý",
+  "filter": {
+    "all": "Tất Cả Danh Mục",
+    "technical": "Kỹ Thuật",
+    "professional": "Chuyên Nghiệp",
+    "language": "Ngôn Ngữ",
+    "other": "Khác"
+  },
+  "card": {
+    "issuer": "Cấp bởi",
+    "issued": "Cấp ngày",
+    "expires": "Hết hạn",
+    "noExpiry": "Không hết hạn",
+    "credentialId": "Mã chứng chỉ",
+    "viewCertificate": "Xem Chứng Chỉ",
+    "verify": "Xác minh",
+    "expiringSoon": "Sắp Hết Hạn"
+  },
+  "modal": {
+    "viewFull": "Xem Chứng Chỉ Đầy Đủ",
+    "verifyOnline": "Xác Minh Trực Tuyến",
+    "close": "Đóng"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-infrastructure",
+  "version": "1.0.0",
+  "description": "AWS CDK Infrastructure for SA-Grade Portfolio",
+  "main": "bin/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "deploy": "cdk deploy --all --require-approval never",
+    "deploy:prod": "cdk deploy --all --require-approval never --context environment=production",
+    "deploy:staging": "cdk deploy --all --require-approval never --context environment=staging",
+    "deploy:dev": "cdk deploy --all --require-approval never --context environment=development",
+    "diff": "cdk diff",
+    "synth": "cdk synth",
+    "destroy": "cdk destroy --all"
+  },
+  "keywords": ["aws-cdk", "infrastructure", "portfolio", "solutions-architect"],
+  "author": "Kha Van Hoang",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "aws-cdk": "^2.100.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.100.0",
+    "constructs": "^10.0.0"
+  }
+}

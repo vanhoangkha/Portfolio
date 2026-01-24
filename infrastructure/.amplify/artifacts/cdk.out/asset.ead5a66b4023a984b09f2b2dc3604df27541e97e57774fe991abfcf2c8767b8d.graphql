@@ -1,0 +1,1001 @@
+type BlogPost @aws_iam @aws_cognito_user_pools {
+  title: String!
+  slug: String!
+  excerpt: String
+  content: String!
+  category: String
+  tags: [String]
+  featuredImage: String
+  author: String!
+  publishedAt: AWSDateTime
+  viewCount: Int
+  featured: Boolean
+  published: Boolean
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Project @aws_iam @aws_cognito_user_pools {
+  title: String!
+  slug: String!
+  description: String!
+  longDescription: String
+  category: String
+  tags: [String]
+  technologies: [String]
+  imageUrl: String
+  githubUrl: String
+  liveUrl: String
+  featured: Boolean
+  startDate: AWSDate
+  endDate: AWSDate
+  status: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Skill @aws_iam @aws_cognito_user_pools {
+  name: String!
+  category: String!
+  level: Int
+  icon: String
+  order: Int
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Certification @aws_iam @aws_cognito_user_pools {
+  name: String!
+  issuer: String!
+  issueDate: AWSDate!
+  expiryDate: AWSDate
+  credentialId: String
+  credentialUrl: String
+  imageUrl: String
+  description: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Achievement @aws_iam @aws_cognito_user_pools {
+  title: String!
+  description: String!
+  date: AWSDate!
+  category: String
+  imageUrl: String
+  link: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type CommunityActivity @aws_iam @aws_cognito_user_pools {
+  title: String!
+  description: String!
+  type: String
+  date: AWSDate!
+  organization: String
+  url: String
+  imageUrl: String
+  participants: Int
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type ContactSubmission @aws_iam @aws_cognito_user_pools {
+  name: String!
+  email: String!
+  subject: String
+  message: String!
+  status: String
+  submittedAt: AWSDateTime!
+  ipAddress: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type AnalyticsEvent @aws_iam @aws_cognito_user_pools @aws_api_key {
+  eventType: String!
+  eventData: String
+  userAgent: String
+  ipAddress: String
+  timestamp: AWSDateTime!
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelBlogPostConnection @aws_iam @aws_cognito_user_pools {
+  items: [BlogPost]!
+  nextToken: String
+}
+
+input ModelBlogPostFilterInput {
+  title: ModelStringInput
+  slug: ModelStringInput
+  excerpt: ModelStringInput
+  content: ModelStringInput
+  category: ModelStringInput
+  tags: ModelStringInput
+  featuredImage: ModelStringInput
+  author: ModelStringInput
+  publishedAt: ModelStringInput
+  viewCount: ModelIntInput
+  featured: ModelBooleanInput
+  published: ModelBooleanInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBlogPostFilterInput]
+  or: [ModelBlogPostFilterInput]
+  not: ModelBlogPostFilterInput
+}
+
+type Query {
+  getBlogPost(id: ID!): BlogPost @aws_iam @aws_cognito_user_pools
+  listBlogPosts(filter: ModelBlogPostFilterInput, limit: Int, nextToken: String): ModelBlogPostConnection @aws_iam @aws_cognito_user_pools
+  getProject(id: ID!): Project @aws_iam @aws_cognito_user_pools
+  listProjects(filter: ModelProjectFilterInput, limit: Int, nextToken: String): ModelProjectConnection @aws_iam @aws_cognito_user_pools
+  getSkill(id: ID!): Skill @aws_iam @aws_cognito_user_pools
+  listSkills(filter: ModelSkillFilterInput, limit: Int, nextToken: String): ModelSkillConnection @aws_iam @aws_cognito_user_pools
+  getCertification(id: ID!): Certification @aws_iam @aws_cognito_user_pools
+  listCertifications(filter: ModelCertificationFilterInput, limit: Int, nextToken: String): ModelCertificationConnection @aws_iam @aws_cognito_user_pools
+  getAchievement(id: ID!): Achievement @aws_iam @aws_cognito_user_pools
+  listAchievements(filter: ModelAchievementFilterInput, limit: Int, nextToken: String): ModelAchievementConnection @aws_iam @aws_cognito_user_pools
+  getCommunityActivity(id: ID!): CommunityActivity @aws_iam @aws_cognito_user_pools
+  listCommunityActivities(filter: ModelCommunityActivityFilterInput, limit: Int, nextToken: String): ModelCommunityActivityConnection @aws_iam @aws_cognito_user_pools
+  getContactSubmission(id: ID!): ContactSubmission @aws_iam @aws_cognito_user_pools
+  listContactSubmissions(filter: ModelContactSubmissionFilterInput, limit: Int, nextToken: String): ModelContactSubmissionConnection @aws_iam @aws_cognito_user_pools
+  getAnalyticsEvent(id: ID!): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+  listAnalyticsEvents(filter: ModelAnalyticsEventFilterInput, limit: Int, nextToken: String): ModelAnalyticsEventConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelBlogPostConditionInput {
+  title: ModelStringInput
+  slug: ModelStringInput
+  excerpt: ModelStringInput
+  content: ModelStringInput
+  category: ModelStringInput
+  tags: ModelStringInput
+  featuredImage: ModelStringInput
+  author: ModelStringInput
+  publishedAt: ModelStringInput
+  viewCount: ModelIntInput
+  featured: ModelBooleanInput
+  published: ModelBooleanInput
+  and: [ModelBlogPostConditionInput]
+  or: [ModelBlogPostConditionInput]
+  not: ModelBlogPostConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateBlogPostInput {
+  title: String!
+  slug: String!
+  excerpt: String
+  content: String!
+  category: String
+  tags: [String]
+  featuredImage: String
+  author: String!
+  publishedAt: AWSDateTime
+  viewCount: Int
+  featured: Boolean
+  published: Boolean
+  id: ID
+}
+
+input UpdateBlogPostInput {
+  title: String
+  slug: String
+  excerpt: String
+  content: String
+  category: String
+  tags: [String]
+  featuredImage: String
+  author: String
+  publishedAt: AWSDateTime
+  viewCount: Int
+  featured: Boolean
+  published: Boolean
+  id: ID!
+}
+
+input DeleteBlogPostInput {
+  id: ID!
+}
+
+type Mutation {
+  createBlogPost(input: CreateBlogPostInput!, condition: ModelBlogPostConditionInput): BlogPost @aws_iam @aws_cognito_user_pools
+  updateBlogPost(input: UpdateBlogPostInput!, condition: ModelBlogPostConditionInput): BlogPost @aws_iam @aws_cognito_user_pools
+  deleteBlogPost(input: DeleteBlogPostInput!, condition: ModelBlogPostConditionInput): BlogPost @aws_iam @aws_cognito_user_pools
+  createProject(input: CreateProjectInput!, condition: ModelProjectConditionInput): Project @aws_iam @aws_cognito_user_pools
+  updateProject(input: UpdateProjectInput!, condition: ModelProjectConditionInput): Project @aws_iam @aws_cognito_user_pools
+  deleteProject(input: DeleteProjectInput!, condition: ModelProjectConditionInput): Project @aws_iam @aws_cognito_user_pools
+  createSkill(input: CreateSkillInput!, condition: ModelSkillConditionInput): Skill @aws_iam @aws_cognito_user_pools
+  updateSkill(input: UpdateSkillInput!, condition: ModelSkillConditionInput): Skill @aws_iam @aws_cognito_user_pools
+  deleteSkill(input: DeleteSkillInput!, condition: ModelSkillConditionInput): Skill @aws_iam @aws_cognito_user_pools
+  createCertification(input: CreateCertificationInput!, condition: ModelCertificationConditionInput): Certification @aws_iam @aws_cognito_user_pools
+  updateCertification(input: UpdateCertificationInput!, condition: ModelCertificationConditionInput): Certification @aws_iam @aws_cognito_user_pools
+  deleteCertification(input: DeleteCertificationInput!, condition: ModelCertificationConditionInput): Certification @aws_iam @aws_cognito_user_pools
+  createAchievement(input: CreateAchievementInput!, condition: ModelAchievementConditionInput): Achievement @aws_iam @aws_cognito_user_pools
+  updateAchievement(input: UpdateAchievementInput!, condition: ModelAchievementConditionInput): Achievement @aws_iam @aws_cognito_user_pools
+  deleteAchievement(input: DeleteAchievementInput!, condition: ModelAchievementConditionInput): Achievement @aws_iam @aws_cognito_user_pools
+  createCommunityActivity(input: CreateCommunityActivityInput!, condition: ModelCommunityActivityConditionInput): CommunityActivity @aws_iam @aws_cognito_user_pools
+  updateCommunityActivity(input: UpdateCommunityActivityInput!, condition: ModelCommunityActivityConditionInput): CommunityActivity @aws_iam @aws_cognito_user_pools
+  deleteCommunityActivity(input: DeleteCommunityActivityInput!, condition: ModelCommunityActivityConditionInput): CommunityActivity @aws_iam @aws_cognito_user_pools
+  createContactSubmission(input: CreateContactSubmissionInput!, condition: ModelContactSubmissionConditionInput): ContactSubmission @aws_iam
+  updateContactSubmission(input: UpdateContactSubmissionInput!, condition: ModelContactSubmissionConditionInput): ContactSubmission @aws_iam @aws_cognito_user_pools
+  deleteContactSubmission(input: DeleteContactSubmissionInput!, condition: ModelContactSubmissionConditionInput): ContactSubmission @aws_iam @aws_cognito_user_pools
+  createAnalyticsEvent(input: CreateAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_iam
+  updateAnalyticsEvent(input: UpdateAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_api_key @aws_iam
+  deleteAnalyticsEvent(input: DeleteAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionBlogPostFilterInput {
+  title: ModelSubscriptionStringInput
+  slug: ModelSubscriptionStringInput
+  excerpt: ModelSubscriptionStringInput
+  content: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  tags: ModelSubscriptionStringInput
+  featuredImage: ModelSubscriptionStringInput
+  author: ModelSubscriptionStringInput
+  publishedAt: ModelSubscriptionStringInput
+  viewCount: ModelSubscriptionIntInput
+  featured: ModelSubscriptionBooleanInput
+  published: ModelSubscriptionBooleanInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionBlogPostFilterInput]
+  or: [ModelSubscriptionBlogPostFilterInput]
+}
+
+type Subscription {
+  onCreateBlogPost(filter: ModelSubscriptionBlogPostFilterInput): BlogPost @aws_subscribe(mutations: ["createBlogPost"]) @aws_iam @aws_cognito_user_pools
+  onUpdateBlogPost(filter: ModelSubscriptionBlogPostFilterInput): BlogPost @aws_subscribe(mutations: ["updateBlogPost"]) @aws_iam @aws_cognito_user_pools
+  onDeleteBlogPost(filter: ModelSubscriptionBlogPostFilterInput): BlogPost @aws_subscribe(mutations: ["deleteBlogPost"]) @aws_iam @aws_cognito_user_pools
+  onCreateProject(filter: ModelSubscriptionProjectFilterInput): Project @aws_subscribe(mutations: ["createProject"]) @aws_iam @aws_cognito_user_pools
+  onUpdateProject(filter: ModelSubscriptionProjectFilterInput): Project @aws_subscribe(mutations: ["updateProject"]) @aws_iam @aws_cognito_user_pools
+  onDeleteProject(filter: ModelSubscriptionProjectFilterInput): Project @aws_subscribe(mutations: ["deleteProject"]) @aws_iam @aws_cognito_user_pools
+  onCreateSkill(filter: ModelSubscriptionSkillFilterInput): Skill @aws_subscribe(mutations: ["createSkill"]) @aws_iam @aws_cognito_user_pools
+  onUpdateSkill(filter: ModelSubscriptionSkillFilterInput): Skill @aws_subscribe(mutations: ["updateSkill"]) @aws_iam @aws_cognito_user_pools
+  onDeleteSkill(filter: ModelSubscriptionSkillFilterInput): Skill @aws_subscribe(mutations: ["deleteSkill"]) @aws_iam @aws_cognito_user_pools
+  onCreateCertification(filter: ModelSubscriptionCertificationFilterInput): Certification @aws_subscribe(mutations: ["createCertification"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCertification(filter: ModelSubscriptionCertificationFilterInput): Certification @aws_subscribe(mutations: ["updateCertification"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCertification(filter: ModelSubscriptionCertificationFilterInput): Certification @aws_subscribe(mutations: ["deleteCertification"]) @aws_iam @aws_cognito_user_pools
+  onCreateAchievement(filter: ModelSubscriptionAchievementFilterInput): Achievement @aws_subscribe(mutations: ["createAchievement"]) @aws_iam @aws_cognito_user_pools
+  onUpdateAchievement(filter: ModelSubscriptionAchievementFilterInput): Achievement @aws_subscribe(mutations: ["updateAchievement"]) @aws_iam @aws_cognito_user_pools
+  onDeleteAchievement(filter: ModelSubscriptionAchievementFilterInput): Achievement @aws_subscribe(mutations: ["deleteAchievement"]) @aws_iam @aws_cognito_user_pools
+  onCreateCommunityActivity(filter: ModelSubscriptionCommunityActivityFilterInput): CommunityActivity @aws_subscribe(mutations: ["createCommunityActivity"]) @aws_iam @aws_cognito_user_pools
+  onUpdateCommunityActivity(filter: ModelSubscriptionCommunityActivityFilterInput): CommunityActivity @aws_subscribe(mutations: ["updateCommunityActivity"]) @aws_iam @aws_cognito_user_pools
+  onDeleteCommunityActivity(filter: ModelSubscriptionCommunityActivityFilterInput): CommunityActivity @aws_subscribe(mutations: ["deleteCommunityActivity"]) @aws_iam @aws_cognito_user_pools
+  onCreateContactSubmission(filter: ModelSubscriptionContactSubmissionFilterInput): ContactSubmission @aws_subscribe(mutations: ["createContactSubmission"]) @aws_iam @aws_cognito_user_pools
+  onUpdateContactSubmission(filter: ModelSubscriptionContactSubmissionFilterInput): ContactSubmission @aws_subscribe(mutations: ["updateContactSubmission"]) @aws_iam @aws_cognito_user_pools
+  onDeleteContactSubmission(filter: ModelSubscriptionContactSubmissionFilterInput): ContactSubmission @aws_subscribe(mutations: ["deleteContactSubmission"]) @aws_iam @aws_cognito_user_pools
+  onCreateAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput): AnalyticsEvent @aws_subscribe(mutations: ["createAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+  onUpdateAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput): AnalyticsEvent @aws_subscribe(mutations: ["updateAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+  onDeleteAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput): AnalyticsEvent @aws_subscribe(mutations: ["deleteAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelProjectConnection @aws_iam @aws_cognito_user_pools {
+  items: [Project]!
+  nextToken: String
+}
+
+input ModelProjectFilterInput {
+  title: ModelStringInput
+  slug: ModelStringInput
+  description: ModelStringInput
+  longDescription: ModelStringInput
+  category: ModelStringInput
+  tags: ModelStringInput
+  technologies: ModelStringInput
+  imageUrl: ModelStringInput
+  githubUrl: ModelStringInput
+  liveUrl: ModelStringInput
+  featured: ModelBooleanInput
+  startDate: ModelStringInput
+  endDate: ModelStringInput
+  status: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelProjectFilterInput]
+  or: [ModelProjectFilterInput]
+  not: ModelProjectFilterInput
+}
+
+input ModelProjectConditionInput {
+  title: ModelStringInput
+  slug: ModelStringInput
+  description: ModelStringInput
+  longDescription: ModelStringInput
+  category: ModelStringInput
+  tags: ModelStringInput
+  technologies: ModelStringInput
+  imageUrl: ModelStringInput
+  githubUrl: ModelStringInput
+  liveUrl: ModelStringInput
+  featured: ModelBooleanInput
+  startDate: ModelStringInput
+  endDate: ModelStringInput
+  status: ModelStringInput
+  and: [ModelProjectConditionInput]
+  or: [ModelProjectConditionInput]
+  not: ModelProjectConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateProjectInput {
+  title: String!
+  slug: String!
+  description: String!
+  longDescription: String
+  category: String
+  tags: [String]
+  technologies: [String]
+  imageUrl: String
+  githubUrl: String
+  liveUrl: String
+  featured: Boolean
+  startDate: AWSDate
+  endDate: AWSDate
+  status: String
+  id: ID
+}
+
+input UpdateProjectInput {
+  title: String
+  slug: String
+  description: String
+  longDescription: String
+  category: String
+  tags: [String]
+  technologies: [String]
+  imageUrl: String
+  githubUrl: String
+  liveUrl: String
+  featured: Boolean
+  startDate: AWSDate
+  endDate: AWSDate
+  status: String
+  id: ID!
+}
+
+input DeleteProjectInput {
+  id: ID!
+}
+
+input ModelSubscriptionProjectFilterInput {
+  title: ModelSubscriptionStringInput
+  slug: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  longDescription: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  tags: ModelSubscriptionStringInput
+  technologies: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  githubUrl: ModelSubscriptionStringInput
+  liveUrl: ModelSubscriptionStringInput
+  featured: ModelSubscriptionBooleanInput
+  startDate: ModelSubscriptionStringInput
+  endDate: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionProjectFilterInput]
+  or: [ModelSubscriptionProjectFilterInput]
+}
+
+type ModelSkillConnection @aws_iam @aws_cognito_user_pools {
+  items: [Skill]!
+  nextToken: String
+}
+
+input ModelSkillFilterInput {
+  name: ModelStringInput
+  category: ModelStringInput
+  level: ModelIntInput
+  icon: ModelStringInput
+  order: ModelIntInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelSkillFilterInput]
+  or: [ModelSkillFilterInput]
+  not: ModelSkillFilterInput
+}
+
+input ModelSkillConditionInput {
+  name: ModelStringInput
+  category: ModelStringInput
+  level: ModelIntInput
+  icon: ModelStringInput
+  order: ModelIntInput
+  and: [ModelSkillConditionInput]
+  or: [ModelSkillConditionInput]
+  not: ModelSkillConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateSkillInput {
+  name: String!
+  category: String!
+  level: Int
+  icon: String
+  order: Int
+  id: ID
+}
+
+input UpdateSkillInput {
+  name: String
+  category: String
+  level: Int
+  icon: String
+  order: Int
+  id: ID!
+}
+
+input DeleteSkillInput {
+  id: ID!
+}
+
+input ModelSubscriptionSkillFilterInput {
+  name: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  level: ModelSubscriptionIntInput
+  icon: ModelSubscriptionStringInput
+  order: ModelSubscriptionIntInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionSkillFilterInput]
+  or: [ModelSubscriptionSkillFilterInput]
+}
+
+type ModelCertificationConnection @aws_iam @aws_cognito_user_pools {
+  items: [Certification]!
+  nextToken: String
+}
+
+input ModelCertificationFilterInput {
+  name: ModelStringInput
+  issuer: ModelStringInput
+  issueDate: ModelStringInput
+  expiryDate: ModelStringInput
+  credentialId: ModelStringInput
+  credentialUrl: ModelStringInput
+  imageUrl: ModelStringInput
+  description: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCertificationFilterInput]
+  or: [ModelCertificationFilterInput]
+  not: ModelCertificationFilterInput
+}
+
+input ModelCertificationConditionInput {
+  name: ModelStringInput
+  issuer: ModelStringInput
+  issueDate: ModelStringInput
+  expiryDate: ModelStringInput
+  credentialId: ModelStringInput
+  credentialUrl: ModelStringInput
+  imageUrl: ModelStringInput
+  description: ModelStringInput
+  and: [ModelCertificationConditionInput]
+  or: [ModelCertificationConditionInput]
+  not: ModelCertificationConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateCertificationInput {
+  name: String!
+  issuer: String!
+  issueDate: AWSDate!
+  expiryDate: AWSDate
+  credentialId: String
+  credentialUrl: String
+  imageUrl: String
+  description: String
+  id: ID
+}
+
+input UpdateCertificationInput {
+  name: String
+  issuer: String
+  issueDate: AWSDate
+  expiryDate: AWSDate
+  credentialId: String
+  credentialUrl: String
+  imageUrl: String
+  description: String
+  id: ID!
+}
+
+input DeleteCertificationInput {
+  id: ID!
+}
+
+input ModelSubscriptionCertificationFilterInput {
+  name: ModelSubscriptionStringInput
+  issuer: ModelSubscriptionStringInput
+  issueDate: ModelSubscriptionStringInput
+  expiryDate: ModelSubscriptionStringInput
+  credentialId: ModelSubscriptionStringInput
+  credentialUrl: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCertificationFilterInput]
+  or: [ModelSubscriptionCertificationFilterInput]
+}
+
+type ModelAchievementConnection @aws_iam @aws_cognito_user_pools {
+  items: [Achievement]!
+  nextToken: String
+}
+
+input ModelAchievementFilterInput {
+  title: ModelStringInput
+  description: ModelStringInput
+  date: ModelStringInput
+  category: ModelStringInput
+  imageUrl: ModelStringInput
+  link: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAchievementFilterInput]
+  or: [ModelAchievementFilterInput]
+  not: ModelAchievementFilterInput
+}
+
+input ModelAchievementConditionInput {
+  title: ModelStringInput
+  description: ModelStringInput
+  date: ModelStringInput
+  category: ModelStringInput
+  imageUrl: ModelStringInput
+  link: ModelStringInput
+  and: [ModelAchievementConditionInput]
+  or: [ModelAchievementConditionInput]
+  not: ModelAchievementConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateAchievementInput {
+  title: String!
+  description: String!
+  date: AWSDate!
+  category: String
+  imageUrl: String
+  link: String
+  id: ID
+}
+
+input UpdateAchievementInput {
+  title: String
+  description: String
+  date: AWSDate
+  category: String
+  imageUrl: String
+  link: String
+  id: ID!
+}
+
+input DeleteAchievementInput {
+  id: ID!
+}
+
+input ModelSubscriptionAchievementFilterInput {
+  title: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  link: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAchievementFilterInput]
+  or: [ModelSubscriptionAchievementFilterInput]
+}
+
+type ModelCommunityActivityConnection @aws_iam @aws_cognito_user_pools {
+  items: [CommunityActivity]!
+  nextToken: String
+}
+
+input ModelCommunityActivityFilterInput {
+  title: ModelStringInput
+  description: ModelStringInput
+  type: ModelStringInput
+  date: ModelStringInput
+  organization: ModelStringInput
+  url: ModelStringInput
+  imageUrl: ModelStringInput
+  participants: ModelIntInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCommunityActivityFilterInput]
+  or: [ModelCommunityActivityFilterInput]
+  not: ModelCommunityActivityFilterInput
+}
+
+input ModelCommunityActivityConditionInput {
+  title: ModelStringInput
+  description: ModelStringInput
+  type: ModelStringInput
+  date: ModelStringInput
+  organization: ModelStringInput
+  url: ModelStringInput
+  imageUrl: ModelStringInput
+  participants: ModelIntInput
+  and: [ModelCommunityActivityConditionInput]
+  or: [ModelCommunityActivityConditionInput]
+  not: ModelCommunityActivityConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateCommunityActivityInput {
+  title: String!
+  description: String!
+  type: String
+  date: AWSDate!
+  organization: String
+  url: String
+  imageUrl: String
+  participants: Int
+  id: ID
+}
+
+input UpdateCommunityActivityInput {
+  title: String
+  description: String
+  type: String
+  date: AWSDate
+  organization: String
+  url: String
+  imageUrl: String
+  participants: Int
+  id: ID!
+}
+
+input DeleteCommunityActivityInput {
+  id: ID!
+}
+
+input ModelSubscriptionCommunityActivityFilterInput {
+  title: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  type: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  organization: ModelSubscriptionStringInput
+  url: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  participants: ModelSubscriptionIntInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCommunityActivityFilterInput]
+  or: [ModelSubscriptionCommunityActivityFilterInput]
+}
+
+type ModelContactSubmissionConnection @aws_iam @aws_cognito_user_pools {
+  items: [ContactSubmission]!
+  nextToken: String
+}
+
+input ModelContactSubmissionFilterInput {
+  name: ModelStringInput
+  email: ModelStringInput
+  subject: ModelStringInput
+  message: ModelStringInput
+  status: ModelStringInput
+  submittedAt: ModelStringInput
+  ipAddress: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelContactSubmissionFilterInput]
+  or: [ModelContactSubmissionFilterInput]
+  not: ModelContactSubmissionFilterInput
+}
+
+input ModelContactSubmissionConditionInput {
+  name: ModelStringInput
+  email: ModelStringInput
+  subject: ModelStringInput
+  message: ModelStringInput
+  status: ModelStringInput
+  submittedAt: ModelStringInput
+  ipAddress: ModelStringInput
+  and: [ModelContactSubmissionConditionInput]
+  or: [ModelContactSubmissionConditionInput]
+  not: ModelContactSubmissionConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateContactSubmissionInput {
+  name: String!
+  email: String!
+  subject: String
+  message: String!
+  status: String
+  submittedAt: AWSDateTime!
+  ipAddress: String
+  id: ID
+}
+
+input UpdateContactSubmissionInput {
+  name: String
+  email: String
+  subject: String
+  message: String
+  status: String
+  submittedAt: AWSDateTime
+  ipAddress: String
+  id: ID!
+}
+
+input DeleteContactSubmissionInput {
+  id: ID!
+}
+
+input ModelSubscriptionContactSubmissionFilterInput {
+  name: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  subject: ModelSubscriptionStringInput
+  message: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  submittedAt: ModelSubscriptionStringInput
+  ipAddress: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionContactSubmissionFilterInput]
+  or: [ModelSubscriptionContactSubmissionFilterInput]
+}
+
+type ModelAnalyticsEventConnection @aws_iam @aws_cognito_user_pools {
+  items: [AnalyticsEvent]!
+  nextToken: String
+}
+
+input ModelAnalyticsEventFilterInput {
+  eventType: ModelStringInput
+  eventData: ModelStringInput
+  userAgent: ModelStringInput
+  ipAddress: ModelStringInput
+  timestamp: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAnalyticsEventFilterInput]
+  or: [ModelAnalyticsEventFilterInput]
+  not: ModelAnalyticsEventFilterInput
+}
+
+input ModelAnalyticsEventConditionInput {
+  eventType: ModelStringInput
+  eventData: ModelStringInput
+  userAgent: ModelStringInput
+  ipAddress: ModelStringInput
+  timestamp: ModelStringInput
+  and: [ModelAnalyticsEventConditionInput]
+  or: [ModelAnalyticsEventConditionInput]
+  not: ModelAnalyticsEventConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateAnalyticsEventInput {
+  eventType: String!
+  eventData: String
+  userAgent: String
+  ipAddress: String
+  timestamp: AWSDateTime!
+  id: ID
+}
+
+input UpdateAnalyticsEventInput {
+  eventType: String
+  eventData: String
+  userAgent: String
+  ipAddress: String
+  timestamp: AWSDateTime
+  id: ID!
+}
+
+input DeleteAnalyticsEventInput {
+  id: ID!
+}
+
+input ModelSubscriptionAnalyticsEventFilterInput {
+  eventType: ModelSubscriptionStringInput
+  eventData: ModelSubscriptionStringInput
+  userAgent: ModelSubscriptionStringInput
+  ipAddress: ModelSubscriptionStringInput
+  timestamp: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAnalyticsEventFilterInput]
+  or: [ModelSubscriptionAnalyticsEventFilterInput]
+}

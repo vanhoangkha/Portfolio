@@ -1,0 +1,68 @@
+{
+  "title": "Hồ sơ",
+  "subtitle": "Lý lịch chuyên môn của tôi",
+  "download": "Tải PDF",
+  "print": "In Hồ sơ",
+  "share": "Chia sẻ Hồ sơ",
+  "lastUpdated": "Cập nhật lần cuối: {{date}}",
+  "sections": {
+    "summary": "Tóm tắt Chuyên môn",
+    "experience": "Kinh nghiệm Làm việc",
+    "education": "Học vấn",
+    "skills": "Kỹ năng Kỹ thuật",
+    "certifications": "Chứng chỉ & Giải thưởng",
+    "projects": "Dự án Chính",
+    "awards": "Giải thưởng & Công nhận",
+    "references": "Người tham chiếu"
+  },
+  "header": {
+    "name": "Tên",
+    "title": "Chức danh",
+    "location": "Địa điểm",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "website": "Website"
+  },
+  "experience": {
+    "present": "Hiện tại",
+    "responsibilities": "Trách nhiệm",
+    "achievements": "Thành tựu Chính"
+  },
+  "education": {
+    "degree": "Bằng cấp",
+    "institution": "Trường",
+    "period": "Thời gian",
+    "gpa": "Điểm GPA",
+    "achievements": "Thành tích"
+  },
+  "certifications": {
+    "issuer": "Cấp bởi",
+    "date": "Ngày",
+    "expires": "Hết hạn",
+    "credentialId": "Mã chứng chỉ",
+    "verify": "Xác minh",
+    "inProgress": "Đang học"
+  },
+  "projects": {
+    "role": "Vai trò",
+    "period": "Thời gian",
+    "description": "Mô tả",
+    "technologies": "Công nghệ",
+    "results": "Kết quả",
+    "links": "Liên kết Dự án"
+  },
+  "skills": {
+    "proficiency": "Trình độ",
+    "years": "Năm Kinh nghiệm"
+  },
+  "references": {
+    "availableOnRequest": "Có sẵn theo yêu cầu",
+    "name": "Tên",
+    "title": "Chức danh",
+    "company": "Công ty",
+    "email": "Email",
+    "phone": "Điện thoại"
+  }
+}

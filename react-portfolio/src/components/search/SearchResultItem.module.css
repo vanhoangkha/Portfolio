@@ -1,0 +1,138 @@
+.item {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item.selected {
+  background: var(--bg-secondary);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+}
+
+.link:hover {
+  background: var(--bg-secondary);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.typeBadge[data-type='project'] {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.typeBadge[data-type='blog'] {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.typeBadge[data-type='skill'] {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.typeBadge[data-type='experience'] {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.typeBadge i {
+  font-size: 0.625rem;
+}
+
+.exactMatch {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.excerpt {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.highlight {
+  background: rgba(var(--primary-color-rgb), 0.2);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 0 0.125rem;
+  border-radius: 2px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.arrow {
+  color: var(--text-tertiary);
+  margin-left: 1rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.link:hover .arrow {
+  transform: translateX(4px);
+  color: var(--primary-color);
+}
+

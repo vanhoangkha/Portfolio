@@ -1,0 +1,27 @@
+{
+  "home": "Home",
+  "about": "About",
+  "experience": "Experience",
+  "projects": "Projects",
+  "skills": "Skills",
+  "testimonials": "Testimonials",
+  "certifications": "Certifications",
+  "blog": "Blog",
+  "resume": "Resume",
+  "contact": "Contact",
+  "menu": "Menu",
+  "skipToContent": "Skip to main content",
+  "backToTop": "Back to Top",
+  "scrollDown": "Scroll Down",
+  "mobileMenu": {
+    "open": "Open Menu",
+    "close": "Close Menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}. All rights reserved.",
+    "builtWith": "Built with {{tech}}",
+    "social": "Follow Me",
+    "links": "Quick Links",
+    "newsletter": "Newsletter"
+  }
+}

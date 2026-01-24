@@ -1,0 +1,112 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-tertiary, #E9ECEF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image.loaded {
+  opacity: 1;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image.loaded ~ .placeholder {
+  opacity: 0;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary, #E9ECEF) 0%,
+    var(--bg-secondary, #F8F9FA) 50%,
+    var(--bg-tertiary, #E9ECEF) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.errorFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-tertiary, #718096);
+  background-color: var(--bg-tertiary, #E9ECEF);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.errorFallback svg {
+  opacity: 0.5;
+}
+
+.errorFallback span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .container {
+  background-color: var(--bg-tertiary, #2D3748);
+}
+
+[data-theme='dark'] .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary, #2D3748) 0%,
+    var(--bg-secondary, #1A202C) 50%,
+    var(--bg-tertiary, #2D3748) 100%
+  );
+  background-size: 200% 100%;
+}
+
+[data-theme='dark'] .errorFallback {
+  background-color: var(--bg-tertiary, #2D3748);
+  color: var(--text-tertiary, #A0AEC0);
+}
+

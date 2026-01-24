@@ -1,0 +1,104 @@
+type BlogPost @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  title: String!
+  slug: String!
+  excerpt: String
+  content: String!
+  category: String
+  tags: [String]
+  featuredImage: String
+  author: String!
+  publishedAt: AWSDateTime
+  viewCount: Int @default(value: "0")
+  featured: Boolean @default(value: "false")
+  published: Boolean @default(value: "false")
+}
+
+type Project @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  title: String!
+  slug: String!
+  description: String!
+  longDescription: String
+  category: String
+  tags: [String]
+  technologies: [String]
+  imageUrl: String
+  githubUrl: String
+  liveUrl: String
+  featured: Boolean @default(value: "false")
+  startDate: AWSDate
+  endDate: AWSDate
+  status: String
+}
+
+type Skill @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  name: String!
+  category: String!
+  level: Int
+  icon: String
+  order: Int
+}
+
+type Certification @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  name: String!
+  issuer: String!
+  issueDate: AWSDate!
+  expiryDate: AWSDate
+  credentialId: String
+  credentialUrl: String
+  imageUrl: String
+  description: String
+}
+
+type Achievement @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  title: String!
+  description: String!
+  date: AWSDate!
+  category: String
+  imageUrl: String
+  link: String
+}
+
+type CommunityActivity @model @auth(rules: [{allow: private, operations: [read, create, update, delete]},
+  {allow: public, provider: iam, operations: [read]}])
+{
+  title: String!
+  description: String!
+  type: String
+  date: AWSDate!
+  organization: String
+  url: String
+  imageUrl: String
+  participants: Int
+}
+
+type ContactSubmission @model @auth(rules: [{allow: private, operations: [read, update, delete]},
+  {allow: public, provider: iam, operations: [create]}])
+{
+  name: String!
+  email: String!
+  subject: String
+  message: String!
+  status: String @default(value: "new")
+  submittedAt: AWSDateTime!
+  ipAddress: String
+}
+
+type AnalyticsEvent @model @auth(rules: [{allow: private, operations: [read, delete]},
+  {allow: public, provider: iam, operations: [create]}])
+{
+  eventType: String!
+  eventData: String
+  userAgent: String
+  ipAddress: String
+  timestamp: AWSDateTime!
+}

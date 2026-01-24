@@ -1,0 +1,26 @@
+{
+  "title": "Skills Matrix",
+  "label": "Expertise",
+  "subtitle": "Technologies I work with",
+  "categories": {
+    "aiml": "AI/ML & GenAI",
+    "cloud": "Cloud Platforms",
+    "container": "Container & Orchestration",
+    "iac": "Infrastructure as Code",
+    "cicd": "CI/CD & Automation",
+    "observability": "Observability",
+    "programming": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "databases": "Databases",
+    "devops": "DevOps & Tools",
+    "ai": "AI & Machine Learning",
+    "other": "Other Skills"
+  },
+  "proficiency": {
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner"
+  },
+  "yearsOfExperience": "{{years}} years of experience"
+}

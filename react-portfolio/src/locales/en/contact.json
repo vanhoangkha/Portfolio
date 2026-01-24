@@ -1,0 +1,54 @@
+{
+  "title": "Get In Touch",
+  "subtitle": "Contact Me",
+  "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
+  "form": {
+    "name": {
+      "label": "Your Name",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "john@example.com"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Project Inquiry"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell me about your project..."
+    },
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Failed to send message. Please try again or email me directly."
+  },
+  "info": {
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "availability": "Availability",
+    "availableForWork": "Available for freelance work"
+  },
+  "social": {
+    "title": "Connect With Me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter"
+  },
+  "newsletter": {
+    "title": "Subscribe to Newsletter",
+    "description": "Get updates on new blog posts and projects",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "Successfully subscribed!",
+    "error": "Subscription failed. Please try again.",
+    "privacy": "We respect your privacy. Unsubscribe anytime.",
+    "consent": "I agree to the",
+    "privacyPolicy": "Privacy Policy",
+    "alreadySubscribed": "You are already subscribed!",
+    "welcomeMessage": "Thank you for subscribing! We've sent a confirmation email to {{email}}",
+    "connectTitle": "Connect with me:"
+  }
+}

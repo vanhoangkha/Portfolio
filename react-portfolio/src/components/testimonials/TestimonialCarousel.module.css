@@ -1,0 +1,259 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.carouselTrack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.carouselItem {
+  min-width: 0;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 1.125rem;
+}
+
+/* Navigation Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+.navButton:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.navButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Dots Indicator */
+.dots {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  outline: none;
+  opacity: 0.3;
+}
+
+.dot:hover {
+  opacity: 0.6;
+  transform: scale(1.2);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.dot.active {
+  background: var(--primary-color);
+  opacity: 1;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Auto-play Toggle */
+.autoPlayToggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.autoPlayToggle:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.autoPlayToggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .navButton {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .navButton:hover:not(:disabled) {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+[data-theme='dark'] .autoPlayToggle {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .autoPlayToggle:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .carouselTrack {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 1rem 0;
+  }
+
+  .carouselTrack {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .controls {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dots {
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active {
+    width: 24px;
+  }
+
+  .autoPlayToggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .navButton {
+    border-width: 2px;
+  }
+
+  .dot {
+    border: 2px solid var(--text-primary);
+  }
+
+  .dot.active {
+    border-color: var(--primary-color);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navButton,
+  .dot,
+  .autoPlayToggle {
+    transition: none;
+  }
+
+  .navButton:hover:not(:disabled),
+  .dot:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .controls,
+  .autoPlayToggle {
+    display: none;
+  }
+
+  .carouselTrack {
+    display: block;
+  }
+
+  .carouselItem {
+    page-break-inside: avoid;
+  }
+}

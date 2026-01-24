@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Kha Văn Hoàng",
+    "titles": [
+      "Kiến trúc sư Giải pháp Cloud",
+      "AWS Community Builder",
+      "Chuyên gia AI/ML",
+      "Chuyên gia DevSecOps",
+      "Chuyên gia Multi-Cloud",
+      "Người dẫn dắt Cộng đồng Tech"
+    ],
+    "description": "Kiến trúc sư Giải pháp với 5 năm kinh nghiệm thiết kế giải pháp cloud quy mô doanh nghiệp trên Amazon Web Services, Microsoft Azure và Google Cloud Platform. AWS Community Builder được công nhận vì thiết lập hệ sinh thái học tập cloud hàng đầu Việt Nam phục vụ 50,000 chuyên gia. Chuyên môn về kiến trúc cloud, tự động hóa hạ tầng, trí tuệ nhân tạo, quản trị bảo mật và chiến lược multi-cloud.",
+    "metrics": {
+      "professionals": "Chuyên gia được đào tạo",
+      "projects": "Dự án Doanh nghiệp",
+      "certifications": "Chứng chỉ AWS"
+    },
+    "cta": {
+      "downloadResume": "Tải Hồ Sơ",
+      "bookCall": "Đặt Lịch Gọi",
+      "viewProjects": "Xem Dự Án"
+    },
+    "scrollDown": "Cuộn xuống phần Giới thiệu"
+  },
+  "featured": {
+    "title": "Dự Án Nổi Bật",
+    "subtitle": "Các dự án và thành tích gần đây"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Blog",
+  "description": "Bài viết về cloud, AI và kỹ thuật phần mềm",
+  "search": {
+    "placeholder": "Tìm kiếm bài viết...",
+    "noResults": "Không tìm thấy bài viết phù hợp với \"{{query}}\"",
+    "results": "Tìm thấy {{count}} bài viết"
+  },
+  "filters": {
+    "all": "Tất cả",
+    "sortBy": "Sắp xếp theo:",
+    "latest": "Mới nhất",
+    "popular": "Phổ biến nhất",
+    "oldest": "Cũ nhất",
+    "layout": {
+      "grid": "Dạng lưới",
+      "list": "Dạng danh sách"
+    }
+  },
+  "post": {
+    "readTime": "{{minutes}} phút đọc",
+    "views": "{{count}} lượt xem",
+    "publishedOn": "Xuất bản ngày {{date}}",
+    "updatedOn": "Cập nhật ngày {{date}}",
+    "author": "Bởi {{name}}",
+    "sharePost": "Chia sẻ bài viết",
+    "relatedPosts": "Bài Viết Liên Quan"
+  },
+  "sidebar": {
+    "recentPosts": "Bài Viết Gần Đây",
+    "popularPosts": "Bài Viết Phổ Biến",
+    "categories": "Danh Mục",
+    "tags": "Thẻ Phổ Biến",
+    "newsletter": {
+      "title": "Cập Nhật Thường Xuyên",
+      "description": "Nhận bài viết mới nhất qua email của bạn.",
+      "placeholder": "Địa chỉ email của bạn",
+      "subscribe": "Đăng Ký"
+    }
+  },
+  "comments": {
+    "title": "Bình Luận",
+    "noComments": "Chưa có bình luận nào. Hãy là người đầu tiên!",
+    "writeComment": "Viết bình luận...",
+    "submit": "Gửi Bình Luận",
+    "reply": "Trả lời",
+    "edit": "Sửa",
+    "delete": "Xóa"
+  }
+}

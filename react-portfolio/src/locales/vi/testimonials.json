@@ -1,0 +1,45 @@
+{
+  "title": "Khách hàng nói gì",
+  "subtitle": "Được tin tưởng bởi các chuyên gia và công ty trên toàn thế giới",
+  "label": "Đánh giá",
+  "featured": "Đánh giá Nổi bật",
+  "all": "Tất cả Đánh giá",
+  "stats": {
+    "clients": "Khách hàng hài lòng",
+    "rating": "Đánh giá trung bình",
+    "satisfaction": "Sự hài lòng",
+    "reviews": "Tổng số Đánh giá"
+  },
+  "cta": {
+    "text": "Muốn làm việc cùng nhau? Hãy cùng tạo nên điều tuyệt vời!",
+    "button": "Liên hệ ngay"
+  },
+  "carousel": {
+    "previous": "Đánh giá trước",
+    "next": "Đánh giá tiếp theo",
+    "pause": "Tạm dừng tự động",
+    "play": "Tiếp tục tự động",
+    "goToSlide": "Đến slide {{number}}"
+  },
+  "card": {
+    "verifiedReview": "Đánh giá Đã xác minh",
+    "from": "từ {{name}}",
+    "at": "tại {{company}}",
+    "role": "{{role}}",
+    "date": "{{date}}",
+    "readMore": "Đọc thêm",
+    "showLess": "Thu gọn"
+  },
+  "filter": {
+    "all": "Tất cả",
+    "clients": "Khách hàng",
+    "colleagues": "Đồng nghiệp",
+    "students": "Học viên",
+    "partners": "Đối tác"
+  },
+  "rating": "Đánh giá: {{rating}} trên 5 sao",
+  "empty": {
+    "title": "Chưa có đánh giá",
+    "description": "Hãy quay lại sau để xem đánh giá từ khách hàng."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Professional Experience",
+  "subtitle": "My career journey",
+  "label": "Experience",
+  "present": "Present",
+  "responsibilities": "Key Responsibilities",
+  "achievements": "Achievements",
+  "technologies": "Technologies Used",
+  "viewDetails": "View Details",
+  "hideDetails": "Hide Details",
+  "duration": "{{years}} years {{months}} months",
+  "positions": {
+    "cloudArchitect": "Cloud and AI Solution Architect",
+    "solutionArchitect": "Cloud Solution Architect",
+    "labHead": "Head of Laboratory",
+    "consultant": "Cloud Architecture Consultant",
+    "founder": "Founding Architect"
+  },
+  "companies": {
+    "aws": "Amazon Web Services (AWS)",
+    "renovaCloud": "Renova Cloud (AWS Advanced Consulting Partner)",
+    "ptitLab": "PTIT IoT Innovation Lab"
+  },
+  "timeline": {
+    "current": "Current Position",
+    "past": "Previous Positions"
+  }
+}

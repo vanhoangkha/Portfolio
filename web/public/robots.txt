@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow unnecessary directories
+Disallow: /infrastructure/
+Disallow: /node_modules/
+Disallow: /.github/
+
+# Sitemap location (update if deploying at a subpath)
+Sitemap: https://your-domain.example/sitemap.xml
+
+

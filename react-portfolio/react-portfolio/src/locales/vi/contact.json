@@ -1,0 +1,36 @@
+{
+  "title": "Liên Hệ",
+  "description": "Đừng ngần ngại liên hệ để hợp tác hoặc chỉ để chào hỏi",
+  "form": {
+    "name": {
+      "label": "Tên của bạn",
+      "placeholder": "Nguyễn Văn A",
+      "error": "Vui lòng nhập tên của bạn"
+    },
+    "email": {
+      "label": "Địa chỉ Email",
+      "placeholder": "nguyen@example.com",
+      "error": "Vui lòng nhập địa chỉ email hợp lệ"
+    },
+    "subject": {
+      "label": "Chủ đề",
+      "placeholder": "Yêu cầu dự án",
+      "error": "Vui lòng nhập chủ đề"
+    },
+    "message": {
+      "label": "Tin nhắn",
+      "placeholder": "Cho tôi biết về dự án của bạn...",
+      "error": "Vui lòng nhập tin nhắn (tối thiểu 20 ký tự)"
+    },
+    "submit": "Gửi Tin Nhắn",
+    "submitting": "Đang gửi...",
+    "success": "Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm.",
+    "error": "Gửi tin nhắn thất bại. Vui lòng thử lại."
+  },
+  "info": {
+    "email": "Email",
+    "phone": "Điện thoại",
+    "location": "Vị trí",
+    "social": "Kết nối với tôi"
+  }
+}

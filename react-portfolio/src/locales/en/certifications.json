@@ -1,0 +1,49 @@
+{
+  "title": "Certifications & Achievements",
+  "subtitle": "Professional certifications and industry recognition",
+  "filter": {
+    "all": "All Certifications",
+    "aws": "AWS",
+    "azure": "Azure",
+    "gcp": "Google Cloud",
+    "security": "Security",
+    "other": "Other"
+  },
+  "emptyState": {
+    "title": "No certifications found",
+    "description": "No certifications found in this category"
+  },
+  "cta": {
+    "text": "Interested in continuous learning and professional development",
+    "button": "Let's Connect"
+  },
+  "card": {
+    "viewDetails": "View Details",
+    "verify": "Verify Certificate",
+    "issuer": "Issued by",
+    "issued": "Issued",
+    "expires": "Expires",
+    "validUntil": "Valid until",
+    "credentialId": "Credential ID",
+    "skills": "Skills",
+    "noExpiry": "No Expiration",
+    "expired": "Expired",
+    "expiresIn": "Expires in {{days}} days"
+  },
+  "categories": {
+    "technical": "Technical",
+    "professional": "Professional",
+    "language": "Language",
+    "other": "Other",
+    "cloud": "Cloud",
+    "security": "Security",
+    "devops": "DevOps",
+    "ai": "AI/ML"
+  },
+  "modal": {
+    "title": "Certificate Details",
+    "close": "Close",
+    "download": "Download Certificate",
+    "share": "Share Certificate"
+  }
+}

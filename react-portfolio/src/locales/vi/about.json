@@ -1,0 +1,101 @@
+{
+  "label": "Giới thiệu",
+  "title": "Tôi là ai",
+  "subtitle": "Tìm hiểu thêm về tôi",
+  "intro": "Tôi là một Kiến trúc sư Giải pháp với chuyên môn trong việc thiết kế các giải pháp cloud quy mô doanh nghiệp trên AWS, Azure và GCP. Hiện tại làm việc tại Amazon Web Services (AWS), tôi chuyên về kiến trúc cloud, tự động hóa hạ tầng, trí tuệ nhân tạo, quản trị bảo mật và chiến lược multi-cloud. Có thành tích đã chứng minh trong việc cung cấp các giải pháp chuyển đổi cho các tập đoàn đa quốc gia và tổ chức dịch vụ tài chính.",
+  "highlights": [
+    {
+      "title": "5+ Năm Kinh nghiệm",
+      "description": "Cung cấp giải pháp hiện đại hóa cloud và doanh nghiệp"
+    },
+    {
+      "title": "50K+ Thành viên Cộng đồng",
+      "description": "Đồng sáng lập mạng lưới học tập AWS lớn nhất Việt Nam"
+    },
+    {
+      "title": "Người sáng lập CloudThinker",
+      "description": "Kiến trúc nền tảng AI đa tác nhân cho tự động hóa cloud"
+    },
+    {
+      "title": "150+ Kỹ sư được Hướng dẫn",
+      "description": "Thành công giúp các chuyên gia có việc làm Cloud/DevOps/AI"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Dự án Hoàn thành"
+    },
+    {
+      "label": "Workshop Tổ chức"
+    },
+    {
+      "label": "Thành viên Cộng đồng (K+)"
+    },
+    {
+      "label": "Chứng chỉ AWS"
+    }
+  ],
+  "experience": {
+    "label": "Hành trình Sự nghiệp",
+    "title": "Kinh nghiệm Chuyên môn",
+    "items": [
+      {
+        "company": "Amazon Web Services (AWS)",
+        "position": "Kiến trúc sư Giải pháp Cloud và AI",
+        "period": "Tháng 12 năm 2021 - Hiện tại",
+        "icon": "fab fa-aws",
+        "achievements": [
+          "Thiết kế các landing zone AWS tiêu chuẩn và khung Infrastructure as Code sử dụng Terraform và AWS CDK cho hơn 60 tổ chức doanh nghiệp, giảm thời gian triển khai 30%",
+          "Kiến trúc các giải pháp Generative AI sử dụng Amazon Bedrock và Amazon SageMaker cho tự động hóa tuân thủ và quy trình kiểm toán thông minh, đạt được giảm 45% chu kỳ xem xét và tiết kiệm $2M mỗi năm",
+          "Triển khai kiến trúc bảo mật Zero Trust với khả năng quan sát toàn diện sử dụng Amazon CloudWatch, OpenTelemetry, và Grafana, giảm sự cố bảo mật 40%",
+          "Thực hiện hơn 200 workshop kỹ thuật đào tạo hơn 150 kỹ sư, thiết lập năng lực cloud cho hơn 45,000 chuyên gia",
+          "Dẫn dắt các sáng kiến chuyển đổi multi-cloud cho hơn 20 khách hàng doanh nghiệp trong các lĩnh vực ngân hàng, dịch vụ tài chính và sản xuất"
+        ],
+        "tags": ["AWS", "GenAI", "Zero Trust", "IaC", "Multi-Cloud"]
+      },
+      {
+        "company": "CloudThinker",
+        "position": "Đồng sáng lập và Kiến trúc sư",
+        "period": "2025 - Hiện tại",
+        "icon": "fas fa-robot",
+        "achievements": [
+          "Kiến trúc nền tảng điều phối đa agent sử dụng Amazon Bedrock cho hoạt động cloud tự động và giám sát tuân thủ trên AWS, Azure và GCP",
+          "Kết quả: Cải thiện hiệu quả vận hành 35-40%; Giảm 50% thời gian phục hồi trung bình"
+        ],
+        "tags": ["AI Agents", "Multi-Cloud", "Automation"],
+        "links": [
+          { "label": "Nền tảng", "url": "https://www.cloudthinker.io" },
+          { "label": "Tài liệu", "url": "https://cloudthinker.mintlify.app" }
+        ]
+      },
+      {
+        "company": "Renova Cloud (Đối tác Tư vấn AWS Advanced)",
+        "position": "Kiến trúc sư Giải pháp Cloud",
+        "period": "Tháng 1 năm 2020 - Tháng 12 năm 2021",
+        "icon": "fas fa-cloud",
+        "achievements": [
+          "Thực hiện các chương trình AWS Migration Acceleration Program cho khách hàng dịch vụ tài chính, cung cấp di chuyển zero-downtime cho các hệ thống ngân hàng quan trọng",
+          "Thiết kế pipeline CI/CD sử dụng Terraform và AWS CodePipeline, tăng vận tốc triển khai 70%",
+          "Thực hiện đánh giá AWS Well-Architected Framework cho 15 tổ chức, đạt được cải thiện 30% về độ tin cậy, bảo mật và hiệu quả chi phí"
+        ],
+        "tags": ["AWS MAP", "Migration", "CI/CD", "Well-Architected"]
+      },
+      {
+        "company": "PTIT IOT Innovation Lab",
+        "position": "Trưởng Phòng thí nghiệm",
+        "period": "Tháng 12 năm 2019 - Tháng 12 năm 2020",
+        "icon": "fas fa-university",
+        "achievements": [
+          "Thiết lập phòng thí nghiệm nghiên cứu IoT và AI, hướng dẫn hơn 30 sinh viên",
+          "Kiến trúc các giải pháp edge computing sử dụng AWS IoT Core và Amazon SageMaker Edge Manager, giảm độ trễ suy luận 40%",
+          "Giải thưởng Nghiên cứu Xuất sắc: 2021 - 2023"
+        ],
+        "tags": ["IoT", "Edge Computing", "AI/ML", "Research"]
+      }
+    ],
+    "links": {
+      "platform": "Nền tảng",
+      "docs": "Tài liệu"
+    }
+  }
+}

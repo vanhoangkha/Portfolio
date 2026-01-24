@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Kha Van Hoang",
+    "title": "Cloud & AI Solution Architect",
+    "description": "I build scalable cloud infrastructure and AI-powered solutions. Passionate about DevSecOps, Kubernetes, and cutting-edge technologies.",
+    "cta": {
+      "viewProjects": "View My Projects",
+      "contact": "Get In Touch"
+    }
+  },
+  "stats": {
+    "experience": "Years Experience",
+    "projects": "Projects Completed",
+    "certifications": "Certifications",
+    "contributions": "Open Source Contributions"
+  },
+  "featured": {
+    "title": "Featured Work",
+    "viewAll": "View All Projects"
+  }
+}

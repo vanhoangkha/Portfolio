@@ -1,0 +1,68 @@
+{
+  "title": "Resume",
+  "subtitle": "My professional background",
+  "download": "Download PDF",
+  "print": "Print Resume",
+  "share": "Share Resume",
+  "lastUpdated": "Last updated: {{date}}",
+  "sections": {
+    "summary": "Professional Summary",
+    "experience": "Work Experience",
+    "education": "Education",
+    "skills": "Technical Skills",
+    "certifications": "Certifications & Awards",
+    "projects": "Key Projects",
+    "awards": "Awards & Recognition",
+    "references": "References"
+  },
+  "header": {
+    "name": "Name",
+    "title": "Title",
+    "location": "Location",
+    "phone": "Phone",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "website": "Website"
+  },
+  "experience": {
+    "present": "Present",
+    "responsibilities": "Responsibilities",
+    "achievements": "Key Achievements"
+  },
+  "education": {
+    "degree": "Degree",
+    "institution": "Institution",
+    "period": "Period",
+    "gpa": "GPA",
+    "achievements": "Achievements"
+  },
+  "certifications": {
+    "issuer": "Issued by",
+    "date": "Date",
+    "expires": "Expires",
+    "credentialId": "Credential ID",
+    "verify": "Verify",
+    "inProgress": "In Progress"
+  },
+  "projects": {
+    "role": "Role",
+    "period": "Period",
+    "description": "Description",
+    "technologies": "Technologies",
+    "results": "Results",
+    "links": "Project Links"
+  },
+  "skills": {
+    "proficiency": "Proficiency",
+    "years": "Years of Experience"
+  },
+  "references": {
+    "availableOnRequest": "Available upon request",
+    "name": "Name",
+    "title": "Title",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone"
+  }
+}
