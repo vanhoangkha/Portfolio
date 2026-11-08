@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "╔═══════════════════════════════════════════════════════════════╗"
-echo "║         🔑 GITHUB TOKEN SETUP WIZARD                         ║"
+echo "║         GITHUB TOKEN SETUP WIZARD                         ║"
 echo "╚═══════════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -21,7 +21,7 @@ echo ""
 echo "2. Fill in the form:"
 echo "   • Note: Portfolio Deployment"
 echo "   • Expiration: 90 days (or No expiration)"
-echo "   • Scopes: ✅ repo (full control of private repositories)"
+echo "   • Scopes: repo (full control of private repositories)"
 echo ""
 echo "3. Click 'Generate token'"
 echo ""
@@ -36,7 +36,7 @@ echo ""
 read -p "Paste your GitHub token here: " token
 
 if [ -z "$token" ]; then
-    echo -e "${RED}❌ No token provided!${NC}"
+    echo -e "${RED}No token provided!${NC}"
     exit 1
 fi
 
@@ -44,7 +44,7 @@ fi
 echo "https://vanhoangkha:${token}@github.com" > ~/.git-credentials
 chmod 600 ~/.git-credentials
 
-echo -e "${GREEN}✅ Token saved!${NC}"
+echo -e "${GREEN}Token saved!${NC}"
 echo ""
 
 echo -e "${BLUE}Step 3: Test Authentication${NC}"
@@ -60,7 +60,7 @@ git push origin feature/restructure-international-standards 2>&1
 if [ $? -eq 0 ]; then
     echo ""
     echo -e "${GREEN}╔═══════════════════════════════════════════════╗${NC}"
-    echo -e "${GREEN}║     ✅ PUSH SUCCESSFUL!                      ║${NC}"
+    echo -e "${GREEN}║     PUSH SUCCESSFUL!                      ║${NC}"
     echo -e "${GREEN}╚═══════════════════════════════════════════════╝${NC}"
     echo ""
     echo "Next steps:"
@@ -72,7 +72,7 @@ if [ $? -eq 0 ]; then
     echo "6. Visit: https://vanhoangkha.github.io/Portfolio/"
 else
     echo ""
-    echo -e "${RED}❌ Push failed! Check the error above.${NC}"
+    echo -e "${RED}Push failed! Check the error above.${NC}"
     echo ""
     echo "Common issues:"
     echo "- Token doesn't have correct permissions"

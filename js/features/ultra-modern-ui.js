@@ -361,7 +361,7 @@
             return;
         }
         
-        console.log('🎨 Initializing Ultra Modern UI...');
+        console.log('Initializing Ultra Modern UI...');
         
         initScrollReveal();
         initParallax();
@@ -381,7 +381,7 @@
             // initCursorTrail(); // Commented out as it can be distracting
         }
         
-        console.log('✨ Ultra Modern UI initialized!');
+        console.log('Ultra Modern UI initialized!');
     }
 
     // Start initialization

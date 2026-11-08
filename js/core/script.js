@@ -410,9 +410,9 @@ document.querySelectorAll('.contact-text a[href^="mailto:"]').forEach(link => {
 // ===================================
 // Console Easter Egg
 // ===================================
-console.log('%c👋 Hello, fellow developer!', 'font-size: 20px; color: #FF9900; font-weight: bold;');
+console.log('%cHello, fellow developer!', 'font-size: 20px; color: #FF9900; font-weight: bold;');
 console.log('%cInterested in the code? Check out my GitHub: https://github.com/vanhoangkha', 'font-size: 14px; color: #146EB4;');
-console.log('%c💡 Press "T" to toggle theme!', 'font-size: 12px; color: #4a5568;');
+console.log('%cPress "T" to toggle theme!', 'font-size: 12px; color: #4a5568;');
 
 // ===================================
 // Analytics (Placeholder)

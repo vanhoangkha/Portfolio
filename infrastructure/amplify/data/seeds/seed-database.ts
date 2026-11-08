@@ -26,103 +26,103 @@ Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
 async function seedBlogPosts() {
-  console.log('\n📝 Seeding Blog Posts...');
+  console.log('\nSeeding Blog Posts...');
   for (const post of blogPosts) {
     try {
       const { data, errors } = await client.models.BlogPost.create(post);
       if (errors) {
-        console.error(`❌ Error creating blog post "${post.title}":`, errors);
+        console.error(`Error creating blog post "${post.title}":`, errors);
       } else {
-        console.log(`✅ Created blog post: ${post.title}`);
+        console.log(`Created blog post: ${post.title}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create blog post "${post.title}":`, error);
+      console.error(`Failed to create blog post "${post.title}":`, error);
     }
   }
 }
 
 async function seedProjects() {
-  console.log('\n🚀 Seeding Projects...');
+  console.log('\nSeeding Projects...');
   for (const project of projects) {
     try {
       const { data, errors } = await client.models.Project.create(project);
       if (errors) {
-        console.error(`❌ Error creating project "${project.title}":`, errors);
+        console.error(`Error creating project "${project.title}":`, errors);
       } else {
-        console.log(`✅ Created project: ${project.title}`);
+        console.log(`Created project: ${project.title}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create project "${project.title}":`, error);
+      console.error(`Failed to create project "${project.title}":`, error);
     }
   }
 }
 
 async function seedSkills() {
-  console.log('\n💻 Seeding Skills...');
+  console.log('\nSeeding Skills...');
   for (const skill of skills) {
     try {
       const { data, errors } = await client.models.Skill.create(skill);
       if (errors) {
-        console.error(`❌ Error creating skill "${skill.name}":`, errors);
+        console.error(`Error creating skill "${skill.name}":`, errors);
       } else {
-        console.log(`✅ Created skill: ${skill.name}`);
+        console.log(`Created skill: ${skill.name}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create skill "${skill.name}":`, error);
+      console.error(`Failed to create skill "${skill.name}":`, error);
     }
   }
 }
 
 async function seedCertifications() {
-  console.log('\n🎓 Seeding Certifications...');
+  console.log('\nSeeding Certifications...');
   for (const cert of certifications) {
     try {
       const { data, errors } = await client.models.Certification.create(cert);
       if (errors) {
-        console.error(`❌ Error creating certification "${cert.name}":`, errors);
+        console.error(`Error creating certification "${cert.name}":`, errors);
       } else {
-        console.log(`✅ Created certification: ${cert.name}`);
+        console.log(`Created certification: ${cert.name}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create certification "${cert.name}":`, error);
+      console.error(`Failed to create certification "${cert.name}":`, error);
     }
   }
 }
 
 async function seedAchievements() {
-  console.log('\n🏆 Seeding Achievements...');
+  console.log('\nSeeding Achievements...');
   for (const achievement of achievements) {
     try {
       const { data, errors } = await client.models.Achievement.create(achievement);
       if (errors) {
-        console.error(`❌ Error creating achievement "${achievement.title}":`, errors);
+        console.error(`Error creating achievement "${achievement.title}":`, errors);
       } else {
-        console.log(`✅ Created achievement: ${achievement.title}`);
+        console.log(`Created achievement: ${achievement.title}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create achievement "${achievement.title}":`, error);
+      console.error(`Failed to create achievement "${achievement.title}":`, error);
     }
   }
 }
 
 async function seedCommunityActivities() {
-  console.log('\n👥 Seeding Community Activities...');
+  console.log('\nSeeding Community Activities...');
   for (const activity of communityActivities) {
     try {
       const { data, errors } = await client.models.CommunityActivity.create(activity);
       if (errors) {
-        console.error(`❌ Error creating activity "${activity.title}":`, errors);
+        console.error(`Error creating activity "${activity.title}":`, errors);
       } else {
-        console.log(`✅ Created activity: ${activity.title}`);
+        console.log(`Created activity: ${activity.title}`);
       }
     } catch (error) {
-      console.error(`❌ Failed to create activity "${activity.title}":`, error);
+      console.error(`Failed to create activity "${activity.title}":`, error);
     }
   }
 }
 
 async function verifyData() {
-  console.log('\n📊 Verifying seeded data...\n');
+  console.log('\nVerifying seeded data...\n');
 
   const stats = {
     blogPosts: 0,
@@ -152,7 +152,7 @@ async function verifyData() {
     const { data: comm } = await client.models.CommunityActivity.list();
     stats.communityActivities = comm.length;
 
-    console.log('📈 Database Statistics:');
+    console.log('Database Statistics:');
     console.log(`   Blog Posts: ${stats.blogPosts}`);
     console.log(`   Projects: ${stats.projects}`);
     console.log(`   Skills: ${stats.skills}`);
@@ -161,12 +161,12 @@ async function verifyData() {
     console.log(`   Community Activities: ${stats.communityActivities}`);
     console.log(`\n   Total Records: ${Object.values(stats).reduce((a, b) => a + b, 0)}`);
   } catch (error) {
-    console.error('❌ Error verifying data:', error);
+    console.error('Error verifying data:', error);
   }
 }
 
 async function clearDatabase() {
-  console.log('\n🗑️  Clearing existing data...');
+  console.log('\nClearing existing data...');
 
   try {
     // Clear all tables
@@ -184,17 +184,17 @@ async function clearDatabase() {
       for (const item of data) {
         await (client.models as any)[table].delete({ id: item.id });
       }
-      console.log(`✅ Cleared ${table} table (${data.length} records)`);
+      console.log(`Cleared ${table} table (${data.length} records)`);
     }
   } catch (error) {
-    console.error('❌ Error clearing database:', error);
+    console.error('Error clearing database:', error);
   }
 }
 
 async function main() {
-  console.log('🌱 Starting database seeding...\n');
-  console.log('⚠️  This will populate your DynamoDB tables with sample data.');
-  console.log('⚠️  Make sure you are connected to the correct environment.\n');
+  console.log('Starting database seeding...\n');
+  console.log('This will populate your DynamoDB tables with sample data.');
+  console.log('Make sure you are connected to the correct environment.\n');
 
   const args = process.argv.slice(2);
   const shouldClear = args.includes('--clear');
@@ -212,11 +212,11 @@ async function main() {
     await seedAchievements();
     await seedCommunityActivities();
 
-    console.log('\n✅ Database seeding completed!\n');
+    console.log('\nDatabase seeding completed!\n');
 
     await verifyData();
   } catch (error) {
-    console.error('\n❌ Seeding failed:', error);
+    console.error('\nSeeding failed:', error);
     process.exit(1);
   }
 }

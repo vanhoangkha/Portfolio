@@ -20,11 +20,11 @@ class Logger {
   }
 
   error(message, ...args) {
-    console.error(`[${this.context}] ❌ ${message}`, ...args);
+    console.error(`[${this.context}] ${message}`, ...args);
   }
 
   warn(message, ...args) {
-    console.warn(`[${this.context}] ⚠️ ${message}`, ...args);
+    console.warn(`[${this.context}] ${message}`, ...args);
   }
 
   info(message, ...args) {
@@ -35,13 +35,13 @@ class Logger {
 
   debug(message, ...args) {
     if (this.enabled) {
-      console.log(`[${this.context}] 🐛 ${message}`, ...args);
+      console.log(`[${this.context}] ${message}`, ...args);
     }
   }
 
   success(message, ...args) {
     if (this.enabled) {
-      console.log(`%c[${this.context}] ✅ ${message}`, 'color: #1EC876', ...args);
+      console.log(`%c[${this.context}] ${message}`, 'color: #1EC876', ...args);
     }
   }
 

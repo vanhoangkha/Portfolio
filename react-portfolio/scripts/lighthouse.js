@@ -17,9 +17,9 @@ const OUTPUT_DIR = join(process.cwd(), 'lighthouse-reports');
 // Create output directory
 mkdirSync(OUTPUT_DIR, { recursive: true });
 
-console.log('🔍 Running Lighthouse audit...');
-console.log(`📍 URL: ${URL}`);
-console.log(`📁 Output: ${OUTPUT_DIR}\n`);
+console.log('Running Lighthouse audit...');
+console.log(`URL: ${URL}`);
+console.log(`Output: ${OUTPUT_DIR}\n`);
 
 (async () => {
   try {
@@ -32,7 +32,7 @@ console.log(`📁 Output: ${OUTPUT_DIR}\n`);
     const reportPath = join(OUTPUT_DIR, 'report.report.json');
     
     if (!existsSync(reportPath)) {
-      console.error('❌ Lighthouse report not found. Make sure the preview server is running.');
+      console.error('Lighthouse report not found. Make sure the preview server is running.');
       process.exit(1);
     }
     
@@ -72,14 +72,14 @@ console.log(`📁 Output: ${OUTPUT_DIR}\n`);
   );
   
   // Print results
-  console.log('\n📊 Lighthouse Results:');
+  console.log('\nLighthouse Results:');
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
   console.log(`Performance:      ${scores.performance}/100 ${scores.performance >= 95 ? '✅' : '❌'}`);
   console.log(`Accessibility:    ${scores.accessibility}/100 ${scores.accessibility >= 95 ? '✅' : '❌'}`);
   console.log(`Best Practices:   ${scores['best-practices']}/100 ${scores['best-practices'] >= 95 ? '✅' : '❌'}`);
   console.log(`SEO:              ${scores.seo}/100 ${scores.seo >= 95 ? '✅' : '❌'}`);
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('\n📈 Core Web Vitals:');
+  console.log('\nCore Web Vitals:');
   console.log(`FCP:  ${metrics.fcp.toFixed(0)}ms ${metrics.fcp <= 1800 ? '✅' : '❌'}`);
   console.log(`LCP:  ${metrics.lcp.toFixed(0)}ms ${metrics.lcp <= 2500 ? '✅' : '❌'}`);
   console.log(`CLS:  ${metrics.cls.toFixed(3)} ${metrics.cls <= 0.1 ? '✅' : '❌'}`);
@@ -89,15 +89,15 @@ console.log(`📁 Output: ${OUTPUT_DIR}\n`);
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
   
     if (summary.passed) {
-      console.log('✅ All scores meet the 95+ target!');
+      console.log('All scores meet the 95+ target!');
       process.exit(0);
     } else {
-      console.log('❌ Some scores are below 95. Check the report for details.');
-      console.log(`📄 Full report: ${join(OUTPUT_DIR, 'report.report.html')}`);
+      console.log('Some scores are below 95. Check the report for details.');
+      console.log(`Full report: ${join(OUTPUT_DIR, 'report.report.html')}`);
       process.exit(1);
     }
   } catch (error) {
-    console.error('❌ Lighthouse audit failed:', error.message);
+    console.error('Lighthouse audit failed:', error.message);
     process.exit(1);
   }
 })();

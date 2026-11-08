@@ -29,8 +29,8 @@ jobs:
 
       - name: Build site
         run: |
-          echo "📦 Preparing files for GitHub Pages..."
-          echo "✅ Portfolio is static HTML/CSS/JS - ready to deploy!"
+          echo "Preparing files for GitHub Pages..."
+          echo "Portfolio is static HTML/CSS/JS - ready to deploy!"
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -52,24 +52,24 @@ jobs:
       - name: Deployment Summary
         run: |
           echo "╔════════════════════════════════════════════╗"
-          echo "║   ✅ GITHUB PAGES DEPLOYMENT SUCCESS!     ║"
+          echo "║   GITHUB PAGES DEPLOYMENT SUCCESS!     ║"
           echo "╚════════════════════════════════════════════╝"
           echo ""
-          echo "🌐 Your portfolio is now live at:"
+          echo "Your portfolio is now live at:"
           echo "   https://vanhoangkha.github.io/Portfolio/"
           echo ""
-          echo "📱 Pages deployed:"
+          echo "Pages deployed:"
           echo "   • Homepage:  https://vanhoangkha.github.io/Portfolio/"
           echo "   • Resume:    https://vanhoangkha.github.io/Portfolio/resume.html"
           echo "   • Blog:      https://vanhoangkha.github.io/Portfolio/blog.html"
           echo ""
-          echo "⚡ Features active:"
-          echo "   ✨ Glass morphism effects"
-          echo "   🧲 Magnetic buttons"
-          echo "   🎭 3D card animations"
-          echo "   🌈 Animated gradients"
-          echo "   📜 Scroll reveals"
-          echo "   🌓 Dark mode"
+          echo "Features active:"
+          echo "   Glass morphism effects"
+          echo "   Magnetic buttons"
+          echo "   3D card animations"
+          echo "   Animated gradients"
+          echo "   Scroll reveals"
+          echo "   Dark mode"
           echo ""
-          echo "🎉 Portfolio is LIVE!"
+          echo "Portfolio is LIVE!"
 

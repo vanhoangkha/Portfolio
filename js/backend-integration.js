@@ -25,7 +25,7 @@ window.portfolioAPI = {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('%c🔗 Backend Integration Active', 'color: #FF9900; font-size: 14px; font-weight: bold;');
+  console.log('%cBackend Integration Active', 'color: #FF9900; font-size: 14px; font-weight: bold;');
 
   // Trigger data loading based on current page
   const currentPage = window.location.pathname;
@@ -45,8 +45,8 @@ async function loadBlogPage() {
     const posts = await getBlogPosts({ limit: 20 });
     const categories = await getBlogCategories();
 
-    console.log(`📝 Loaded ${posts.length} blog posts from backend`);
-    console.log(`📂 Categories:`, categories);
+    console.log(`Loaded ${posts.length} blog posts from backend`);
+    console.log(`Categories:`, categories);
 
     // Render blog posts
     renderBlogPosts(posts);
@@ -66,8 +66,8 @@ async function loadHomePage() {
       getProjects({ featuredOnly: true, limit: 6 })
     ]);
 
-    console.log(`⭐ Loaded ${featuredPosts.length} featured blog posts`);
-    console.log(`⭐ Loaded ${featuredProjects.length} featured projects`);
+    console.log(`Loaded ${featuredPosts.length} featured blog posts`);
+    console.log(`Loaded ${featuredProjects.length} featured projects`);
 
     // Render featured content
     renderFeaturedBlog(featuredPosts);
@@ -311,7 +311,7 @@ function stripHtml(html) {
   return doc.body.textContent || '';
 }
 
-console.log('✅ Backend Integration Module loaded');
+console.log('Backend Integration Module loaded');
 console.log('  - Blog API ready');
 console.log('  - Projects API ready');
 console.log('  - Contact API ready');

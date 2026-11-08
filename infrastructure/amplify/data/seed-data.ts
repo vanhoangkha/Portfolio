@@ -10,11 +10,11 @@ const client = generateClient<ClientSchema>({
 });
 
 async function seedData() {
-  console.log('🌱 Starting database seeding...\n');
+  console.log('Starting database seeding...\n');
 
   try {
     // Seed Blog Posts
-    console.log('📝 Seeding blog posts...');
+    console.log('Seeding blog posts...');
     const blogPosts = [
       {
         title: 'Getting Started with AWS CDK',
@@ -298,7 +298,7 @@ security-scan:
     }
 
     // Seed Projects
-    console.log('\n💼 Seeding projects...');
+    console.log('\nSeeding projects...');
     const projects = [
       {
         title: 'Cloud-Native E-commerce Platform',
@@ -455,7 +455,7 @@ security-scan:
     }
 
     // Seed Skills
-    console.log('\n🎯 Seeding skills...');
+    console.log('\nSeeding skills...');
     const skills = [
       { name: 'AWS', category: 'Cloud', level: 95, icon: 'aws', order: 1 },
       { name: 'Kubernetes', category: 'DevOps', level: 90, icon: 'kubernetes', order: 2 },
@@ -475,7 +475,7 @@ security-scan:
     }
 
     // Seed Contact Submission (sample)
-    console.log('\n💬 Seeding sample contact message...');
+    console.log('\nSeeding sample contact message...');
     await client.models.ContactSubmission.create({
       name: 'John Doe',
       email: 'john.doe@example.com',
@@ -487,15 +487,15 @@ security-scan:
     });
     console.log('  ✓ Created sample contact message');
 
-    console.log('\n✅ Database seeding completed successfully!');
-    console.log('\n📊 Summary:');
+    console.log('\nDatabase seeding completed successfully!');
+    console.log('\nSummary:');
     console.log(`  - Blog Posts: ${blogPosts.length}`);
     console.log(`  - Projects: ${projects.length}`);
     console.log(`  - Skills: ${skills.length}`);
     console.log(`  - Contact Messages: 1`);
 
   } catch (error) {
-    console.error('❌ Error seeding data:', error);
+    console.error('Error seeding data:', error);
     throw error;
   }
 }
@@ -503,7 +503,7 @@ security-scan:
 // Run seeding
 seedData()
   .then(() => {
-    console.log('\n🎉 All done! You can now test the CMS with sample data.');
+    console.log('\nAll done! You can now test the CMS with sample data.');
     process.exit(0);
   })
   .catch((error) => {

@@ -46,38 +46,38 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('%c🚀 Portfolio Initialized', 'color: #FF9900; font-size: 16px; font-weight: bold;');
-    console.log('%c📦 Loaded Modules:', 'color: #146EB4; font-size: 14px; font-weight: bold;');
+    console.log('%cPortfolio Initialized', 'color: #FF9900; font-size: 16px; font-weight: bold;');
+    console.log('%cLoaded Modules:', 'color: #146EB4; font-size: 14px; font-weight: bold;');
 
     // Check core modules
-    console.log('  ✅ Core modules loaded');
+    console.log('  Core modules loaded');
 
     // Check premium features
     if (window.toast) {
-        console.log('  ✅ Toast system ready');
+        console.log('  Toast system ready');
     }
 
     // Check form validator
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        console.log('  ✅ Form validation ready');
+        console.log('  Form validation ready');
     }
 
     // Check custom cursor (desktop only)
     if (window.innerWidth >= 768) {
         const cursor = document.querySelector('.cursor-dot');
         if (cursor) {
-            console.log('  ✅ Custom cursor active');
+            console.log('  Custom cursor active');
         }
     }
 
     // Check FAB
     const fab = document.querySelector('.fab-container');
     if (fab) {
-        console.log('  ✅ FAB menu ready');
+        console.log('  FAB menu ready');
     }
 
-    console.log('%c🎨 All systems operational!', 'color: #1EC876; font-size: 14px; font-weight: bold;');
+    console.log('%cAll systems operational!', 'color: #1EC876; font-size: 14px; font-weight: bold;');
 });
 
 // ===================================
@@ -89,7 +89,7 @@ if (window.performance && window.performance.timing) {
         setTimeout(() => {
             const timing = window.performance.timing;
             const loadTime = timing.loadEventEnd - timing.navigationStart;
-            console.log(`⚡ Page load time: ${loadTime}ms`);
+            console.log(`Page load time: ${loadTime}ms`);
         }, 0);
     });
 }
@@ -99,7 +99,7 @@ if (window.performance && window.performance.timing) {
 // ===================================
 
 window.addEventListener('error', (event) => {
-    console.error('❌ Error detected:', event.error);
+    console.error('Error detected:', event.error);
     // In production, you might want to send this to an error tracking service
 });
 

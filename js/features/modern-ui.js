@@ -12,7 +12,7 @@ class ModernUIManager {
   }
 
   init() {
-    console.log('✨ Modern UI Manager initialized');
+    console.log('Modern UI Manager initialized');
     this.initScrollReveal();
     this.init3DCards();
     this.initRippleEffect();
@@ -45,7 +45,7 @@ class ModernUIManager {
         this.scrollRevealObserver.observe(el);
       });
 
-      console.log(`🎭 Scroll reveal initialized for ${revealElements.length} elements`);
+      console.log(`Scroll reveal initialized for ${revealElements.length} elements`);
     }
   }
 
@@ -60,7 +60,7 @@ class ModernUIManager {
       card.addEventListener('mouseleave', () => this.handle3DCardLeave(card));
     });
 
-    console.log(`🎴 3D cards initialized: ${this.card3DElements.length}`);
+    console.log(`3D cards initialized: ${this.card3DElements.length}`);
   }
 
   handle3DCardMove(e, card) {
@@ -125,7 +125,7 @@ class ModernUIManager {
       });
     });
 
-    console.log('💧 Ripple effect initialized');
+    console.log('Ripple effect initialized');
   }
 
   /**
@@ -139,7 +139,7 @@ class ModernUIManager {
       element.addEventListener('mouseleave', () => this.hideTooltip());
     });
 
-    console.log(`💬 Tooltips initialized: ${tooltipElements.length}`);
+    console.log(`Tooltips initialized: ${tooltipElements.length}`);
   }
 
   showTooltip(e, element) {
@@ -234,7 +234,7 @@ class ModernUIManager {
       });
     });
 
-    console.log(`🌊 Parallax effects initialized: ${parallaxElements.length}`);
+    console.log(`Parallax effects initialized: ${parallaxElements.length}`);
   }
 
   /**
@@ -288,7 +288,7 @@ class ModernUIManager {
       container.appendChild(particle);
     }
 
-    console.log('✨ Floating particles created');
+    console.log('Floating particles created');
   }
 
   /**
@@ -326,7 +326,7 @@ class ModernUIManager {
 
     circles.forEach(circle => observer.observe(circle));
 
-    console.log(`📊 Progress circles animated: ${circles.length}`);
+    console.log(`Progress circles animated: ${circles.length}`);
   }
 
   /**
@@ -357,7 +357,7 @@ class ModernUIManager {
       lastScroll = currentScroll;
     });
 
-    console.log('📱 Enhanced navbar scroll effects');
+    console.log('Enhanced navbar scroll effects');
   }
 
   /**
@@ -370,7 +370,7 @@ class ModernUIManager {
       text.style.backgroundSize = '200% 200%';
     });
 
-    console.log(`🎨 Gradient text animations: ${gradientTexts.length}`);
+    console.log(`Gradient text animations: ${gradientTexts.length}`);
   }
 
   /**
@@ -399,4 +399,4 @@ if (document.readyState === 'loading') {
 // Export for manual control
 window.ModernUIManager = ModernUIManager;
 
-console.log('🚀 Modern UI JavaScript loaded');
+console.log('Modern UI JavaScript loaded');
