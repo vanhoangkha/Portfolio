@@ -35,24 +35,24 @@ jobs:
 
       - name: Install root dependencies (for CDK bundling tools)
         run: |
-          echo "📦 Installing root dependencies..."
+          echo "Installing root dependencies..."
           npm ci
 
       - name: Install Amplify backend dependencies
         working-directory: infrastructure/amplify
         run: |
-          echo "📦 Installing Amplify Gen 2 dependencies..."
+          echo "Installing Amplify Gen 2 dependencies..."
           npm ci
 
       - name: Install Lambda function dependencies
         working-directory: infrastructure/amplify/functions/contact-handler
         run: |
-          echo "📦 Installing Lambda function dependencies..."
+          echo "Installing Lambda function dependencies..."
           npm ci
 
       - name: Deploy Amplify backend
         run: |
-          echo "🚀 Deploying Amplify Gen 2 backend..."
+          echo "Deploying Amplify Gen 2 backend..."
           echo "This will create:"
           echo "  - Amazon Cognito User Pool"
           echo "  - AWS AppSync GraphQL API"
@@ -64,28 +64,28 @@ jobs:
       - name: Export backend config
         working-directory: infrastructure/amplify
         run: |
-          echo "📝 Generating amplify_outputs.json..."
+          echo "Generating amplify_outputs.json..."
           if [ -f amplify_outputs.json ]; then
             cp amplify_outputs.json ../../apps/web/
-            echo "✅ Config exported to apps/web/"
+            echo "Config exported to apps/web/"
           fi
 
       - name: Deployment summary
         if: success()
         run: |
-          echo "✅ Backend deployment successful!"
+          echo "Backend deployment successful!"
           echo ""
           echo "Resources created:"
-          echo "  ✅ Cognito User Pool"
-          echo "  ✅ AppSync GraphQL API"
-          echo "  ✅ DynamoDB tables (7)"
-          echo "  ✅ Lambda functions"
-          echo "  ✅ S3 buckets (3)"
+          echo "  Cognito User Pool"
+          echo "  AppSync GraphQL API"
+          echo "  DynamoDB tables (7)"
+          echo "  Lambda functions"
+          echo "  S3 buckets (3)"
 
       - name: Notify on failure
         if: failure()
         run: |
-          echo "❌ Backend deployment failed!"
+          echo "Backend deployment failed!"
           echo "Check logs above for details."
 
   deploy-frontend:
@@ -103,7 +103,7 @@ jobs:
 
       - name: Start Amplify deployment
         run: |
-          echo "🚀 Triggering Amplify Hosting deployment..."
+          echo "Triggering Amplify Hosting deployment..."
           JOB_ID=$(aws amplify start-job \
             --app-id ${{ env.AMPLIFY_APP_ID }} \
             --branch-name ${{ github.ref_name }} \
@@ -117,7 +117,7 @@ jobs:
 
       - name: Monitor deployment
         run: |
-          echo "⏳ Monitoring deployment progress..."
+          echo "Monitoring deployment progress..."
 
           for i in {1..30}; do
             STATUS=$(aws amplify get-job \
@@ -131,22 +131,22 @@ jobs:
             echo "Status: $STATUS"
 
             if [ "$STATUS" = "SUCCEED" ]; then
-              echo "✅ Deployment successful!"
+              echo "Deployment successful!"
               exit 0
             elif [ "$STATUS" = "FAILED" ]; then
-              echo "❌ Deployment failed!"
+              echo "Deployment failed!"
               exit 1
             fi
 
             sleep 10
           done
 
-          echo "⏱️ Deployment timeout - check Amplify Console"
+          echo "Deployment timeout - check Amplify Console"
 
       - name: Get production URL
         if: success()
         run: |
-          echo "🌐 Production URL:"
+          echo "Production URL:"
           echo "https://master.${{ env.AMPLIFY_APP_ID }}.amplifyapp.com"
 
   notify:
@@ -159,16 +159,16 @@ jobs:
       - name: Deployment summary
         run: |
           echo "================================================"
-          echo "🎉 AMPLIFY FULL-STACK DEPLOYMENT COMPLETE"
+          echo "AMPLIFY FULL-STACK DEPLOYMENT COMPLETE"
           echo "================================================"
           echo ""
           echo "Backend: ${{ needs.deploy-backend.result }}"
           echo "Frontend: ${{ needs.deploy-frontend.result }}"
           echo ""
-          echo "🔗 Production URL:"
+          echo "Production URL:"
           echo "https://master.${{ env.AMPLIFY_APP_ID }}.amplifyapp.com"
           echo ""
-          echo "📊 Backend Resources:"
+          echo "Backend Resources:"
           echo "  - Cognito User Pool"
           echo "  - AppSync GraphQL API"
           echo "  - DynamoDB (7 tables)"

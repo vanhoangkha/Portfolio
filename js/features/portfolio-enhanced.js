@@ -442,7 +442,7 @@ class PortfolioRenderer {
       this.renderAchievements(achievements);
 
       portfolioUtils.performance.endTimer('portfolioLoad');
-      console.log('✅ Portfolio loaded successfully!');
+      console.log('Portfolio loaded successfully!');
 
       // Cache data for offline access
       portfolioUtils.storage.set('portfolio_data', {
@@ -456,7 +456,7 @@ class PortfolioRenderer {
       });
 
     } catch (error) {
-      console.error('❌ Error initializing portfolio:', error);
+      console.error('Error initializing portfolio:', error);
 
       // Show error states
       const sections = [
@@ -482,7 +482,7 @@ class PortfolioRenderer {
       // Try to load cached data
       const cachedData = portfolioUtils.storage.get('portfolio_data');
       if (cachedData) {
-        console.log('📦 Loading from cache...');
+        console.log('Loading from cache...');
         this.renderSkills(cachedData.skills);
         this.renderCertifications(cachedData.certifications);
         this.renderTestimonials(cachedData.testimonials);

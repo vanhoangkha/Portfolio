@@ -104,7 +104,7 @@ deploy:vercel:production:
     - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
     - vercel build --prod --token=$VERCEL_TOKEN
     - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN > deployment-url.txt
-    - echo "🚀 Deployed to production:"
+    - echo "Deployed to production:"
     - cat deployment-url.txt
   environment:
     name: production

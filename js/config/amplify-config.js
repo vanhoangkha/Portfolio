@@ -6,6 +6,6 @@ Amplify.configure(outputs, {
   ssr: false
 });
 
-console.log('✅ Amplify configured successfully');
+console.log('Amplify configured successfully');
 
 export default Amplify;

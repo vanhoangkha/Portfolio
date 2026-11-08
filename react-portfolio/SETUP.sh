@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Setting up React Portfolio..."
+echo "Setting up React Portfolio..."
 echo ""
 
 # Check Node version
@@ -9,11 +9,11 @@ echo "✓ NPM version: $(npm --version)"
 echo ""
 
 # Install dependencies
-echo "📦 Installing dependencies..."
+echo "Installing dependencies..."
 npm install
 
 echo ""
-echo "✅ Setup complete!"
+echo "Setup complete!"
 echo ""
 echo "Next steps:"
 echo "  1. npm run dev     - Start development server"

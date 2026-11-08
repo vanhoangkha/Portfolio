@@ -32,7 +32,7 @@ jobs:
             --output text)
 
           echo "cost=$COST" >> $GITHUB_OUTPUT
-          echo "📊 Current month cost: \$$COST"
+          echo "Current month cost: \$$COST"
 
       - name: Check budget threshold
         run: |
@@ -40,10 +40,10 @@ jobs:
           COST=${{ steps.cost.outputs.cost }}
           
           if (( $(awk "BEGIN {print ($COST > $THRESHOLD)}") )); then
-            echo "⚠️ Cost \$$COST exceeds threshold \$$THRESHOLD"
+            echo "Cost \$$COST exceeds threshold \$$THRESHOLD"
             exit 1
           else
-            echo "✅ Cost \$$COST is within budget"
+            echo "Cost \$$COST is within budget"
           fi
 
       - name: Get service breakdown
@@ -62,5 +62,5 @@ jobs:
       - name: Notify if over budget
         if: failure()
         run: |
-          echo "💰 AWS cost alert triggered"
+          echo "AWS cost alert triggered"
           # Add Slack/SNS notification here

@@ -41,7 +41,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.greeting}>
-            <span className={styles.wave}>👋</span> {t('hero.greeting')}
+            <span className={styles.wave}></span> {t('hero.greeting')}
           </div>
 
           <h1 className={styles.title}>{t('hero.name')}</h1>

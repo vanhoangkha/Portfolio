@@ -15,7 +15,7 @@ class AdvancedUIController {
   }
 
   init() {
-    console.log('🚀 Advanced UI Controller initialized');
+    console.log('Advanced UI Controller initialized');
     this.initCustomCursor();
     this.initScrollProgress();
     this.initMagneticButtons();
@@ -33,7 +33,7 @@ class AdvancedUIController {
   initCustomCursor() {
     // Skip on touch devices
     if ('ontouchstart' in window) {
-      console.log('⏭️  Skipping custom cursor on touch device');
+      console.log('Skipping custom cursor on touch device');
       return;
     }
 
@@ -80,7 +80,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log('🎯 Custom cursor initialized');
+    console.log('Custom cursor initialized');
   }
 
   /**
@@ -138,7 +138,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log('📊 Scroll progress initialized');
+    console.log('Scroll progress initialized');
   }
 
   /**
@@ -166,7 +166,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log(`🧲 Magnetic buttons initialized: ${magneticButtons.length}`);
+    console.log(`Magnetic buttons initialized: ${magneticButtons.length}`);
   }
 
   /**
@@ -201,7 +201,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log(`🔤 Text scramble initialized: ${scrambleElements.length}`);
+    console.log(`Text scramble initialized: ${scrambleElements.length}`);
   }
 
   /**
@@ -217,7 +217,7 @@ class AdvancedUIController {
         `;
     document.body.insertBefore(blobContainer, document.body.firstChild);
 
-    console.log('💧 Blob morphing initialized');
+    console.log('Blob morphing initialized');
   }
 
   /**
@@ -249,7 +249,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log('🖼️  Image effects initialized');
+    console.log('Image effects initialized');
   }
 
   /**
@@ -282,7 +282,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log('🔘 Floating action buttons initialized');
+    console.log('Floating action buttons initialized');
   }
 
   handleFABAction(action) {
@@ -373,7 +373,7 @@ class AdvancedUIController {
       progressBar.style.width = `${progress}%`;
     }, 200);
 
-    console.log('⏳ Page preloader initialized');
+    console.log('Page preloader initialized');
   }
 
   /**
@@ -384,7 +384,7 @@ class AdvancedUIController {
     noise.className = 'noise-overlay';
     document.body.insertBefore(noise, document.body.firstChild);
 
-    console.log('🔊 Noise overlay initialized');
+    console.log('Noise overlay initialized');
   }
 
   /**
@@ -491,7 +491,7 @@ class AdvancedUIController {
       });
     });
 
-    console.log(`✨ Interactive particles created: ${count}`);
+    console.log(`Interactive particles created: ${count}`);
   }
 
   /**
@@ -531,7 +531,7 @@ if (document.readyState === 'loading') {
 // Export for manual control
 window.AdvancedUIController = AdvancedUIController;
 
-console.log('🎨 Advanced UI JavaScript loaded');
+console.log('Advanced UI JavaScript loaded');
 
 // Add CSS animations for toast
 if (!document.getElementById('advanced-ui-animations')) {

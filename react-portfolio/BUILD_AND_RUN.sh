@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 React Portfolio - Build and Run"
+echo "React Portfolio - Build and Run"
 echo "=================================="
 echo ""
 
@@ -11,7 +11,7 @@ NC='\033[0m' # No Color
 
 # Check if node_modules exists
 if [ ! -d "node_modules" ]; then
-    echo "📦 Installing dependencies..."
+    echo "Installing dependencies..."
     npm install
     echo ""
 fi

@@ -299,5 +299,5 @@ class SearchFilterUI {
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   window.searchFilterUI = new SearchFilterUI();
-  console.log('✅ Search and filter initialized');
+  console.log('Search and filter initialized');
 });

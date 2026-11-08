@@ -621,7 +621,7 @@ function optimizeAnimations() {
 // Initialize All Premium Features
 // ===================================
 function initPremiumFeatures() {
-  console.log('%c✨ Initializing Premium Features...', 'color: #FF9900; font-size: 14px; font-weight: bold;');
+  console.log('%cInitializing Premium Features...', 'color: #FF9900; font-size: 14px; font-weight: bold;');
 
   // Initialize features
   init3DTiltEffect();
@@ -642,7 +642,7 @@ function initPremiumFeatures() {
     hero.appendChild(mesh);
   }
 
-  console.log('%c✅ Premium Features Initialized!', 'color: #1EC876; font-size: 14px; font-weight: bold;');
+  console.log('%cPremium Features Initialized!', 'color: #1EC876; font-size: 14px; font-weight: bold;');
 
   // Show welcome toast
   setTimeout(() => {

@@ -252,7 +252,7 @@ class PerformanceMonitor {
     if (this.timers && this.timers[name]) {
       const duration = performance.now() - this.timers[name];
       this.metrics[name] = duration;
-      console.log(`⏱️ ${name}: ${duration.toFixed(2)}ms`);
+      console.log(`${name}: ${duration.toFixed(2)}ms`);
       return duration;
     }
   }
@@ -396,7 +396,7 @@ if (typeof window !== 'undefined') {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('✅ Portfolio utilities initialized');
+  console.log('Portfolio utilities initialized');
   portfolioUtils.performance.startTimer('pageLoad');
 });
 

@@ -51,7 +51,7 @@ export const Footer = () => {
 
         <div className={styles.bottom}>
           <p>© {currentYear} Kha Van Hoang. All rights reserved.</p>
-          <p>Built with React, TypeScript & ❤️</p>
+          <p>Built with React, TypeScript &</p>
         </div>
       </div>
     </footer>

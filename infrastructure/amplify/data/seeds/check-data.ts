@@ -15,7 +15,7 @@ Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
 async function checkData() {
-  console.log('📊 Checking database statistics...\n');
+  console.log('Checking database statistics...\n');
 
   try {
     const stats = {
@@ -31,7 +31,7 @@ async function checkData() {
     // Blog Posts
     const { data: posts } = await client.models.BlogPost.list();
     stats.blogPosts = posts.length;
-    console.log(`📝 Blog Posts: ${stats.blogPosts}`);
+    console.log(`Blog Posts: ${stats.blogPosts}`);
     if (stats.blogPosts > 0) {
       const published = posts.filter((p) => p.published).length;
       const featured = posts.filter((p) => p.featured).length;
@@ -42,7 +42,7 @@ async function checkData() {
     // Projects
     const { data: projects } = await client.models.Project.list();
     stats.projects = projects.length;
-    console.log(`\n🚀 Projects: ${stats.projects}`);
+    console.log(`\nProjects: ${stats.projects}`);
     if (stats.projects > 0) {
       const featured = projects.filter((p) => p.featured).length;
       const completed = projects.filter((p) => p.status === 'completed').length;
@@ -53,7 +53,7 @@ async function checkData() {
     // Skills
     const { data: skills } = await client.models.Skill.list();
     stats.skills = skills.length;
-    console.log(`\n💻 Skills: ${stats.skills}`);
+    console.log(`\nSkills: ${stats.skills}`);
     if (stats.skills > 0) {
       const categories = [...new Set(skills.map((s) => s.category))];
       console.log(`   - Categories: ${categories.join(', ')}`);
@@ -62,37 +62,37 @@ async function checkData() {
     // Certifications
     const { data: certs } = await client.models.Certification.list();
     stats.certifications = certs.length;
-    console.log(`\n🎓 Certifications: ${stats.certifications}`);
+    console.log(`\nCertifications: ${stats.certifications}`);
 
     // Achievements
     const { data: achievements } = await client.models.Achievement.list();
     stats.achievements = achievements.length;
-    console.log(`\n🏆 Achievements: ${stats.achievements}`);
+    console.log(`\nAchievements: ${stats.achievements}`);
 
     // Community Activities
     const { data: activities } = await client.models.CommunityActivity.list();
     stats.communityActivities = activities.length;
-    console.log(`\n👥 Community Activities: ${stats.communityActivities}`);
+    console.log(`\nCommunity Activities: ${stats.communityActivities}`);
 
     // Contact Submissions
     const { data: contacts } = await client.models.ContactSubmission.list();
     stats.contactSubmissions = contacts.length;
-    console.log(`\n📧 Contact Submissions: ${stats.contactSubmissions}`);
+    console.log(`\nContact Submissions: ${stats.contactSubmissions}`);
     if (stats.contactSubmissions > 0) {
       const newSubmissions = contacts.filter((c) => c.status === 'new').length;
       console.log(`   - New: ${newSubmissions}`);
     }
 
     const total = Object.values(stats).reduce((a, b) => a + b, 0);
-    console.log(`\n📈 Total Records: ${total}`);
+    console.log(`\nTotal Records: ${total}`);
 
     if (total === 0) {
-      console.log('\n⚠️  Database is empty. Run "npm run seed" to populate with sample data.');
+      console.log('\nDatabase is empty. Run "npm run seed" to populate with sample data.');
     } else {
-      console.log('\n✅ Database has data!');
+      console.log('\nDatabase has data!');
     }
   } catch (error) {
-    console.error('❌ Error checking database:', error);
+    console.error('Error checking database:', error);
     process.exit(1);
   }
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Starting React Portfolio Server..."
+echo "Starting React Portfolio Server..."
 echo ""
 
 # Get IP address
@@ -12,7 +12,7 @@ npm run build
 echo ""
 echo "Starting preview server..."
 echo ""
-echo "✅ Server will be available at:"
+echo "Server will be available at:"
 echo "   Local:   http://localhost:3000"
 echo "   Network: http://$IP:3000"
 echo ""

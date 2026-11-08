@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "╔═══════════════════════════════════════════════════════════════╗"
-echo "║     🚀 PUSH TO GITHUB - INTERACTIVE GUIDE                    ║"
+echo "║     PUSH TO GITHUB - INTERACTIVE GUIDE                    ║"
 echo "╚═══════════════════════════════════════════════════════════════╝"
 echo ""
 
@@ -29,7 +29,7 @@ case $choice in
         echo -e "\n${YELLOW}Pushing current branch...${NC}"
         git push origin feature/restructure-international-standards
         if [ $? -eq 0 ]; then
-            echo -e "${GREEN}✅ Push successful!${NC}"
+            echo -e "${GREEN}Push successful!${NC}"
             echo ""
             echo "Next steps:"
             echo "1. Go to: https://github.com/vanhoangkha/Portfolio"
@@ -37,7 +37,7 @@ case $choice in
             echo "3. Create PR and merge to main"
             echo "4. Or just merge locally with option 2"
         else
-            echo -e "${RED}❌ Push failed!${NC}"
+            echo -e "${RED}Push failed!${NC}"
             echo "You need to setup git authentication first (option 3)"
         fi
         ;;
@@ -49,12 +49,12 @@ case $choice in
         echo -e "${YELLOW}Pushing main...${NC}"
         git push origin main
         if [ $? -eq 0 ]; then
-            echo -e "${GREEN}✅ Push successful!${NC}"
+            echo -e "${GREEN}Push successful!${NC}"
             echo ""
-            echo "🎉 Your portfolio will be live in 2-3 minutes at:"
+            echo "Your portfolio will be live in 2-3 minutes at:"
             echo "   https://vanhoangkha.github.io/Portfolio/"
         else
-            echo -e "${RED}❌ Push failed!${NC}"
+            echo -e "${RED}Push failed!${NC}"
             echo "You need to setup git authentication first (option 3)"
         fi
         ;;
@@ -67,7 +67,7 @@ case $choice in
         echo "1. Visit: https://github.com/settings/tokens"
         echo "2. Click 'Generate new token (classic)'"
         echo "3. Give it a name: 'Portfolio Deployment'"
-        echo "4. Select scope: ✅ repo (full control)"
+        echo "4. Select scope: repo (full control)"
         echo "5. Click 'Generate token'"
         echo "6. COPY THE TOKEN (you won't see it again!)"
         echo ""
@@ -82,7 +82,7 @@ case $choice in
         read -p "Press Enter after you've created the token..."
         
         git config --global credential.helper store
-        echo -e "${GREEN}✅ Credential helper configured!${NC}"
+        echo -e "${GREEN}Credential helper configured!${NC}"
         echo ""
         echo "Now run this script again and choose option 1 or 2"
         ;;
@@ -97,6 +97,6 @@ esac
 
 echo ""
 echo "════════════════════════════════════════════════════════"
-echo "📚 For detailed instructions, read: GITHUB_PAGES_DEPLOY.md"
+echo "For detailed instructions, read: GITHUB_PAGES_DEPLOY.md"
 echo "════════════════════════════════════════════════════════"
 
