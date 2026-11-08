@@ -1,21 +1,21 @@
-# ✅ READY TO USE - React Portfolio
+# READY TO USE - React Portfolio
 
-## 🎉 Setup Complete!
+## Setup Complete!
 
 Your React portfolio is **fully configured** and **ready to use**!
 
-### ✓ What's Done
+### What's Done
 
-- ✅ All dependencies installed (619 packages)
-- ✅ Assets copied from original portfolio
-- ✅ TypeScript configured
-- ✅ ESLint + Prettier set up
-- ✅ Testing framework ready
-- ✅ Build system working
-- ✅ PWA configured
-- ✅ Production build successful
+- All dependencies installed (619 packages)
+- Assets copied from original portfolio
+- TypeScript configured
+- ESLint + Prettier set up
+- Testing framework ready
+- Build system working
+- PWA configured
+- Production build successful
 
-### 📊 Build Stats
+### Build Stats
 
 ```
 Bundle Size:
@@ -30,7 +30,7 @@ PWA: 21 files precached (522.42 KB)
 Build time: 5.78s
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Start Development Server
 ```bash
@@ -49,7 +49,7 @@ Output in `dist/` folder
 npm run preview
 ```
 
-## 📝 Next Steps
+## Next Steps
 
 ### 1. Customize Content (Required)
 
@@ -120,7 +120,7 @@ export const defaultSEO: SEOConfig = {
 };
 ```
 
-## 🎨 Customization Guide
+## Customization Guide
 
 ### Change Colors
 1. Open `src/styles/index.css`
@@ -137,7 +137,7 @@ export const defaultSEO: SEOConfig = {
 1. Edit Framer Motion props in components
 2. Or update `src/styles/index.css` for CSS animations
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -150,7 +150,7 @@ npm run test:ui
 npm run test:coverage
 ```
 
-## 🔍 Code Quality
+## Code Quality
 
 ```bash
 # Check types
@@ -166,7 +166,7 @@ npm run format
 npm run validate
 ```
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 ### Build
 ```bash
@@ -191,7 +191,7 @@ npm run build
 npx gh-pages -d dist
 ```
 
-## 📚 Documentation
+## Documentation
 
 - **START_HERE.md** - You are here!
 - **QUICKSTART.md** - Quick reference
@@ -202,7 +202,7 @@ npx gh-pages -d dist
 - **MIGRATION_GUIDE.md** - Migration details
 - **COMPLETE_REFACTOR.md** - Full refactor details
 
-## 🛠️ Useful Scripts
+## Useful Scripts
 
 ```bash
 # Development
@@ -227,7 +227,7 @@ npm run validate         # Run all checks
 ./SETUP.sh               # Setup script
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Port 3000 in use
 ```bash
@@ -251,7 +251,7 @@ npm run lint        # Check linting
 ### Hot reload not working
 Restart dev server: Ctrl+C then `npm run dev`
 
-## ✅ Pre-Deployment Checklist
+## Pre-Deployment Checklist
 
 Before deploying to production:
 
@@ -269,19 +269,19 @@ Before deploying to production:
 - [ ] Configured analytics (optional)
 - [ ] Set up custom domain (optional)
 
-## 🎯 Performance Targets
+## Performance Targets
 
 Your portfolio should achieve:
 
-- ✅ Lighthouse Performance: 95+
-- ✅ Lighthouse Accessibility: 95+
-- ✅ Lighthouse Best Practices: 95+
-- ✅ Lighthouse SEO: 95+
-- ✅ First Contentful Paint: <1.5s
-- ✅ Time to Interactive: <2.5s
-- ✅ Bundle Size: <400KB
+- Lighthouse Performance: 95+
+- Lighthouse Accessibility: 95+
+- Lighthouse Best Practices: 95+
+- Lighthouse SEO: 95+
+- First Contentful Paint: <1.5s
+- Time to Interactive: <2.5s
+- Bundle Size: <400KB
 
-## 💡 Pro Tips
+## Pro Tips
 
 1. **Use TypeScript**: Get autocomplete and catch errors early
 2. **Write Tests**: Ensure code quality
@@ -292,7 +292,7 @@ Your portfolio should achieve:
 7. **Use Git**: Commit changes frequently
 8. **Deploy Often**: Test in production environment
 
-## 📞 Support
+## Support
 
 Need help?
 
@@ -300,14 +300,14 @@ Need help?
 - **GitHub Issues**: https://github.com/vanhoangkha/Portfolio/issues
 - **LinkedIn**: https://linkedin.com/in/vanhoangkha
 
-## 🎓 Learning Resources
+## Learning Resources
 
 - [React Docs](https://react.dev)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook)
 - [Vite Guide](https://vitejs.dev/guide)
 - [Framer Motion](https://www.framer.com/motion)
 
-## 🎉 You're All Set!
+## You're All Set!
 
 Your React portfolio is ready to customize and deploy!
 
@@ -320,11 +320,11 @@ npm run dev
 
 ---
 
-**Built with ❤️ using React, TypeScript, and Vite**
+**Built with using React, TypeScript, and Vite**
 
 **Total Setup Time**: ~5 minutes
 **Build Time**: ~6 seconds
 **Bundle Size**: ~330 KB (gzipped: ~108 KB)
 **Lighthouse Score**: 97/100
 
-🚀 **Happy coding!**
+**Happy coding!**

@@ -8,23 +8,23 @@
 [![Vite](https://img.shields.io/badge/Vite-5.1-646cff)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 
-## ✨ Features
+## Features
 
-- ⚡️ **Vite** - Lightning fast build tool
-- ⚛️ **React 18** - Latest React with concurrent features
-- 📘 **TypeScript** - Full type safety
-- 🎨 **Framer Motion** - Smooth animations
-- 🎯 **Zustand** - Lightweight state management
-- 🛣️ **React Router v6** - Client-side routing
-- 📱 **PWA** - Progressive Web App support
-- 🎭 **CSS Modules** - Scoped styling
-- 🧪 **Vitest** - Fast unit testing
-- 🔍 **ESLint + Prettier** - Code quality
-- 🚀 **CI/CD** - GitHub Actions
-- ♿️ **Accessible** - WCAG 2.1 AA compliant
-- 🔎 **SEO Optimized** - Meta tags, Open Graph, structured data
+- **Vite** - Lightning fast build tool
+- **React 18** - Latest React with concurrent features
+- **TypeScript** - Full type safety
+- **Framer Motion** - Smooth animations
+- **Zustand** - Lightweight state management
+- **React Router v6** - Client-side routing
+- **PWA** - Progressive Web App support
+- **CSS Modules** - Scoped styling
+- **Vitest** - Fast unit testing
+- **ESLint + Prettier** - Code quality
+- **CI/CD** - GitHub Actions
+- **Accessible** - WCAG 2.1 AA compliant
+- **SEO Optimized** - Meta tags, Open Graph, structured data
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js >= 18.0.0
@@ -56,7 +56,7 @@ npm run build
 npm run preview
 ```
 
-## 📦 Scripts
+## Scripts
 
 ```bash
 npm run dev              # Start dev server
@@ -72,7 +72,7 @@ npm run type-check       # Check TypeScript
 npm run validate         # Run all checks
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -92,7 +92,7 @@ src/
 └── main.tsx            # Entry point
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Update Personal Information
 
@@ -130,7 +130,7 @@ Replace files in `public/assets/`:
 - `images/` - Photos/screenshots
 - `icons/` - Favicon and app icons
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run tests
@@ -146,14 +146,14 @@ npm run test:coverage
 npm run test:ui
 ```
 
-## 📊 Performance
+## Performance
 
 - **Lighthouse Score**: 97/100
 - **First Contentful Paint**: <1.5s
 - **Time to Interactive**: <2.5s
 - **Bundle Size**: ~330 KB (gzipped: ~108 KB)
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel (Recommended)
 ```bash
@@ -175,7 +175,7 @@ npx gh-pages -d dist
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 
-## 📚 Documentation
+## Documentation
 
 - [READY_TO_USE.md](READY_TO_USE.md) - Setup complete guide
 - [QUICKSTART.md](QUICKSTART.md) - Quick reference
@@ -185,7 +185,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 - [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) - Migration from vanilla JS
 - [COMPLETE_REFACTOR.md](COMPLETE_REFACTOR.md) - Refactor details
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core
 - React 18.3
@@ -212,29 +212,29 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 - GitHub Actions
 - Workbox (Service Worker)
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file.
 
-## 👤 Author
+## Author
 
 **Kha Van Hoang**
 - Email: khavan.work@gmail.com
 - LinkedIn: [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)
 - GitHub: [github.com/vanhoangkha](https://github.com/vanhoangkha)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - React team for amazing framework
 - Vite team for blazing fast tooling
 - Framer Motion for smooth animations
 - Open source community
 
-## 📈 Stats
+## Stats
 
 - **Files**: 80+
 - **Components**: 25+
@@ -245,6 +245,6 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
-**Built with ❤️ using React, TypeScript, and Vite**
+**Built with using React, TypeScript, and Vite**
 
-⭐ Star this repo if you find it helpful!
+Star this repo if you find it helpful!

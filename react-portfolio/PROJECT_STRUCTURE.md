@@ -1,4 +1,4 @@
-# 📁 Project Structure
+# Project Structure
 
 This document provides an overview of the professional folder structure.
 
@@ -6,16 +6,16 @@ This document provides an overview of the professional folder structure.
 
 ```
 react-portfolio/
-├── 📁 .github/              # GitHub workflows and templates
-├── 📁 config/              # Configuration files
-├── 📁 docs/                # All documentation
+├── .github/ # GitHub workflows and templates
+├── config/ # Configuration files
+├── docs/ # All documentation
 │   ├── guides/            # User and developer guides
 │   ├── architecture/      # Architecture docs
 │   ├── api/              # API documentation
 │   └── changelog/        # Version history
-├── 📁 public/             # Static assets
-├── 📁 scripts/           # Build and utility scripts
-├── 📁 src/               # Source code
+├── public/ # Static assets
+├── scripts/ # Build and utility scripts
+├── src/ # Source code
 │   ├── components/       # React components
 │   ├── pages/           # Page components
 │   ├── hooks/           # Custom hooks
@@ -27,7 +27,7 @@ react-portfolio/
 │   ├── styles/          # Global styles
 │   ├── i18n/           # Internationalization
 │   └── lib/            # Library configurations
-└── 📄 Configuration files
+└── Configuration files
 ```
 
 ## Detailed Structure

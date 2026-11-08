@@ -2,7 +2,7 @@
 
 This document describes the professional folder structure of the React Portfolio project.
 
-## 📁 Root Directory
+## Root Directory
 
 ```
 react-portfolio/
@@ -42,7 +42,7 @@ react-portfolio/
 └── README.md
 ```
 
-## 📂 Source Code Structure (`src/`)
+## Source Code Structure (`src/`)
 
 ### Components (`src/components/`)
 
@@ -197,7 +197,7 @@ lib/
 └── queryClient.ts              # React Query configuration
 ```
 
-## 🎯 Best Practices
+## Best Practices
 
 ### Component Organization
 
@@ -239,7 +239,7 @@ import type { BlogPost } from '@/types';
 import styles from './Component.module.css';
 ```
 
-## 📦 Module Organization
+## Module Organization
 
 ### Barrel Exports
 
@@ -263,7 +263,7 @@ Configured in `vite.config.ts` and `tsconfig.json`:
 - `@store/` → `src/store/`
 - `@types/` → `src/types/`
 
-## 🔄 Migration Notes
+## Migration Notes
 
 When adding new features:
 

@@ -1,10 +1,10 @@
-# 🚀 START HERE - React Portfolio
+# START HERE - React Portfolio
 
-## ✅ Setup Complete!
+## Setup Complete!
 
 Your React portfolio is ready to use. All dependencies are installed and assets are copied.
 
-## 🎯 Quick Commands
+## Quick Commands
 
 ### Development
 ```bash
@@ -38,7 +38,7 @@ npm run format        # Format code
 npm run validate      # Run all checks
 ```
 
-## 📝 Customization Steps
+## Customization Steps
 
 ### 1. Update Personal Information
 
@@ -125,7 +125,7 @@ export const defaultSEO: SEOConfig = {
 };
 ```
 
-## 🎨 Styling Tips
+## Styling Tips
 
 ### CSS Modules
 Each component has its own `.module.css` file for scoped styles.
@@ -136,7 +136,7 @@ Edit `src/styles/index.css` for global styles and CSS variables.
 ### Dark/Light Theme
 Theme automatically switches based on user preference. Customize in `src/store/themeStore.ts`.
 
-## 🧪 Testing Your Changes
+## Testing Your Changes
 
 After making changes:
 
@@ -145,7 +145,7 @@ After making changes:
 3. **Run tests**: `npm test`
 4. **Preview**: `npm run dev`
 
-## 📦 Building for Production
+## Building for Production
 
 ```bash
 # Build
@@ -158,7 +158,7 @@ npm run preview
 ls -lh dist/
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Option 1: Vercel (Recommended)
 ```bash
@@ -180,7 +180,7 @@ npx gh-pages -d dist
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 
-## 📚 Documentation
+## Documentation
 
 - [README.md](README.md) - Project overview
 - [QUICKSTART.md](QUICKSTART.md) - Quick start guide
@@ -190,7 +190,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 - [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) - Migration from vanilla JS
 - [COMPLETE_REFACTOR.md](COMPLETE_REFACTOR.md) - Complete refactor details
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Port 3000 already in use
 ```bash
@@ -217,7 +217,7 @@ npm run lint        # Check linting errors
 # Press Ctrl+C, then npm run dev
 ```
 
-## 💡 Pro Tips
+## Pro Tips
 
 1. **Use TypeScript**: Get autocomplete and type checking
 2. **Use ESLint**: Catch errors early
@@ -226,7 +226,7 @@ npm run lint        # Check linting errors
 5. **Optimize images**: Use WebP format
 6. **Use lazy loading**: For better performance
 
-## 🎓 Learning Resources
+## Learning Resources
 
 ### React
 - [React Docs](https://react.dev)
@@ -241,13 +241,13 @@ npm run lint        # Check linting errors
 ### Framer Motion
 - [Framer Motion Docs](https://www.framer.com/motion)
 
-## 📞 Support
+## Support
 
 - **Email**: khavan.work@gmail.com
 - **GitHub**: https://github.com/vanhoangkha/Portfolio
 - **LinkedIn**: https://linkedin.com/in/vanhoangkha
 
-## ✅ Checklist
+## Checklist
 
 Before deploying:
 
@@ -264,7 +264,7 @@ Before deploying:
 - [ ] Updated meta tags for SEO
 - [ ] Configured analytics (optional)
 
-## 🎉 You're Ready!
+## You're Ready!
 
 Your React portfolio is fully set up and ready to customize. Start with:
 
@@ -276,4 +276,4 @@ Then open http://localhost:3000 and start customizing!
 
 ---
 
-**Built with ❤️ using React, TypeScript, and Vite**
+**Built with using React, TypeScript, and Vite**

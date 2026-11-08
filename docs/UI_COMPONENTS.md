@@ -1,10 +1,10 @@
-# 🎨 Hướng dẫn sử dụng UI Components
+# Hướng dẫn sử dụng UI Components
 
 ## Tổng quan
 
 Bộ sưu tập các component UI hiện đại và đẹp mắt được thiết kế để nâng cao trải nghiệm người dùng.
 
-## 📦 Components có sẵn
+## Components có sẵn
 
 ### 1. Animated Buttons (`animated-buttons.css`)
 
@@ -148,7 +148,7 @@ Bộ sưu tập các component UI hiện đại và đẹp mắt được thiế
 </div>
 ```
 
-## 🎯 Cách sử dụng
+## Cách sử dụng
 
 ### 1. Import CSS files
 
@@ -176,7 +176,7 @@ Chỉ cần thêm class tương ứng vào element:
 </div>
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Thay đổi màu sắc
 
@@ -198,7 +198,7 @@ Sử dụng CSS variables:
 }
 ```
 
-## 📱 Responsive
+## Responsive
 
 Tất cả components đều responsive và hoạt động tốt trên mobile:
 
@@ -210,7 +210,7 @@ Tất cả components đều responsive và hoạt động tốt trên mobile:
 }
 ```
 
-## 🚀 Demo
+## Demo
 
 Xem demo đầy đủ tại: `demo-ui.html`
 
@@ -222,21 +222,21 @@ npm run dev
 http://localhost:8080/demo-ui.html
 ```
 
-## 💡 Tips
+## Tips
 
 1. **Performance**: Sử dụng `will-change` cho animations phức tạp
 2. **Accessibility**: Luôn thêm ARIA labels cho interactive elements
 3. **Browser Support**: Test trên nhiều browsers (Chrome, Firefox, Safari)
 4. **Dark Mode**: Components tự động adapt với dark theme
 
-## 🎓 Best Practices
+## Best Practices
 
 ### 1. Không lạm dụng animations
 ```html
-<!-- ❌ Tránh -->
+<!-- Tránh -->
 <div class="btn-pulse btn-shimmer btn-glitch">Too much!</div>
 
-<!-- ✅ Tốt -->
+<!-- Tốt -->
 <button class="btn-gradient-animated">Clean & Simple</button>
 ```
 
@@ -252,7 +252,7 @@ http://localhost:8080/demo-ui.html
 ### 3. Maintain consistency
 Chọn 1-2 styles chính và sử dụng xuyên suốt project.
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Backdrop filter không hoạt động?
 - Check browser support
@@ -264,7 +264,7 @@ Chọn 1-2 styles chính và sử dụng xuyên suốt project.
 - Add `will-change: transform`
 - Optimize với `contain: layout`
 
-## 📚 Resources
+## Resources
 
 - [CSS Tricks - Glassmorphism](https://css-tricks.com/glassmorphism/)
 - [MDN - Backdrop Filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
@@ -272,4 +272,4 @@ Chọn 1-2 styles chính và sử dụng xuyên suốt project.
 
 ---
 
-**Tạo bởi Kha Van Hoang** ❤️
+**Tạo bởi Kha Van Hoang**

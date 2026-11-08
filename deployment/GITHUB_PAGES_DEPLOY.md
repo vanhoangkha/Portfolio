@@ -1,12 +1,12 @@
-# 🚀 GitHub Pages Deployment Guide
+# GitHub Pages Deployment Guide
 
-## ✅ Code Đã Sẵn Sàng!
+## Code Đã Sẵn Sàng!
 
 Tất cả code đã được commit và sẵn sàng deploy lên GitHub Pages.
 
 ---
 
-## 🔐 BƯỚC 1: Setup Git Authentication
+## BƯỚC 1: Setup Git Authentication
 
 ### Option A: Personal Access Token (Recommended)
 
@@ -49,7 +49,7 @@ git push origin feature/restructure-international-standards
 
 ---
 
-## 🚀 BƯỚC 2: Push Code to GitHub
+## BƯỚC 2: Push Code to GitHub
 
 ```bash
 cd /home/ubuntu/Portfolio
@@ -65,7 +65,7 @@ git push origin master
 
 ---
 
-## ⚙️ BƯỚC 3: Enable GitHub Pages
+## BƯỚC 3: Enable GitHub Pages
 
 ### Automatically (via Workflow):
 
@@ -98,15 +98,15 @@ Nếu muốn deploy từ branch:
 
 ---
 
-## 📱 BƯỚC 4: Access Your Live Site
+## BƯỚC 4: Access Your Live Site
 
 After deployment (2-3 minutes):
 
 ```
-🌐 Production URL:
+Production URL:
 https://vanhoangkha.github.io/Portfolio/
 
-📄 Pages:
+Pages:
 - Homepage: https://vanhoangkha.github.io/Portfolio/
 - Resume:   https://vanhoangkha.github.io/Portfolio/resume.html
 - Blog:     https://vanhoangkha.github.io/Portfolio/blog.html
@@ -114,7 +114,7 @@ https://vanhoangkha.github.io/Portfolio/
 
 ---
 
-## 🔄 QUICK DEPLOY COMMANDS
+## QUICK DEPLOY COMMANDS
 
 ```bash
 # 1. Make changes to code
@@ -133,11 +133,11 @@ git push origin master
 
 ---
 
-## 📊 What Will Be Deployed
+## What Will Be Deployed
 
 All your new features:
 
-✅ **Ultra Modern UI:**
+**Ultra Modern UI:**
 - Glass morphism effects
 - Magnetic button interactions
 - 3D card transformations
@@ -147,13 +147,13 @@ All your new features:
 - Counter animations
 - Enhanced typography
 
-✅ **Content Updates:**
+**Content Updates:**
 - Professional information
 - 50K+ community stats
 - All projects and experience
 - Awards and certifications
 
-✅ **Optimized Structure:**
+**Optimized Structure:**
 - Clean folder organization
 - Assets in proper folders
 - SEO optimized
@@ -161,7 +161,7 @@ All your new features:
 
 ---
 
-## 🎯 Verify Deployment
+## Verify Deployment
 
 ### Check Build Status:
 ```
@@ -176,15 +176,15 @@ curl -I https://vanhoangkha.github.io/Portfolio/
 ```
 
 ### Test Features:
-- ✅ Homepage loads
-- ✅ Dark mode toggle works
-- ✅ Animations smooth
-- ✅ Mobile responsive
-- ✅ All links working
+- Homepage loads
+- Dark mode toggle works
+- Animations smooth
+- Mobile responsive
+- All links working
 
 ---
 
-## 🌐 Custom Domain (Optional)
+## Custom Domain (Optional)
 
 If you have a custom domain:
 
@@ -206,25 +206,25 @@ Value: vanhoangkha.github.io
 ### 3. GitHub Settings:
 - Settings → Pages
 - Custom domain: yourdomain.com
-- Enforce HTTPS: ✅
+- Enforce HTTPS:
 
 ---
 
-## 💰 Cost
+## Cost
 
-**FREE! 🎉**
+**FREE! **
 
 GitHub Pages is completely free for:
-- ✅ Public repositories
-- ✅ Unlimited bandwidth
-- ✅ Free SSL certificate
-- ✅ Global CDN
-- ✅ 100GB/month soft limit
-- ✅ Custom domains supported
+- Public repositories
+- Unlimited bandwidth
+- Free SSL certificate
+- Global CDN
+- 100GB/month soft limit
+- Custom domains supported
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Deployment Failed?
 1. Check Actions tab for errors
@@ -243,25 +243,25 @@ GitHub Pages is completely free for:
 
 ---
 
-## ✨ Features Active
+## Features Active
 
 Once deployed, your portfolio will have:
 
-- 🎨 **Premium UI** - Glass morphism, 3D effects
-- 🧲 **Magnetic Buttons** - Interactive hover
-- 🎭 **3D Cards** - Tilt on mouse move
-- 🌈 **Animated Gradients** - Smooth colors
-- 📜 **Scroll Reveals** - Fade-in animations
-- ✍️ **Typing Effect** - Auto-typing text
-- 📊 **Counters** - Animated statistics
-- 🌓 **Dark Mode** - Toggle light/dark
-- 📱 **Responsive** - Perfect on mobile
-- ⚡ **Fast** - Optimized performance
-- 🔒 **Secure** - HTTPS enabled
+- **Premium UI** - Glass morphism, 3D effects
+- **Magnetic Buttons** - Interactive hover
+- **3D Cards** - Tilt on mouse move
+- **Animated Gradients** - Smooth colors
+- **Scroll Reveals** - Fade-in animations
+- **Typing Effect** - Auto-typing text
+- **Counters** - Animated statistics
+- **Dark Mode** - Toggle light/dark
+- **Responsive** - Perfect on mobile
+- **Fast** - Optimized performance
+- **Secure** - HTTPS enabled
 
 ---
 
-## 🎉 Success Checklist
+## Success Checklist
 
 After deployment:
 
@@ -276,7 +276,7 @@ After deployment:
 
 ---
 
-## 📚 Next Steps
+## Next Steps
 
 1. **Push code** (see BƯỚC 1 above)
 2. **Enable GitHub Pages** (BƯỚC 3)
@@ -285,5 +285,5 @@ After deployment:
 
 ---
 
-**Your portfolio is ready to shine on GitHub Pages! 🌟**
+**Your portfolio is ready to shine on GitHub Pages! **
 

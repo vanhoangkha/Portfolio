@@ -2,14 +2,14 @@
 
 Scripts để populate dữ liệu mẫu vào DynamoDB cho portfolio.
 
-## 📋 Mục Lục
+## Mục Lục
 
 - [Cài Đặt](#cài-đặt)
 - [Sử Dụng](#sử-dụng)
 - [Dữ Liệu Mẫu](#dữ-liệu-mẫu)
 - [Troubleshooting](#troubleshooting)
 
-## 🚀 Cài Đặt
+## Cài Đặt
 
 1. **Đảm bảo backend đã được deploy:**
    ```bash
@@ -27,7 +27,7 @@ Scripts để populate dữ liệu mẫu vào DynamoDB cho portfolio.
    ls ../amplify_outputs.json
    ```
 
-## 💻 Sử Dụng
+## Sử Dụng
 
 ### Kiểm tra dữ liệu hiện tại
 
@@ -38,19 +38,19 @@ npm run seed:check
 
 Kết quả:
 ```
-📊 Checking database statistics...
+Checking database statistics...
 
-📝 Blog Posts: 0
-🚀 Projects: 0
-💻 Skills: 0
-🎓 Certifications: 0
-🏆 Achievements: 0
-👥 Community Activities: 0
-📧 Contact Submissions: 0
+Blog Posts: 0
+Projects: 0
+Skills: 0
+Certifications: 0
+Achievements: 0
+Community Activities: 0
+Contact Submissions: 0
 
-📈 Total Records: 0
+Total Records: 0
 
-⚠️  Database is empty. Run "npm run seed" to populate with sample data.
+Database is empty. Run "npm run seed" to populate with sample data.
 ```
 
 ### Thêm dữ liệu mẫu
@@ -73,33 +73,33 @@ npm run seed:check
 
 Kết quả mong đợi:
 ```
-📊 Checking database statistics...
+Checking database statistics...
 
-📝 Blog Posts: 6
+Blog Posts: 6
    - Published: 6
    - Featured: 2
 
-🚀 Projects: 6
+Projects: 6
    - Featured: 3
    - Completed: 4
 
-💻 Skills: 24
+Skills: 24
    - Categories: Cloud, Architecture, AI/ML, DevOps, Programming, Database
 
-🎓 Certifications: 5
+Certifications: 5
 
-🏆 Achievements: 5
+Achievements: 5
 
-👥 Community Activities: 5
+Community Activities: 5
 
-📧 Contact Submissions: 0
+Contact Submissions: 0
 
-📈 Total Records: 51
+Total Records: 51
 
-✅ Database has data!
+Database has data!
 ```
 
-## 📊 Dữ Liệu Mẫu
+## Dữ Liệu Mẫu
 
 ### Blog Posts (6 bài viết)
 - **Scalable AWS Architectures** (Featured)
@@ -147,7 +147,7 @@ Kết quả mong đợi:
 - DevOps Vietnam Conference
 - Tech Talk: Serverless at Scale
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Lỗi: "Cannot find amplify_outputs.json"
 
@@ -235,7 +235,7 @@ npm run deploy
    const { data: posts } = await client.models.BlogPost.list();
    ```
 
-## 📝 Tùy Chỉnh Dữ Liệu
+## Tùy Chỉnh Dữ Liệu
 
 Để thêm/sửa dữ liệu mẫu:
 
@@ -256,11 +256,11 @@ npm run deploy
    npm run seed:clear  # Xóa cũ và thêm mới
    ```
 
-## 🔐 Security Note
+## Security Note
 
-⚠️ **Production:** Đảm bảo `authorizationMode` là `userPool` trong production, không dùng `apiKey` trừ khi cần thiết.
+**Production:** Đảm bảo `authorizationMode` là `userPool` trong production, không dùng `apiKey` trừ khi cần thiết.
 
-## 📚 Resources
+## Resources
 
 - [AWS Amplify Data Documentation](https://docs.amplify.aws/gen2/build-a-backend/data/)
 - [GraphQL API Documentation](https://docs.amplify.aws/gen2/build-a-backend/data/connect-to-api/)

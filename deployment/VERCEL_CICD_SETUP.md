@@ -1,6 +1,6 @@
 # Vercel CI/CD Setup Guide
 
-## 🔧 Cấu hình GitLab CI/CD với Vercel
+## Cấu hình GitLab CI/CD với Vercel
 
 ### Bước 1: Lấy Vercel Token
 
@@ -42,9 +42,9 @@ Thêm các variables:
 
 | Key | Value | Protected | Masked |
 |-----|-------|-----------|--------|
-| `VERCEL_TOKEN` | Token từ bước 1 | ✅ | ✅ |
-| `VERCEL_ORG_ID` | orgId từ bước 2 | ✅ | ❌ |
-| `VERCEL_PROJECT_ID` | projectId từ bước 2 | ✅ | ❌ |
+| `VERCEL_TOKEN` | Token từ bước 1 | Yes | Yes |
+| `VERCEL_ORG_ID` | orgId từ bước 2 | Yes | No |
+| `VERCEL_PROJECT_ID` | projectId từ bước 2 | Yes | No |
 
 ### Bước 4: Tạo vercel.json (đã có)
 
@@ -58,27 +58,27 @@ git commit -m "feat: setup Vercel CI/CD"
 git push gitlab main
 ```
 
-## 🚀 Workflow
+## Workflow
 
 ### Khi tạo Merge Request:
-- ✅ Run tests
-- ✅ Build project
-- ✅ Deploy preview lên Vercel
-- 📝 Comment preview URL vào MR
+- Run tests
+- Build project
+- Deploy preview lên Vercel
+- Comment preview URL vào MR
 
 ### Khi merge vào main:
-- ✅ Run tests
-- ✅ Build project
-- ✅ Deploy production lên Vercel
-- 🌐 Update production URL
+- Run tests
+- Build project
+- Deploy production lên Vercel
+- Update production URL
 
-## 📊 Monitoring
+## Monitoring
 
 - **GitLab Pipelines**: https://gitlab.com/awsfirstcloudaijourney/Portfolio/-/pipelines
 - **Vercel Dashboard**: https://vercel.com/dashboard
 - **Deployment Logs**: Trong GitLab CI/CD job logs
 
-## 🔄 Rollback
+## Rollback
 
 ### Qua Vercel Dashboard:
 1. Vào https://vercel.com/dashboard
@@ -90,17 +90,17 @@ git push gitlab main
 vercel rollback
 ```
 
-## 🎯 Lợi ích
+## Lợi ích
 
-- ✅ Tự động deploy mỗi khi push
-- ✅ Preview cho mỗi MR
-- ✅ Zero-downtime deployment
-- ✅ Instant rollback
-- ✅ Global CDN
-- ✅ HTTPS tự động
-- ✅ Analytics built-in
+- Tự động deploy mỗi khi push
+- Preview cho mỗi MR
+- Zero-downtime deployment
+- Instant rollback
+- Global CDN
+- HTTPS tự động
+- Analytics built-in
 
-## 🔐 Security
+## Security
 
 - Token được mask trong logs
 - Protected variables chỉ chạy trên protected branches

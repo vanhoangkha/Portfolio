@@ -1,4 +1,4 @@
-# JavaScript Directory 💻
+# JavaScript Directory
 
 ## Structure
 

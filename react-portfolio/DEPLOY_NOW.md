@@ -1,14 +1,14 @@
-# 🚀 DEPLOY NGAY - 5 PHÚT
+# DEPLOY NGAY - 5 PHÚT
 
-## ✅ Sẵn Sàng Deploy
+## Sẵn Sàng Deploy
 
 Portfolio của bạn đã:
-- ✅ Build thành công
-- ✅ Push lên GitHub
-- ✅ Vercel config ready
-- ✅ 100% production ready
+- Build thành công
+- Push lên GitHub
+- Vercel config ready
+- 100% production ready
 
-## 🎯 Deploy Trong 5 Phút
+## Deploy Trong 5 Phút
 
 ### Bước 1: Mở Vercel (1 phút)
 
@@ -44,22 +44,22 @@ Portfolio của bạn đã:
 ### Bước 3: Đợi Deploy (2 phút)
 
 Vercel sẽ:
-- ✅ Install dependencies
-- ✅ Build project
-- ✅ Deploy to CDN
-- ✅ Generate URL
+- Install dependencies
+- Build project
+- Deploy to CDN
+- Generate URL
 
-### Bước 4: Xong! 🎉
+### Bước 4: Xong!
 
 Bạn sẽ thấy:
 ```
-🎉 Congratulations!
+Congratulations!
 
 Your project is live at:
 https://portfolio-[random].vercel.app
 ```
 
-## 📱 URL Của Bạn
+## URL Của Bạn
 
 Sau khi deploy, bạn sẽ có:
 
@@ -73,7 +73,7 @@ https://portfolio-vanhoangkha.vercel.app
 https://portfolio-[commit-hash].vercel.app
 ```
 
-## 🔧 Nếu Có Lỗi
+## Nếu Có Lỗi
 
 ### Lỗi: "Build Failed"
 
@@ -108,7 +108,7 @@ git push
 
 Vercel sẽ auto redeploy.
 
-## 🎨 Custom Domain (Optional)
+## Custom Domain (Optional)
 
 Nếu muốn domain riêng như `khavanhoang.com`:
 
@@ -118,7 +118,7 @@ Nếu muốn domain riêng như `khavanhoang.com`:
 4. Update DNS theo hướng dẫn
 5. Đợi 24h
 
-## 🔄 Auto Deploy
+## Auto Deploy
 
 Từ giờ, mỗi khi bạn:
 ```bash
@@ -127,7 +127,7 @@ git push origin main
 
 Vercel sẽ **tự động deploy** trong 2-3 phút!
 
-## 📊 Monitor Portfolio
+## Monitor Portfolio
 
 Trong Vercel Dashboard:
 
@@ -146,27 +146,27 @@ Dashboard → Speed Insights
 Dashboard → Logs
 ```
 
-## 🌟 Share Portfolio
+## Share Portfolio
 
 ### LinkedIn Post
 
 ```
-🚀 Excited to share my new portfolio!
+Excited to share my new portfolio!
 
 As a Cloud Solutions Architect with 5 years of experience, 
 I've built this portfolio to showcase my work with AWS, 
 Azure, and GCP.
 
-✨ Highlights:
+Highlights:
 • 50,000+ professionals enabled
 • $2M+ in cost savings delivered
 • AWS Community Builder
 • 7 AWS Certifications
 
 Built with React, TypeScript, and Vite
-🎨 Professional UX/UI design
-♿ WCAG 2.1 AA compliant
-⚡ Lighthouse score: 97/100
+Professional UX/UI design
+WCAG 2.1 AA compliant
+Lighthouse score: 97/100
 
 Check it out: [YOUR-VERCEL-URL]
 
@@ -186,7 +186,7 @@ Add portfolio link:
 Portfolio: https://your-portfolio.vercel.app
 ```
 
-## ✅ Post-Deploy Checklist
+## Post-Deploy Checklist
 
 Test portfolio:
 
@@ -202,7 +202,7 @@ Test portfolio:
 - [ ] Resume downloads
 - [ ] Social links work
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Share**: Post on LinkedIn
 2. **Update**: Add to resume
@@ -210,7 +210,7 @@ Test portfolio:
 4. **Monitor**: Check analytics weekly
 5. **Update**: Keep content fresh
 
-## 📞 Support
+## Support
 
 **Vercel Issues**:
 - Docs: https://vercel.com/docs
@@ -220,19 +220,19 @@ Test portfolio:
 - GitHub: https://github.com/vanhoangkha/Portfolio
 - Email: khavan.work@gmail.com
 
-## 🎉 Success!
+## Success!
 
 Sau khi deploy:
 
-✅ Portfolio live 24/7
-✅ Free SSL certificate
-✅ Global CDN (fast worldwide)
-✅ Auto-deploy on push
-✅ 99.99% uptime
-✅ Free analytics
-✅ Unlimited bandwidth
+Portfolio live 24/7
+Free SSL certificate
+Global CDN (fast worldwide)
+Auto-deploy on push
+99.99% uptime
+Free analytics
+Unlimited bandwidth
 
-**Chúc mừng! Bạn đã có portfolio professional online!** 🚀
+**Chúc mừng! Bạn đã có portfolio professional online!**
 
 ---
 
@@ -242,4 +242,4 @@ Sau khi deploy:
 
 **Chi phí**: $0 (Free forever)
 
-**Kết quả**: Portfolio online ngay lập tức! 🎊
+**Kết quả**: Portfolio online ngay lập tức!

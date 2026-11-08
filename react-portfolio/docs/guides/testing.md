@@ -97,10 +97,10 @@ describe('formatDate', () => {
 Focus on testing what users see and do, not implementation details.
 
 ```typescript
-// ✅ Good - tests user behavior
+// Good - tests user behavior
 expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
 
-// ❌ Bad - tests implementation
+// Bad - tests implementation
 expect(component.state.isSubmitting).toBe(false);
 ```
 
@@ -108,12 +108,12 @@ expect(component.state.isSubmitting).toBe(false);
 Prefer queries that reflect how users interact with your app.
 
 ```typescript
-// ✅ Good - semantic queries
+// Good - semantic queries
 screen.getByRole('button', { name: /submit/i });
 screen.getByLabelText(/email/i);
 screen.getByText(/welcome/i);
 
-// ❌ Bad - implementation queries
+// Bad - implementation queries
 screen.getByTestId('submit-button');
 screen.getByClassName('email-input');
 ```
@@ -204,10 +204,10 @@ screen.debug(); // prints current DOM
 **Solution**: Use `waitFor` or `findBy` queries
 
 ```typescript
-// ✅ Good
+// Good
 expect(await screen.findByText('Updated')).toBeInTheDocument();
 
-// ❌ Bad
+// Bad
 expect(screen.getByText('Updated')).toBeInTheDocument();
 ```
 
