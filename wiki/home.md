@@ -2,7 +2,7 @@
 
 Welcome to the Portfolio project wiki!
 
-## 📚 Documentation
+## Documentation
 
 - [Getting Started](getting-started)
 - [Architecture](architecture)
@@ -11,14 +11,14 @@ Welcome to the Portfolio project wiki!
 - [API Documentation](api)
 - [Troubleshooting](troubleshooting)
 
-## 🚀 Quick Links
+## Quick Links
 
 - [Project Repository](https://gitlab.com/awsfirstcloudaijourney/Portfolio)
 - [CI/CD Pipelines](https://gitlab.com/awsfirstcloudaijourney/Portfolio/-/pipelines)
 - [Issues](https://gitlab.com/awsfirstcloudaijourney/Portfolio/-/issues)
 - [Merge Requests](https://gitlab.com/awsfirstcloudaijourney/Portfolio/-/merge_requests)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 + TypeScript
 - **Styling**: CSS Modules
@@ -29,16 +29,16 @@ Welcome to the Portfolio project wiki!
 - **Deployment**: Kubernetes + Docker
 - **Hosting**: AWS Amplify / GitLab Pages
 
-## 📊 Project Status
+## Project Status
 
-- ✅ Phase 1: Core functionality complete
-- ✅ Phase 2: Advanced features complete
-- 🚧 Phase 3: Backend integration in progress
+- Phase 1: Core functionality complete
+- Phase 2: Advanced features complete
+- Phase 3: Backend integration in progress
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see [LICENSE](../LICENSE) for details.

@@ -1,4 +1,4 @@
-# CSS Directory 🎨
+# CSS Directory
 
 ## Structure
 

@@ -1,14 +1,14 @@
-# 🚀 Hướng Dẫn Deploy Portfolio Lên Vercel
+# Hướng Dẫn Deploy Portfolio Lên Vercel
 
-## ✅ Chuẩn Bị
+## Chuẩn Bị
 
 Portfolio đã sẵn sàng deploy với:
-- ✅ Build thành công
-- ✅ Vercel config đã tạo
-- ✅ Code đã push lên GitHub
-- ✅ Production ready
+- Build thành công
+- Vercel config đã tạo
+- Code đã push lên GitHub
+- Production ready
 
-## 🌐 Deploy Qua Vercel Web (Khuyến Nghị)
+## Deploy Qua Vercel Web (Khuyến Nghị)
 
 ### Bước 1: Tạo Tài Khoản Vercel
 
@@ -40,7 +40,7 @@ Install Command: npm install
 
 1. Click **"Deploy"**
 2. Đợi 2-3 phút
-3. Xong! 🎉
+3. Xong!
 
 ### Bước 5: Lấy URL
 
@@ -49,7 +49,7 @@ Sau khi deploy xong, bạn sẽ có URL như:
 https://portfolio-username.vercel.app
 ```
 
-## 🎯 Deploy Thủ Công (Alternative)
+## Deploy Thủ Công (Alternative)
 
 Nếu muốn deploy từ terminal:
 
@@ -88,7 +88,7 @@ Làm theo hướng dẫn:
 vercel --prod
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Build Failed?
 
@@ -121,7 +121,7 @@ Nếu cần (hiện tại không cần):
 2. Add variables
 3. Redeploy
 
-## 🎨 Custom Domain (Optional)
+## Custom Domain (Optional)
 
 ### Bước 1: Mua Domain
 
@@ -151,14 +151,14 @@ Value: cname.vercel-dns.com
 
 Đợi 24-48 giờ để DNS propagate.
 
-## 🔄 Auto Deploy
+## Auto Deploy
 
 Vercel tự động deploy khi:
-- ✅ Push code lên GitHub main branch
-- ✅ Merge pull request
-- ✅ Manual trigger trong dashboard
+- Push code lên GitHub main branch
+- Merge pull request
+- Manual trigger trong dashboard
 
-## 📊 Monitoring
+## Monitoring
 
 Trong Vercel Dashboard:
 - **Analytics**: Xem traffic
@@ -166,7 +166,7 @@ Trong Vercel Dashboard:
 - **Deployments**: Xem history
 - **Speed Insights**: Performance metrics
 
-## 🎯 Post-Deploy Checklist
+## Post-Deploy Checklist
 
 - [ ] Site loads correctly
 - [ ] All pages work
@@ -177,7 +177,7 @@ Trong Vercel Dashboard:
 - [ ] Forms work (if any)
 - [ ] Performance good (Lighthouse)
 
-## 🌟 Optimization Tips
+## Optimization Tips
 
 ### 1. Enable Analytics
 
@@ -195,18 +195,18 @@ Vercel Dashboard → Analytics → Enable
 
 Vercel Dashboard → Speed Insights → Enable
 
-## 📱 Share Your Portfolio
+## Share Your Portfolio
 
 Sau khi deploy, share:
 
 **LinkedIn**:
 ```
-🚀 Excited to share my new portfolio!
+Excited to share my new portfolio!
 
 Built with React, TypeScript, and Vite
-✅ Professional UX/UI design
-✅ WCAG 2.1 AA compliant
-✅ Lighthouse score: 97/100
+Professional UX/UI design
+WCAG 2.1 AA compliant
+Lighthouse score: 97/100
 
 Check it out: [your-url]
 
@@ -215,19 +215,19 @@ Check it out: [your-url]
 
 **Twitter**:
 ```
-Just launched my new portfolio! 🚀
+Just launched my new portfolio!
 
 Built with React + TypeScript
-⚡ Vite for blazing fast builds
-🎨 Modern UX/UI design
-♿ Fully accessible
+Vite for blazing fast builds
+Modern UX/UI design
+Fully accessible
 
 [your-url]
 
 #100DaysOfCode #WebDev
 ```
 
-## 🆘 Need Help?
+## Need Help?
 
 ### Vercel Support
 - Docs: https://vercel.com/docs
@@ -238,18 +238,18 @@ Built with React + TypeScript
 - GitHub: https://github.com/vanhoangkha/Portfolio/issues
 - Email: khavan.work@gmail.com
 
-## ✅ Success!
+## Success!
 
 Sau khi deploy xong:
 
-1. ✅ Portfolio live tại: `https://your-portfolio.vercel.app`
-2. ✅ Auto-deploy khi push code
-3. ✅ Free SSL certificate
-4. ✅ Global CDN
-5. ✅ Analytics included
-6. ✅ 99.99% uptime
+1. Portfolio live tại: `https://your-portfolio.vercel.app`
+2. Auto-deploy khi push code
+3. Free SSL certificate
+4. Global CDN
+5. Analytics included
+6. 99.99% uptime
 
-**Chúc mừng! Portfolio của bạn đã online!** 🎉
+**Chúc mừng! Portfolio của bạn đã online!**
 
 ---
 
@@ -257,4 +257,4 @@ Sau khi deploy xong:
 1. Share URL với network
 2. Add to LinkedIn profile
 3. Update resume với portfolio link
-4. Apply for jobs! 💼
+4. Apply for jobs!

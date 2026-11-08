@@ -8,15 +8,15 @@
 
 ---
 
-## 💼 Professional Summary
+## Professional Summary
 
 Senior Cloud Security Engineer with **5+ years** of experience designing, implementing, and operating security solutions across **AWS, Azure, and GCP**. Specializing in:
 
-- 🛡️ Cloud Security Architecture & Zero Trust Design
-- 🚨 SOC Operations & Incident Response Automation
-- 🔍 Threat Detection & Hunting Frameworks
-- 📊 Compliance & Risk Management (PCI-DSS, SOC2, ISO 27001)
-- 🤖 Infrastructure as Code (Terraform, CloudFormation)
+- Cloud Security Architecture & Zero Trust Design
+- SOC Operations & Incident Response Automation
+- Threat Detection & Hunting Frameworks
+- Compliance & Risk Management (PCI-DSS, SOC2, ISO 27001)
+- Infrastructure as Code (Terraform, CloudFormation)
 
 **Community Impact:**
 - AWS Community Builder (Cloud Security Track)
@@ -26,9 +26,9 @@ Senior Cloud Security Engineer with **5+ years** of experience designing, implem
 
 ---
 
-## 🎯 Featured Projects
+## Featured Projects
 
-### 1. AWS First Cloud Journey (⭐ 18 stars)
+### 1. AWS First Cloud Journey (18 stars)
 **Complete AWS Learning Platform**
 
 A comprehensive AWS learning resource serving 45,000+ community members with structured learning paths, hands-on labs, and certification preparation.
@@ -44,7 +44,7 @@ A comprehensive AWS learning resource serving 45,000+ community members with str
 
 ---
 
-### 2. n8n on AWS EKS (⭐ 16 stars)
+### 2. n8n on AWS EKS (16 stars)
 **Production-Ready Workflow Automation Platform**
 
 Enterprise-grade deployment of n8n workflow automation on AWS EKS with high availability, security hardening, and scalability.
@@ -60,7 +60,7 @@ Enterprise-grade deployment of n8n workflow automation on AWS EKS with high avai
 
 ---
 
-### 3. AWS Free Tier Optimization Guide (⭐ 11 stars)
+### 3. AWS Free Tier Optimization Guide (11 stars)
 **Cost Management for Startups**
 
 Comprehensive guide helping startups and learners maximize AWS Free Tier benefits with practical cost optimization strategies.
@@ -76,7 +76,7 @@ Comprehensive guide helping startups and learners maximize AWS Free Tier benefit
 
 ---
 
-### 4. Event Operations Handbook (⭐ 6 stars)
+### 4. Event Operations Handbook (6 stars)
 **Large-Scale Tech Event Management**
 
 Complete operational handbook for organizing enterprise tech events with 1,500+ attendees, based on real-world AWS community events.
@@ -124,7 +124,7 @@ Comprehensive AI-powered financial analysis platform built with Streamlit and AW
 
 ---
 
-## 🛠️ Technical Skills
+## Technical Skills
 
 ### Cloud Platforms & Security
 ```
@@ -148,7 +148,7 @@ Kubernetes   ████████░░ 80%
 
 ---
 
-## 📊 Professional Achievements
+## Professional Achievements
 
 | Achievement | Impact | Year |
 |-------------|--------|------|
@@ -161,7 +161,7 @@ Kubernetes   ████████░░ 80%
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - **[Case Studies](./CASE_STUDIES.md)** - Detailed project breakdowns with technical deep dives
 - **[Blog Articles](./BLOG_ARTICLES.md)** - Published content and technical articles
@@ -170,19 +170,19 @@ Kubernetes   ████████░░ 80%
 
 ---
 
-## 💬 Let's Connect
+## Let's Connect
 
 I'm always interested in collaborating on:
 
-- ☁️ Cloud security architecture projects
-- 🔍 Threat detection and incident response initiatives
-- 📚 Educational content and community projects
-- 🤝 Security tool development and automation
+- Cloud security architecture projects
+- Threat detection and incident response initiatives
+- Educational content and community projects
+- Security tool development and automation
 
-**📧 Email:** [khavan.work@gmail.com](mailto:khavan.work@gmail.com)  
-**💼 LinkedIn:** [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)  
-**🐦 Twitter:** [@WorkKhavan](https://twitter.com/WorkKhavan)  
-**🌐 Website:** [vanhoangkha.github.io](https://vanhoangkha.github.io)
+**Email:** [khavan.work@gmail.com](mailto:khavan.work@gmail.com)
+**LinkedIn:** [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)
+**Twitter:** [@WorkKhavan](https://twitter.com/WorkKhavan)
+**Website:** [vanhoangkha.github.io](https://vanhoangkha.github.io)
 
 ---
 

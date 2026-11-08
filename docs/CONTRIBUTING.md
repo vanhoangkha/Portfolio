@@ -92,4 +92,4 @@ Feel free to open an issue for any questions or reach out to:
 - Email: khavan.work@gmail.com
 - LinkedIn: [linkedin.com/in/vanhoangkha](https://linkedin.com/in/vanhoangkha)
 
-Thank you for contributing! 🎉
+Thank you for contributing!

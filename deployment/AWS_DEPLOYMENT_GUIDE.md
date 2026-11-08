@@ -1,10 +1,10 @@
-# 🚀 AWS Deployment Guide - Portfolio Full-Stack
+# AWS Deployment Guide - Portfolio Full-Stack
 
-## 📊 Current Deployment Status
+## Current Deployment Status
 
-### ✅ **Backend Infrastructure (AWS Amplify Gen 2)**
+### **Backend Infrastructure (AWS Amplify Gen 2)**
 
-**Status:** ✅ DEPLOYED
+**Status:** DEPLOYED
 
 **Resources Created:**
 ```
@@ -47,7 +47,7 @@ App ID: dzecmyr42457
 
 ---
 
-## 🌐 **Frontend Hosting (AWS Amplify)**
+## **Frontend Hosting (AWS Amplify)**
 
 ### Production URL:
 ```
@@ -61,7 +61,7 @@ https://master.dzecmyr42457.amplifyapp.com
 
 ---
 
-## 🔄 **CI/CD Pipeline (GitHub Actions)**
+## **CI/CD Pipeline (GitHub Actions)**
 
 ### Workflows Available:
 
@@ -83,7 +83,7 @@ https://master.dzecmyr42457.amplifyapp.com
 
 ---
 
-## 🚀 **How to Deploy**
+## **How to Deploy**
 
 ### Method 1: GitHub Push (Automatic)
 
@@ -124,7 +124,7 @@ npx ampx pipeline-deploy --branch master --app-id dzecmyr42457
 
 ---
 
-## 📁 **Project Structure for Deployment**
+## **Project Structure for Deployment**
 
 ```
 Portfolio/
@@ -148,7 +148,7 @@ Portfolio/
 
 ---
 
-## ⚙️ **Environment Variables Needed**
+## **Environment Variables Needed**
 
 For GitHub Actions:
 
@@ -161,7 +161,7 @@ AMPLIFY_APP_ID: dzecmyr42457
 
 ---
 
-## 🔧 **Local Development with Backend**
+## **Local Development with Backend**
 
 ### Start Amplify Sandbox:
 
@@ -193,7 +193,7 @@ python3 -m http.server 8000
 
 ---
 
-## 📊 **Backend Data Management**
+## **Backend Data Management**
 
 ### GraphQL API Endpoint:
 ```
@@ -246,7 +246,7 @@ curl -X POST \
 
 ---
 
-## 🎯 **Deployment Checklist**
+## **Deployment Checklist**
 
 Before deploying:
 
@@ -261,7 +261,7 @@ Before deploying:
 
 ---
 
-## 📱 **Access URLs**
+## **Access URLs**
 
 ### Production:
 ```
@@ -277,7 +277,7 @@ Backend:  Sandbox - dynamic URL when running
 
 ---
 
-## 🔍 **Monitoring & Logs**
+## **Monitoring & Logs**
 
 ### AWS Amplify Console:
 - Build logs: https://console.aws.amazon.com/amplify/apps/dzecmyr42457
@@ -292,7 +292,7 @@ Backend:  Sandbox - dynamic URL when running
 
 ---
 
-## 💰 **Cost Estimation**
+## **Cost Estimation**
 
 **Expected Monthly Cost:** ~$5-10
 
@@ -310,7 +310,7 @@ Backend:  Sandbox - dynamic URL when running
 
 ---
 
-## 🚨 **Troubleshooting**
+## **Troubleshooting**
 
 ### Build Fails on Amplify:
 
@@ -346,7 +346,7 @@ Backend already configured for CORS. If issues persist:
 
 ---
 
-## 🔄 **Update Deployment**
+## **Update Deployment**
 
 ### Update Frontend Only:
 
@@ -368,7 +368,7 @@ npx ampx pipeline-deploy --branch master --app-id dzecmyr42457
 
 ---
 
-## 🎉 **Quick Deploy Commands**
+## **Quick Deploy Commands**
 
 ```bash
 # Full deploy (backend + frontend)
@@ -386,7 +386,7 @@ curl -I https://master.dzecmyr42457.amplifyapp.com
 
 ---
 
-## 📚 **Resources**
+## **Resources**
 
 - **Amplify Console:** https://console.aws.amazon.com/amplify/apps/dzecmyr42457
 - **AppSync Console:** https://console.aws.amazon.com/appsync
@@ -396,16 +396,16 @@ curl -I https://master.dzecmyr42457.amplifyapp.com
 
 ---
 
-## ✅ **Deployment Status Summary**
+## **Deployment Status Summary**
 
 | Component | Status | URL/Endpoint |
 |-----------|--------|--------------|
-| Frontend Hosting | ✅ Ready | https://master.dzecmyr42457.amplifyapp.com |
-| Backend API | ✅ Deployed | AppSync GraphQL |
-| Authentication | ✅ Active | Cognito User Pool |
-| Database | ✅ Ready | DynamoDB (7 tables) |
-| Storage | ✅ Configured | S3 Buckets |
-| CI/CD | ✅ Active | GitHub Actions |
+| Frontend Hosting | Ready | https://master.dzecmyr42457.amplifyapp.com |
+| Backend API | Deployed | AppSync GraphQL |
+| Authentication | Active | Cognito User Pool |
+| Database | Ready | DynamoDB (7 tables) |
+| Storage | Configured | S3 Buckets |
+| CI/CD | Active | GitHub Actions |
 
 ---
 

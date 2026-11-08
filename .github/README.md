@@ -48,7 +48,7 @@ Runs on every push and pull request to `master`, `main`, or `develop` branches.
 
 ---
 
-### Amplify Deploy Workflow (`workflows/amplify-deploy.yml`) ⭐ **ACTIVE**
+### Amplify Deploy Workflow (`workflows/amplify-deploy.yml`) **ACTIVE**
 
 **Primary deployment workflow** for AWS Amplify Gen 2 full-stack application.
 
@@ -95,7 +95,7 @@ Deploys to production when code is pushed to `master` or `main` branch.
 
 ---
 
-### Deploy Workflow (`workflows/deploy.yml`) 🔒 **LEGACY**
+### Deploy Workflow (`workflows/deploy.yml`) **LEGACY**
 
 Deploys to production when code is pushed to `master` or `main` branch.
 

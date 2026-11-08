@@ -1,6 +1,6 @@
 # Deployment Guide
 
-## 🚀 Deployment Options
+## Deployment Options
 
 ### 1. GitLab Pages (Static)
 
@@ -66,7 +66,7 @@ services:
     restart: unless-stopped
 ```
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Set these in GitLab CI/CD Settings:
 
@@ -76,14 +76,14 @@ Set these in GitLab CI/CD Settings:
 - `DOCKER_REGISTRY_USER` - Container registry username
 - `DOCKER_REGISTRY_PASSWORD` - Container registry password
 
-## 📊 Monitoring
+## Monitoring
 
 - GitLab CI/CD pipeline status
 - Kubernetes pod health checks
 - Application performance monitoring
 - Error tracking and logging
 
-## 🔄 Rollback
+## Rollback
 
 ```bash
 # Kubernetes rollback

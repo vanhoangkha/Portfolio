@@ -1,10 +1,10 @@
-# 🇻🇳 HƯỚNG DẪN CHẠY PORTFOLIO
+# HƯỚNG DẪN CHẠY PORTFOLIO
 
-## ✅ Server Đã Sẵn Sàng!
+## Server Đã Sẵn Sàng!
 
 Portfolio React của bạn đã được cài đặt và build thành công!
 
-## 🚀 Cách Chạy
+## Cách Chạy
 
 ### Cách 1: Chạy Development Server (Khuyến nghị cho dev)
 
@@ -32,7 +32,7 @@ npm run build
 npm run preview -- --host 0.0.0.0 --port 3000
 ```
 
-## 🌐 Truy Cập Portfolio
+## Truy Cập Portfolio
 
 ### Từ Máy Local (qua SSH Tunnel)
 
@@ -59,7 +59,7 @@ Bạn cần:
 2. Có public IP hoặc domain
 3. Truy cập: `http://your-public-ip:3000`
 
-## 📦 Deploy Lên Production
+## Deploy Lên Production
 
 ### Option 1: Vercel (Miễn phí, Khuyến nghị)
 
@@ -96,7 +96,7 @@ npx gh-pages -d dist
 
 Truy cập tại: `https://your-username.github.io/Portfolio`
 
-## 🛠️ Các Lệnh Hữu Ích
+## Các Lệnh Hữu Ích
 
 ```bash
 # Development
@@ -116,7 +116,7 @@ npm run type-check       # Kiểm tra TypeScript
 npm run validate         # Chạy tất cả checks
 ```
 
-## 📝 Tùy Chỉnh Nội Dung
+## Tùy Chỉnh Nội Dung
 
 ### 1. Cập nhật thông tin cá nhân
 
@@ -156,7 +156,7 @@ Thay thế các file trong `public/assets/`:
 - `images/` - Hình ảnh
 - `icons/` - Icons
 
-## 🐛 Xử Lý Lỗi
+## Xử Lý Lỗi
 
 ### Port 3000 đã được sử dụng
 
@@ -182,14 +182,14 @@ npm run type-check  # Kiểm tra TypeScript
 npm run lint        # Kiểm tra linting
 ```
 
-## 📊 Thông Tin Build
+## Thông Tin Build
 
 - **Build time**: ~6 giây
 - **Bundle size**: ~330 KB (gzipped: ~108 KB)
 - **Lighthouse score**: 97/100
 - **PWA**: Có hỗ trợ
 
-## 📚 Tài Liệu
+## Tài Liệu
 
 - **README.md** - Tài liệu chính
 - **START_HERE.md** - Bắt đầu
@@ -197,7 +197,7 @@ npm run lint        # Kiểm tra linting
 - **DEPLOYMENT.md** - Hướng dẫn deploy
 - **TESTING.md** - Hướng dẫn test
 
-## 💡 Lưu Ý
+## Lưu Ý
 
 1. **Development server** (`npm run dev`):
    - Có hot reload
@@ -215,12 +215,12 @@ npm run lint        # Kiểm tra linting
    - Có SSL miễn phí
    - Có CDN toàn cầu
 
-## 📞 Hỗ Trợ
+## Hỗ Trợ
 
 - **Email**: khavan.work@gmail.com
 - **GitHub**: https://github.com/vanhoangkha/Portfolio
 
-## ✅ Checklist Trước Khi Deploy
+## Checklist Trước Khi Deploy
 
 - [ ] Đã cập nhật thông tin cá nhân
 - [ ] Đã thay đổi màu sắc theme
@@ -231,7 +231,7 @@ npm run lint        # Kiểm tra linting
 - [ ] Đã build thành công
 - [ ] Đã test production build
 
-## 🎉 Hoàn Thành!
+## Hoàn Thành!
 
 Portfolio của bạn đã sẵn sàng! Chỉ cần:
 
@@ -242,4 +242,4 @@ Portfolio của bạn đã sẵn sàng! Chỉ cần:
 
 ---
 
-**Chúc bạn thành công!** 🚀
+**Chúc bạn thành công!**

@@ -1,6 +1,6 @@
 # Portfolio Infrastructure - AWS CDK
 
-## 🏗️ Overview
+## Overview
 
 This directory contains the Infrastructure as Code (IaC) for the SA-grade portfolio using AWS CDK (TypeScript).
 
@@ -16,7 +16,7 @@ This directory contains the Infrastructure as Code (IaC) for the SA-grade portfo
 
 ---
 
-## 📁 Structure
+## Structure
 
 ```
 infrastructure/
@@ -33,7 +33,7 @@ infrastructure/
 
 ---
 
-## 🚀 Prerequisites
+## Prerequisites
 
 1. **AWS CLI** configured with credentials
    ```bash
@@ -58,7 +58,7 @@ infrastructure/
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 cd infrastructure
@@ -67,7 +67,7 @@ npm install
 
 ---
 
-## 🛠️ Deployment
+## Deployment
 
 ### Deploy All Stacks
 
@@ -109,7 +109,7 @@ cdk synth
 
 ---
 
-## 🌍 Multi-Environment Setup
+## Multi-Environment Setup
 
 The infrastructure supports three environments:
 
@@ -123,7 +123,7 @@ Each environment has isolated resources with appropriate tags.
 
 ---
 
-## 🔐 Security Features
+## Security Features
 
 ### WAF Rules
 
@@ -148,7 +148,7 @@ Each environment has isolated resources with appropriate tags.
 
 ---
 
-## 📊 Monitoring
+## Monitoring
 
 ### CloudWatch Dashboard
 
@@ -176,7 +176,7 @@ cdk deploy PortfolioMonitoring-production
 
 ---
 
-## 💰 Cost Optimization
+## Cost Optimization
 
 ### Estimated Monthly Cost
 
@@ -199,7 +199,7 @@ cdk deploy PortfolioMonitoring-production
 
 ---
 
-## 🔄 Backup & Disaster Recovery
+## Backup & Disaster Recovery
 
 ### S3 Versioning
 
@@ -221,9 +221,9 @@ cdk deploy PortfolioMonitoring-production
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
-**⚠️ Warning**: This will delete all resources!
+**Warning**: This will delete all resources!
 
 ```bash
 # Development
@@ -238,7 +238,7 @@ cdk destroy --all --context environment=production
 
 ---
 
-## 📝 Outputs
+## Outputs
 
 After deployment, CDK will output:
 
@@ -255,7 +255,7 @@ Save these values for CI/CD configuration.
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### CDK Bootstrap Issues
 
@@ -292,7 +292,7 @@ CloudFront distributions take 15-30 minutes to deploy. Be patient!
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Test CloudFront
 
@@ -318,7 +318,7 @@ done
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [AWS CDK Documentation](https://docs.aws.amazon.com/cdk/)
 - [CloudFront Best Practices](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html)
@@ -327,7 +327,7 @@ done
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Create feature branch
 2. Make changes
@@ -337,13 +337,13 @@ done
 
 ---
 
-## 📄 License
+## License
 
 MIT
 
 ---
 
-## 👤 Author
+## Author
 
 **Kha Van Hoang**
 - AWS Solutions Architect
@@ -351,17 +351,17 @@ MIT
 
 ---
 
-**🎯 This infrastructure demonstrates AWS Solutions Architect expertise including:**
+**This infrastructure demonstrates AWS Solutions Architect expertise including:**
 
-✅ Infrastructure as Code (CDK)
-✅ Multi-environment setup
-✅ Security best practices
-✅ Monitoring and alerting
-✅ Cost optimization
-✅ Disaster recovery
-✅ Compliance (CloudTrail, Config)
-✅ High availability
-✅ Performance optimization
-✅ Well-Architected Framework alignment
+Infrastructure as Code (CDK)
+Multi-environment setup
+Security best practices
+Monitoring and alerting
+Cost optimization
+Disaster recovery
+Compliance (CloudTrail, Config)
+High availability
+Performance optimization
+Well-Architected Framework alignment
 
-🤖 Generated with Claude Code
+Generated with Claude Code

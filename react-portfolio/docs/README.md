@@ -2,7 +2,7 @@
 
 This directory contains all project documentation organized by category.
 
-## 📚 Documentation Structure
+## Documentation Structure
 
 ```
 docs/

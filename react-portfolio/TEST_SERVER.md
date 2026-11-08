@@ -1,14 +1,14 @@
-# ✅ Server Đang Chạy Thành Công!
+# Server Đang Chạy Thành Công!
 
-## 🎉 Xác Nhận
+## Xác Nhận
 
 Portfolio React của bạn đã được:
-- ✅ Cài đặt thành công (619 packages)
-- ✅ Build thành công (dist/ folder)
-- ✅ Server đã chạy và phản hồi HTTP 200 OK
-- ✅ HTML được render đúng
+- Cài đặt thành công (619 packages)
+- Build thành công (dist/ folder)
+- Server đã chạy và phản hồi HTTP 200 OK
+- HTML được render đúng
 
-## 🌐 Vấn Đề Hiện Tại
+## Vấn Đề Hiện Tại
 
 Bạn đang ở môi trường **server Linux không có giao diện đồ họa** (headless server).
 
@@ -16,7 +16,7 @@ Server đang chạy tại: `http://localhost:3000`
 
 Nhưng bạn không thể mở browser trực tiếp trên server này.
 
-## 💡 Giải Pháp
+## Giải Pháp
 
 ### Giải Pháp 1: SSH Tunnel (Khuyến nghị cho testing)
 
@@ -45,11 +45,11 @@ vercel
 ```
 
 **Ưu điểm Vercel**:
-- ✅ Miễn phí
-- ✅ Tự động build
-- ✅ SSL miễn phí
-- ✅ CDN toàn cầu
-- ✅ Có URL public ngay lập tức
+- Miễn phí
+- Tự động build
+- SSL miễn phí
+- CDN toàn cầu
+- Có URL public ngay lập tức
 
 ### Giải Pháp 3: Chạy với Public IP
 
@@ -64,7 +64,7 @@ Sau đó truy cập: `http://your-public-ip:3000`
 
 **Lưu ý**: Cần mở port 3000 trong Security Group/Firewall
 
-## 🔍 Kiểm Tra Server Đang Chạy
+## Kiểm Tra Server Đang Chạy
 
 ```bash
 # Kiểm tra server có phản hồi không
@@ -77,7 +77,7 @@ netstat -tulpn | grep 3000
 lsof -i :3000
 ```
 
-## 📦 Build Production
+## Build Production
 
 Nếu muốn deploy, hãy build trước:
 
@@ -89,7 +89,7 @@ npm run build
 ls -lh dist/
 ```
 
-## 🚀 Deploy Nhanh với Vercel
+## Deploy Nhanh với Vercel
 
 ```bash
 # Bước 1: Cài Vercel
@@ -114,20 +114,20 @@ vercel
 # https://portfolio-abc123.vercel.app
 ```
 
-## 📊 Trạng Thái Hiện Tại
+## Trạng Thái Hiện Tại
 
 ```
-✅ Dependencies: Installed (619 packages)
-✅ TypeScript: Configured
-✅ Build: Successful (dist/ folder created)
-✅ Dev Server: Running on localhost:3000
-✅ HTTP Response: 200 OK
-✅ HTML: Rendering correctly
+Dependencies: Installed (619 packages)
+TypeScript: Configured
+Build: Successful (dist/ folder created)
+Dev Server: Running on localhost:3000
+HTTP Response: 200 OK
+HTML: Rendering correctly
 
-⚠️  Browser Access: Not available (headless server)
+Browser Access: Not available (headless server)
 ```
 
-## 🎯 Khuyến Nghị
+## Khuyến Nghị
 
 **Cho Development/Testing**:
 - Dùng SSH tunnel để xem trên máy local
@@ -137,7 +137,7 @@ vercel
 - Hoặc Netlify
 - Hoặc GitHub Pages
 
-## 📞 Cần Giúp?
+## Cần Giúp?
 
 Nếu bạn muốn:
 1. **Xem portfolio ngay**: Deploy lên Vercel (5 phút)
